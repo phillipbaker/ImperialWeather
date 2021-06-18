@@ -19,6 +19,7 @@
 		F87E5CB0267CA4240032949A /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E5CAF267CA4240032949A /* NetworkRequest.swift */; };
 		F87E5CB2267CA44D0032949A /* APIResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E5CB1267CA44D0032949A /* APIResource.swift */; };
 		F87E5CB4267CA46C0032949A /* CurrentWeatherResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E5CB3267CA46C0032949A /* CurrentWeatherResource.swift */; };
+		F87E5CC0267CA65C0032949A /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E5CBF267CA65C0032949A /* TestData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		F87E5CAF267CA4240032949A /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		F87E5CB1267CA44D0032949A /* APIResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResource.swift; sourceTree = "<group>"; };
 		F87E5CB3267CA46C0032949A /* CurrentWeatherResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherResource.swift; sourceTree = "<group>"; };
+		F87E5CBF267CA65C0032949A /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 		F87E5C98267C9E960032949A /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				F87E5CBF267CA65C0032949A /* TestData.swift */,
 				F87E5C99267C9E960032949A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -200,6 +203,7 @@
 				F87E5CB0267CA4240032949A /* NetworkRequest.swift in Sources */,
 				F87E5C93267C9E950032949A /* ImperialWeatherApp.swift in Sources */,
 				F87E5CB2267CA44D0032949A /* APIResource.swift in Sources */,
+				F87E5CC0267CA65C0032949A /* TestData.swift in Sources */,
 				F87E5CA3267CA2880032949A /* Conditions.swift in Sources */,
 				F87E5CA5267CA2BD0032949A /* Coordinates.swift in Sources */,
 				F87E5CA7267CA3080032949A /* Forecast.swift in Sources */,
