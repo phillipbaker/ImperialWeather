@@ -15,6 +15,10 @@
 		F87E5CA5267CA2BD0032949A /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E5CA4267CA2BD0032949A /* Coordinates.swift */; };
 		F87E5CA7267CA3080032949A /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E5CA6267CA3080032949A /* Forecast.swift */; };
 		F87E5CA9267CA3280032949A /* WeatherDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E5CA8267CA3280032949A /* WeatherDescription.swift */; };
+		F87E5CAE267CA3E80032949A /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E5CAD267CA3E80032949A /* APIRequest.swift */; };
+		F87E5CB0267CA4240032949A /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E5CAF267CA4240032949A /* NetworkRequest.swift */; };
+		F87E5CB2267CA44D0032949A /* APIResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E5CB1267CA44D0032949A /* APIResource.swift */; };
+		F87E5CB4267CA46C0032949A /* CurrentWeatherResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E5CB3267CA46C0032949A /* CurrentWeatherResource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		F87E5CA4267CA2BD0032949A /* Coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
 		F87E5CA6267CA3080032949A /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		F87E5CA8267CA3280032949A /* WeatherDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDescription.swift; sourceTree = "<group>"; };
+		F87E5CAD267CA3E80032949A /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		F87E5CAF267CA4240032949A /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		F87E5CB1267CA44D0032949A /* APIResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResource.swift; sourceTree = "<group>"; };
+		F87E5CB3267CA46C0032949A /* CurrentWeatherResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherResource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				F87E5C92267C9E950032949A /* ImperialWeatherApp.swift */,
+				F87E5CAA267CA3BA0032949A /* Services */,
 				F87E5CA1267CA27D0032949A /* Models */,
 				F87E5C94267C9E950032949A /* ContentView.swift */,
 				F87E5C96267C9E960032949A /* Assets.xcassets */,
@@ -87,6 +96,33 @@
 				F87E5CA8267CA3280032949A /* WeatherDescription.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		F87E5CAA267CA3BA0032949A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F87E5CAB267CA3C90032949A /* Requests */,
+				F87E5CAC267CA3D20032949A /* Resources */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F87E5CAB267CA3C90032949A /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				F87E5CAD267CA3E80032949A /* APIRequest.swift */,
+				F87E5CAF267CA4240032949A /* NetworkRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		F87E5CAC267CA3D20032949A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F87E5CB1267CA44D0032949A /* APIResource.swift */,
+				F87E5CB3267CA46C0032949A /* CurrentWeatherResource.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,8 +194,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F87E5CB4267CA46C0032949A /* CurrentWeatherResource.swift in Sources */,
 				F87E5C95267C9E950032949A /* ContentView.swift in Sources */,
+				F87E5CAE267CA3E80032949A /* APIRequest.swift in Sources */,
+				F87E5CB0267CA4240032949A /* NetworkRequest.swift in Sources */,
 				F87E5C93267C9E950032949A /* ImperialWeatherApp.swift in Sources */,
+				F87E5CB2267CA44D0032949A /* APIResource.swift in Sources */,
 				F87E5CA3267CA2880032949A /* Conditions.swift in Sources */,
 				F87E5CA5267CA2BD0032949A /* Coordinates.swift in Sources */,
 				F87E5CA7267CA3080032949A /* Forecast.swift in Sources */,
