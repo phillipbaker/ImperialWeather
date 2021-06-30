@@ -21,7 +21,9 @@ struct HourlyWeatherView: View {
                         Image(systemName: hourly.description[0].conditionName)
                             .frame(width: 32, height: 32, alignment: .center)
                             .imageScale(.large)
-                        Text(primaryScale == .celsius ? hourly.celsiusString : hourly.fahrenheitString) + Text("º")
+                        Text(primaryScale == .celsius
+                                ? hourly.celsiusString
+                                : hourly.fahrenheitString) + Text("º")
                             .font(.callout)
                     }
                 }
