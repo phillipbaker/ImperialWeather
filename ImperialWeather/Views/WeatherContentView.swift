@@ -17,7 +17,6 @@ struct WeatherContentView: View {
                     .padding(.bottom)
                 HourlyWeatherView(dataModel: dataModel)
                 DailyWeatherView(dataModel: dataModel)
-                Spacer()
             }
             .toolbar {
                 ToolbarItem(placement: .bottomBar) {
