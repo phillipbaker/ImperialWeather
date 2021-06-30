@@ -18,45 +18,45 @@ struct WeatherDescription: Codable {
     var conditionName: String {
         switch id {
         case 200...210, 212...232:
-            return "cloud.bolt.rain"
+            return "cloud.bolt.rain.fill"
         case 211:
-            return "cloud.bolt"
+            return "cloud.bolt.fill"
         case 300, 310, 313:
-            return "cloud.drizzle"
+            return "cloud.drizzle.fill"
         case 301, 311, 321:
-            return "cloud.rain"
+            return "cloud.rain.fill"
         case 302, 312, 314:
-            return "cloud.heavyrain"
+            return "cloud.heavyrain.fill"
         case 500, 501, 520, 521:
             return "cloud.rain"
         case 502, 503, 504, 522, 531:
-            return "cloud.heavyrain"
+            return "cloud.heavyrain.fill"
         case 511:
             return "snowflake"
         case 600...602:
-            return "cloud.snow"
+            return "cloud.snow.fill"
         case 611...622:
-            return "cloud.sleet"
+            return "cloud.sleet.fill"
         case 701:
             return "aqi.low"
         case 711, 762:
-            return "smoke"
+            return "smoke.fill"
         case 721:
-            return "sun.haze"
+            return "sun.haze.fill"
         case 731, 751, 761:
-            return "sun.dust"
+            return "sun.dust.fill"
         case 741:
-            return "cloud.fog"
+            return "cloud.fog.fill"
         case 771:
-            return "cloud.heavyrain"
+            return "cloud.heavyrain.fill"
         case 781:
             return "tornado"
         case 800:
-            return "sun.max"
+            return "sun.max.fill"
         case 801...804:
-            return "cloud"
+            return "cloud.fill"
         default:
-            return "exclamationmark.triangle"
+            return "exclamationmark.triangle.fill"
         }
     }
     
