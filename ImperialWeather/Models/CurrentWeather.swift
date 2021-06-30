@@ -1,5 +1,5 @@
 //
-//  Forecast.swift
+//  CurrentWeather.swift
 //  ImperialWeather
 //
 //  Created by Phillip Baker on 6/18/21.
@@ -7,18 +7,14 @@
 
 import Foundation
 
-struct Wrapper<T: Decodable>: Decodable {
-    let item: T
-}
-
-struct Forecast: Codable {
+struct CurrentWeather: Codable {
     let coordinates: Coordinates
     let description: [WeatherDescription]
     let conditions: Conditions
     let location: String?
 }
 
-extension Forecast {
+extension CurrentWeather {
     enum CodingKeys: String, CodingKey {
         case coordinates = "coord"
         case description = "weather"

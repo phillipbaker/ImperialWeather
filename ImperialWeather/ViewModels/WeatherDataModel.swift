@@ -8,37 +8,75 @@
 import CoreLocation
 import Foundation
 
-final class WeatherDataModel: NSObject, ObservableObject {
-    
-    enum LoadingState {
-        case idle
-        case loading
-        case failed
-        case loaded
+enum LoadingState {
+    case idle
+    case loading
+    case failed(WeatherError)
+    case loaded
+}
+
+final class WeatherDataModel: ObservableObject {
+    @Published private(set) var currentWeather: CurrentWeather
+    @Published private(set) var upcomingWeather: UpcomingWeather
+    @Published private(set) var loadingState: LoadingState = .idle
+
+    private var locationManager: LocationManager
+    private var currentWeatherRequest: APIRequest<CurrentWeatherResource>?
+    private var upcomingWeatherRequest: APIRequest<UpcomingWeatherResource>?
+
+    init() {
+        locationManager = LocationManager()
+        currentWeather = TestData.currentWeather // make this fetch last saved forecast from AppStorage/CoreData?
+        upcomingWeather = TestData.upcomingWeather  // make this fetch last saved forecast from AppStorage/CoreData?
+        locationManager.delegate = self
     }
     
-//    var locationManager = LocationManager()
-    private var weatherRequest: APIRequest<CurrentWeatherResource>?
-
-    @Published var loadingState = LoadingState.idle
-    @Published private(set) var forecast = Forecast(coordinates: Coordinates(longitude: 0.0, latitude: 0.0), description: [WeatherDescription(id: 0, description: "Updating Weather...")], conditions: Conditions(temperature: 0.0), location: nil)
-
-    func fetchCurrentWeather(location: CLLocationCoordinate2D?) {
-        if let location = location {
-            let latitude = String(location.latitude)
-            let longitude = String(location.longitude)
-            
-            let resource = CurrentWeatherResource(latitude: latitude, longitude: longitude)
-            let request = APIRequest(resource: resource)
-            
-            self.weatherRequest = request
-            request.execute { [weak self] forecast in
-                self?.forecast = forecast ?? TestData.forecast
-            }
-        } else {
-            print("No location data received.")
+    func fetchWeather(location: CLLocationCoordinate2D) {
+        loadingState = .loading
+        let group = DispatchGroup()
+        group.enter()
+        fetchCurrentWeather(location: location)
+        group.leave()
+        group.enter()
+        fetchUpcomingWeather(location: location)
+        group.leave()
+        group.notify(queue: .main) {
         }
-     
+        self.loadingState = .loaded
+    }
+    
+    func fetchCurrentWeather(location: CLLocationCoordinate2D) {
+        let resource = CurrentWeatherResource(latitude: String(location.latitude), longitude: String(location.longitude))
+        let request = APIRequest(resource: resource)
+        self.currentWeatherRequest = request
+        request.execute { [weak self] currentWeather in
+            self?.currentWeather = currentWeather ?? TestData.currentWeather // make this an error state
+            print(String(describing: currentWeather))
+        }
+    }
+    
+    func fetchUpcomingWeather(location: CLLocationCoordinate2D) {
+        let resource = UpcomingWeatherResource(latitude: String(location.latitude), longitude: String(location.longitude))
+        let request = APIRequest(resource: resource)
+        self.upcomingWeatherRequest = request
+        request.execute { [weak self] upcomingWeather in
+            self?.upcomingWeather = upcomingWeather ?? TestData.upcomingWeather // make this an error state
+            print(String(describing: upcomingWeather))
+        }
     }
 }
 
+extension WeatherDataModel: LocationManagerDelegate {
+    func locationManager(_ locationManager: LocationManager, didUpdate location: CLLocationCoordinate2D) {
+        fetchWeather(location: location)
+    }
+    
+    func locationManager(_ locationManager: LocationManager, didUpdate status: CLAuthorizationStatus) {
+        // update the status heres
+    }
+    
+    func locationManager(_ locationManger: LocationManager, didFailWith error: WeatherError?) {
+        guard let error = error else { return }
+        loadingState = .failed(error) // and the error is the device failed to return location data
+    }
+}
