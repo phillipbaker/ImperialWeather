@@ -13,20 +13,18 @@ struct CurrentWeatherView: View {
     
     var body: some View {
         VStack(spacing: 16) {
-            VStack(spacing: 24) {
-                VStack(spacing: 4) {
-                    Text(dataModel.currentWeather.location ?? "Unknown")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                    
-                    Text(dataModel.currentWeather.description[0].description)
-                }
+            VStack(spacing: 4) {
+                Text(dataModel.currentWeather.location ?? "Unknown")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
                 
-                Image(systemName: dataModel.currentWeather.description[0].conditionName)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 64, height: 64)
+                Text(dataModel.currentWeather.description[0].description)
             }
+            
+            Image(systemName: dataModel.currentWeather.description[0].conditionName)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 64, height: 64)
             
             VStack(spacing: 8) {
                 Text(primaryScale == .celsius
