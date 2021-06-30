@@ -13,10 +13,14 @@ struct CurrentWeatherView: View {
     
     var body: some View {
         VStack(spacing: 16) {
-            VStack(spacing: 16) {
-                Text(dataModel.currentWeather.location ?? "Unknown")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
+            VStack(spacing: 24) {
+                VStack(spacing: 4) {
+                    Text(dataModel.currentWeather.location ?? "Unknown")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                    
+                    Text(dataModel.currentWeather.description[0].description)
+                }
                 
                 Image(systemName: dataModel.currentWeather.description[0].conditionName)
                     .resizable()
