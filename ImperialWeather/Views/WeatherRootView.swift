@@ -17,9 +17,7 @@ struct WeatherRootView: View {
         case .loading:
             ProgressView()
         case .loaded:
-            VStack {
-                CurrentWeatherView(dataModel: dataModel)
-            }
+            WeatherContentView(dataModel: dataModel)
         case .failed(let error):
             ErrorView(error: error)
         }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct UpcomingWeatherView: View {
+struct HourlyWeatherView: View {
     @ObservedObject private(set) var dataModel: WeatherDataModel
     @AppStorage("primaryScale") private var primaryScale: PrimaryScale = .celsius
     
@@ -31,8 +31,8 @@ struct UpcomingWeatherView: View {
     }
 }
 
-struct UpcomingWeatherView_Previews: PreviewProvider {
+struct HourlyWeatherView_Previews: PreviewProvider {
     static var previews: some View {
-        UpcomingWeatherView(dataModel: WeatherDataModel())
+        HourlyWeatherView(dataModel: WeatherDataModel())
     }
 }

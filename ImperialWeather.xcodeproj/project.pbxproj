@@ -30,6 +30,7 @@
 		F87E5CC0267CA65C0032949A /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E5CBF267CA65C0032949A /* TestData.swift */; };
 		F8CEA31F268B69FF0070DEE0 /* DateFormatter+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CEA31E268B69FF0070DEE0 /* DateFormatter+Ext.swift */; };
 		F8CEA322268B6BE00070DEE0 /* DailyWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CEA321268B6BE00070DEE0 /* DailyWeatherView.swift */; };
+		F8CEA324268C62080070DEE0 /* WeatherContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CEA323268C62080070DEE0 /* WeatherContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		F87E5CBF267CA65C0032949A /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		F8CEA31E268B69FF0070DEE0 /* DateFormatter+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Ext.swift"; sourceTree = "<group>"; };
 		F8CEA321268B6BE00070DEE0 /* DailyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherView.swift; sourceTree = "<group>"; };
+		F8CEA323268C62080070DEE0 /* WeatherContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				F87E5CBB267CA5D80032949A /* WeatherRootView.swift */,
+				F8CEA323268C62080070DEE0 /* WeatherContentView.swift */,
 				F80C3D5B2683309B00C5CF76 /* CurrentWeatherView.swift */,
 				F829864B2685D73C00DBDB5A /* UpcomingWeatherView.swift */,
 				F8CEA321268B6BE00070DEE0 /* DailyWeatherView.swift */,
@@ -268,6 +271,7 @@
 				F87E5CA7267CA3080032949A /* CurrentWeather.swift in Sources */,
 				F829864C2685D73C00DBDB5A /* UpcomingWeatherView.swift in Sources */,
 				F87E5CA9267CA3280032949A /* WeatherDescription.swift in Sources */,
+				F8CEA324268C62080070DEE0 /* WeatherContentView.swift in Sources */,
 				F8CEA31F268B69FF0070DEE0 /* DateFormatter+Ext.swift in Sources */,
 				F87E5CBE267CA6150032949A /* PrimaryScalePickerView.swift in Sources */,
 				F87E5CBC267CA5D80032949A /* WeatherRootView.swift in Sources */,

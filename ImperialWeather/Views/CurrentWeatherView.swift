@@ -39,12 +39,6 @@ struct CurrentWeatherView: View {
                         Text("to you").font(.title).foregroundColor(.secondary)
                 }
             }
-            
-            UpcomingWeatherView(dataModel: dataModel)
-            
-            DailyWeatherView(dataModel: dataModel)
-            
-            PrimaryScalePickerView()
         }
     }
 }
