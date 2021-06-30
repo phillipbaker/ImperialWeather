@@ -1,5 +1,5 @@
 //
-//  UpcomingWeatherView.swift
+//  HourlyWeatherView.swift
 //  ImperialWeather
 //
 //  Created by Phillip Baker on 6/25/21.
