@@ -34,7 +34,6 @@ struct DailyWeatherView: View {
                 }
             }
         }
-        .padding()
     }
 }
 

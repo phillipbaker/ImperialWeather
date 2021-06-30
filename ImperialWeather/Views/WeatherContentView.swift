@@ -9,13 +9,22 @@ import SwiftUI
 
 struct WeatherContentView: View {
     @ObservedObject private(set) var dataModel: WeatherDataModel
-
+    
     var body: some View {
-        VStack {
-            CurrentWeatherView(dataModel: dataModel)
-            HourlyWeatherView(dataModel: dataModel)
-            DailyWeatherView(dataModel: dataModel)
-            PrimaryScalePickerView()
+        ScrollView(.vertical) {
+            VStack(spacing: 32) {
+                CurrentWeatherView(dataModel: dataModel)
+                    .padding(.bottom)
+                HourlyWeatherView(dataModel: dataModel)
+                DailyWeatherView(dataModel: dataModel)
+                Spacer()
+            }
+            .toolbar {
+                ToolbarItem(placement: .bottomBar) {
+                    PrimaryScalePickerView()
+                }
+            }
+            .padding()
         }
     }
 }

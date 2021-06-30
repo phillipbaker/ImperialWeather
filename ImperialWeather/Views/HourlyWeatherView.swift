@@ -13,7 +13,7 @@ struct HourlyWeatherView: View {
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 24) {
+            HStack(spacing: 16) {
                 ForEach(dataModel.upcomingWeather.hourlyWeather) { hourly in
                     VStack(spacing: 8) {
                         Text(hourly.formattedHour)
@@ -29,7 +29,6 @@ struct HourlyWeatherView: View {
                 }
             }
         }
-        .padding(.horizontal)
     }
 }
 
