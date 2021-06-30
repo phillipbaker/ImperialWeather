@@ -51,7 +51,6 @@ final class WeatherDataModel: ObservableObject {
         self.currentWeatherRequest = request
         request.execute { [weak self] currentWeather in
             self?.currentWeather = currentWeather ?? TestData.currentWeather // make this an error state
-            print(String(describing: currentWeather))
         }
     }
     
@@ -61,7 +60,6 @@ final class WeatherDataModel: ObservableObject {
         self.upcomingWeatherRequest = request
         request.execute { [weak self] upcomingWeather in
             self?.upcomingWeather = upcomingWeather ?? TestData.upcomingWeather // make this an error state
-            print(String(describing: upcomingWeather))
         }
     }
 }

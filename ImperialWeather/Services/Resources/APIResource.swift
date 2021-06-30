@@ -36,7 +36,6 @@ extension APIResource {
             let dateQueryItem = URLQueryItem(name: "dt", value: String(format: "%.0f", currentDate))
             components.queryItems?.append(dateQueryItem)
         }
-        print(components.url!)
         return components.url!
     }
 }
