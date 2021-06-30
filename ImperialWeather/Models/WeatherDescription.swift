@@ -28,7 +28,7 @@ struct WeatherDescription: Codable {
         case 302, 312, 314:
             return "cloud.heavyrain.fill"
         case 500, 501, 520, 521:
-            return "cloud.rain"
+            return "cloud.rain.fill"
         case 502, 503, 504, 522, 531:
             return "cloud.heavyrain.fill"
         case 511:
