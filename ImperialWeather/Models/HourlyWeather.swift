@@ -12,8 +12,14 @@ struct HourlyWeather: Codable, Identifiable {
     let hour: Date
     let temperature: Double
     let description: [WeatherDescription]
+    
     var formattedHour: String {
-        return DateFormatter.hourFormat.string(from: hour)
+        let currentTime = Date()
+        if hour <= currentTime {
+            return "Now"
+        } else {
+            return DateFormatter.hourFormat.string(from: hour)
+        }
     }
     
     var celsiusString: String {

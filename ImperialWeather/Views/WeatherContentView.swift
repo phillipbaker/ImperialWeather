@@ -11,19 +11,24 @@ struct WeatherContentView: View {
     @ObservedObject private(set) var dataModel: WeatherDataModel
     
     var body: some View {
-        ScrollView(.vertical) {
-            VStack(spacing: 32) {
-                CurrentWeatherView(dataModel: dataModel)
-                    .padding(.bottom)
-                HourlyWeatherView(dataModel: dataModel)
-                DailyWeatherView(dataModel: dataModel)
-            }
-            .toolbar {
-                ToolbarItem(placement: .bottomBar) {
-                    PrimaryScalePickerView()
+        ZStack {
+            Rectangle()
+                .foregroundColor(.weatherBackground)
+                .edgesIgnoringSafeArea(.all)
+            
+            ScrollView(.vertical) {
+                VStack(spacing: 16) {
+                    CurrentWeatherView(dataModel: dataModel)
+                    HourlyWeatherView(dataModel: dataModel)
+                    DailyWeatherView(dataModel: dataModel)
                 }
+                .toolbar {
+                    ToolbarItem(placement: .bottomBar) {
+                        PrimaryScalePickerView()
+                    }
+                }
+                .padding()
             }
-            .padding()
         }
     }
 }

@@ -8,7 +8,7 @@
 import CoreLocation
 import Foundation
 
-enum LoadingState {
+enum LoadingState: Equatable {
     case idle
     case loading
     case failed(WeatherError)

@@ -12,34 +12,41 @@ struct CurrentWeatherView: View {
     @AppStorage("primaryScale") private var primaryScale: PrimaryScale = .celsius
     
     var body: some View {
-        VStack(spacing: 16) {
-            VStack(spacing: 4) {
-                Text(dataModel.currentWeather.location ?? "Unknown")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
+        VStack(spacing: 12) {
+            VStack(spacing: 12) {
+                VStack(spacing: 4) {
+                    Text(dataModel.currentWeather.location ?? "Unknown")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                    
+                    Text(dataModel.currentWeather.description[0].description)
+                }
                 
-                Text(dataModel.currentWeather.description[0].description)
+                Image(systemName: dataModel.currentWeather.description[0].conditionName)
+                    .renderingMode(.original)
+                    .aspectRatio(contentMode: .fit)
+                    .font(.system(size: 72))
+                    .padding(.vertical)
+                    .paneShadow()
             }
-            
-            Image(systemName: dataModel.currentWeather.description[0].conditionName)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 64, height: 64)
             
             VStack(spacing: 8) {
                 Text(primaryScale == .celsius
                         ? "\(dataModel.currentWeather.conditions.celsiusString)ºC"
                         : "\(dataModel.currentWeather.conditions.fahrenheitString)ºF")
-                    .font(.largeTitle).fontWeight(.bold)
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
                 
-                Text("(That’s ").font(.title2).foregroundColor(.secondary) +
-                    Text(primaryScale == .fahrenheit
-                            ? "\(dataModel.currentWeather.conditions.celsiusString)ºC "
-                            : "\(dataModel.currentWeather.conditions.fahrenheitString)ºF ")
-                    .font(.title2).foregroundColor(.secondary) +
-                    Text("to you.)").font(.title2).foregroundColor(.secondary)
+                Text(primaryScale == .fahrenheit
+                        ? "\(dataModel.currentWeather.conditions.celsiusString)ºC "
+                        : "\(dataModel.currentWeather.conditions.fahrenheitString)ºF ")
+                    .font(.title2)
+                    .foregroundColor(.secondary)
             }
         }
+        .padding(.vertical)
+        .frame(maxWidth: .infinity)
+        .paneBackground()
     }
 }
 

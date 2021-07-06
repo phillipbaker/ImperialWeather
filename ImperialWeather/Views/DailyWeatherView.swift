@@ -16,24 +16,37 @@ struct DailyWeatherView: View {
             ForEach(dataModel.upcomingWeather.dailyWeather) { daily in
                 HStack {
                     Text(daily.formattedDay)
-                        .frame(width: 100, alignment: .leading)
+                        .frame(minWidth: 92, alignment: .leading)
+                    
                     Spacer()
                     
                     Image(systemName: daily.description[0].conditionName)
-                        .frame(width: 24, height: 24, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .renderingMode(.original)
+                        .imageScale(.large)
+                        .paneShadow()
                     
                     Spacer()
                     
                     Text(primaryScale == .celsius
-                            ? daily.temperature.maxCelsiusString
-                            : daily.temperature.maxFahrenheitString)
-                    Text(primaryScale == .celsius
-                            ? daily.temperature.minCelsiusString
-                            : daily.temperature.minFahrenheitString)
+                            ? "\(daily.temperature.maxCelsiusString)ºC"
+                            : "\(daily.temperature.maxFahrenheitString)ºF")
+                        .fontWeight(.medium)
+                        .multilineTextAlignment(.trailing)
+                        .frame(minWidth: 40)
+                        .font(.callout)
+                    
+                    Text(primaryScale == .fahrenheit
+                            ? "\(daily.temperature.maxCelsiusString)ºC"
+                            : "\(daily.temperature.maxFahrenheitString)ºF")
+                        .frame(minWidth: 40)
+                        .font(.callout)
                         .foregroundColor(.secondary)
+                        .multilineTextAlignment(.trailing)
                 }
+                .frame(minHeight: 28, alignment: .center)
             }
         }
+        .paneBackground()
     }
 }
 

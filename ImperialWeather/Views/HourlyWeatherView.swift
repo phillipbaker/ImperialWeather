@@ -15,20 +15,32 @@ struct HourlyWeatherView: View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 16) {
                 ForEach(dataModel.upcomingWeather.hourlyWeather) { hourly in
-                    VStack(spacing: 8) {
+                    VStack(spacing: 16) {
                         Text(hourly.formattedHour)
-                            .font(.callout.uppercaseSmallCaps())
+                            .font(.body.uppercaseSmallCaps())
                         Image(systemName: hourly.description[0].conditionName)
-                            .frame(width: 32, height: 32, alignment: .center)
+                            .renderingMode(.original)
+                            .frame(minWidth: 28, minHeight: 28, alignment: .top)
                             .imageScale(.large)
-                        Text(primaryScale == .celsius
-                                ? hourly.celsiusString
-                                : hourly.fahrenheitString) + Text("º")
-                            .font(.callout)
+                            .paneShadow()
+                        
+                        VStack(spacing: 8) {
+                            Text(primaryScale == .celsius
+                                    ? "\(hourly.celsiusString)ºC"
+                                    : "\(hourly.fahrenheitString)ºF")
+                                .font(.callout)
+                                .fontWeight(.medium)
+                            Text(primaryScale == .fahrenheit
+                                    ? "\(hourly.celsiusString)ºC"
+                                    : "\(hourly.fahrenheitString)ºF")
+                                .font(.callout)
+                                .foregroundColor(.secondary)
+                        }
                     }
                 }
             }
         }
+        .paneBackground()
     }
 }
 
