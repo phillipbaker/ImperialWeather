@@ -7,20 +7,37 @@
 
 import SwiftUI
 
-enum WeatherError: Error {
-    case badLocation
-    case networkError
-}
-
 struct ErrorView: View {
     let error: WeatherError
     
     var body: some View {
-        switch error {
-        case .badLocation:
-            Text("The location was bad.")
-        case .networkError:
-            Text("There was a network error.")
+        ZStack {
+            Color.weatherBackground
+                .edgesIgnoringSafeArea(.all)
+            VStack(spacing: 16) {
+                switch error {
+                case .badLocation:
+                    Image(systemName: "location.slash")
+                        .font(.system(size: 128))
+                    Text("Unable to establish your location.")
+                        .font(.title)
+                case .networkError:
+                    Image(systemName: "wifi.exclamationmark")
+                        .font(.system(size: 128))
+                    Text("There was a network error.")
+                        .font(.title)
+                case .invalidResponse:
+                    Image(systemName: "xmark.octagon")
+                        .font(.system(size: 128))
+                    Text("Invalid Response")
+                        .font(.title)
+                case .invalidData:
+                    Image(systemName: "xmark.octagon")
+                        .font(.system(size: 128))
+                    Text("Invalid Data")
+                        .font(.title)
+                }
+            }
         }
     }
 }

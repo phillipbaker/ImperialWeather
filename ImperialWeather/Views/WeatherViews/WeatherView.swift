@@ -1,5 +1,5 @@
 //
-//  WeatherContentView.swift
+//  WeatherView.swift
 //  ImperialWeather
 //
 //  Created by Phillip Baker on 6/30/21.
@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct WeatherContentView: View {
-    @ObservedObject private(set) var dataModel: WeatherDataModel
+struct WeatherView: View {
+    @ObservedObject private(set) var viewModel: WeatherViewModel
     
     var body: some View {
         ZStack {
@@ -18,9 +18,9 @@ struct WeatherContentView: View {
             
             ScrollView(.vertical) {
                 VStack(spacing: 16) {
-                    CurrentWeatherView(dataModel: dataModel)
-                    HourlyWeatherView(dataModel: dataModel)
-                    DailyWeatherView(dataModel: dataModel)
+                    CurrentWeatherView(viewModel: viewModel)
+                    HourlyWeatherView(viewModel: viewModel)
+                    DailyWeatherView(viewModel: viewModel)
                 }
                 .toolbar {
                     ToolbarItem(placement: .bottomBar) {
@@ -30,11 +30,14 @@ struct WeatherContentView: View {
                 .padding()
             }
         }
+        .onAppear {
+            viewModel.fetchLocation()
+        }
     }
 }
 
 struct WeatherContentView_Previews: PreviewProvider {
     static var previews: some View {
-        WeatherContentView(dataModel: WeatherDataModel())
+        WeatherView(viewModel: WeatherViewModel())
     }
 }

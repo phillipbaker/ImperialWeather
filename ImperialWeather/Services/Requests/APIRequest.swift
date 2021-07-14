@@ -16,14 +16,18 @@ class APIRequest<Resource: APIResource> {
 }
 
 extension APIRequest: NetworkRequest {
-    func decode(_ data: Data) -> (Resource.ModelType?) {
+    func decode(_ data: Data, withCompletion completion: @escaping (Result<(Resource.ModelType?), WeatherError>) -> Void) {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .secondsSince1970
-        let forecast = try? decoder.decode(Resource.ModelType.self, from: data)
-        return forecast
+        do {
+            let value = try decoder.decode(Resource.ModelType.self, from: data)
+            completion(.success(value))
+        } catch {
+            completion(.failure(.invalidData))
+        }
     }
     
-    func execute(withCompletion completion: @escaping (Resource.ModelType?) -> Void) {
+    func execute(withCompletion completion: @escaping (Result<(Resource.ModelType?),WeatherError>) -> Void) {
         load(resource.url, withCompletion: completion)
     }
 }

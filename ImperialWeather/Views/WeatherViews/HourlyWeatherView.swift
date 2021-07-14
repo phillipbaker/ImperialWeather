@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct HourlyWeatherView: View {
-    @ObservedObject private(set) var dataModel: WeatherDataModel
+    @ObservedObject private(set) var viewModel: WeatherViewModel
     @AppStorage("primaryScale") private var primaryScale: PrimaryScale = .celsius
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 16) {
-                ForEach(dataModel.upcomingWeather.hourlyWeather) { hourly in
+                ForEach(viewModel.upcomingWeather.hourlyWeather) { hourly in
                     VStack(spacing: 16) {
                         Text(hourly.formattedHour)
                             .font(.body.uppercaseSmallCaps())
@@ -28,12 +28,10 @@ struct HourlyWeatherView: View {
                             Text(primaryScale == .celsius
                                     ? "\(hourly.celsiusString)ºC"
                                     : "\(hourly.fahrenheitString)ºF")
-                                .font(.callout)
                                 .fontWeight(.medium)
                             Text(primaryScale == .fahrenheit
                                     ? "\(hourly.celsiusString)ºC"
                                     : "\(hourly.fahrenheitString)ºF")
-                                .font(.callout)
                                 .foregroundColor(.secondary)
                         }
                     }
@@ -46,6 +44,6 @@ struct HourlyWeatherView: View {
 
 struct HourlyWeatherView_Previews: PreviewProvider {
     static var previews: some View {
-        HourlyWeatherView(dataModel: WeatherDataModel())
+        HourlyWeatherView(viewModel: WeatherViewModel())
     }
 }
