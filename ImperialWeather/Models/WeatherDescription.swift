@@ -38,7 +38,7 @@ struct WeatherDescription: Codable {
         case 611...622:
             return "cloud.sleet.fill"
         case 701:
-            return "aqi.low"
+            return "cloud.fog.fill"
         case 711, 762:
             return "smoke.fill"
         case 721:

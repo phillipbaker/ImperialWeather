@@ -17,7 +17,7 @@ struct HourlyWeatherView: View {
                 ForEach(viewModel.upcomingWeather.hourlyWeather) { hourly in
                     VStack(spacing: 16) {
                         Text(hourly.formattedHour)
-                            .font(.body.uppercaseSmallCaps())
+                            .font(.callout)
                         Image(systemName: hourly.description[0].conditionName)
                             .renderingMode(.original)
                             .frame(minWidth: 28, minHeight: 28, alignment: .top)
