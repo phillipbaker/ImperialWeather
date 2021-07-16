@@ -38,6 +38,7 @@ struct ErrorView: View {
                         .font(.title)
                 }
             }
+            .paneBackground()
         }
     }
 }
