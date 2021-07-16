@@ -13,7 +13,7 @@ struct PaneBackground: ViewModifier {
             .padding()
             .background(UltraThinMaterialView())
             .cornerRadius(12)
-            .shadow(color: .black.opacity(0.1), radius: 8, x: 0, y: 1)
+            .paneShadow()
     }
 }
 

@@ -1,5 +1,5 @@
 //
-//  MyShadow.swift
+//  PaneShadow.swift
 //  ImperialWeather
 //
 //  Created by Phillip Baker on 7/5/21.
