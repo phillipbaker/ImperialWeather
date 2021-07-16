@@ -21,6 +21,9 @@ struct WeatherView: View {
                     CurrentWeatherView(viewModel: viewModel)
                     HourlyWeatherView(viewModel: viewModel)
                     DailyWeatherView(viewModel: viewModel)
+                    Rectangle()
+                        .foregroundColor(.clear)
+                        .frame(height: 72)
                 }
                 .toolbar {
                     ToolbarItem(placement: .bottomBar) {
