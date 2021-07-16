@@ -11,10 +11,6 @@ struct WeatherDescription: Codable {
     let id: Int
     let description: String
     
-    var lowercasedDescription: String {
-        return description.lowercased()
-    }
-    
     var conditionName: String {
         switch id {
         case 200...210, 212...232:
