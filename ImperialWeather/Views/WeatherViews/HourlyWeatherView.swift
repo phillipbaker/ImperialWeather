@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HourlyWeatherView: View {
     @ObservedObject private(set) var viewModel: WeatherViewModel
-    @AppStorage("primaryScale") private var primaryScale: PrimaryScale = .celsius
+    @AppStorage("temperatureScale") private var temperatureScale: TemperatureScale = .celsius
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -25,22 +25,22 @@ struct HourlyWeatherView: View {
                             .paneShadow()
                         
                         VStack(spacing: 8) {
-                            Text(primaryScale == .celsius
+                            Text(temperatureScale == .celsius
                                     ? "\(hourly.temperature.celsiusString)ºC"
                                     : "\(hourly.temperature.fahrenheitString)ºF")
                                 .fontWeight(.medium)
                                 
                                 .accessibility(
-                                    label: primaryScale == .celsius
+                                    label: temperatureScale == .celsius
                                         ? Text("\(hourly.temperature.celsiusString)º Celsius")
                                         : Text("\(hourly.temperature.fahrenheitString)º Fahrenheit")
                                 )
                             
-                            Text(primaryScale == .fahrenheit
+                            Text(temperatureScale == .fahrenheit
                                     ? "\(hourly.temperature.celsiusString)ºC"
                                     : "\(hourly.temperature.fahrenheitString)ºF")
                                 .foregroundColor(.secondary)
-                                .accessibility(label: primaryScale == .fahrenheit
+                                .accessibility(label: temperatureScale == .fahrenheit
                                                 ? Text("\(hourly.temperature.celsiusString)º Celsius")
                                                 : Text("\(hourly.temperature.fahrenheitString)º Fahrenheit"))
                         }

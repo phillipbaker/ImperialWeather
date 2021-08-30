@@ -35,7 +35,7 @@ struct WeatherView: View {
                 }
                 .toolbar {
                     ToolbarItem(placement: .bottomBar) {
-                        PrimaryScalePickerView()
+                        TemperatureScalePickerView()
                     }
                 }
                 .padding()

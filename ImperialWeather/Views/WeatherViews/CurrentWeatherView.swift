@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CurrentWeatherView: View {
     @ObservedObject private(set) var viewModel: WeatherViewModel
-    @AppStorage("primaryScale") private var primaryScale: PrimaryScale = .celsius
+    @AppStorage("temperatureScale") private var temperatureScale: TemperatureScale = .celsius
     
     var body: some View {
         VStack(spacing: 12) {
@@ -31,21 +31,21 @@ struct CurrentWeatherView: View {
             }
             
             VStack(spacing: 8) {
-                Text(primaryScale == .celsius
+                Text(temperatureScale == .celsius
                         ? "\(viewModel.currentWeather.conditions.temperature.celsiusString)ºC"
                         : "\(viewModel.currentWeather.conditions.temperature.fahrenheitString)ºF")
                     .font(.largeTitle)
                     .fontWeight(.bold)
-                    .accessibility(label: primaryScale == .celsius
+                    .accessibility(label: temperatureScale == .celsius
                                     ? Text("\(viewModel.currentWeather.conditions.temperature.celsiusString)º Celsius")
                                     : Text("\(viewModel.currentWeather.conditions.temperature.fahrenheitString)º Fahrenheit"))
                 
-                Text(primaryScale == .fahrenheit
+                Text(temperatureScale == .fahrenheit
                         ? "\(viewModel.currentWeather.conditions.temperature.celsiusString)ºC "
                         : "\(viewModel.currentWeather.conditions.temperature.fahrenheitString)ºF ")
                     .font(.title2)
                     .foregroundColor(.secondary)
-                    .accessibility(label: primaryScale == .fahrenheit
+                    .accessibility(label: temperatureScale == .fahrenheit
                                     ? Text("\(viewModel.currentWeather.conditions.temperature.celsiusString)º Celsius")
                                     : Text("\(viewModel.currentWeather.conditions.temperature.fahrenheitString)º Fahrenheit"))
             }
