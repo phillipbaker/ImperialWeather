@@ -15,6 +15,7 @@
 		F82986482685CAFC00DBDB5A /* UpcomingWeatherResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82986472685CAFC00DBDB5A /* UpcomingWeatherResource.swift */; };
 		F829864A2685CB3C00DBDB5A /* UpcomingWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82986492685CB3C00DBDB5A /* UpcomingWeather.swift */; };
 		F829864C2685D73C00DBDB5A /* HourlyWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F829864B2685D73C00DBDB5A /* HourlyWeatherView.swift */; };
+		F83CA24426C662EB00096BDA /* IdleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83CA24326C662EB00096BDA /* IdleView.swift */; };
 		F875DCA5268DF98C0025386F /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F875DCA4268DF98C0025386F /* Color+Ext.swift */; };
 		F87E5C93267C9E950032949A /* ImperialWeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E5C92267C9E950032949A /* ImperialWeatherApp.swift */; };
 		F87E5C97267C9E960032949A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F87E5C96267C9E960032949A /* Assets.xcassets */; };
@@ -52,6 +53,7 @@
 		F82986472685CAFC00DBDB5A /* UpcomingWeatherResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingWeatherResource.swift; sourceTree = "<group>"; };
 		F82986492685CB3C00DBDB5A /* UpcomingWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingWeather.swift; sourceTree = "<group>"; };
 		F829864B2685D73C00DBDB5A /* HourlyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherView.swift; sourceTree = "<group>"; };
+		F83CA24326C662EB00096BDA /* IdleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdleView.swift; sourceTree = "<group>"; };
 		F875DCA4268DF98C0025386F /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
 		F87E5C8F267C9E950032949A /* ImperialWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImperialWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F87E5C92267C9E950032949A /* ImperialWeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImperialWeatherApp.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				F87FB914269724E300E38184 /* WeatherViews */,
 				F87FB9102696F60900E38184 /* PermissionView.swift */,
 				F87FB9122696F7AD00E38184 /* LoadingView.swift */,
+				F83CA24326C662EB00096BDA /* IdleView.swift */,
 				F80C3D5D268338AE00C5CF76 /* ErrorView.swift */,
 			);
 			path = Views;
@@ -307,6 +310,7 @@
 				F829864A2685CB3C00DBDB5A /* UpcomingWeather.swift in Sources */,
 				F800ABE7269351B400060ACF /* UltraThinMaterialView.swift in Sources */,
 				F87E5CB0267CA4240032949A /* NetworkRequest.swift in Sources */,
+				F83CA24426C662EB00096BDA /* IdleView.swift in Sources */,
 				F8DB82BD269EDEAF00B3936B /* WeatherError.swift in Sources */,
 				F80C3D5C2683309B00C5CF76 /* CurrentWeatherView.swift in Sources */,
 				F87E5C93267C9E950032949A /* ImperialWeatherApp.swift in Sources */,

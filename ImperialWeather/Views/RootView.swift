@@ -13,8 +13,7 @@ struct RootView: View {
     var body: some View {
         switch viewModel.loadingState {
         case .idle:
-            Color.weatherBackground
-                .edgesIgnoringSafeArea(.all)
+            IdleView()
         case .loading:
             LoadingView()
         case .loaded:
