@@ -21,6 +21,14 @@ struct WeatherView: View {
                     CurrentWeatherView(viewModel: viewModel)
                     HourlyWeatherView(viewModel: viewModel)
                     DailyWeatherView(viewModel: viewModel)
+                    
+                    HStack {
+                        Text("Source: OpenWeatherMap.")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                        Spacer()
+                    }
+                    
                     Rectangle()
                         .foregroundColor(.clear)
                         .frame(height: 72)
