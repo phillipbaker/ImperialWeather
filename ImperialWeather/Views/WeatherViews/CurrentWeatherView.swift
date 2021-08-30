@@ -36,12 +36,18 @@ struct CurrentWeatherView: View {
                         : "\(viewModel.currentWeather.conditions.fahrenheitString)ºF")
                     .font(.largeTitle)
                     .fontWeight(.bold)
+                    .accessibility(label: primaryScale == .celsius
+                                    ? Text("\(viewModel.currentWeather.conditions.celsiusString)º Celsius")
+                                    : Text("\(viewModel.currentWeather.conditions.fahrenheitString)º Fahrenheit"))
                 
                 Text(primaryScale == .fahrenheit
                         ? "\(viewModel.currentWeather.conditions.celsiusString)ºC "
                         : "\(viewModel.currentWeather.conditions.fahrenheitString)ºF ")
                     .font(.title2)
                     .foregroundColor(.secondary)
+                    .accessibility(label: primaryScale == .fahrenheit
+                                    ? Text("\(viewModel.currentWeather.conditions.celsiusString)º Celsius")
+                                    : Text("\(viewModel.currentWeather.conditions.fahrenheitString)º Fahrenheit"))
             }
             .redacted(reason: viewModel.loadingState == .loading ? .placeholder : [])
         }

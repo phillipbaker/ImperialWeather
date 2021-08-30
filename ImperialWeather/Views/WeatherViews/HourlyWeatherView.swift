@@ -29,10 +29,20 @@ struct HourlyWeatherView: View {
                                     ? "\(hourly.celsiusString)ºC"
                                     : "\(hourly.fahrenheitString)ºF")
                                 .fontWeight(.medium)
+                                
+                                .accessibility(
+                                    label: primaryScale == .celsius
+                                        ? Text("\(hourly.celsiusString)º Celsius")
+                                        : Text("\(hourly.fahrenheitString)º Fahrenheit")
+                                )
+                            
                             Text(primaryScale == .fahrenheit
                                     ? "\(hourly.celsiusString)ºC"
                                     : "\(hourly.fahrenheitString)ºF")
                                 .foregroundColor(.secondary)
+                                .accessibility(label: primaryScale == .fahrenheit
+                                                ? Text("\(hourly.celsiusString)º Celsius")
+                                                : Text("\(hourly.fahrenheitString)º Fahrenheit"))
                         }
                     }
                 }

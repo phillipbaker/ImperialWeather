@@ -33,6 +33,10 @@ struct DailyWeatherView: View {
                         .fontWeight(.medium)
                         .multilineTextAlignment(.trailing)
                         .frame(minWidth: 40)
+                        .accessibility(label: primaryScale == .celsius
+                                        ? Text("\(daily.temperature.maxCelsiusString)º Celsius")
+                                        : Text("\(daily.temperature.maxFahrenheitString)º Fahrenheit"))
+                    
                     
                     Text(primaryScale == .fahrenheit
                             ? "\(daily.temperature.maxCelsiusString)ºC"
@@ -40,6 +44,12 @@ struct DailyWeatherView: View {
                         .frame(minWidth: 40)
                         .foregroundColor(.secondary)
                         .multilineTextAlignment(.trailing)
+                        
+                        .accessibility(
+                            label: primaryScale == .fahrenheit
+                                ? Text("\(daily.temperature.maxCelsiusString)º Celsius")
+                                : Text("\(daily.temperature.maxFahrenheitString)º Fahrenheit")
+                        )
                 }
                 .frame(minHeight: 28, alignment: .center)
             }
