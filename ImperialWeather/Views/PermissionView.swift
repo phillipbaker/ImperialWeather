@@ -9,23 +9,31 @@ import SwiftUI
 
 struct PermissionView: View {
     var body: some View {
-        VStack(spacing: 72) {
-            VStack(alignment: .leading, spacing: 8) {
-                Text("Imperial Weather needs your location to show the weather where you are.")
-                    .font(.headline)
-                Text("Your location data is only used to display weather information and is not stored by the app.")
-                    .foregroundColor(.secondary)
+        ZStack {
+            Color.weatherBackground
+                .edgesIgnoringSafeArea(.all)
+            VStack(spacing: 32) {
+                Image(systemName: "location.slash.fill")
+                    .font(.system(size: 128))
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Imperial Weather Cannot Access Your Location")
+                        .font(.headline)
+                    Text("Imperial Weather needs your location to show you the weather where you are. Your location data is not stored by the app.")
+                        .foregroundColor(.secondary)
+                }
+                .multilineTextAlignment(.center)
+                
+                Button("Turn On Location Services in Settings") {
+                    launchAppSettings()
+                }
+                .padding()
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .cornerRadius(12)
             }
-            
-            Button("Turn On Location Services in Settings") {
-                launchAppSettings()
-            }
+            .paneBackground()
             .padding()
-            .background(Color.blue)
-            .foregroundColor(.white)
-            .cornerRadius(12)
         }
-        .padding()
     }
     
     func launchAppSettings() {
@@ -38,6 +46,10 @@ struct PermissionView: View {
 
 struct PermissionView_Previews: PreviewProvider {
     static var previews: some View {
-        PermissionView()
+        ZStack {
+            Color.weatherBackground
+                .edgesIgnoringSafeArea(.all)
+            PermissionView()
+        }
     }
 }
