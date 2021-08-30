@@ -28,27 +28,27 @@ struct DailyWeatherView: View {
                     Spacer()
                     
                     Text(primaryScale == .celsius
-                            ? "\(daily.temperature.maxCelsiusString)ºC"
-                            : "\(daily.temperature.maxFahrenheitString)ºF")
+                            ? "\(daily.temperature.max.celsiusString)ºC"
+                            : "\(daily.temperature.max.fahrenheitString)ºF")
                         .fontWeight(.medium)
                         .multilineTextAlignment(.trailing)
                         .frame(minWidth: 40)
                         .accessibility(label: primaryScale == .celsius
-                                        ? Text("\(daily.temperature.maxCelsiusString)º Celsius")
-                                        : Text("\(daily.temperature.maxFahrenheitString)º Fahrenheit"))
+                                        ? Text("\(daily.temperature.max.celsiusString)º Celsius")
+                                        : Text("\(daily.temperature.max.fahrenheitString)º Fahrenheit"))
                     
                     
                     Text(primaryScale == .fahrenheit
-                            ? "\(daily.temperature.maxCelsiusString)ºC"
-                            : "\(daily.temperature.maxFahrenheitString)ºF")
+                            ? "\(daily.temperature.max.celsiusString)ºC"
+                            : "\(daily.temperature.max.fahrenheitString)ºF")
                         .frame(minWidth: 40)
                         .foregroundColor(.secondary)
                         .multilineTextAlignment(.trailing)
                         
                         .accessibility(
                             label: primaryScale == .fahrenheit
-                                ? Text("\(daily.temperature.maxCelsiusString)º Celsius")
-                                : Text("\(daily.temperature.maxFahrenheitString)º Fahrenheit")
+                                ? Text("\(daily.temperature.max.celsiusString)º Celsius")
+                                : Text("\(daily.temperature.max.fahrenheitString)º Fahrenheit")
                         )
                 }
                 .frame(minHeight: 28, alignment: .center)

@@ -22,14 +22,6 @@ struct HourlyWeather: Codable, Identifiable {
         }
     }
     
-    var celsiusString: String {
-        return String(format: "%.0f", temperature)
-    }
-    
-    var fahrenheitString: String {
-        return String(format: "%.0f",(temperature * 1.8) + 32)
-    }
-    
     enum CodingKeys: String, CodingKey {
         case hour = "dt"
         case temperature = "temp"

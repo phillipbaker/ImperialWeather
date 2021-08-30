@@ -26,23 +26,23 @@ struct HourlyWeatherView: View {
                         
                         VStack(spacing: 8) {
                             Text(primaryScale == .celsius
-                                    ? "\(hourly.celsiusString)ºC"
-                                    : "\(hourly.fahrenheitString)ºF")
+                                    ? "\(hourly.temperature.celsiusString)ºC"
+                                    : "\(hourly.temperature.fahrenheitString)ºF")
                                 .fontWeight(.medium)
                                 
                                 .accessibility(
                                     label: primaryScale == .celsius
-                                        ? Text("\(hourly.celsiusString)º Celsius")
-                                        : Text("\(hourly.fahrenheitString)º Fahrenheit")
+                                        ? Text("\(hourly.temperature.celsiusString)º Celsius")
+                                        : Text("\(hourly.temperature.fahrenheitString)º Fahrenheit")
                                 )
                             
                             Text(primaryScale == .fahrenheit
-                                    ? "\(hourly.celsiusString)ºC"
-                                    : "\(hourly.fahrenheitString)ºF")
+                                    ? "\(hourly.temperature.celsiusString)ºC"
+                                    : "\(hourly.temperature.fahrenheitString)ºF")
                                 .foregroundColor(.secondary)
                                 .accessibility(label: primaryScale == .fahrenheit
-                                                ? Text("\(hourly.celsiusString)º Celsius")
-                                                : Text("\(hourly.fahrenheitString)º Fahrenheit"))
+                                                ? Text("\(hourly.temperature.celsiusString)º Celsius")
+                                                : Text("\(hourly.temperature.fahrenheitString)º Fahrenheit"))
                         }
                     }
                 }
