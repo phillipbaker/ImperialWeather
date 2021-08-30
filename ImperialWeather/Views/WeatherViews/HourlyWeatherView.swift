@@ -31,18 +31,19 @@ struct HourlyWeatherView: View {
                                 .fontWeight(.medium)
                                 
                                 .accessibility(
-                                    label: temperatureScale == .celsius
-                                        ? Text("\(hourly.temperature.celsiusString)º Celsius")
-                                        : Text("\(hourly.temperature.fahrenheitString)º Fahrenheit")
+                                    label: Text(temperatureScale == .celsius
+                                                    ? "\(hourly.temperature.celsiusString)º Celsius"
+                                                    : "\(hourly.temperature.fahrenheitString)º Fahrenheit")
                                 )
                             
                             Text(temperatureScale == .fahrenheit
                                     ? "\(hourly.temperature.celsiusString)ºC"
                                     : "\(hourly.temperature.fahrenheitString)ºF")
                                 .foregroundColor(.secondary)
-                                .accessibility(label: temperatureScale == .fahrenheit
-                                                ? Text("\(hourly.temperature.celsiusString)º Celsius")
-                                                : Text("\(hourly.temperature.fahrenheitString)º Fahrenheit"))
+                                .accessibility(label: Text(temperatureScale == .fahrenheit
+                                                            ? "\(hourly.temperature.celsiusString)º Celsius"
+                                                            : "\(hourly.temperature.fahrenheitString)º Fahrenheit")
+                                )
                         }
                     }
                 }
