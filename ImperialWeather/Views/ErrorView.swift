@@ -19,26 +19,32 @@ struct ErrorView: View {
                 case .badLocation:
                     Image(systemName: "location.slash")
                         .font(.system(size: 128))
-                    Text("Unable to establish your location.")
-                        .font(.title)
+                    Text("Unable to Establish Your Location")
+                        .font(.headline)
                 case .networkError:
                     Image(systemName: "wifi.exclamationmark")
                         .font(.system(size: 128))
-                    Text("There was a network error.")
-                        .font(.title)
+                    VStack(spacing: 8) {
+                        Text("You Are Not Connected to the Internet")
+                            .font(.headline)
+                        Text("The weather can’t be displayed because your device is currently offline.")
+                            .foregroundColor(.secondary)
+                            .multilineTextAlignment(.center)
+                    }
                 case .invalidResponse:
                     Image(systemName: "xmark.octagon")
                         .font(.system(size: 128))
                     Text("Invalid Response")
-                        .font(.title)
+                        .font(.title2)
                 case .invalidData:
                     Image(systemName: "xmark.octagon")
                         .font(.system(size: 128))
                     Text("Invalid Data")
-                        .font(.title)
+                        .font(.title2)
                 }
             }
             .paneBackground()
+            .padding(.horizontal)
         }
     }
 }
