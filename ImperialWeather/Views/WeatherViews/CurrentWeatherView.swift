@@ -59,6 +59,12 @@ struct CurrentWeatherView: View {
 
 struct CurrentWeatherView_Previews: PreviewProvider {
     static var previews: some View {
-        CurrentWeatherView(viewModel: WeatherViewModel())
+        ZStack {
+            Color.weatherBackground
+                .edgesIgnoringSafeArea(.all)
+            
+            CurrentWeatherView(viewModel: WeatherViewModel())
+                .padding(.horizontal)
+        }
     }
 }
