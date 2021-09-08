@@ -38,7 +38,7 @@ struct CurrentWeatherView: View {
                     .fontWeight(.bold)
                     .accessibility(label: Text(temperatureScale == .celsius
                                                 ? "\(viewModel.currentWeather.conditions.temperature.celsiusString)º Celsius"
-                                                : "\(viewModel.currentWeather.conditions.temperature.celsiusString)º Fahrenheit")
+                                                : "\(viewModel.currentWeather.conditions.temperature.fahrenheitString)º Fahrenheit")
                     )
                 
                 Text(temperatureScale == .fahrenheit
