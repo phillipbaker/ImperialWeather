@@ -18,7 +18,7 @@ struct TemperatureScalePickerView: View {
     @AppStorage("temperatureScale") private var temperatureScale: TemperatureScale = .celsius
     
     var body: some View {
-        Picker("Temperature Scale", selection: $temperatureScale) {
+        Picker("Temperature Scale Picker", selection: $temperatureScale) {
             Group {
                 Text("ºC")
                     .tag(TemperatureScale.celsius)
