@@ -108,6 +108,17 @@
 			path = ViewModifiers;
 			sourceTree = "<group>";
 		};
+		F856307626EA181F00D11D16 /* WeatherViews */ = {
+			isa = PBXGroup;
+			children = (
+				F8CEA323268C62080070DEE0 /* WeatherView.swift */,
+				F80C3D5B2683309B00C5CF76 /* CurrentWeatherView.swift */,
+				F829864B2685D73C00DBDB5A /* HourlyWeatherView.swift */,
+				F8CEA321268B6BE00070DEE0 /* DailyWeatherView.swift */,
+			);
+			path = WeatherViews;
+			sourceTree = "<group>";
+		};
 		F87E5C86267C9E950032949A = {
 			isa = PBXGroup;
 			children = (
@@ -129,11 +140,11 @@
 			children = (
 				F87E5C92267C9E950032949A /* ImperialWeatherApp.swift */,
 				F87E5CAA267CA3BA0032949A /* Services */,
-				F87E5CA1267CA27D0032949A /* Models */,
+				F8BF578726E8F2A500CC5E84 /* Models */,
 				F87E5CB5267CA4F80032949A /* ViewModels */,
-				F87E5CB6267CA4FF0032949A /* Views */,
-				F800ABE82693AFED00060ACF /* ViewModifiers */,
+				F8BF578426E8F1FE00CC5E84 /* Views */,
 				F8CEA320268B6A0B0070DEE0 /* Extensions */,
+				F800ABE82693AFED00060ACF /* ViewModifiers */,
 				F87E5C96267C9E960032949A /* Assets.xcassets */,
 				F87E5C9B267C9E960032949A /* Info.plist */,
 				F87E5C98267C9E960032949A /* Preview Content */,
@@ -148,23 +159,6 @@
 				F87E5C99267C9E960032949A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		F87E5CA1267CA27D0032949A /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				F87E5CA6267CA3080032949A /* CurrentWeather.swift */,
-				F82986492685CB3C00DBDB5A /* UpcomingWeather.swift */,
-				F8CEA329268C63A50070DEE0 /* HourlyWeather.swift */,
-				F8CEA327268C63900070DEE0 /* DailyWeather.swift */,
-				F87E5CA2267CA2880032949A /* Conditions.swift */,
-				F87E5CA4267CA2BD0032949A /* Coordinates.swift */,
-				F8CEA325268C63760070DEE0 /* Temperature.swift */,
-				F87E5CA8267CA3280032949A /* WeatherDescription.swift */,
-				F87FB916269728BB00E38184 /* LoadingState.swift */,
-				F8DB82BC269EDEAF00B3936B /* WeatherError.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		F87E5CAA267CA3BA0032949A /* Services */ = {
@@ -203,31 +197,38 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		F87E5CB6267CA4FF0032949A /* Views */ = {
+		F8BF578426E8F1FE00CC5E84 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				F87E5CBB267CA5D80032949A /* RootView.swift */,
-				F87FB914269724E300E38184 /* WeatherViews */,
+				F856307626EA181F00D11D16 /* WeatherViews */,
+				F87E5CBD267CA6150032949A /* TemperatureScalePickerView.swift */,
+				F800ABE6269351B400060ACF /* UltraThinMaterialView.swift */,
+				F884C4A426C29DC200DC4769 /* AdaptiveStackView.swift */,
 				F87FB9102696F60900E38184 /* PermissionView.swift */,
 				F87FB9122696F7AD00E38184 /* LoadingView.swift */,
-				F83CA24326C662EB00096BDA /* IdleView.swift */,
 				F80C3D5D268338AE00C5CF76 /* ErrorView.swift */,
-				F884C4A426C29DC200DC4769 /* AdaptiveStackView.swift */,
+				F83CA24326C662EB00096BDA /* IdleView.swift */,
 			);
-			path = Views;
+			name = Views;
+			path = CurrentWeather/Views;
 			sourceTree = "<group>";
 		};
-		F87FB914269724E300E38184 /* WeatherViews */ = {
+		F8BF578726E8F2A500CC5E84 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F8CEA323268C62080070DEE0 /* WeatherView.swift */,
-				F80C3D5B2683309B00C5CF76 /* CurrentWeatherView.swift */,
-				F829864B2685D73C00DBDB5A /* HourlyWeatherView.swift */,
-				F8CEA321268B6BE00070DEE0 /* DailyWeatherView.swift */,
-				F800ABE6269351B400060ACF /* UltraThinMaterialView.swift */,
-				F87E5CBD267CA6150032949A /* TemperatureScalePickerView.swift */,
+				F87E5CA6267CA3080032949A /* CurrentWeather.swift */,
+				F82986492685CB3C00DBDB5A /* UpcomingWeather.swift */,
+				F8CEA329268C63A50070DEE0 /* HourlyWeather.swift */,
+				F8CEA327268C63900070DEE0 /* DailyWeather.swift */,
+				F87E5CA2267CA2880032949A /* Conditions.swift */,
+				F87E5CA4267CA2BD0032949A /* Coordinates.swift */,
+				F8CEA325268C63760070DEE0 /* Temperature.swift */,
+				F87E5CA8267CA3280032949A /* WeatherDescription.swift */,
+				F87FB916269728BB00E38184 /* LoadingState.swift */,
+				F8DB82BC269EDEAF00B3936B /* WeatherError.swift */,
 			);
-			path = WeatherViews;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F8CEA320268B6A0B0070DEE0 /* Extensions */ = {
