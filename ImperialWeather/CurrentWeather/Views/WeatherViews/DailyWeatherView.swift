@@ -8,20 +8,19 @@
 import SwiftUI
 
 struct DailyWeatherView: View {
+    @Environment(\.sizeCategory) var sizeCategory
     @ObservedObject private(set) var viewModel: WeatherViewModel
     @AppStorage("temperatureScale") private var temperatureScale: TemperatureScale = .celsius
     
     var body: some View {
         VStack(spacing: 8) {
             ForEach(viewModel.upcomingWeather.dailyWeather) { daily in
-                // Make this one adaptive based on accessibility text sizes or perhaps text size and compact width?
-                HStack {
+                AdaptiveStackView {
                     Text(daily.formattedDay)
                         .frame(minWidth: 92, alignment: .leading)
                     
-                    HStack {
+                    AdaptiveStackView {
                         Spacer()
-                        
                         Image(systemName: daily.description[0].conditionName)
                             .renderingMode(.original)
                             .imageScale(.large)
@@ -58,6 +57,7 @@ struct DailyWeatherView: View {
                 }
             }
         }
+        .frame(maxWidth: .infinity)
         .paneBackground()
     }
 }
