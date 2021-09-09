@@ -52,7 +52,7 @@ struct WeatherDescription: Codable {
         case 801...804:
             return "cloud.fill"
         default:
-            return "exclamationmark.triangle.fill"
+            return "questionmark.circle"
         }
     }
     

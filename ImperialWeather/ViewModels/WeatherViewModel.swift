@@ -19,8 +19,8 @@ final class WeatherViewModel: NSObject, ObservableObject {
 
     override init() {
         loadingState = .idle
-        currentWeather = TestData.currentWeather
-        upcomingWeather = TestData.upcomingWeather
+        currentWeather = PlaceholderData.currentWeather
+        upcomingWeather = PlaceholderData.upcomingWeather
         super.init()
         locationManager.delegate = self
         fetchWeather()
@@ -60,7 +60,7 @@ final class WeatherViewModel: NSObject, ObservableObject {
             switch result {
             case .success(let currentWeather):
                 DispatchQueue.main.async {
-                    self?.currentWeather = currentWeather ?? TestData.currentWeather
+                    self?.currentWeather = currentWeather ?? PlaceholderData.currentWeather
                     self?.loadingState = .loaded
                 }
             case .failure(let error):
@@ -79,7 +79,7 @@ final class WeatherViewModel: NSObject, ObservableObject {
             switch result {
             case .success(let upcomingWeather):
                 DispatchQueue.main.async {
-                    self?.upcomingWeather = upcomingWeather ?? TestData.upcomingWeather
+                    self?.upcomingWeather = upcomingWeather ?? PlaceholderData.upcomingWeather
                     self?.loadingState = .loaded
                 }
             case .failure(let error):
