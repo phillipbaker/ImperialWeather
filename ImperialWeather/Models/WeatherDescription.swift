@@ -10,6 +10,7 @@ import Foundation
 struct WeatherDescription: Codable {
     let id: Int
     let description: String
+    let icon: String
     
     var conditionName: String {
         switch id {
@@ -48,16 +49,21 @@ struct WeatherDescription: Codable {
         case 781:
             return "tornado"
         case 800:
-            return "sun.max.fill"
+            if icon.contains("d") {
+                return "sun.max.fill"
+            } else {
+                return "moon.stars.fill"
+            }
         case 801...804:
             return "cloud.fill"
         default:
-            return "questionmark.circle"
+            return "square.dashed"
         }
     }
     
     enum CodingKeys: String, CodingKey {
         case id
         case description = "main"
+        case icon
     }
 }
