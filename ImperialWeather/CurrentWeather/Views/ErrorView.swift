@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ErrorView: View {
     let error: WeatherError
-    
+
     var body: some View {
         ZStack {
             Color.weatherBackground

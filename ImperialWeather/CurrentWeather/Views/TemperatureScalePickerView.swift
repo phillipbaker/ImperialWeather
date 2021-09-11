@@ -10,13 +10,13 @@ import SwiftUI
 enum TemperatureScale: Int {
     case celsius
     case fahrenheit
-    
+
     var id: Int { rawValue }
 }
 
 struct TemperatureScalePickerView: View {
     @AppStorage("temperatureScale") private var temperatureScale: TemperatureScale = .celsius
-    
+
     var body: some View {
         Picker("Temperature Scale Picker", selection: $temperatureScale) {
             Group {

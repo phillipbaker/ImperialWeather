@@ -9,7 +9,7 @@ import Foundation
 
 struct UpcomingWeatherResource: APIResource {
     typealias ModelType = UpcomingWeather
-    
+
     var latitude: String
     var longitude: String
 

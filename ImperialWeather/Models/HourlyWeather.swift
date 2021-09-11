@@ -12,7 +12,7 @@ struct HourlyWeather: Codable, Identifiable {
     let hour: Date
     let temperature: Double
     let description: [WeatherDescription]
-    
+
     var formattedHour: String {
         let currentTime = Date()
         if hour <= currentTime {
@@ -21,7 +21,7 @@ struct HourlyWeather: Codable, Identifiable {
             return DateFormatter.hourFormat.string(from: hour)
         }
     }
-    
+
     enum CodingKeys: String, CodingKey {
         case hour = "dt"
         case temperature = "temp"

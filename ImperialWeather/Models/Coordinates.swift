@@ -12,7 +12,7 @@ import Foundation
 struct Coordinates: Codable {
     var longitude: Double
     var latitude: Double
-    
+
     enum CodingKeys: String, CodingKey {
         case longitude = "lon"
         case latitude = "lat"

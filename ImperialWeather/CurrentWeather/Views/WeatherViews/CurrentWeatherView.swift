@@ -32,23 +32,23 @@ struct CurrentWeatherView: View {
             
             VStack(spacing: 8) {
                 Text(temperatureScale == .celsius
-                        ? "\(viewModel.currentWeather.conditions.temperature.celsiusString)ºC"
-                        : "\(viewModel.currentWeather.conditions.temperature.fahrenheitString)ºF")
+                    ? "\(viewModel.currentWeather.conditions.temperature.celsiusString)ºC"
+                    : "\(viewModel.currentWeather.conditions.temperature.fahrenheitString)ºF")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .accessibility(label: Text(temperatureScale == .celsius
-                                                ? "\(viewModel.currentWeather.conditions.temperature.celsiusString)º Celsius"
-                                                : "\(viewModel.currentWeather.conditions.temperature.fahrenheitString)º Fahrenheit")
+                            ? "\(viewModel.currentWeather.conditions.temperature.celsiusString)º Celsius"
+                            : "\(viewModel.currentWeather.conditions.temperature.fahrenheitString)º Fahrenheit")
                     )
                 
                 Text(temperatureScale == .fahrenheit
-                        ? "\(viewModel.currentWeather.conditions.temperature.celsiusString)ºC"
-                        : "\(viewModel.currentWeather.conditions.temperature.fahrenheitString)ºF")
+                    ? "\(viewModel.currentWeather.conditions.temperature.celsiusString)ºC"
+                    : "\(viewModel.currentWeather.conditions.temperature.fahrenheitString)ºF")
                     .font(.title2)
                     .foregroundColor(.secondary)
                     .accessibility(label: Text(temperatureScale == .fahrenheit
-                                                ? "\(viewModel.currentWeather.conditions.temperature.celsiusString)º Celsius"
-                                                : "\(viewModel.currentWeather.conditions.temperature.celsiusString)º Fahrenheit")
+                            ? "\(viewModel.currentWeather.conditions.temperature.celsiusString)º Celsius"
+                            : "\(viewModel.currentWeather.conditions.temperature.celsiusString)º Fahrenheit")
                     )
             }
             .redacted(reason: viewModel.loadingState == .loading ? .placeholder : [])

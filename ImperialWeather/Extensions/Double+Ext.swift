@@ -11,8 +11,8 @@ extension Double {
     var celsiusString: String {
         return String(format: "%.0f", self)
     }
-    
+
     var fahrenheitString: String {
-        return String(format: "%.0f",(self * 1.8) + 32)
+        return String(format: "%.0f", (self * 1.8) + 32)
     }
 }

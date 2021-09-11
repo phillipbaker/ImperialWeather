@@ -10,7 +10,7 @@ import Foundation
 struct UpcomingWeather: Codable {
     let hourlyWeather: [HourlyWeather]
     let dailyWeather: [DailyWeather]
-    
+
     enum CodingKeys: String, CodingKey {
         case hourlyWeather = "hourly"
         case dailyWeather = "daily"

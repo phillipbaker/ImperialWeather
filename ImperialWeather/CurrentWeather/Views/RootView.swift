@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RootView: View {
     @StateObject private var viewModel = WeatherViewModel()
-    
+
     var body: some View {
         switch viewModel.loadingState {
         case .idle:

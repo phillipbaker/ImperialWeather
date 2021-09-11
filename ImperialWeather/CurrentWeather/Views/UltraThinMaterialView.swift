@@ -9,11 +9,11 @@ import SwiftUI
 
 struct UltraThinMaterialView: UIViewRepresentable {
     typealias UIViewType = UIVisualEffectView
-    
+
     func makeUIView(context: Context) -> UIVisualEffectView {
         return UIVisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterial))
     }
-    
+
     func updateUIView(_ uiView: UIVisualEffectView, context: Context) {
         uiView.effect = UIBlurEffect(style: .systemUltraThinMaterial)
     }

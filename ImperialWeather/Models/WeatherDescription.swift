@@ -11,7 +11,7 @@ struct WeatherDescription: Codable {
     let id: Int
     let description: String
     let icon: String
-    
+
     var conditionName: String {
         switch id {
         case 200...210, 212...232:
@@ -60,7 +60,7 @@ struct WeatherDescription: Codable {
             return "square.dashed"
         }
     }
-    
+
     enum CodingKeys: String, CodingKey {
         case id
         case description = "main"

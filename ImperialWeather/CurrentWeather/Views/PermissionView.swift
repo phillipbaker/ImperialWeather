@@ -22,7 +22,7 @@ struct PermissionView: View {
                         .foregroundColor(.secondary)
                 }
                 .multilineTextAlignment(.center)
-                
+
                 Button("Turn On Location Services in Settings") {
                     launchAppSettings()
                 }
@@ -35,10 +35,11 @@ struct PermissionView: View {
             .padding()
         }
     }
-    
+
     func launchAppSettings() {
         if let bundleId = Bundle.main.bundleIdentifier,
-           let url = URL(string: "\(UIApplication.openSettingsURLString)&path=LOCATION/\(bundleId)") {
+           let url = URL(string: "\(UIApplication.openSettingsURLString)&path=LOCATION/\(bundleId)")
+        {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }

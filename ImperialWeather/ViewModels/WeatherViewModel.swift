@@ -55,7 +55,7 @@ final class WeatherViewModel: NSObject, ObservableObject {
     func fetchCurrentWeather(location: CLLocationCoordinate2D) {
         let resource = CurrentWeatherResource(latitude: String(location.latitude), longitude: String(location.longitude))
         let request = APIRequest(resource: resource)
-        self.currentWeatherRequest = request
+        currentWeatherRequest = request
         request.execute { [weak self] result in
             switch result {
             case .success(let currentWeather):
@@ -74,7 +74,7 @@ final class WeatherViewModel: NSObject, ObservableObject {
     func fetchUpcomingWeather(location: CLLocationCoordinate2D) {
         let resource = UpcomingWeatherResource(latitude: String(location.latitude), longitude: String(location.longitude))
         let request = APIRequest(resource: resource)
-        self.upcomingWeatherRequest = request
+        upcomingWeatherRequest = request
         request.execute { [weak self] result in
             switch result {
             case .success(let upcomingWeather):

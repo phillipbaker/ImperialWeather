@@ -13,7 +13,7 @@ extension DateFormatter {
         formatter.dateFormat = "ha"
         return formatter
     }()
-    
+
     static let dayFormat: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE"

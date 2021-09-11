@@ -9,7 +9,7 @@ import Foundation
 
 struct Conditions: Codable {
     let temperature: Double
-    
+
     enum CodingKeys: String, CodingKey {
         case temperature = "temp"
     }

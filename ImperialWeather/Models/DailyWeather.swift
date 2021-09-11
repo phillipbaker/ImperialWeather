@@ -12,11 +12,11 @@ struct DailyWeather: Codable, Identifiable {
     let day: Date
     let temperature: Temperature
     let description: [WeatherDescription]
-    
+
     var formattedDay: String {
         return DateFormatter.dayFormat.string(from: day)
     }
-    
+
     enum CodingKeys: String, CodingKey {
         case day = "dt"
         case temperature = "temp"

@@ -9,19 +9,19 @@ import SwiftUI
 
 struct AdaptiveStackView<Content: View>: View {
     @Environment(\.sizeCategory) private var sizeCategory
-    
+
     var spacing: CGFloat?
     var horizontalAlignment: HorizontalAlignment
     var verticalAlignment: VerticalAlignment
     var content: () -> Content
-    
+
     init(horizontalAlignment: HorizontalAlignment = .center, verticalAlignment: VerticalAlignment = .center, spacing: CGFloat? = nil, @ViewBuilder content: @escaping () -> Content) {
         self.horizontalAlignment = horizontalAlignment
         self.verticalAlignment = verticalAlignment
         self.spacing = spacing
         self.content = content
     }
-    
+
     var body: some View {
         Group {
             if sizeCategory.isAccessibilityCategory {

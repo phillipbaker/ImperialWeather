@@ -10,7 +10,7 @@ import SwiftUI
 struct HourlyWeatherView: View {
     @ObservedObject private(set) var viewModel: WeatherViewModel
     @AppStorage("temperatureScale") private var temperatureScale: TemperatureScale = .celsius
-    
+
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 16) {
@@ -23,26 +23,26 @@ struct HourlyWeatherView: View {
                             .frame(minWidth: 28, minHeight: 28, alignment: .top)
                             .imageScale(.large)
                             .paneShadow()
-                        
+
                         VStack(spacing: 8) {
                             Text(temperatureScale == .celsius
-                                    ? "\(hourly.temperature.celsiusString)ºC"
-                                    : "\(hourly.temperature.fahrenheitString)ºF")
+                                ? "\(hourly.temperature.celsiusString)ºC"
+                                : "\(hourly.temperature.fahrenheitString)ºF")
                                 .fontWeight(.medium)
-                                
+
                                 .accessibility(
                                     label: Text(temperatureScale == .celsius
-                                                    ? "\(hourly.temperature.celsiusString)º Celsius"
-                                                    : "\(hourly.temperature.fahrenheitString)º Fahrenheit")
+                                        ? "\(hourly.temperature.celsiusString)º Celsius"
+                                        : "\(hourly.temperature.fahrenheitString)º Fahrenheit")
                                 )
-                            
+
                             Text(temperatureScale == .fahrenheit
-                                    ? "\(hourly.temperature.celsiusString)ºC"
-                                    : "\(hourly.temperature.fahrenheitString)ºF")
+                                ? "\(hourly.temperature.celsiusString)ºC"
+                                : "\(hourly.temperature.fahrenheitString)ºF")
                                 .foregroundColor(.secondary)
                                 .accessibility(label: Text(temperatureScale == .fahrenheit
-                                                            ? "\(hourly.temperature.celsiusString)º Celsius"
-                                                            : "\(hourly.temperature.fahrenheitString)º Fahrenheit")
+                                        ? "\(hourly.temperature.celsiusString)º Celsius"
+                                        : "\(hourly.temperature.fahrenheitString)º Fahrenheit")
                                 )
                         }
                     }

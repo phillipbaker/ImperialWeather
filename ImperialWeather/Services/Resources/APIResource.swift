@@ -30,7 +30,7 @@ extension APIResource {
             URLQueryItem(name: "lat", value: latitude),
             URLQueryItem(name: "lon", value: longitude)
         ]
-        
+
         if methodPath == Path.oneCall.rawValue {
             let currentDate = Date().timeIntervalSince1970
             let dateQueryItem = URLQueryItem(name: "dt", value: String(format: "%.0f", currentDate))
