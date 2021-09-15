@@ -9,14 +9,17 @@ import SwiftUI
 
 struct SecondaryTemperatureView: View {
     @AppStorage("temperatureScale") private var temperatureScale: TemperatureScale = .celsius
-    
+
     var temperature: Double
-    
+
     var body: some View {
-        Text(temperatureScale == .fahrenheit ? temperature.celsiusStringShort : temperature.fahrenheitStringShort)
-            .foregroundColor(.secondary)
-            .frame(minWidth: 40)
-            .accessibilityLabel()
+        Text(temperatureScale == .fahrenheit
+            ? temperature.celsiusString + Degrees.c
+            : temperature.fahrenheitString + Degrees.f
+        )
+        .foregroundColor(.secondary)
+        .frame(minWidth: 40)
+        .accessibilityLabel()
     }
 }
 

@@ -12,7 +12,9 @@ struct PrimaryTemperatureView: View {
     var temperature: Double
     
     var body: some View {
-        Text(temperatureScale == .celsius ? temperature.celsiusStringShort : temperature.fahrenheitStringShort)
+        Text(temperatureScale == .celsius
+                ? temperature.celsiusString + Degrees.c
+                : temperature.fahrenheitString + Degrees.f)
             .fontWeight(.medium)
             .frame(minWidth: 40)
             .accessibilityLabel()

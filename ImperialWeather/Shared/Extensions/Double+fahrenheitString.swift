@@ -8,12 +8,7 @@
 import Foundation
 
 extension Double {
-    var fahrenheitStringShort: String {
-        return String(format: "%.0f", (self * 1.8) + 32) + Degrees.f
-    }
-    
     var fahrenheitString: String {
-        return String(format: "%.0f", (self * 1.8) + 32) + Degrees.fahrenheit
+        return String(format: "%.0f", (self * 1.8) + 32)
     }
-
 }
