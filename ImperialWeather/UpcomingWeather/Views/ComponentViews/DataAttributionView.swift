@@ -9,16 +9,12 @@ import SwiftUI
 
 struct DataAttributionView: View {
     var body: some View {
-        HStack {
-            HStack(spacing: 4) {
-                Text("Source:")
-                Link("OpenWeatherMap", destination: URL(string: "https://openweathermap.org")!)
-            }
-            .font(.caption)
-            .foregroundColor(.secondary)
-            
-            Spacer()
+        HStack(spacing: 4) {
+            Text("Source:")
+            Link("OpenWeatherMap", destination: URL(string: "https://openweathermap.org")!)
         }
+        .font(.caption)
+        .foregroundColor(.secondary)
     }
 }
 
