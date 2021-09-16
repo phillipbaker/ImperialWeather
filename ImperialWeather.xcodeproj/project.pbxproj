@@ -34,7 +34,7 @@
 		F87FB9112696F60900E38184 /* LocationPermissionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87FB9102696F60900E38184 /* LocationPermissionScreen.swift */; };
 		F87FB9132696F7AD00E38184 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87FB9122696F7AD00E38184 /* LoadingView.swift */; };
 		F87FB917269728BB00E38184 /* LoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87FB916269728BB00E38184 /* LoadingState.swift */; };
-		F884C4A526C29DC200DC4769 /* AdaptiveStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F884C4A426C29DC200DC4769 /* AdaptiveStackView.swift */; };
+		F884C4A526C29DC200DC4769 /* SizeCategoryStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F884C4A426C29DC200DC4769 /* SizeCategoryStackView.swift */; };
 		F8A45FC026ECEC5900C34631 /* WeatherIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A45FBF26ECEC5900C34631 /* WeatherIcons.swift */; };
 		F8BC642226F1EDE600B70620 /* CurrentWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BC642126F1EDE500B70620 /* CurrentWeatherView.swift */; };
 		F8BC642526F1FB3000B70620 /* WeatherImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BC642426F1FB3000B70620 /* WeatherImageView.swift */; };
@@ -90,7 +90,7 @@
 		F87FB9102696F60900E38184 /* LocationPermissionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPermissionScreen.swift; sourceTree = "<group>"; };
 		F87FB9122696F7AD00E38184 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		F87FB916269728BB00E38184 /* LoadingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingState.swift; sourceTree = "<group>"; };
-		F884C4A426C29DC200DC4769 /* AdaptiveStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveStackView.swift; sourceTree = "<group>"; };
+		F884C4A426C29DC200DC4769 /* SizeCategoryStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeCategoryStackView.swift; sourceTree = "<group>"; };
 		F8A45FBF26ECEC5900C34631 /* WeatherIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherIcons.swift; sourceTree = "<group>"; };
 		F8BC642126F1EDE500B70620 /* CurrentWeatherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeatherView.swift; sourceTree = "<group>"; };
 		F8BC642426F1FB3000B70620 /* WeatherImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherImageView.swift; sourceTree = "<group>"; };
@@ -224,9 +224,9 @@
 				F87FB9122696F7AD00E38184 /* LoadingView.swift */,
 				F8EDEF5A26F0BD42008CB9A7 /* BackgroundView.swift */,
 				F8BC642426F1FB3000B70620 /* WeatherImageView.swift */,
-				F884C4A426C29DC200DC4769 /* AdaptiveStackView.swift */,
 				F8C5ABC126EF745B00466C34 /* DataAttributionView.swift */,
 				F800ABE6269351B400060ACF /* UltraThinMaterialView.swift */,
+				F884C4A426C29DC200DC4769 /* SizeCategoryStackView.swift */,
 				F8BC643226F211B900B70620 /* PrimaryTemperatureView.swift */,
 				F8BC643426F2138800B70620 /* SecondaryTemperatureView.swift */,
 				F87E5CBD267CA6150032949A /* TemperatureScalePickerView.swift */,
@@ -401,7 +401,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F884C4A526C29DC200DC4769 /* AdaptiveStackView.swift in Sources */,
+				F884C4A526C29DC200DC4769 /* SizeCategoryStackView.swift in Sources */,
 				F82986482685CAFC00DBDB5A /* UpcomingWeatherResource.swift in Sources */,
 				F8CEA322268B6BE00070DEE0 /* DailyWeatherView.swift in Sources */,
 				F87E5CB4267CA46C0032949A /* CurrentWeatherResource.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  AdaptiveStackView.swift
+//  SizeCategoryStackView.swift
 //  ImperialWeather
 //
 //  Created by Phillip Baker on 8/10/21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AdaptiveStackView<Content: View>: View {
+struct SizeCategoryStackView<Content: View>: View {
     @Environment(\.sizeCategory) private var sizeCategory
 
     var spacing: CGFloat?

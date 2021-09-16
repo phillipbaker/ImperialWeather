@@ -13,11 +13,11 @@ struct DailyWeatherView: View {
     var body: some View {
         VStack(spacing: 8) {
             ForEach(viewModel.upcomingWeather.dailyWeather) { day in
-                AdaptiveStackView {
+                SizeCategoryStackView {
                     Text(day.inDayFormat)
                         .frame(minWidth: 92, alignment: .leading)
                     
-                    AdaptiveStackView {
+                    SizeCategoryStackView {
                         Spacer()
                         
                         WeatherImageView(name: day.description[0].conditionName)
