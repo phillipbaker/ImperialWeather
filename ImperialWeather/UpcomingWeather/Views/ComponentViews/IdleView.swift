@@ -9,8 +9,7 @@ import SwiftUI
 
 struct IdleView: View {
     var body: some View {
-        Rectangle()
-            .foregroundColor(.clear)
+        Color.clear
     }
 }
 

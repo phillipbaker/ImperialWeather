@@ -9,8 +9,7 @@ import SwiftUI
 
 struct BackgroundView: View {
     var body: some View {
-        Rectangle()
-            .foregroundColor(.weatherBackground)
+        Color.weatherBackground
             .edgesIgnoringSafeArea(.all)
     }
 }
