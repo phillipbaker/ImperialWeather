@@ -9,10 +9,13 @@ import SwiftUI
 
 enum ButtonActions {
     static func launchAppSettings() {
-        if let bundleId = Bundle.main.bundleIdentifier,
-           let url = URL(string: "\(UIApplication.openSettingsURLString)&path=LOCATION/\(bundleId)")
-        {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        }
+        guard let bundleId = Bundle.main.bundleIdentifier else { return }
+        let url = URL(string: "\(UIApplication.openSettingsURLString)&path=LOCATION/\(bundleId)")!
+        UIApplication.shared.open(url)
+    }
+    
+    static func submitFeeback() {
+        let url = URL(string: "mailto:INSERTEMAILHERE")!
+        UIApplication.shared.open(url)
     }
 }

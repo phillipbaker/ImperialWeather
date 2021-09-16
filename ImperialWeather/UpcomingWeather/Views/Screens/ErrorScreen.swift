@@ -18,7 +18,7 @@ struct ErrorScreen: View {
                 errorTitle: ErrorMessage.badLocationTitle,
                 errorDescription: ErrorMessage.badLocationDescription,
                 buttonTitle: ErrorMessage.badLocationButtonTitle,
-                buttonAction: {}
+                buttonAction: ButtonActions.launchAppSettings
             )
         case .networkError:
             ErrorView(
@@ -26,7 +26,7 @@ struct ErrorScreen: View {
                 errorTitle: ErrorMessage.networkErrorTitle,
                 errorDescription: ErrorMessage.networkErrorDescription,
                 buttonTitle: ErrorMessage.networkErrorButtonTitle,
-                buttonAction: {}
+                buttonAction: ButtonActions.launchAppSettings
             )
         case .invalidResponse:
             ErrorView(
@@ -34,7 +34,7 @@ struct ErrorScreen: View {
                 errorTitle: ErrorMessage.invalidResponseTitle,
                 errorDescription: ErrorMessage.invalidResponseDescription,
                 buttonTitle: ErrorMessage.invalidResponseButtonTitle,
-                buttonAction: {}
+                buttonAction: ButtonActions.submitFeeback
             )
         case .invalidData:
             ErrorView(
@@ -42,7 +42,7 @@ struct ErrorScreen: View {
                 errorTitle: ErrorMessage.invalidDataTitle,
                 errorDescription: ErrorMessage.invalidDataDescription,
                 buttonTitle: ErrorMessage.invalidDataButtonTitle,
-                buttonAction: {}
+                buttonAction: ButtonActions.submitFeeback
             )
         }
     }

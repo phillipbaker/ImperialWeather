@@ -11,24 +11,24 @@ enum ErrorMessage {
     // MARK: - Bad Location
     static let badLocationImage = "location.slash"
     static let badLocationTitle = "Unable to Establish Your Location"
-    static let badLocationDescription = "Imperial Weather was unable to establish your location"
-    static let badLocationButtonTitle = "Retry"
+    static let badLocationDescription = "Imperial Weather was unable to establish your location."
+    static let badLocationButtonTitle = "Check Location Permissions in Settings"
 
     // MARK: - Network Error
     static let networkErrorImage = "wifi.exclamationmark"
     static let networkErrorTitle = "You Are Not Connected to the Internet"
     static let networkErrorDescription = "The weather can’t be displayed because your device is currently offline."
-    static let networkErrorButtonTitle = ""
+    static let networkErrorButtonTitle = "Check Network Connection in Settings"
 
     // MARK: - Invalid Response
     static let invalidDataOrResponseImage = "xmark.octagon"
     static let invalidResponseTitle = "Invalid Response"
-    static let invalidResponseDescription = ""
-    static let invalidResponseButtonTitle = "Retry"
+    static let invalidResponseDescription = "Imperial Weather could not create a forecast from the data provided."
+    static let invalidResponseButtonTitle = "Report This Problem"
 
     // MARK: - Invalid Data
     static let invalidDataTitle = "Invalid Data"
-    static let invalidDataDescription = ""
+    static let invalidDataDescription = "Imperial Weather could not create a forecast from the data provided."
     static let invalidDataButtonTitle = "Retry"
     
     // MARK: - Location Permission
