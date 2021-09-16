@@ -14,7 +14,7 @@ struct LocationPermissionScreen: View {
             errorTitle: ErrorMessage.locationPermissionTitle,
             errorDescription: ErrorMessage.locationPermissionDescription,
             buttonTitle: ErrorMessage.loactionPermissionButtonTitle,
-            buttonAction: HelperFunctions.launchAppSettings
+            buttonAction: ButtonActions.launchAppSettings
         )
     }
 }
