@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DataAttributionView: View {
     var body: some View {
-        HStack(spacing: 4) {
+        SizeCategoryStackView(spacing: 4) {
             Text("Source:")
             Link("OpenWeatherMap", destination: URL(string: "https://openweathermap.org")!)
         }

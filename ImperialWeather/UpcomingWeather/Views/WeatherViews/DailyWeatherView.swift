@@ -12,30 +12,37 @@ struct DailyWeatherView: View {
     
     var body: some View {
         VStack(spacing: 8) {
+            HStack {
+                Text("7-Day Forecast")
+                    .font(.caption)
+                    .textCase(.uppercase)
+                    .foregroundColor(.secondary)
+                
+                Spacer()
+            }
+            
             ForEach(viewModel.upcomingWeather.dailyWeather) { day in
+                Divider()
                 SizeCategoryStackView {
                     Text(day.inDayFormat)
                         .frame(minWidth: 92, alignment: .leading)
                     
-                    SizeCategoryStackView {
-                        Spacer()
-                        
-                        WeatherImageView(name: day.description[0].conditionName)
-                        
-                        Spacer()
-                        
-                        HStack {
-                            PrimaryTemperatureView(temperature: day.temperature.max)
-                            SecondaryTemperatureView(temperature: day.temperature.max)
-                        }
-                        .multilineTextAlignment(.trailing)
+                    Spacer()
+                    
+                    WeatherImageView(name: day.description[0].conditionName)
+                    
+                    Spacer()
+                    
+                    HStack {
+                        PrimaryTemperatureView(temperature: day.temperature.max)
+                        SecondaryTemperatureView(temperature: day.temperature.max)
                     }
-                    .frame(minHeight: 28, alignment: .center)
+                    .multilineTextAlignment(.trailing)
                 }
             }
         }
-        .frame(maxWidth: .infinity)
         .paneBackground()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 

@@ -12,20 +12,24 @@ struct HourlyWeatherView: View {
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            LazyHStack(spacing: 16) {
+            LazyHStack {
                 ForEach(viewModel.upcomingWeather.hourlyWeather) { hour in
-                    VStack(spacing: 16) {
-                        Text(hour.formattedHour)
-                            .frame(minWidth: 40)
-                            .font(.callout)
-                        
-                        WeatherImageView(name: hour.description[0].conditionName)
-                            .frame(minWidth: 28, minHeight: 28, alignment: .top)
-                        
-                        VStack(spacing: 8) {
-                            PrimaryTemperatureView(temperature: hour.temperature)
-                            SecondaryTemperatureView(temperature: hour.temperature)
+                    HStack {
+                        VStack(alignment: .center, spacing: 16) {
+                            Text(hour.formattedHour)
+                                .frame(minWidth: 40)
+                                .font(.callout)
+                            
+                            WeatherImageView(name: hour.description[0].conditionName)
+                                .frame(minWidth: 28, minHeight: 28, maxHeight: .infinity, alignment: .top)
+                            
+                            VStack(spacing: 8) {
+                                PrimaryTemperatureView(temperature: hour.temperature)
+                                SecondaryTemperatureView(temperature: hour.temperature)
+                            }
                         }
+                        
+                        Divider()
                     }
                 }
             }
