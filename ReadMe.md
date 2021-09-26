@@ -2,7 +2,7 @@
 
 A weather app that displays the current temperature in Fahrenheit and Celsius at the same time.
 
-*Frameworks: SwiftUI, CoreLocation, URLSession, Codable, Result*
+*Frameworks/APIs: SwiftUI, CoreLocation, URLSession, Codable*
 
 ## Why I Made This
 
