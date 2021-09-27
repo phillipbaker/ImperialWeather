@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CurrentWeatherResource: APIResource {
+struct CurrentWeatherResource: ApiResource {
     typealias ModelType = CurrentWeather
 
     var latitude: String

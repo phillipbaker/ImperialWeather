@@ -21,7 +21,7 @@ struct HourlyWeatherView: View {
                                 .font(.callout)
                             
                             WeatherImageView(name: hour.description[0].conditionName)
-                                .frame(minWidth: 28, minHeight: 28, maxHeight: .infinity, alignment: .top)
+                                .frame(minWidth: 28, minHeight: 28, alignment: .top)
                             
                             VStack(spacing: 8) {
                                 PrimaryTemperatureView(temperature: hour.temperature)

@@ -14,8 +14,8 @@ final class WeatherViewModel: NSObject, ObservableObject {
     @Published private(set) var upcomingWeather: UpcomingWeather
 
     private var locationManager = CLLocationManager()
-    private var currentWeatherRequest: APIRequest<CurrentWeatherResource>?
-    private var upcomingWeatherRequest: APIRequest<UpcomingWeatherResource>?
+    private var currentWeatherRequest: ApiRequest<CurrentWeatherResource>?
+    private var upcomingWeatherRequest: ApiRequest<UpcomingWeatherResource>?
 
     override init() {
         loadingState = .idle
@@ -54,7 +54,7 @@ final class WeatherViewModel: NSObject, ObservableObject {
     
     func fetchCurrentWeather(location: CLLocationCoordinate2D) {
         let resource = CurrentWeatherResource(latitude: String(location.latitude), longitude: String(location.longitude))
-        let request = APIRequest(resource: resource)
+        let request = ApiRequest(resource: resource)
         currentWeatherRequest = request
         request.execute { [weak self] result in
             switch result {
@@ -73,7 +73,7 @@ final class WeatherViewModel: NSObject, ObservableObject {
     
     func fetchUpcomingWeather(location: CLLocationCoordinate2D) {
         let resource = UpcomingWeatherResource(latitude: String(location.latitude), longitude: String(location.longitude))
-        let request = APIRequest(resource: resource)
+        let request = ApiRequest(resource: resource)
         upcomingWeatherRequest = request
         request.execute { [weak self] result in
             switch result {

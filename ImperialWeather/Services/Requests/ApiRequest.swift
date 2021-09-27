@@ -1,5 +1,5 @@
 //
-//  APIRequest.swift
+//  ApiRequest.swift
 //  ImperialWeather
 //
 //  Created by Phillip Baker on 6/18/21.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class APIRequest<Resource: APIResource> {
+class ApiRequest<Resource: ApiResource> {
     let resource: Resource
 
     init(resource: Resource) {
@@ -15,7 +15,7 @@ class APIRequest<Resource: APIResource> {
     }
 }
 
-extension APIRequest: NetworkRequest {
+extension ApiRequest: NetworkRequest {
     func decode(_ data: Data, withCompletion completion: @escaping (Result<Resource.ModelType?, WeatherError>) -> Void) {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .secondsSince1970
