@@ -12,4 +12,4 @@ I moved from the US to the UK and consequently switched from using Fahrenheit to
 
 The app displays current weather and hourly and daily temperatures for the user’s current location. 
 
-I deliberately kept functionality simple. Side-by-side temperatures for my current location was enough to solve my problem. Once I had that working, I wanted to spend time include error handling and decompose and organize the view hierarchy, view modifiers and formatted values as a learning experience.
+I deliberately kept the functionality simple. Side-by-side temperatures for my current location was enough to solve my problem. Once I had that working, I spent more time on error handling and decomposing and organizing the SwiftUI view hierarchy, view modifiers and formatted values.
