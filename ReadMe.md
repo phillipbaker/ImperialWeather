@@ -1,6 +1,8 @@
 # Imperial Weather
 
-A weather app that displays the current temperature in Fahrenheit and Celsius at the same time.
+A weather app that displays the current and upcoming temperature in Fahrenheit and Celsius at the same time.
+
+![iw@3x](https://user-images.githubusercontent.com/16352712/135824865-145c96f9-4f75-43e6-8633-773c9d7b524b.png)
 
 *Frameworks/APIs: SwiftUI, CoreLocation, URLSession, Codable*
 
