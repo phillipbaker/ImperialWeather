@@ -20,7 +20,7 @@ One great learning experience here was seeing how many problems even a trivial i
 
 ### A Stack View That Adapts to Accessible Text Sizes
 
-At the largest accessible text sizes, the daily weather pane squashed text together and became unreadable (below left). I made a custom and reuseable stack view that adapts from a horizontal to a vertical stack for accessible text sizes (below right).
+At the largest accessible text sizes, the daily weather pane squashed text together and became unreadable (below left). I made a custom and reusable stack view that adapts from a horizontal to a vertical stack for accessible text sizes (below right).
 
 ![accessible-text-stackview@3x](https://user-images.githubusercontent.com/16352712/135830154-6ca2c7b8-2e52-4469-979c-6e209ac055f6.png)
 
@@ -36,11 +36,11 @@ The icon for clear weather, a sun, didn’t make sense at night. As I was using 
 
 ### Weather Icon Alignment
 
-Another issue with weather icons was alignment. SF Symbols aren’t visually centered within their frame so all of the icons looked misaligned. The worst case were cloud icons that might or might not include depictions of rain, thunder, fog, sleet or snow. I opted for an 80/20 solution of setting a fixed minimum frame size around weather icons and aligning them all to the top of their frame. This aligned the top of all of the cloud-related icons and solved the distracting level of misalignment althought it’s not perfect. A more robust solution would be to align all of the icons visually within their frame and I chose not to invest time to do that over moving on. 
+Another issue with weather icons was alignment. SF Symbols aren’t visually centered within their frame so all of the icons looked misaligned. The worst case were cloud icons that might or might not include depictions of rain, thunder, fog, sleet or snow. I opted for an 80/20 solution of setting a fixed minimum frame size around weather icons and aligning them all to the top of their frame. This aligned the top of all of the cloud-related icons and solved the distracting level of misalignment although it’s not perfect. A more robust solution would be to align all of the icons visually within their frame and I chose not to invest time to do that over moving on. 
 
 ### Voiceover Support for ºC and ºF
 
-One last accessibilty issue was that Voiceover would read “degrees C” and “degress F” because that is exactly what the interface says. Since these abbreviations are used throughout the weather screen it was pretty jarring to hear. I made an accessiblity label that reads “Celsius” and “Farenheit” in full for those values and moved it into its own view modifier.
+One last accessibility issue was that Voiceover would read “degrees C” and “degrees F” because that is exactly what the interface says. Since these abbreviations are used throughout the weather screen it was pretty jarring to hear. I made an accessibility label that reads “Celsius” and “Fahrenheit” in full for those values and moved it into its own view modifier.
 
 ### Current Hour in the Past
 
