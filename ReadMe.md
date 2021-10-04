@@ -45,3 +45,19 @@ One last accessibilty issue was that Voiceover would read “degrees C” and �
 ### Current Hour in the Past
 
 The first hour of weather returned by Open Weather Map is for the current hour which means it can be in the past. For example, at 10.30am, the first entry for hourly weather is for 10am. I added a check so that if an hour was in the past, it should use the label “Now” instead of the time.
+
+## Remaining Issues
+
+There are a bunch of issues I hope to resolve but left for now in order to ship new work but I want to acknowledge some of them here.
+
+### Location Permission Changes
+
+When I change the location permission in system Settings, the app does not seem to recognize the change until it is completely quit from the background. Similarly, “onAppear” doesn’t seem to update the weather data when the app is reopened from the background but I need to test it more thoroughly.
+
+### Further Refactoring
+
+SwiftUI is almost endlessly composable. I reorganized the code a  lot, more than was productive probably. That said, in its current state it could benefit from further refactoring.
+
+The Idle and Loading views have ended up so similar as to make at least one redundant. It might even be better to move away from a state-driven approach altogether. 
+
+The error type I created requires a lot of code at the call site and I think I can do better. I’m sure there is much, much more.
