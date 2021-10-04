@@ -40,4 +40,8 @@ Another issue with weather icons was alignment. SF Symbols aren’t visually cen
 
 ### Voiceover Support for ºC and ºF
 
-One last accessibilty issue was that Voiceover would read “degrees C” and “degress F” because that is exactly what the interface says. Since these abbreviations are used throughout the weather screen it was pretty jarring to hear. I made an accessiblity label that reads “Celsius” and “Farenheit” in full for those values and moved it into its own view modifier.  
+One last accessibilty issue was that Voiceover would read “degrees C” and “degress F” because that is exactly what the interface says. Since these abbreviations are used throughout the weather screen it was pretty jarring to hear. I made an accessiblity label that reads “Celsius” and “Farenheit” in full for those values and moved it into its own view modifier.
+
+### Current Hour in the Past
+
+The first hour of weather returned by Open Weather Map is for the current hour which means it can be in the past. For example, at 10.30am, the first entry for hourly weather is for 10am. I added a check so that if an hour was in the past, it should use the label “Now” instead of the time.
