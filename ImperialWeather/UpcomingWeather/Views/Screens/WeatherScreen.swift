@@ -12,11 +12,13 @@ struct WeatherScreen: View {
     
     var body: some View {
         ScrollView(.vertical) {
-            VStack(spacing: 16) {
+            SizeClassStackView(verticalAlignment: .top, spacing: 16) {
                 CurrentWeatherView(viewModel: viewModel)
-                HourlyWeatherView(viewModel: viewModel)
-                DailyWeatherView(viewModel: viewModel)
-                DataAttributionView()
+                VStack(spacing: 16) {
+                    HourlyWeatherView(viewModel: viewModel)
+                    DailyWeatherView(viewModel: viewModel)
+                    DataAttributionView()
+                }
             }
             .padding()
         }

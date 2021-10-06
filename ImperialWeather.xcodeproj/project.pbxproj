@@ -10,6 +10,7 @@
 		F800ABE7269351B400060ACF /* UltraThinMaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F800ABE6269351B400060ACF /* UltraThinMaterialView.swift */; };
 		F800ABEA2693B00600060ACF /* PaneBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = F800ABE92693B00600060ACF /* PaneBackground.swift */; };
 		F800ABEC2693B44E00060ACF /* PaneShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F800ABEB2693B44E00060ACF /* PaneShadow.swift */; };
+		F809412727073C2800030B55 /* SizeClassStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F809412627073C2800030B55 /* SizeClassStackView.swift */; };
 		F80C3D5E268338AE00C5CF76 /* ErrorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80C3D5D268338AE00C5CF76 /* ErrorScreen.swift */; };
 		F82986482685CAFC00DBDB5A /* UpcomingWeatherResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82986472685CAFC00DBDB5A /* UpcomingWeatherResource.swift */; };
 		F829864A2685CB3C00DBDB5A /* UpcomingWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82986492685CB3C00DBDB5A /* UpcomingWeather.swift */; };
@@ -64,6 +65,7 @@
 		F800ABE6269351B400060ACF /* UltraThinMaterialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltraThinMaterialView.swift; sourceTree = "<group>"; };
 		F800ABE92693B00600060ACF /* PaneBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaneBackground.swift; sourceTree = "<group>"; };
 		F800ABEB2693B44E00060ACF /* PaneShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaneShadow.swift; sourceTree = "<group>"; };
+		F809412627073C2800030B55 /* SizeClassStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeClassStackView.swift; sourceTree = "<group>"; };
 		F80C3D5D268338AE00C5CF76 /* ErrorScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorScreen.swift; sourceTree = "<group>"; };
 		F82986472685CAFC00DBDB5A /* UpcomingWeatherResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingWeatherResource.swift; sourceTree = "<group>"; };
 		F82986492685CB3C00DBDB5A /* UpcomingWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingWeather.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				F8C5ABC126EF745B00466C34 /* DataAttributionView.swift */,
 				F800ABE6269351B400060ACF /* UltraThinMaterialView.swift */,
 				F884C4A426C29DC200DC4769 /* SizeCategoryStackView.swift */,
+				F809412627073C2800030B55 /* SizeClassStackView.swift */,
 				F8BC643226F211B900B70620 /* PrimaryTemperatureView.swift */,
 				F8BC643426F2138800B70620 /* SecondaryTemperatureView.swift */,
 				F87E5CBD267CA6150032949A /* TemperatureScalePickerView.swift */,
@@ -406,6 +409,7 @@
 				F8CEA322268B6BE00070DEE0 /* DailyWeatherView.swift in Sources */,
 				F87E5CB4267CA46C0032949A /* CurrentWeatherResource.swift in Sources */,
 				F8CB3C4026DD152C0094491A /* Double+celsiusString.swift in Sources */,
+				F809412727073C2800030B55 /* SizeClassStackView.swift in Sources */,
 				F87E5CAE267CA3E80032949A /* ApiRequest.swift in Sources */,
 				F8BC643126F209A800B70620 /* AccessibilityLabel.swift in Sources */,
 				F8FC076526EE93E2007FF4EE /* DateFormatter+dayFormat.swift in Sources */,
