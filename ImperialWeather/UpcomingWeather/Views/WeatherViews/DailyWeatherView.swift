@@ -11,7 +11,7 @@ struct DailyWeatherView: View {
     @ObservedObject private(set) var viewModel: WeatherViewModel
     
     var body: some View {
-        VStack(spacing: 8) {
+        VStack(spacing: 12) {
             HStack {
                 Text("7-Day Forecast")
                     .font(.caption)
