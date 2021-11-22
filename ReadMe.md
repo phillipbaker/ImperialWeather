@@ -46,6 +46,10 @@ One last accessibility issue was that Voiceover would read “degrees C” and �
 
 The first hour of weather returned by Open Weather Map is for the current hour which means it can be in the past. For example, at 10.30am, the first entry for hourly weather is for 10am. I added a check so that if an hour was in the past, it should use the label “Now” instead of the time.
 
+### Remove Current Day from Daily Forecast
+
+The OpenWeatherMap API response for daily weather contains eight daily forecasts including the current day. A daily high temperature for the current day felt redundant because the weather screen includes the current temperature and hourly temperatures for the rest of the day. I removed it in the view model to make the daily weather pane a 7-day forecast starting on the next day.   
+
 ## Remaining Issues
 
 There are a bunch of issues I hope to resolve but left for now in order to ship new work but I want to acknowledge some of them here.
