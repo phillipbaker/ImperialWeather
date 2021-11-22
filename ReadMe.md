@@ -2,7 +2,7 @@
 
 A weather app that displays the current and upcoming temperature in Fahrenheit and Celsius at the same time.
 
-![iw@3x](https://user-images.githubusercontent.com/16352712/135826266-9b1af907-a1a5-47fa-a613-5de32784a58c.png)
+![iw@3x](https://user-images.githubusercontent.com/16352712/142862543-5bc38ee7-c38e-4c8a-b1be-7e2ebdf3b495.png)
 
 ## Why I Made This
 
