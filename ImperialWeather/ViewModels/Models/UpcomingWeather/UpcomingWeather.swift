@@ -9,7 +9,12 @@ import Foundation
 
 struct UpcomingWeather: Codable {
     let hourlyWeather: [HourlyWeather]
-    let dailyWeather: [DailyWeather]
+    var dailyWeather: [DailyWeather]
+    
+    mutating func removeCurrentDayFromDaily() -> UpcomingWeather {
+        self.dailyWeather.remove(at: 0)
+        return self
+    }
 }
 
 extension UpcomingWeather {

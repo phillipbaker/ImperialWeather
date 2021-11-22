@@ -77,9 +77,9 @@ final class WeatherViewModel: NSObject, ObservableObject {
         upcomingWeatherRequest = request
         request.execute { [weak self] result in
             switch result {
-            case .success(let upcomingWeather):
+            case .success(var upcomingWeather):
                 DispatchQueue.main.async {
-                    self?.upcomingWeather = upcomingWeather ?? PlaceholderForecast.upcomingWeather
+                    self?.upcomingWeather = upcomingWeather?.removeCurrentDayFromDaily() ?? PlaceholderForecast.upcomingWeather
                     self?.loadingState = .loaded
                 }
             case .failure(let error):
