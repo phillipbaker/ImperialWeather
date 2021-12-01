@@ -16,49 +16,49 @@ struct WeatherDescription: Codable {
     var conditionName: String {
         switch id {
         case 200...210, 212...232:
-            return WeatherIcons.thunderstorm
+            return WeatherIcon.thunderstorm
         case 211:
-            return WeatherIcons.lightning
+            return WeatherIcon.lightning
         case 300, 310, 313:
-            return WeatherIcons.drizzle
+            return WeatherIcon.drizzle
         case 301, 311, 321:
-            return WeatherIcons.rain
+            return WeatherIcon.rain
         case 302, 312, 314:
-            return WeatherIcons.heavyRain
+            return WeatherIcon.heavyRain
         case 500, 501, 520, 521:
-            return WeatherIcons.rain
+            return WeatherIcon.rain
         case 502, 503, 504, 522, 531:
-            return WeatherIcons.heavyRain
+            return WeatherIcon.heavyRain
         case 511:
-            return WeatherIcons.ice
+            return WeatherIcon.ice
         case 600...602:
-            return WeatherIcons.snow
+            return WeatherIcon.snow
         case 611...622:
-            return WeatherIcons.sleet
+            return WeatherIcon.sleet
         case 701:
-            return WeatherIcons.fog
+            return WeatherIcon.fog
         case 711, 762:
-            return WeatherIcons.smoke
+            return WeatherIcon.smoke
         case 721:
-            return WeatherIcons.haze
+            return WeatherIcon.haze
         case 731, 751, 761:
-            return WeatherIcons.dust
+            return WeatherIcon.dust
         case 741:
-            return WeatherIcons.fog
+            return WeatherIcon.fog
         case 771:
-            return WeatherIcons.heavyRain
+            return WeatherIcon.heavyRain
         case 781:
-            return WeatherIcons.tornado
+            return WeatherIcon.tornado
         case 800:
             if icon.contains("d") {
-                return WeatherIcons.sun
+                return WeatherIcon.sun
             } else {
-                return WeatherIcons.moonStars
+                return WeatherIcon.moonStars
             }
         case 801...804:
-            return WeatherIcons.cloud
+            return WeatherIcon.cloud
         default:
-            return WeatherIcons.dashedSquare
+            return WeatherIcon.dashedSquare
         }
     }
 }

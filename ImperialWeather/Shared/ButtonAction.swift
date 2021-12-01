@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum ButtonActions {
+enum ButtonAction {
     static func launchAppSettings() {
         guard let bundleId = Bundle.main.bundleIdentifier else { return }
         let url = URL(string: "\(UIApplication.openSettingsURLString)&path=LOCATION/\(bundleId)")!

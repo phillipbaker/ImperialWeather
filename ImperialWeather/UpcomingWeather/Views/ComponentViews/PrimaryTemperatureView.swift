@@ -10,11 +10,11 @@ import SwiftUI
 struct PrimaryTemperatureView: View {
     @AppStorage("temperatureScale") private var temperatureScale: TemperatureScale = .celsius
     var temperature: Double
-    
+
     var body: some View {
         Text(temperatureScale == .celsius
-                ? temperature.celsiusString + Degrees.c
-                : temperature.fahrenheitString + Degrees.f)
+            ? temperature.celsiusString + Celsius.short
+            : temperature.fahrenheitString + Fahrenheit.short)
             .fontWeight(.medium)
             .frame(minWidth: 40)
             .accessibilityLabel()

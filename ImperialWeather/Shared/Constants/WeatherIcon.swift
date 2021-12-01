@@ -1,5 +1,5 @@
 //
-//  WeatherIcons.swift
+//  WeatherIcon.swift
 //  ImperialWeather
 //
 //  Created by Phillip Baker on 9/11/21.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum WeatherIcons {
+enum WeatherIcon {
     static let cloud = "cloud.fill"
     static let dashedSquare = "square.dashed"
     static let drizzle = "cloud.drizzle.fill"
