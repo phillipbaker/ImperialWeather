@@ -1,5 +1,5 @@
 //
-//  WeatherError.swift
+//  ApiError.swift
 //  ImperialWeather
 //
 //  Created by Phillip Baker on 7/14/21.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum WeatherError: Error {
+enum ApiError: Error {
     case badLocation
     case networkError
     case invalidResponse

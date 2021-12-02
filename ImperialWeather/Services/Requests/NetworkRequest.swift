@@ -9,12 +9,12 @@ import Foundation
 
 protocol NetworkRequest: AnyObject {
     associatedtype ModelType
-    func decode(_ data: Data, withCompletion completion: @escaping (Result<ModelType?, WeatherError>) -> Void)
-    func execute(withCompletion completion: @escaping (Result<ModelType?, WeatherError>) -> Void)
+    func decode(_ data: Data, withCompletion completion: @escaping (Result<ModelType?, ApiError>) -> Void)
+    func execute(withCompletion completion: @escaping (Result<ModelType?, ApiError>) -> Void)
 }
 
 extension NetworkRequest {
-    func load(_ url: URL, withCompletion completion: @escaping (Result<ModelType?, WeatherError>) -> Void) {
+    func load(_ url: URL, withCompletion completion: @escaping (Result<ModelType?, ApiError>) -> Void) {
         let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
             if let _ = error {
                 completion(.failure(.networkError))

@@ -16,7 +16,7 @@ class ApiRequest<Resource: ApiResource> {
 }
 
 extension ApiRequest: NetworkRequest {
-    func decode(_ data: Data, withCompletion completion: @escaping (Result<Resource.ModelType?, WeatherError>) -> Void) {
+    func decode(_ data: Data, withCompletion completion: @escaping (Result<Resource.ModelType?, ApiError>) -> Void) {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .secondsSince1970
         do {
@@ -27,7 +27,7 @@ extension ApiRequest: NetworkRequest {
         }
     }
 
-    func execute(withCompletion completion: @escaping (Result<Resource.ModelType?, WeatherError>) -> Void) {
+    func execute(withCompletion completion: @escaping (Result<Resource.ModelType?, ApiError>) -> Void) {
         load(resource.url, withCompletion: completion)
     }
 }

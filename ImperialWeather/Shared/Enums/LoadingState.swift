@@ -12,5 +12,5 @@ enum LoadingState: Equatable {
     case loading
     case loaded
     case locationDenied
-    case failed(WeatherError)
+    case failed(ApiError)
 }
