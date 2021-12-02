@@ -26,7 +26,7 @@ extension ApiResource {
         components.path = methodPath
         components.queryItems = [
             URLQueryItem(name: "units", value: "metric"),
-            URLQueryItem(name: "appid", value: "1a88c4ffddb4347488d126585e64e2b3"),
+            URLQueryItem(name: "appid", value: "INSERT_API_KEY_HERE"),
             URLQueryItem(name: "lat", value: latitude),
             URLQueryItem(name: "lon", value: longitude)
         ]
