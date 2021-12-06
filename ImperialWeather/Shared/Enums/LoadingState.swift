@@ -11,6 +11,5 @@ enum LoadingState: Equatable {
     case idle
     case loading
     case loaded
-    case locationDenied
     case failed(ApiError)
 }

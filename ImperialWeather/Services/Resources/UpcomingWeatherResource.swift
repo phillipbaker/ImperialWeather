@@ -14,6 +14,6 @@ struct UpcomingWeatherResource: ApiResource {
     var longitude: String
 
     var methodPath: String {
-        return Path.oneCall.rawValue
+        return Path.upcomingWeather.rawValue
     }
 }

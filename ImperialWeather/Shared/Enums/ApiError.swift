@@ -12,4 +12,5 @@ enum ApiError: Error {
     case networkError
     case invalidResponse
     case invalidData
+    case decodingError
 }

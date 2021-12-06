@@ -8,8 +8,8 @@
 import Foundation
 
 enum Path: String {
-    case oneCall = "/data/2.5/onecall"
     case currentWeather = "/data/2.5/weather"
+    case upcomingWeather = "/data/2.5/onecall"
 }
 
 protocol ApiResource {
@@ -26,12 +26,12 @@ extension ApiResource {
         components.path = methodPath
         components.queryItems = [
             URLQueryItem(name: "units", value: "metric"),
-            URLQueryItem(name: "appid", value: "INSERT_API_KEY_HERE"),
+            URLQueryItem(name: "appid", value: "8eb67cde63abdbe9d9dbd5e23531318a"),
             URLQueryItem(name: "lat", value: latitude),
             URLQueryItem(name: "lon", value: longitude)
         ]
 
-        if methodPath == Path.oneCall.rawValue {
+        if methodPath == Path.upcomingWeather.rawValue {
             let currentDate = Date().timeIntervalSince1970
             let dateQueryItem = URLQueryItem(name: "dt", value: String(format: "%.0f", currentDate))
             components.queryItems?.append(dateQueryItem)

@@ -44,6 +44,14 @@ struct ErrorScreen: View {
                 buttonTitle: ErrorMessage.invalidDataButtonTitle,
                 buttonAction: ButtonAction.submitFeeback
             )
+        case .decodingError:
+            ErrorView(
+                errorImage: ErrorMessage.invalidDataOrResponseImage,
+                errorTitle: ErrorMessage.invalidDataTitle,
+                errorDescription: ErrorMessage.invalidDataDescription,
+                buttonTitle: ErrorMessage.invalidDataButtonTitle,
+                buttonAction: ButtonAction.submitFeeback
+            )
         }
     }
 }

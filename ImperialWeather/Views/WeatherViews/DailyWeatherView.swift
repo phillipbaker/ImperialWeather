@@ -48,6 +48,6 @@ struct DailyWeatherView: View {
 
 struct DailyWeatherView_Previews: PreviewProvider {
     static var previews: some View {
-        DailyWeatherView(viewModel: WeatherViewModel())
+        DailyWeatherView(viewModel: WeatherViewModel(service: WeatherService()))
     }
 }

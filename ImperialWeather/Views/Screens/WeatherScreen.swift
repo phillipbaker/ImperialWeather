@@ -29,7 +29,7 @@ struct WeatherContentView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             BackgroundView()
-            WeatherScreen(viewModel: WeatherViewModel())
+            WeatherScreen(viewModel: WeatherViewModel(service: WeatherService()))
         }
     }
 }
