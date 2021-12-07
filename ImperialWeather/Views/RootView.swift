@@ -27,6 +27,7 @@ struct RootView: View {
             }
         }
         .task {
+            locationViewModel.requestPermission()
             guard let location = locationViewModel.location else {
                 weatherViewModel.loadingState = .failed(.locationError)
                 return
