@@ -28,7 +28,7 @@ struct RootView: View {
         }
         .task {
             guard let location = locationViewModel.location else {
-                weatherViewModel.loadingState = .failed(.badLocation)
+                weatherViewModel.loadingState = .failed(.locationError)
                 return
             }
             await weatherViewModel.fetchWeather(for: location)

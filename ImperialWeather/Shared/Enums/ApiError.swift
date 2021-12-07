@@ -8,7 +8,7 @@
 import Foundation
 
 enum ApiError: Error {
-    case badLocation
+    case locationError
     case networkError
     case invalidResponse
     case invalidData

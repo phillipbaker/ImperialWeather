@@ -12,7 +12,7 @@ struct ErrorScreen: View {
     
     var body: some View {
         switch error {
-        case .badLocation:
+        case .locationError:
             ErrorView(
                 errorImage: ErrorMessage.badLocationImage,
                 errorTitle: ErrorMessage.badLocationTitle,
