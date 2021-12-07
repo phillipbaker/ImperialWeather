@@ -29,7 +29,7 @@ struct DailyWeatherView: View {
                     
                     Spacer()
                     
-                    WeatherImageView(name: day.description[0].conditionName)
+                    WeatherImageView(name: day.description.first?.conditionName ?? WeatherIcon.dashedSquare)
                     
                     Spacer()
                     

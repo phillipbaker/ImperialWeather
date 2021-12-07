@@ -19,7 +19,7 @@ struct HourlyWeatherView: View {
                             .frame(minWidth: 40)
                             .font(.callout)
                         
-                        WeatherImageView(name: hour.description[0].conditionName)
+                        WeatherImageView(name: hour.description.first?.conditionName ?? WeatherIcon.dashedSquare)
                             .frame(minWidth: 28, minHeight: 28, alignment: .top)
                         
                         VStack(spacing: 8) {

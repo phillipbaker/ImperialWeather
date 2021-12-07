@@ -18,10 +18,10 @@ struct CurrentWeatherView: View {
                         .font(.largeTitle)
                         .fontWeight(.bold)
                     
-                    Text(viewModel.currentWeather.description[0].description)
+                    Text(viewModel.currentWeather.description.first?.description ?? "Unknown")
                 }
                 
-                WeatherImageView(name: viewModel.currentWeather.description[0].conditionName)
+                WeatherImageView(name: viewModel.currentWeather.description.first?.conditionName ?? WeatherIcon.dashedSquare)
                     .font(.system(size: 72))
                     .padding(.vertical)
                 
