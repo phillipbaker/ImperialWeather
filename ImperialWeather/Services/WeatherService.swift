@@ -19,7 +19,7 @@ struct WeatherService {
         }
 
         guard let decodedData = try? JSONDecoder().decode(CurrentWeather.self, from: data) else {
-            throw ApiError.decodingError
+            throw ApiError.invalidData
         }
         
         return decodedData
@@ -35,7 +35,7 @@ struct WeatherService {
         }
         
         guard var decodedData = try? JSONDecoder().decode(UpcomingWeather.self, from: data) else {
-            throw ApiError.decodingError
+            throw ApiError.invalidData
         }
         
         return decodedData.removeCurrentDayFromDaily()
