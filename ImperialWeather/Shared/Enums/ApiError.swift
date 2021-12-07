@@ -13,4 +13,5 @@ enum ApiError: Error {
     case invalidResponse
     case invalidData
     case decodingError
+    case locationPermission
 }

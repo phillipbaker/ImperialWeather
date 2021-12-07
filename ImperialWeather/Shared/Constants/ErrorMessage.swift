@@ -8,11 +8,11 @@
 import Foundation
 
 enum ErrorMessage {
-    // MARK: - Bad Location
-    static let badLocationImage = "location.slash"
-    static let badLocationTitle = "Unable to Establish Your Location"
-    static let badLocationDescription = "Imperial Weather was unable to establish your location."
-    static let badLocationButtonTitle = "Check Location Permissions in Settings"
+    // MARK: - Location Error
+    static let locationErrorImage = "location.slash"
+    static let locationErrorTitle = "Unable to Establish Your Location"
+    static let locationErrorDescription = "Imperial Weather was unable to establish your location."
+    static let locationErrorButtonTitle = "Check Location Permissions in Settings"
 
     // MARK: - Network Error
     static let networkErrorImage = "wifi.exclamationmark"
@@ -29,10 +29,10 @@ enum ErrorMessage {
     // MARK: - Invalid Data
     static let invalidDataTitle = "Invalid Data"
     static let invalidDataDescription = "Imperial Weather could not create a forecast from the data provided."
-    static let invalidDataButtonTitle = "Retry"
+    static let invalidDataButtonTitle = "Report This Problem"
     
     // MARK: - Location Permission
     static let locationPermissionTitle = "Imperial Weather Cannot Access Your Location"
     static let locationPermissionDescription = "Imperial Weather needs your location to show you the weather where you are. Your location data is not stored by the app."
-    static let loactionPermissionButtonTitle = "Turn On Location Services in Settings"
+    static let locationPermissionButtonTitle = "Turn On Location Services in Settings"
 }

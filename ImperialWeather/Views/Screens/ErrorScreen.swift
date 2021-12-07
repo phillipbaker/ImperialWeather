@@ -13,44 +13,52 @@ struct ErrorScreen: View {
     var body: some View {
         switch error {
         case .locationError:
-            ErrorView(
-                errorImage: ErrorMessage.badLocationImage,
-                errorTitle: ErrorMessage.badLocationTitle,
-                errorDescription: ErrorMessage.badLocationDescription,
-                buttonTitle: ErrorMessage.badLocationButtonTitle,
+            ErrorMessageView(
+                image: ErrorMessage.locationErrorImage,
+                title: ErrorMessage.locationErrorTitle,
+                description: ErrorMessage.locationErrorDescription,
+                buttonTitle: ErrorMessage.locationErrorButtonTitle,
                 buttonAction: ButtonAction.launchAppSettings
             )
         case .networkError:
-            ErrorView(
-                errorImage: ErrorMessage.networkErrorImage,
-                errorTitle: ErrorMessage.networkErrorTitle,
-                errorDescription: ErrorMessage.networkErrorDescription,
+            ErrorMessageView(
+                image: ErrorMessage.networkErrorImage,
+                title: ErrorMessage.networkErrorTitle,
+                description: ErrorMessage.networkErrorDescription,
                 buttonTitle: ErrorMessage.networkErrorButtonTitle,
                 buttonAction: ButtonAction.launchAppSettings
             )
         case .invalidResponse:
-            ErrorView(
-                errorImage: ErrorMessage.invalidDataOrResponseImage,
-                errorTitle: ErrorMessage.invalidResponseTitle,
-                errorDescription: ErrorMessage.invalidResponseDescription,
+            ErrorMessageView(
+                image: ErrorMessage.invalidDataOrResponseImage,
+                title: ErrorMessage.invalidResponseTitle,
+                description: ErrorMessage.invalidResponseDescription,
                 buttonTitle: ErrorMessage.invalidResponseButtonTitle,
                 buttonAction: ButtonAction.submitFeeback
             )
         case .invalidData:
-            ErrorView(
-                errorImage: ErrorMessage.invalidDataOrResponseImage,
-                errorTitle: ErrorMessage.invalidDataTitle,
-                errorDescription: ErrorMessage.invalidDataDescription,
+            ErrorMessageView(
+                image: ErrorMessage.invalidDataOrResponseImage,
+                title: ErrorMessage.invalidDataTitle,
+                description: ErrorMessage.invalidDataDescription,
                 buttonTitle: ErrorMessage.invalidDataButtonTitle,
                 buttonAction: ButtonAction.submitFeeback
             )
         case .decodingError:
-            ErrorView(
-                errorImage: ErrorMessage.invalidDataOrResponseImage,
-                errorTitle: ErrorMessage.invalidDataTitle,
-                errorDescription: ErrorMessage.invalidDataDescription,
+            ErrorMessageView(
+                image: ErrorMessage.invalidDataOrResponseImage,
+                title: ErrorMessage.invalidDataTitle,
+                description: ErrorMessage.invalidDataDescription,
                 buttonTitle: ErrorMessage.invalidDataButtonTitle,
                 buttonAction: ButtonAction.submitFeeback
+            )
+        case .locationPermission:
+            ErrorMessageView(
+                image: ErrorMessage.locationErrorImage,
+                title: ErrorMessage.locationPermissionTitle,
+                description: ErrorMessage.locationPermissionDescription,
+                buttonTitle: ErrorMessage.locationPermissionButtonTitle,
+                buttonAction: ButtonAction.launchAppSettings
             )
         }
     }
@@ -60,7 +68,27 @@ struct ErrorScreen_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             BackgroundView()
+            ErrorScreen(error: .locationError)
+        }
+        
+        ZStack {
+            BackgroundView()
             ErrorScreen(error: .networkError)
+        }
+        
+        ZStack {
+            BackgroundView()
+            ErrorScreen(error: .invalidResponse)
+        }
+        
+        ZStack {
+            BackgroundView()
+            ErrorScreen(error: .invalidData)
+        }
+        
+        ZStack {
+            BackgroundView()
+            ErrorScreen(error: .locationPermission)
         }
     }
 }
