@@ -21,7 +21,7 @@ struct RootView: View {
             case .restricted, .denied:
                 LocationPermissionScreen()
             case .authorizedAlways, .authorizedWhenInUse:
-                showWeatherView
+                showWeather
             @unknown default:
                 EmptyView()
             }
@@ -35,7 +35,7 @@ struct RootView: View {
         }
     }
     
-    @ViewBuilder private var showWeatherView: some View {
+    @ViewBuilder private var showWeather: some View {
         switch weatherViewModel.loadingState {
         case .idle:
             EmptyView()
