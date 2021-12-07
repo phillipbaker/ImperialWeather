@@ -9,6 +9,7 @@ import CoreLocation
 import Foundation
 
 final class LocationViewModel: NSObject, CLLocationManagerDelegate, ObservableObject {
+    @Published private(set) var error: Error?
     @Published private(set) var location: CLLocationCoordinate2D?
     @Published private(set) var authorizationStatus: CLAuthorizationStatus
     
@@ -38,5 +39,6 @@ final class LocationViewModel: NSObject, CLLocationManagerDelegate, ObservableOb
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        self.error = error
     }
 }
