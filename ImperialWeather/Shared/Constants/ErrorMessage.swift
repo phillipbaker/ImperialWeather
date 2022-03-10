@@ -22,8 +22,8 @@ enum ErrorMessage {
 
     // MARK: - Invalid Response
     static let invalidDataOrResponseImage = "xmark.octagon"
-    static let invalidResponseTitle = "Invalid Response"
-    static let invalidResponseDescription = "Imperial Weather could not create a forecast from the data provided."
+    static let invalidResponseTitle = "Invalid APIKey"
+    static let invalidResponseDescription = "Imperial Weather could not retrieve a forecast from the weather provider."
     static let invalidResponseButtonTitle = "Report This Problem"
 
     // MARK: - Invalid Data
