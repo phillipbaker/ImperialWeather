@@ -20,24 +20,25 @@ struct DailyWeatherView: View {
                 
                 Spacer()
             }
-            
-            ForEach(viewModel.upcomingWeather.dailyWeather) { day in
-                Divider()
-                SizeCategoryStackView {
-                    Text(day.inDayFormat)
-                        .frame(minWidth: 92, alignment: .leading)
-                    
-                    Spacer()
-                    
-                    WeatherImageView(name: day.description.first?.conditionName ?? WeatherIcon.dashedSquare)
-                    
-                    Spacer()
-                    
-                    HStack {
-                        PrimaryTemperatureView(temperature: day.temperature.max)
-                        SecondaryTemperatureView(temperature: day.temperature.max)
+            if let dailyWeather = viewModel.upcomingWeather?.dailyWeather {
+                ForEach(dailyWeather) { day in
+                    Divider()
+                    SizeCategoryStackView {
+                        Text(day.inDayFormat)
+                            .frame(minWidth: 92, alignment: .leading)
+                        
+                        Spacer()
+                        
+                        WeatherImageView(name: day.description.first?.conditionName ?? WeatherIcon.dashedSquare)
+                        
+                        Spacer()
+                        
+                        HStack {
+                            PrimaryTemperatureView(temperature: day.temperature.max)
+                            SecondaryTemperatureView(temperature: day.temperature.max)
+                        }
+                        .multilineTextAlignment(.trailing)
                     }
-                    .multilineTextAlignment(.trailing)
                 }
             }
         }

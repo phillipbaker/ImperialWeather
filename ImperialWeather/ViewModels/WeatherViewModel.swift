@@ -14,8 +14,8 @@ final class WeatherViewModel: NSObject, ObservableObject {
     
     @Published private(set) var error: Error?
     @Published private(set) var loadingState: LoadingState?
-    @Published private(set) var currentWeather: CurrentWeather
-    @Published private(set) var upcomingWeather: UpcomingWeather
+    @Published private(set) var currentWeather: CurrentWeather?
+    @Published private(set) var upcomingWeather: UpcomingWeather?
     @Published private(set) var authorizationStatus: CLAuthorizationStatus
     
     private let service = DependencyProvider.weatherService
@@ -25,8 +25,6 @@ final class WeatherViewModel: NSObject, ObservableObject {
     
     @MainActor
     override init() {
-        currentWeather = PlaceholderForecast.currentWeather
-        upcomingWeather = PlaceholderForecast.upcomingWeather
         authorizationStatus = locationManager.authorizationStatus
 
         super.init()

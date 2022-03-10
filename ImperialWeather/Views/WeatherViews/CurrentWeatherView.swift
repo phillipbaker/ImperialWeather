@@ -14,23 +14,25 @@ struct CurrentWeatherView: View {
         VStack(spacing: 32) {
             Group {
                 VStack(spacing: 4) {
-                    Text(viewModel.currentWeather.location ?? "Unknown")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                    
-                    Text(viewModel.currentWeather.description.first?.description ?? "Unknown")
-                }
-                
-                WeatherImageView(name: viewModel.currentWeather.description.first?.conditionName ?? WeatherIcon.dashedSquare)
-                    .font(.system(size: 72))
-                    .padding(.vertical)
-                
-                VStack(spacing: 8) {
-                    PrimaryTemperatureView(temperature: viewModel.currentWeather.conditions.temperature)
-                        .font(.largeTitle)
-                    
-                    SecondaryTemperatureView(temperature: viewModel.currentWeather.conditions.temperature)
-                        .font(.title2)
+                    if let currentWeather = viewModel.currentWeather {
+                        Text(currentWeather.location ?? "Unknown")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                        Text(currentWeather.description.first?.description ?? "Unknown")
+                        
+                        
+                        WeatherImageView(name: currentWeather.description.first?.conditionName ?? WeatherIcon.dashedSquare)
+                            .font(.system(size: 72))
+                            .padding(.vertical)
+                        
+                        VStack(spacing: 8) {
+                            PrimaryTemperatureView(temperature: currentWeather.conditions.temperature)
+                                .font(.largeTitle)
+                            
+                            SecondaryTemperatureView(temperature: currentWeather.conditions.temperature)
+                                .font(.title2)
+                        }
+                    }
                 }
             }
             
