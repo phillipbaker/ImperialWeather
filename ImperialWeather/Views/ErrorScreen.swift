@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ErrorScreen: View {
-    let error: ApiError
+    let error: APIError
     
     var body: some View {
         switch error {

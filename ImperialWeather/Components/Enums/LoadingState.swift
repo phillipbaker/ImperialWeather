@@ -11,5 +11,5 @@ enum LoadingState: Equatable {
     case idle
     case loading
     case loaded
-    case failed(ApiError)
+    case failed(APIError)
 }
