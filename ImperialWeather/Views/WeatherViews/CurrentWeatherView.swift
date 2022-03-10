@@ -48,7 +48,7 @@ struct CurrentWeatherView_Previews: PreviewProvider {
             Color.weatherBackground
                 .edgesIgnoringSafeArea(.all)
             
-            CurrentWeatherView(viewModel: WeatherViewModel(service: WeatherService()))
+            CurrentWeatherView(viewModel: WeatherViewModel())
                 .padding(.horizontal)
         }
     }
