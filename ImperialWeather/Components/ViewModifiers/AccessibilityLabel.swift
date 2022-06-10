@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AccessibilityLabel: ViewModifier {
     @AppStorage("temperatureScale") private var temperatureScale: TemperatureScale = .celsius
+    
     let temperature: Double
 
     func body(content: Content) -> some View {
