@@ -14,7 +14,7 @@ struct DailyWeatherView: View {
         VStack(spacing: 12) {
             Text("7-Day Forecast")
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .font(.caption)
+                .font(.callout)
                 .textCase(.uppercase)
                 .foregroundColor(.secondary)
             

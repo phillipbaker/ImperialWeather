@@ -21,7 +21,6 @@ struct TemperatureScalePickerView: View {
                     .accessibility(label: Text(Fahrenheit.full))
             }
         }
-        .frame(width: 128)
         .pickerStyle(SegmentedPickerStyle())
     }
 }

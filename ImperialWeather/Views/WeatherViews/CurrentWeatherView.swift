@@ -11,7 +11,7 @@ struct CurrentWeatherView: View {
     var weather: CurrentWeather
     
     var body: some View {
-        VStack(spacing: 8) {
+        VStack(spacing: 32) {
             VStack(spacing: 4) {
                 Text(weather.location ?? "Unknown")
                     .font(.largeTitle)
@@ -19,20 +19,21 @@ struct CurrentWeatherView: View {
                 Text(weather.description.first?.description ?? "Unknown")
             }
             
-            WeatherImageView(imageName: weather.description.first?.conditionName ?? WeatherIcon.dashedSquare)
-                .font(.system(size: 48))
-                .padding(.vertical)
-            
-            VStack(spacing: 8) {
-                PrimaryTemperatureView(temperature: weather.conditions.temperature)
-                    .font(.largeTitle)
+            HStack(spacing: 16) {
+                WeatherImageView(imageName: weather.description.first?.conditionName ?? WeatherIcon.dashedSquare)
+                    .font(.system(size: 48))
                 
-                SecondaryTemperatureView(temperature: weather.conditions.temperature)
-                    .font(.title2)
+                Divider()
+                    .frame(maxHeight: 100)
+                
+                VStack(alignment: .leading, spacing: 4) {
+                    PrimaryTemperatureView(temperature: weather.conditions.temperature)
+                        .font(.largeTitle)
+                    
+                    SecondaryTemperatureView(temperature: weather.conditions.temperature)
+                        .font(.title3)
+                }
             }
-            .padding(.vertical)
-            
-            TemperatureScalePickerView()
         }
         .padding(.vertical)
         .frame(maxWidth: .infinity)

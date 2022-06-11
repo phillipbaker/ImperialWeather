@@ -11,17 +11,27 @@ struct WeatherView: View {
     @ObservedObject private(set) var viewModel: WeatherViewModel
     
     var body: some View {
-        ScrollView(.vertical) {
-            SizeClassStackView(verticalAlignment: .top, spacing: 16) {
-                CurrentWeatherView(weather: viewModel.currentWeather ?? PreviewData.current)
-                
-                VStack(spacing: 16) {
-                    HourlyWeatherView(hourlyWeather: viewModel.upcomingWeather?.hourlyWeather ?? PreviewData.hourly)
-                    DailyWeatherView(dailyWeather: viewModel.upcomingWeather?.dailyWeather ?? PreviewData.daily)
-                    DataAttributionView()
+        NavigationView {
+            ScrollView(.vertical) {
+                SizeClassStackView(verticalAlignment: .top, spacing: 16) {
+                    CurrentWeatherView(weather: viewModel.currentWeather ?? PreviewData.current)
+                    
+                    VStack(spacing: 16) {
+                        HourlyWeatherView(hourlyWeather: viewModel.upcomingWeather?.hourlyWeather ?? PreviewData.hourly)
+                        DailyWeatherView(dailyWeather: viewModel.upcomingWeather?.dailyWeather ?? PreviewData.daily)
+                        DataAttributionView()
+                    }
+                }
+                .padding()
+            }
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    TemperatureScalePickerView()
                 }
             }
-            .padding()
+            .navigationBarTitleDisplayMode(.inline)
+            .backgroundView()
+            
         }
     }
 }

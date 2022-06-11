@@ -12,7 +12,7 @@ struct HourlyWeatherView: View {
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            LazyHStack(spacing: 16) {
+            LazyHStack(spacing: 24) {
                 ForEach(hourlyWeather) { hour in
                     HourlyWeatherRow(hour: hour)
                 }
