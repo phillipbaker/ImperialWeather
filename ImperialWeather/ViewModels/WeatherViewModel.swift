@@ -18,8 +18,8 @@ final class WeatherViewModel: NSObject, ObservableObject {
     @Published private(set) var upcomingWeather: UpcomingWeather?
     @Published private(set) var authorizationStatus: CLAuthorizationStatus
     
-    private let service = DependencyProvider.weatherService
-    private let locationManager = DependencyProvider.locationManager
+    private let service = WeatherService()
+    private let locationManager = CLLocationManager()
     
     // MARK: - Methods
     
