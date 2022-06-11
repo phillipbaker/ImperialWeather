@@ -19,7 +19,7 @@ struct RootView: View {
             case .restricted, .denied:
                 ErrorScreen(error: .locationPermission)
             case .authorizedAlways, .authorizedWhenInUse:
-                WeatherScreen(viewModel: viewModel)
+                LoadingScreen(viewModel: viewModel)
             case .notDetermined:
                 EmptyView()
             @unknown default:

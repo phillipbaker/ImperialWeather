@@ -1,8 +1,8 @@
 //
-//  WeatherScreen.swift
+//  WeatherView.swift
 //  ImperialWeather
 //
-//  Created by Phillip Baker on 6/30/21.
+//  Created by Phillip Baker on 6/10/22.
 //
 
 import SwiftUI
@@ -11,20 +11,31 @@ struct WeatherScreen: View {
     @ObservedObject private(set) var viewModel: WeatherViewModel
     
     var body: some View {
-        switch viewModel.loadingState {
-        case .none, .idle:
-            EmptyView()
-        case .loading:
-            ProgressView()
-        case .loaded:
-            WeatherView(viewModel: viewModel)
-        case .failed(let error):
-            ErrorScreen(error: error)
+        ScrollView(.vertical) {
+            SizeClassStackView(verticalAlignment: .top, spacing: 16) {
+                VStack(spacing: 16) {
+                    TemperatureScalePickerView()
+                    if let currentWeather = viewModel.currentWeather {
+                        CurrentWeatherView(weather: currentWeather)
+                    }
+                }
+                
+                VStack(spacing: 16) {
+                    if let upcomingWeather = viewModel.upcomingWeather {
+                        HourlyWeatherView(hourlyWeather: upcomingWeather.hourlyWeather)
+                        DailyWeatherView(dailyWeather: upcomingWeather.dailyWeather)
+                    }
+                    
+                    DataAttributionView()
+                }
+            }
+            .padding()
         }
+        .backgroundView()
     }
 }
 
-struct WeatherContentView_Previews: PreviewProvider {
+struct WeatherView_Previews: PreviewProvider {
     static var previews: some View {
         WeatherScreen(viewModel: .init())
             .backgroundView()
