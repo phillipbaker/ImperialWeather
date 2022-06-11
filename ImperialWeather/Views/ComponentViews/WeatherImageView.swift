@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct WeatherImageView: View {
-    var name: String
+    var imageName: String
     
     var body: some View {
-        Image(systemName: name)
+        Image(systemName: imageName)
             .renderingMode(.original)
             .aspectRatio(contentMode: .fit)
             .imageScale(.large)

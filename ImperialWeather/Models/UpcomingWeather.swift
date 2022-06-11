@@ -11,7 +11,7 @@ struct UpcomingWeather: Codable {
     let hourlyWeather: [HourlyWeather]
     var dailyWeather: [DailyWeather]
     
-    mutating func removeCurrentDayFromDaily() -> UpcomingWeather {
+    mutating func withTodayRemovedFromDaily() -> UpcomingWeather {
         self.dailyWeather.remove(at: 0)
         return self
     }

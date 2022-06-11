@@ -36,9 +36,7 @@ struct ErrorScreen: View {
 
 struct ErrorScreen_Previews: PreviewProvider {
     static var previews: some View {
-        ZStack {
-            BackgroundView()
-            ErrorScreen(error: .networkError)
-        }
+        ErrorScreen(error: .networkError)
+            .backgroundView()
     }
 }

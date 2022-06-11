@@ -8,38 +8,19 @@
 import SwiftUI
 
 struct DailyWeatherView: View {
-    @ObservedObject private(set) var viewModel: WeatherViewModel
+    var dailyWeather: [DailyWeather]
     
     var body: some View {
         VStack(spacing: 12) {
-            HStack {
-                Text("7-Day Forecast")
-                    .font(.caption)
-                    .textCase(.uppercase)
-                    .foregroundColor(.secondary)
-                
-                Spacer()
-            }
-            if let dailyWeather = viewModel.upcomingWeather?.dailyWeather {
-                ForEach(dailyWeather) { day in
-                    Divider()
-                    SizeCategoryStackView {
-                        Text(day.inDayFormat)
-                            .frame(minWidth: 92, alignment: .leading)
-                        
-                        Spacer()
-                        
-                        WeatherImageView(name: day.description.first?.conditionName ?? WeatherIcon.dashedSquare)
-                        
-                        Spacer()
-                        
-                        HStack {
-                            PrimaryTemperatureView(temperature: day.temperature.max)
-                            SecondaryTemperatureView(temperature: day.temperature.max)
-                        }
-                        .multilineTextAlignment(.trailing)
-                    }
-                }
+            Text("7-Day Forecast")
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .font(.caption)
+                .textCase(.uppercase)
+                .foregroundColor(.secondary)
+            
+            ForEach(dailyWeather) { day in
+                Divider()
+                DailyWeatherRow(day: day)
             }
         }
         .paneBackground()
@@ -49,6 +30,8 @@ struct DailyWeatherView: View {
 
 struct DailyWeatherView_Previews: PreviewProvider {
     static var previews: some View {
-        DailyWeatherView(viewModel: WeatherViewModel())
+        DailyWeatherView(dailyWeather: PreviewData.daily)
+            .padding(.horizontal)
+            .backgroundView()
     }
 }

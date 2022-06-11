@@ -12,7 +12,8 @@ struct RootView: View {
     
     var body: some View {
         ZStack {
-            BackgroundView()
+            Color.weatherBackground
+                .ignoresSafeArea()
             
             switch viewModel.authorizationStatus {
             case .restricted, .denied:

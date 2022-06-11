@@ -8,27 +8,13 @@
 import SwiftUI
 
 struct HourlyWeatherView: View {
-    @ObservedObject private(set) var viewModel: WeatherViewModel
+    var hourlyWeather: [HourlyWeather]
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHStack(spacing: 16) {
-                if let hourlyWeather = viewModel.upcomingWeather?.hourlyWeather {
-                    ForEach(hourlyWeather) { hour in
-                        VStack(alignment: .center, spacing: 16) {
-                            Text(hour.formattedHour)
-                                .frame(minWidth: 40)
-                                .font(.callout)
-                            
-                            WeatherImageView(name: hour.description.first?.conditionName ?? WeatherIcon.dashedSquare)
-                                .frame(minWidth: 28, minHeight: 28, alignment: .top)
-                            
-                            VStack(spacing: 8) {
-                                PrimaryTemperatureView(temperature: hour.temperature)
-                                SecondaryTemperatureView(temperature: hour.temperature)
-                            }
-                        }
-                    }
+                ForEach(hourlyWeather) { hour in
+                    HourlyWeatherRow(hour: hour)
                 }
             }
         }
@@ -38,6 +24,8 @@ struct HourlyWeatherView: View {
 
 struct HourlyWeatherView_Previews: PreviewProvider {
     static var previews: some View {
-        HourlyWeatherView(viewModel: WeatherViewModel())
+        HourlyWeatherView(hourlyWeather: PreviewData.hourly)
+            .padding(.horizontal)
+            .backgroundView()
     }
 }

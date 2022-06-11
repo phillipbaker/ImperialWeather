@@ -17,17 +17,7 @@ struct WeatherScreen: View {
         case .loading:
             ProgressView()
         case .loaded:
-            ScrollView(.vertical) {
-                SizeClassStackView(verticalAlignment: .top, spacing: 16) {
-                    CurrentWeatherView(viewModel: viewModel)
-                    VStack(spacing: 16) {
-                        HourlyWeatherView(viewModel: viewModel)
-                        DailyWeatherView(viewModel: viewModel)
-                        DataAttributionView()
-                    }
-                }
-                .padding()
-            }
+            WeatherView(viewModel: viewModel)
         case .failed(let error):
             ErrorScreen(error: error)
         }
@@ -36,9 +26,7 @@ struct WeatherScreen: View {
 
 struct WeatherContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ZStack {
-            BackgroundView()
-            WeatherScreen(viewModel: WeatherViewModel())
-        }
+        WeatherScreen(viewModel: .init())
+            .backgroundView()
     }
 }

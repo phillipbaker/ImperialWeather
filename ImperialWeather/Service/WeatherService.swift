@@ -18,11 +18,11 @@ struct WeatherService {
             throw APIError.invalidResponse
         }
 
-        guard let decodedData = try? JSONDecoder().decode(CurrentWeather.self, from: data) else {
+        guard let decodedCurrentWeather = try? JSONDecoder().decode(CurrentWeather.self, from: data) else {
             throw APIError.invalidData
         }
         
-        return decodedData
+        return decodedCurrentWeather
     }
     
     func fetchUpcomingWeather(for location: CLLocationCoordinate2D) async throws -> UpcomingWeather {
@@ -34,10 +34,10 @@ struct WeatherService {
             throw APIError.invalidResponse
         }
         
-        guard var decodedData = try? JSONDecoder().decode(UpcomingWeather.self, from: data) else {
+        guard var decodedUpcomingWeather = try? JSONDecoder().decode(UpcomingWeather.self, from: data) else {
             throw APIError.invalidData
         }
         
-        return decodedData.removeCurrentDayFromDaily()
+        return decodedUpcomingWeather.withTodayRemovedFromDaily()
     }
 }
