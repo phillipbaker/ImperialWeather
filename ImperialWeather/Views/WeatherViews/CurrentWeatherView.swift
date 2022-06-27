@@ -34,8 +34,10 @@ struct CurrentWeatherView: View {
                         .font(.title3)
                 }
             }
+            
+            TemperatureScalePickerView()
         }
-        .padding(.vertical)
+        .padding(.top)
         .frame(maxWidth: .infinity)
         .paneBackground()
     }

@@ -14,7 +14,6 @@ struct WeatherScreen: View {
         ScrollView(.vertical) {
             SizeClassStackView(verticalAlignment: .top, spacing: 16) {
                 VStack(spacing: 16) {
-                    TemperatureScalePickerView()
                     if let currentWeather = viewModel.currentWeather {
                         CurrentWeatherView(weather: currentWeather)
                     }
