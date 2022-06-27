@@ -1,5 +1,5 @@
 //
-//  SizeClassStackView.swift
+//  HorizontalSizeClassStack.swift
 //  ImperialWeather
 //
 //  Created by Phillip Baker on 10/1/21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SizeClassStackView<Content: View>: View {
+struct HorizontalSizeClassStack<Content: View>: View {
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
     var spacing: CGFloat?

@@ -13,7 +13,7 @@ struct DataAttributionView: View {
             Text("Source:")
             Link("OpenWeatherMap", destination: URL(string: "https://openweathermap.org")!)
         }
-        .font(.callout)
+        .font(.caption)
         .foregroundColor(.secondary)
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.leading)

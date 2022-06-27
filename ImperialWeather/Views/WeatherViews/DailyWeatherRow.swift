@@ -14,6 +14,7 @@ struct DailyWeatherRow: View {
         SizeCategoryStackView {
             Text(day.inDayFormat)
                 .frame(minWidth: 92, alignment: .leading)
+                .opacity(0.9)
             
             Spacer()
             
@@ -21,10 +22,12 @@ struct DailyWeatherRow: View {
             
             Spacer()
             
-            PrimaryTemperatureView(temperature: day.temperature.max)
-                .multilineTextAlignment(.trailing)
-            SecondaryTemperatureView(temperature: day.temperature.max)
-                .multilineTextAlignment(.trailing)
+            Group {
+                PrimaryTemperatureView(temperature: day.temperature.max).opacity(0.9)
+                SecondaryTemperatureView(temperature: day.temperature.max)
+            }
+            .font(.system(.body, design: .rounded))
+            .multilineTextAlignment(.trailing)
         }
     }
 }

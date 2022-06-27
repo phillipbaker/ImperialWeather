@@ -38,6 +38,9 @@ struct WeatherService {
             throw APIError.invalidData
         }
         
-        return decodedUpcomingWeather.withTodayRemovedFromDaily()
+        /// Remove the current day from the daily forecast data
+        let forecast = decodedUpcomingWeather.removeCurrentDayFromDailyWeather()
+        
+        return forecast
     }
 }

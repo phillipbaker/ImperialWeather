@@ -17,6 +17,7 @@
 		F812D98D2853F4AD00FC8223 /* HourlyWeatherRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F812D98C2853F4AD00FC8223 /* HourlyWeatherRow.swift */; };
 		F812D98F2854574000FC8223 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F812D98E2854574000FC8223 /* PreviewData.swift */; };
 		F812D99128549C1600FC8223 /* PaneShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F812D99028549C1600FC8223 /* PaneShadow.swift */; };
+		F81CFD3D286A3C2B002CCE51 /* VerticalSizeClassStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81CFD3C286A3C2B002CCE51 /* VerticalSizeClassStack.swift */; };
 		F83B0A25275CEC44001F4F3A /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83B0A19275CEC44001F4F3A /* Coordinates.swift */; };
 		F83B0A26275CEC44001F4F3A /* Conditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83B0A1A275CEC44001F4F3A /* Conditions.swift */; };
 		F83B0A27275CEC44001F4F3A /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83B0A1B275CEC44001F4F3A /* Temperature.swift */; };
@@ -37,7 +38,7 @@
 		F867BC2D275E0725001CBA62 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F867BC1B275E0725001CBA62 /* BackgroundView.swift */; };
 		F867BC2E275E0725001CBA62 /* SecondaryTemperatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F867BC1C275E0725001CBA62 /* SecondaryTemperatureView.swift */; };
 		F867BC2F275E0725001CBA62 /* WeatherImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F867BC1D275E0725001CBA62 /* WeatherImageView.swift */; };
-		F867BC30275E0725001CBA62 /* SizeClassStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F867BC1E275E0725001CBA62 /* SizeClassStackView.swift */; };
+		F867BC30275E0725001CBA62 /* HorizontalSizeClassStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F867BC1E275E0725001CBA62 /* HorizontalSizeClassStack.swift */; };
 		F867BC31275E0725001CBA62 /* TemperatureScalePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F867BC1F275E0725001CBA62 /* TemperatureScalePickerView.swift */; };
 		F867BC33275E0725001CBA62 /* DataAttributionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F867BC21275E0725001CBA62 /* DataAttributionView.swift */; };
 		F875DCA5268DF98C0025386F /* WeatherBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = F875DCA4268DF98C0025386F /* WeatherBackground.swift */; };
@@ -70,6 +71,7 @@
 		F812D98C2853F4AD00FC8223 /* HourlyWeatherRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherRow.swift; sourceTree = "<group>"; };
 		F812D98E2854574000FC8223 /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
 		F812D99028549C1600FC8223 /* PaneShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaneShadow.swift; sourceTree = "<group>"; };
+		F81CFD3C286A3C2B002CCE51 /* VerticalSizeClassStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalSizeClassStack.swift; sourceTree = "<group>"; };
 		F83B0A19275CEC44001F4F3A /* Coordinates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
 		F83B0A1A275CEC44001F4F3A /* Conditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conditions.swift; sourceTree = "<group>"; };
 		F83B0A1B275CEC44001F4F3A /* Temperature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
@@ -90,7 +92,7 @@
 		F867BC1B275E0725001CBA62 /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		F867BC1C275E0725001CBA62 /* SecondaryTemperatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondaryTemperatureView.swift; sourceTree = "<group>"; };
 		F867BC1D275E0725001CBA62 /* WeatherImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherImageView.swift; sourceTree = "<group>"; };
-		F867BC1E275E0725001CBA62 /* SizeClassStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeClassStackView.swift; sourceTree = "<group>"; };
+		F867BC1E275E0725001CBA62 /* HorizontalSizeClassStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalSizeClassStack.swift; sourceTree = "<group>"; };
 		F867BC1F275E0725001CBA62 /* TemperatureScalePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureScalePickerView.swift; sourceTree = "<group>"; };
 		F867BC21275E0725001CBA62 /* DataAttributionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataAttributionView.swift; sourceTree = "<group>"; };
 		F875DCA4268DF98C0025386F /* WeatherBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherBackground.swift; sourceTree = "<group>"; };
@@ -181,7 +183,8 @@
 			isa = PBXGroup;
 			children = (
 				F867BC1D275E0725001CBA62 /* WeatherImageView.swift */,
-				F867BC1E275E0725001CBA62 /* SizeClassStackView.swift */,
+				F867BC1E275E0725001CBA62 /* HorizontalSizeClassStack.swift */,
+				F81CFD3C286A3C2B002CCE51 /* VerticalSizeClassStack.swift */,
 				F867BC1A275E0725001CBA62 /* SizeCategoryStackView.swift */,
 				F867BC18275E0725001CBA62 /* PrimaryTemperatureView.swift */,
 				F867BC1C275E0725001CBA62 /* SecondaryTemperatureView.swift */,
@@ -389,8 +392,9 @@
 				F867BC31275E0725001CBA62 /* TemperatureScalePickerView.swift in Sources */,
 				F867BC27275E0725001CBA62 /* HourlyWeatherView.swift in Sources */,
 				F812D98F2854574000FC8223 /* PreviewData.swift in Sources */,
+				F81CFD3D286A3C2B002CCE51 /* VerticalSizeClassStack.swift in Sources */,
 				F8FC076726EE943F007FF4EE /* Double+fahrenheitString.swift in Sources */,
-				F867BC30275E0725001CBA62 /* SizeClassStackView.swift in Sources */,
+				F867BC30275E0725001CBA62 /* HorizontalSizeClassStack.swift in Sources */,
 				F83B0A28275CEC44001F4F3A /* CurrentWeather.swift in Sources */,
 				F867BC2D275E0725001CBA62 /* BackgroundView.swift in Sources */,
 				F800ABEC2693B44E00060ACF /* PaneBackground.swift in Sources */,

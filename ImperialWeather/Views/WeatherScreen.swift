@@ -12,7 +12,7 @@ struct WeatherScreen: View {
     
     var body: some View {
         ScrollView(.vertical) {
-            SizeClassStackView(verticalAlignment: .top, spacing: 16) {
+            HorizontalSizeClassStack(verticalAlignment: .top, spacing: 16) {
                 VStack(spacing: 16) {
                     if let currentWeather = viewModel.currentWeather {
                         CurrentWeatherView(weather: currentWeather)
@@ -30,7 +30,6 @@ struct WeatherScreen: View {
             }
             .padding()
         }
-        .backgroundView()
     }
 }
 

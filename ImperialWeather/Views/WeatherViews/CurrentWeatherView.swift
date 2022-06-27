@@ -8,30 +8,34 @@
 import SwiftUI
 
 struct CurrentWeatherView: View {
+    
     var weather: CurrentWeather
     
     var body: some View {
         VStack(spacing: 32) {
-            VStack(spacing: 4) {
-                Text(weather.location ?? "Unknown")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                Text(weather.description.first?.description ?? "Unknown")
-            }
-            
-            HStack(spacing: 16) {
-                WeatherImageView(imageName: weather.description.first?.conditionName ?? WeatherIcon.dashedSquare)
-                    .font(.system(size: 48))
+            VerticalSizeClassStack {
+                VStack(spacing: 4) {
+                    Text(weather.location ?? "Unknown")
+                        .font(.system(.largeTitle, design: .rounded))
+                        .fontWeight(.bold)
+                    Text(weather.description.first?.description ?? "Unknown")
+                }
+                .opacity(0.9)
                 
-                Divider()
-                    .frame(maxHeight: 100)
-                
-                VStack(alignment: .leading, spacing: 4) {
-                    PrimaryTemperatureView(temperature: weather.conditions.temperature)
-                        .font(.largeTitle)
+                HStack(spacing: 16) {
+                    WeatherImageView(imageName: weather.description.first?.conditionName ?? WeatherIcon.dashedSquare)
+                        .font(.system(size: 48))
                     
-                    SecondaryTemperatureView(temperature: weather.conditions.temperature)
-                        .font(.title3)
+                    Divider()
+                        .frame(maxHeight: 100)
+                    
+                    VStack(alignment: .leading, spacing: 4) {
+                        PrimaryTemperatureView(temperature: weather.conditions.temperature)
+                            .font(.largeTitle)
+                            .opacity(0.9)
+                        
+                        SecondaryTemperatureView(temperature: weather.conditions.temperature)
+                    }
                 }
             }
             
