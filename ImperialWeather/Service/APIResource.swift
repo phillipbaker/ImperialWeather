@@ -9,7 +9,7 @@ import Foundation
 
 enum Path: String {
     case currentWeather = "/data/2.5/weather"
-    case upcomingWeather = "/data/2.5/onecall"
+    case upcomingWeather = "/data/3.0/onecall"
 }
 
 protocol APIResource {
@@ -26,7 +26,7 @@ extension APIResource {
         components.path = methodPath
         components.queryItems = [
             URLQueryItem(name: "units", value: "metric"),
-            URLQueryItem(name: "appid", value: "91e17bd9d49e798e4a2ff7ad8adf29d4"),
+            URLQueryItem(name: "appid", value: "INSERT_APIKEY_HERE"),
             URLQueryItem(name: "lat", value: latitude),
             URLQueryItem(name: "lon", value: longitude)
         ]

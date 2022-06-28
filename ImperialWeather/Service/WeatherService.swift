@@ -34,7 +34,9 @@ struct WeatherService {
             throw APIError.invalidResponse
         }
         
-        guard var decodedUpcomingWeather = try? JSONDecoder().decode(UpcomingWeather.self, from: data) else {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .secondsSince1970
+        guard var decodedUpcomingWeather = try? decoder.decode(UpcomingWeather.self, from: data) else {
             throw APIError.invalidData
         }
         
