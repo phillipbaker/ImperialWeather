@@ -12,10 +12,6 @@ struct DailyWeather: Codable, Identifiable {
     let day: Date
     let temperature: Temperature
     let description: [WeatherDescription]
-
-    var inDayFormat: String {
-        return DateFormatter.dayFormat.string(from: day)
-    }
 }
 
 extension DailyWeather {

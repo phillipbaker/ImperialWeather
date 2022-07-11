@@ -18,9 +18,9 @@ struct DailyWeatherView: View {
                 .textCase(.uppercase)
                 .foregroundColor(.secondary)
             
-            ForEach(dailyWeather) { day in
+            ForEach(dailyWeather) { dailyWeather in
                 Divider()
-                DailyWeatherRow(day: day)
+                DailyWeatherRow(dailyWeather: dailyWeather)
             }
         }
         .paneBackground()
