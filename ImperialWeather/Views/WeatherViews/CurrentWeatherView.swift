@@ -13,7 +13,7 @@ struct CurrentWeatherView: View {
     
     var body: some View {
         VStack(spacing: 32) {
-            VerticalSizeClassStack {
+            VerticalSizeClassStack(spacing: 32) {
                 VStack(spacing: 4) {
                     Text(weather.location ?? "Unknown")
                         .font(.system(.largeTitle, design: .rounded))

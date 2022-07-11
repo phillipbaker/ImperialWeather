@@ -13,7 +13,7 @@ struct HourlyWeatherRow: View {
     var body: some View {
         VStack(spacing: 16) {
             Text(hour.formattedHour)
-                .frame(minWidth: 40)
+                .frame(minWidth: 44)
                 .font(.callout)
                 .textCase(.uppercase)
                 .foregroundColor(.secondary)
