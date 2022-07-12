@@ -24,7 +24,7 @@ struct HourlyWeatherView: View {
 
 struct HourlyWeatherView_Previews: PreviewProvider {
     static var previews: some View {
-        HourlyWeatherView(hourlyWeather: PreviewData.hourly)
+        HourlyWeatherView(hourlyWeather: HourlyWeather.previewData)
             .padding(.horizontal)
             .backgroundView()
     }

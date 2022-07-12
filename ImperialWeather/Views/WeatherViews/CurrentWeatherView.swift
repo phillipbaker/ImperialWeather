@@ -49,7 +49,7 @@ struct CurrentWeatherView: View {
 
 struct CurrentWeatherView_Previews: PreviewProvider {
     static var previews: some View {
-        CurrentWeatherView(weather: PreviewData.current)
+        CurrentWeatherView(weather: CurrentWeather.previewData)
             .padding()
             .backgroundView()
     }
