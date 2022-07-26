@@ -8,31 +8,21 @@
 import Foundation
 
 extension Date {
-    var formattedHour: String {
-        let currentTime = Date.now
-        
-        if self <= currentTime {
-            return "Now"
-        } else {
-            let formatter = DateFormatter()
-            formatter.dateFormat = "ha"
-            return formatter.string(from: self)
-        }
+    var nowHourFormat: String {
+        self <= Date.now ? "Now" : self.formatted(.dateTime.hour())
     }
 
-    var formattedDay: String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "EEEE"
-        return formatter.string(from: self)
+    var wideWeekdayFormat: String {
+        self.formatted(.dateTime.weekday(.wide))
     }
 }
 
 extension Double {
     var fahrenheitString: String {
-        return String(format: "%.0f", (self * 1.8) + 32)
+        ((self * 1.8) + 32).formatted(.number.precision(.significantDigits(2)))
     }
 
     var celsiusString: String {
-        return String(format: "%.0f", self)
+        self.formatted(.number.precision(.significantDigits(2)))
     }
 }
