@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ErrorScreen: View {
-    let error: APIError
+    let error: NetworkingError
     
     var body: some View {
         VStack(spacing: 16) {

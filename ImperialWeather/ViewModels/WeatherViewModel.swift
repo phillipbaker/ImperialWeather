@@ -45,13 +45,13 @@ final class WeatherViewModel: NSObject, ObservableObject {
             loadingState = .loaded
         } catch {
             switch error {
-            case APIError.locationError:
+            case NetworkingError.locationError:
                 loadingState = .failed(.locationError)
-            case APIError.invalidResponse:
+            case NetworkingError.invalidResponse:
                 loadingState = .failed(.invalidResponse)
-            case APIError.invalidData:
+            case NetworkingError.invalidData:
                 loadingState = .failed(.invalidData)
-            case APIError.networkError:
+            case NetworkingError.networkError:
                 loadingState = .failed(.networkError)
             default:
                 loadingState = .failed(.invalidData)

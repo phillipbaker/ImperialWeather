@@ -15,11 +15,11 @@ struct WeatherService {
         let (data, response) = try await URLSession.shared.data(from: resource.url)
         
         guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-            throw APIError.invalidResponse
+            throw NetworkingError.invalidResponse
         }
 
         guard let decodedCurrentWeather = try? JSONDecoder().decode(CurrentWeather.self, from: data) else {
-            throw APIError.invalidData
+            throw NetworkingError.invalidData
         }
         
         return decodedCurrentWeather
@@ -31,13 +31,13 @@ struct WeatherService {
         let (data, response) = try await URLSession.shared.data(from: resource.url)
         
         guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-            throw APIError.invalidResponse
+            throw NetworkingError.invalidResponse
         }
         
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .secondsSince1970
         guard var decodedUpcomingWeather = try? decoder.decode(UpcomingWeather.self, from: data) else {
-            throw APIError.invalidData
+            throw NetworkingError.invalidData
         }
         
         /// Remove the current day from the daily forecast data
