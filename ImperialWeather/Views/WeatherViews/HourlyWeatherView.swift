@@ -15,6 +15,7 @@ struct HourlyWeatherView: View {
             LazyHStack(spacing: 24) {
                 ForEach(hourlyWeather) { hourlyWeather in
                     HourlyWeatherRow(hourlyWeather: hourlyWeather)
+                    Divider()
                 }
             }
         }
