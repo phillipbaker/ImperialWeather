@@ -26,7 +26,6 @@
 		F83B0A2B275CEC44001F4F3A /* UpcomingWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83B0A20275CEC44001F4F3A /* UpcomingWeather.swift */; };
 		F83B0A2C275CEC44001F4F3A /* WeatherDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83B0A21275CEC44001F4F3A /* WeatherDescription.swift */; };
 		F83B0A31275D4BB6001F4F3A /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83B0A30275D4BB6001F4F3A /* WeatherService.swift */; };
-		F847FFE9275F70C20017BB9F /* APIResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F847FFE8275F70C20017BB9F /* APIResource.swift */; };
 		F867BC23275E0725001CBA62 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F867BC0E275E0725001CBA62 /* RootView.swift */; };
 		F867BC25275E0725001CBA62 /* ErrorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F867BC11275E0725001CBA62 /* ErrorScreen.swift */; };
 		F867BC26275E0725001CBA62 /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F867BC12275E0725001CBA62 /* LoadingScreen.swift */; };
@@ -54,6 +53,7 @@
 		F897EE2A28E64B6C00A9C504 /* InvalidResponseMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F897EE2928E64B6C00A9C504 /* InvalidResponseMessage.swift */; };
 		F897EE2C28E64B8400A9C504 /* InvalidDataMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F897EE2B28E64B8400A9C504 /* InvalidDataMessage.swift */; };
 		F897EE2E28E64BA300A9C504 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F897EE2D28E64BA300A9C504 /* ErrorMessage.swift */; };
+		F897EE3228E7014400A9C504 /* APIResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F897EE3128E7014400A9C504 /* APIResource.swift */; };
 		F8A45FC026ECEC5900C34631 /* WeatherIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A45FBF26ECEC5900C34631 /* WeatherIcon.swift */; };
 		F8BC643126F209A800B70620 /* AccessibilityLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BC643026F209A800B70620 /* AccessibilityLabel.swift */; };
 		F8C5ABBE26EF6F6900466C34 /* Celsius.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C5ABBD26EF6F6900466C34 /* Celsius.swift */; };
@@ -82,7 +82,6 @@
 		F83B0A20275CEC44001F4F3A /* UpcomingWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingWeather.swift; sourceTree = "<group>"; };
 		F83B0A21275CEC44001F4F3A /* WeatherDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDescription.swift; sourceTree = "<group>"; };
 		F83B0A30275D4BB6001F4F3A /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
-		F847FFE8275F70C20017BB9F /* APIResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResource.swift; sourceTree = "<group>"; };
 		F867BC0E275E0725001CBA62 /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		F867BC11275E0725001CBA62 /* ErrorScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorScreen.swift; sourceTree = "<group>"; };
 		F867BC12275E0725001CBA62 /* LoadingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingScreen.swift; sourceTree = "<group>"; };
@@ -112,6 +111,7 @@
 		F897EE2928E64B6C00A9C504 /* InvalidResponseMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvalidResponseMessage.swift; sourceTree = "<group>"; };
 		F897EE2B28E64B8400A9C504 /* InvalidDataMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvalidDataMessage.swift; sourceTree = "<group>"; };
 		F897EE2D28E64BA300A9C504 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
+		F897EE3128E7014400A9C504 /* APIResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResource.swift; sourceTree = "<group>"; };
 		F8A45FBF26ECEC5900C34631 /* WeatherIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherIcon.swift; sourceTree = "<group>"; };
 		F8BC643026F209A800B70620 /* AccessibilityLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityLabel.swift; sourceTree = "<group>"; };
 		F8C5ABBD26EF6F6900466C34 /* Celsius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Celsius.swift; sourceTree = "<group>"; };
@@ -268,7 +268,7 @@
 		F897EE3028E6FF7900A9C504 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F847FFE8275F70C20017BB9F /* APIResource.swift */,
+				F897EE3128E7014400A9C504 /* APIResource.swift */,
 				F87E5CB3267CA46C0032949A /* CurrentWeatherResource.swift */,
 				F812D9822853D34500FC8223 /* UpcomingWeatherResource.swift */,
 			);
@@ -383,6 +383,7 @@
 				F83B0A29275CEC44001F4F3A /* HourlyWeather.swift in Sources */,
 				F867BC2F275E0725001CBA62 /* WeatherImageView.swift in Sources */,
 				F8DB82BD269EDEAF00B3936B /* NetworkingError.swift in Sources */,
+				F897EE3228E7014400A9C504 /* APIResource.swift in Sources */,
 				F87E5C93267C9E950032949A /* ImperialWeatherApp.swift in Sources */,
 				F867BC25275E0725001CBA62 /* ErrorScreen.swift in Sources */,
 				F867BC2E275E0725001CBA62 /* SecondaryTemperatureView.swift in Sources */,
@@ -390,7 +391,6 @@
 				F8EDEF6626F0CB68008CB9A7 /* TemperatureScale.swift in Sources */,
 				F897EE2828E64B5400A9C504 /* NetworkErrorMessage.swift in Sources */,
 				F897EE2428E64B0800A9C504 /* LocationPermissionMessage.swift in Sources */,
-				F847FFE9275F70C20017BB9F /* APIResource.swift in Sources */,
 				F83B0A31275D4BB6001F4F3A /* WeatherService.swift in Sources */,
 				F87FB917269728BB00E38184 /* LoadingState.swift in Sources */,
 				F897EE2A28E64B6C00A9C504 /* InvalidResponseMessage.swift in Sources */,
