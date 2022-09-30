@@ -244,27 +244,35 @@
 		F87E5CAA267CA3BA0032949A /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				F847FFE8275F70C20017BB9F /* APIResource.swift */,
-				F87E5CB3267CA46C0032949A /* CurrentWeatherResource.swift */,
-				F812D9822853D34500FC8223 /* UpcomingWeatherResource.swift */,
-				F8DB82BC269EDEAF00B3936B /* NetworkingError.swift */,
-				F897EE2F28E64BAF00A9C504 /* ErrorMessages */,
+				F897EE3028E6FF7900A9C504 /* Resources */,
+				F897EE2F28E64BAF00A9C504 /* Errors */,
 				F83B0A30275D4BB6001F4F3A /* WeatherService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
 		};
-		F897EE2F28E64BAF00A9C504 /* ErrorMessages */ = {
+		F897EE2F28E64BAF00A9C504 /* Errors */ = {
 			isa = PBXGroup;
 			children = (
 				F897EE2D28E64BA300A9C504 /* ErrorMessage.swift */,
+				F8DB82BC269EDEAF00B3936B /* NetworkingError.swift */,
 				F897EE2328E64B0800A9C504 /* LocationPermissionMessage.swift */,
 				F897EE2528E64B3400A9C504 /* LocationErrorMessage.swift */,
 				F897EE2728E64B5400A9C504 /* NetworkErrorMessage.swift */,
 				F897EE2928E64B6C00A9C504 /* InvalidResponseMessage.swift */,
 				F897EE2B28E64B8400A9C504 /* InvalidDataMessage.swift */,
 			);
-			path = ErrorMessages;
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		F897EE3028E6FF7900A9C504 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F847FFE8275F70C20017BB9F /* APIResource.swift */,
+				F87E5CB3267CA46C0032949A /* CurrentWeatherResource.swift */,
+				F812D9822853D34500FC8223 /* UpcomingWeatherResource.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		F8A45FBE26ECE4C900C34631 /* Constants */ = {
