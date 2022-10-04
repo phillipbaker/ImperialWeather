@@ -7,35 +7,49 @@
 
 import Foundation
 
-enum Path: String {
-    case currentWeather = "/data/2.5/weather"
-    case upcomingWeather = "/data/3.0/onecall"
-}
-
 protocol APIResource {
     associatedtype ModelType: Decodable
-
-    var methodPath: String { get }
+    var path: String { get }
     var latitude: String { get }
     var longitude: String { get }
+    var queryItems: [(String, String?)]? { get }
 }
 
 extension APIResource {
-    var url: URL {
-        var components = URLComponents(string: "https://api.openweathermap.org")!
-        components.path = methodPath
+    
+    var scheme: String { "https" }
+    var host: String { "api.openweathermap.org" }
+    
+    var url: URL? {
+        var components = URLComponents()
+        
+        components.scheme = scheme
+        components.host = host
+        components.path = path
+        
         components.queryItems = [
             URLQueryItem(name: "units", value: "metric"),
-            URLQueryItem(name: "appid", value: "INSERT_API_KEY_HERE"),
+            URLQueryItem(name: "appid", value: "255ac5237b16a546abf2777715aaf51a"),
             URLQueryItem(name: "lat", value: latitude),
             URLQueryItem(name: "lon", value: longitude)
         ]
-
-        if methodPath == Path.upcomingWeather.rawValue {
-            let currentDate = Date().timeIntervalSince1970
-            let dateQueryItem = URLQueryItem(name: "dt", value: String(format: "%.0f", currentDate))
-            components.queryItems?.append(dateQueryItem)
+        
+        if let resourceItems = resourceQueryItems {
+            components.queryItems?.append(contentsOf: resourceItems)
         }
-        return components.url!
+
+        return components.url
+    }
+    
+    var resourceQueryItems: [URLQueryItem]? {
+        var resourceQueryItems = [URLQueryItem]()
+        if let unwrappedItems = queryItems {
+            for (name, value) in unwrappedItems where value != nil {
+                let queryItem = URLQueryItem(name: name, value: value)
+                resourceQueryItems.append(queryItem)
+            }
+        }
+        
+        return resourceQueryItems
     }
 }

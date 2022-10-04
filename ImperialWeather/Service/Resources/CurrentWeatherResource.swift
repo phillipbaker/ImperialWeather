@@ -12,8 +12,7 @@ struct CurrentWeatherResource: APIResource {
 
     var latitude: String
     var longitude: String
-
-    var methodPath: String {
-        return Path.currentWeather.rawValue
-    }
+    var queryItems: [(String, String?)]?
+    
+    var path: String { "/data/2.5/weather" }
 }

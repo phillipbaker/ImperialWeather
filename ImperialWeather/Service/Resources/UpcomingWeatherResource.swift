@@ -9,11 +9,15 @@ import Foundation
 
 struct UpcomingWeatherResource: APIResource {
     typealias ModelType = UpcomingWeather
-
+    
+    var path: String { "/data/3.0/onecall" }
+    
     var latitude: String
     var longitude: String
-
-    var methodPath: String {
-        return Path.upcomingWeather.rawValue
+    
+    var queryItems: [(String, String?)]? {
+        // Current date query item
+        let currentDate = Date().timeIntervalSince1970
+        return [("dt", String(format: "%.0f", currentDate))]
     }
 }

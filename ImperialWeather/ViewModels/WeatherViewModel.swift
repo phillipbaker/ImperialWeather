@@ -18,7 +18,9 @@ final class WeatherViewModel: NSObject, ObservableObject {
     @Published private(set) var upcomingWeather: UpcomingWeather?
     @Published private(set) var authorizationStatus: CLAuthorizationStatus
     
-    private let service = WeatherService()
+    private var currentWeatherRequest: APIRequest<CurrentWeatherResource>?
+    private var upcomingWeatherRequest: APIRequest<UpcomingWeatherResource>?
+    
     private let locationManager = CLLocationManager()
     
     // MARK: - Methods
@@ -39,9 +41,19 @@ final class WeatherViewModel: NSObject, ObservableObject {
     
     func fetchWeather(for location: CLLocationCoordinate2D) async {
         loadingState = .loading
+        
+        let currentWeatherResource = CurrentWeatherResource(latitude: String(location.latitude), longitude: String(location.longitude))
+        let currentRequest = APIRequest(resource: currentWeatherResource)
+        self.currentWeatherRequest = currentRequest
+
+        let upcomingWeatherResource = UpcomingWeatherResource(latitude: String(location.latitude), longitude: String(location.longitude))
+        let upcomingRequest = APIRequest(resource: upcomingWeatherResource)
+        self.upcomingWeatherRequest = upcomingRequest
+        
         do {
-            currentWeather = try await service.fetchCurrentWeather(for: location)
-            upcomingWeather = try await service.fetchUpcomingWeather(for: location)
+            currentWeather = try await currentRequest.execute()
+            var upcoming = try await upcomingRequest.execute()
+            upcomingWeather = upcoming?.removeCurrentDayFromDailyWeather()
             loadingState = .loaded
         } catch {
             switch error {
