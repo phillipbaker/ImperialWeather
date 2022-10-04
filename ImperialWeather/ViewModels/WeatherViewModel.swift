@@ -40,6 +40,7 @@ final class WeatherViewModel: NSObject, ObservableObject {
     }
     
     func fetchWeather(for location: CLLocationCoordinate2D) async {
+        guard loadingState != .loading else { return }
         loadingState = .loading
         
         let currentWeatherResource = CurrentWeatherResource(latitude: String(location.latitude), longitude: String(location.longitude))
