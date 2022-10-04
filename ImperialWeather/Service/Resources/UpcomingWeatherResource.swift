@@ -18,6 +18,9 @@ struct UpcomingWeatherResource: APIResource {
     var queryItems: [(String, String?)]? {
         // Current date query item
         let currentDate = Date().timeIntervalSince1970
-        return [("dt", String(format: "%.0f", currentDate))]
+        return [
+            ("dt", String(format: "%.0f", currentDate)),
+            ("exclude", "currently, minutely, alerts")
+        ]
     }
 }
