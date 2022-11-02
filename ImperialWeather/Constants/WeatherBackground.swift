@@ -9,4 +9,5 @@ import SwiftUI
 
 extension Color {
     static let weatherBackground = Color("WeatherBackground")
+    static let selectionBackground = Color("SelectionBackground")
 }
