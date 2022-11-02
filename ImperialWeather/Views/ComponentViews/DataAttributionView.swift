@@ -16,7 +16,6 @@ struct DataAttributionView: View {
         .font(.caption)
         .foregroundColor(.secondary)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.leading)
     }
 }
 
