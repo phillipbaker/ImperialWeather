@@ -21,3 +21,9 @@ extension DailyWeather {
         case description = "weather"
     }
 }
+
+extension DailyWeather: Equatable {
+    static func == (lhs: DailyWeather, rhs: DailyWeather) -> Bool {
+        lhs.id == rhs.id
+    }
+}
