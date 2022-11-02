@@ -15,6 +15,10 @@ extension Date {
     var wideWeekdayFormat: String {
         self.formatted(.dateTime.weekday(.wide))
     }
+    
+    var narrowDayFormat: String {
+        self.formatted(.dateTime.weekday(.narrow))
+    }
 }
 
 extension Double {
