@@ -26,6 +26,7 @@ struct WeatherScreen: View {
                     }
                     
                     DataAttributionView()
+                        .padding(.leading)
                 }
             }
             .padding()
