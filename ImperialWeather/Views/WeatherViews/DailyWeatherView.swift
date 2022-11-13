@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct DailyWeatherView: View {
-    var dailyWeather: [DailyWeather]
+    let dailyWeather: [DailyWeather]
+    @State private var detailPresented = false
+    @State private var selection: DailyWeather?
     
     var body: some View {
         VStack(spacing: 12) {
@@ -18,9 +20,16 @@ struct DailyWeatherView: View {
                 .textCase(.uppercase)
                 .foregroundColor(.secondary)
             
-            ForEach(dailyWeather) { dailyWeather in
+            ForEach(dailyWeather) { day in
                 Divider()
-                DailyWeatherRow(dailyWeather: dailyWeather)
+                DailyWeatherRow(dailyWeather: day)
+                    .sheet(isPresented: $detailPresented) {
+                        WeatherDetailView (dailyWeather: dailyWeather, initialSelection: selection ?? dailyWeather[0])
+                    }
+                    .onTapGesture {
+                        selection = day
+                        detailPresented = true
+                    }
             }
         }
         .paneBackground()
