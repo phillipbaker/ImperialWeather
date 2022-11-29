@@ -9,9 +9,9 @@ import Charts
 import SwiftUI
 
 struct WeatherDetailView: View {
-    let dailyWeather: [DailyWeather]
-    let initialSelection: DailyWeather
-    @State private var selection: DailyWeather = DailyWeather.preview[0]
+    let dailyWeather: [DailyWeatherRaw]
+    let initialSelection: DailyWeatherRaw
+    @State private var selection: DailyWeatherRaw = DailyWeatherRaw.preview[0]
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -113,6 +113,6 @@ struct WeatherDetailView: View {
 
 struct WeatherDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        WeatherDetailView(dailyWeather: DailyWeather.preview, initialSelection: DailyWeather.preview[0])
+        WeatherDetailView(dailyWeather: DailyWeatherRaw.preview, initialSelection: DailyWeatherRaw.preview[0])
     }
 }

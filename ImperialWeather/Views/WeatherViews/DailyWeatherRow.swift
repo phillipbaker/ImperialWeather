@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DailyWeatherRow: View {
-    var dailyWeather: DailyWeather
+    var dailyWeather: DailyWeatherRaw
     
     var body: some View {
         SizeCategoryStackView {
@@ -34,6 +34,6 @@ struct DailyWeatherRow: View {
 
 struct DailyWeatherRow_Previews: PreviewProvider {
     static var previews: some View {
-        DailyWeatherRow(dailyWeather: DailyWeather.preview.first!)
+        DailyWeatherRow(dailyWeather: DailyWeatherRaw.preview.first!)
     }
 }

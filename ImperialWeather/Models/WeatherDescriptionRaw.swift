@@ -1,6 +1,6 @@
 
 //
-//  WeatherDescription.swift
+//  WeatherDescriptionRaw.swift
 //  ImperialWeather
 //
 //  Created by Phillip Baker on 6/18/21.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct WeatherDescription: Codable {
+struct WeatherDescriptionRaw: Codable {
     let description: String
     let icon: String
     let id: Int
@@ -63,7 +63,7 @@ struct WeatherDescription: Codable {
     }
 }
 
-extension WeatherDescription {
+extension WeatherDescriptionRaw {
     enum CodingKeys: String, CodingKey {
         case description = "main"
         case icon

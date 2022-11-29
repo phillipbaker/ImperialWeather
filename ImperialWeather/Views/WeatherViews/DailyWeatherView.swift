@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct DailyWeatherView: View {
-    let dailyWeather: [DailyWeather]
+    let dailyWeather: [DailyWeatherRaw]
     @State private var detailPresented = false
-    @State private var selection: DailyWeather?
+    @State private var selection: DailyWeatherRaw?
     
     var body: some View {
         VStack(spacing: 12) {
@@ -39,7 +39,7 @@ struct DailyWeatherView: View {
 
 struct DailyWeatherView_Previews: PreviewProvider {
     static var previews: some View {
-        DailyWeatherView(dailyWeather: DailyWeather.preview)
+        DailyWeatherView(dailyWeather: DailyWeatherRaw.preview)
             .padding(.horizontal)
             .backgroundView()
     }

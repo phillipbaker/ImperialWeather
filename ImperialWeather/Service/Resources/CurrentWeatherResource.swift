@@ -8,7 +8,7 @@
 import Foundation
 
 struct CurrentWeatherResource: APIResource {
-    typealias ModelType = CurrentWeather
+    typealias ModelType = CurrentWeatherRaw
 
     var latitude: String
     var longitude: String

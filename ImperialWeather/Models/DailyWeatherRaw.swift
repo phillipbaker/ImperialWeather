@@ -1,5 +1,5 @@
 //
-//  DailyWeather.swift
+//  DailyWeatherRaw.swift
 //  ImperialWeather
 //
 //  Created by Phillip Baker on 6/30/21.
@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct DailyWeather: Codable, Identifiable {
+struct DailyWeatherRaw: Codable, Identifiable {
     let id = UUID()
     let day: Date
-    let temperature: Temperature
-    let description: [WeatherDescription]
+    let temperature: TemperatureRaw
+    let description: [WeatherDescriptionRaw]
 }
 
-extension DailyWeather {
+extension DailyWeatherRaw {
     enum CodingKeys: String, CodingKey {
         case day = "dt"
         case temperature = "temp"
@@ -22,8 +22,8 @@ extension DailyWeather {
     }
 }
 
-extension DailyWeather: Equatable {
-    static func == (lhs: DailyWeather, rhs: DailyWeather) -> Bool {
+extension DailyWeatherRaw: Equatable {
+    static func == (lhs: DailyWeatherRaw, rhs: DailyWeatherRaw) -> Bool {
         lhs.id == rhs.id
     }
 }

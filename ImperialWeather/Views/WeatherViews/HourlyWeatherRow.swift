@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HourlyWeatherRow: View {
-    var hourlyWeather: HourlyWeather
+    var hourlyWeather: HourlyWeatherRaw
     
     var body: some View {
         VStack(spacing: 16) {
@@ -33,6 +33,6 @@ struct HourlyWeatherRow: View {
 
 struct HourlyWeatherRow_Previews: PreviewProvider {
     static var previews: some View {
-        HourlyWeatherRow(hourlyWeather: HourlyWeather.preview.first!)
+        HourlyWeatherRow(hourlyWeather: HourlyWeatherRaw.preview.first!)
     }
 }

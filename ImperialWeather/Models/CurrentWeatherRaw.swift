@@ -1,5 +1,5 @@
 //
-//  CurrentWeather.swift
+//  CurrentWeatherRaw.swift
 //  ImperialWeather
 //
 //  Created by Phillip Baker on 6/18/21.
@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct CurrentWeather: Codable {
-    let coordinates: Coordinates
-    let description: [WeatherDescription]
-    let conditions: Conditions
+struct CurrentWeatherRaw: Codable {
+    let coordinates: CoordinatesRaw
+    let description: [WeatherDescriptionRaw]
+    let conditions: ConditionsRaw
     let location: String?
 }
 
-extension CurrentWeather {
+extension CurrentWeatherRaw {
     enum CodingKeys: String, CodingKey {
         case coordinates = "coord"
         case description = "weather"

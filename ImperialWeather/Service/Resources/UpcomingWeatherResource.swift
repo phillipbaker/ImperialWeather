@@ -8,7 +8,7 @@
 import Foundation
 
 struct UpcomingWeatherResource: APIResource {
-    typealias ModelType = UpcomingWeather
+    typealias ModelType = UpcomingWeatherRaw
     
     var path: String { "/data/3.0/onecall" }
     

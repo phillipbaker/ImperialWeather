@@ -10,7 +10,7 @@ import SwiftUI
 
 @available(iOS 16.0, *)
 struct WeatherDetailChartView: View {
-    let dailyWeather: [DailyWeather]
+    let dailyWeather: [DailyWeatherRaw]
     
     var body: some View {
         Chart(dailyWeather) { day in
@@ -68,7 +68,7 @@ struct WeatherDetailChartView: View {
 @available(iOS 16.0, *)
 struct WeatherDetailChartView_Previews: PreviewProvider {
     static var previews: some View {
-        WeatherDetailChartView(dailyWeather: DailyWeather.preview)
+        WeatherDetailChartView(dailyWeather: DailyWeatherRaw.preview)
             .padding(.horizontal)
     }
 }

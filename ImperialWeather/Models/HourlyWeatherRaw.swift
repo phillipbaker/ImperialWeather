@@ -1,5 +1,5 @@
 //
-//  HourlyWeather.swift
+//  HourlyWeatherRaw.swift
 //  ImperialWeather
 //
 //  Created by Phillip Baker on 6/30/21.
@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct HourlyWeather: Codable, Identifiable {
+struct HourlyWeatherRaw: Codable, Identifiable {
     let id = UUID()
     let hour: Date
     let temperature: Double
-    let description: [WeatherDescription]
+    let description: [WeatherDescriptionRaw]
 }
 
-extension HourlyWeather {
+extension HourlyWeatherRaw {
     enum CodingKeys: String, CodingKey {
         case hour = "dt"
         case temperature = "temp"

@@ -1,5 +1,5 @@
 //
-//  UpcomingWeather+Preview.swift
+//  UpcomingWeatherRaw+Preview.swift
 //  ImperialWeather
 //
 //  Created by Phillip Baker on 11/29/22.
@@ -7,6 +7,6 @@
 
 import Foundation
 
-extension UpcomingWeather {
-    static let preview: UpcomingWeather = .init(hourlyWeather: HourlyWeather.preview, dailyWeather: DailyWeather.preview)
+extension UpcomingWeatherRaw {
+    static let preview: UpcomingWeatherRaw = .init(hourlyWeather: HourlyWeatherRaw.preview, dailyWeather: DailyWeatherRaw.preview)
 }

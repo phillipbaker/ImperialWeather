@@ -14,8 +14,8 @@ final class WeatherViewModel: NSObject, ObservableObject {
     
     @Published private(set) var error: Error?
     @Published private(set) var loadingState: LoadingState?
-    @Published private(set) var currentWeather: CurrentWeather?
-    @Published private(set) var upcomingWeather: UpcomingWeather?
+    @Published private(set) var currentWeather: CurrentWeatherRaw?
+    @Published private(set) var upcomingWeather: UpcomingWeatherRaw?
     @Published private(set) var authorizationStatus: CLAuthorizationStatus
     
     private var currentWeatherRequest: APIRequest<CurrentWeatherResource>?

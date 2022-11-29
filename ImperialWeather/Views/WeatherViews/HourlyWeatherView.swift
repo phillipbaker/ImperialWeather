@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HourlyWeatherView: View {
-    var hourlyWeather: [HourlyWeather]
+    var hourlyWeather: [HourlyWeatherRaw]
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -25,7 +25,7 @@ struct HourlyWeatherView: View {
 
 struct HourlyWeatherView_Previews: PreviewProvider {
     static var previews: some View {
-        HourlyWeatherView(hourlyWeather: HourlyWeather.preview)
+        HourlyWeatherView(hourlyWeather: HourlyWeatherRaw.preview)
             .padding(.horizontal)
             .backgroundView()
     }

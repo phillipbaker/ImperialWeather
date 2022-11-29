@@ -1,5 +1,5 @@
 //
-//  Conditions.swift
+//  ConditionsRaw.swift
 //  ImperialWeather
 //
 //  Created by Phillip Baker on 6/18/21.
@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct Conditions: Codable {
+struct ConditionsRaw: Codable {
     let temperature: Double
 }
 
-extension Conditions {
+extension ConditionsRaw {
     enum CodingKeys: String, CodingKey {
         case temperature = "temp"
     }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CurrentWeatherView: View {
     
-    var weather: CurrentWeather
+    var weather: CurrentWeatherRaw
     
     var body: some View {
         VStack(spacing: 32) {
@@ -49,7 +49,7 @@ struct CurrentWeatherView: View {
 
 struct CurrentWeatherView_Previews: PreviewProvider {
     static var previews: some View {
-        CurrentWeatherView(weather: CurrentWeather.preview)
+        CurrentWeatherView(weather: CurrentWeatherRaw.preview)
             .padding()
             .backgroundView()
     }
