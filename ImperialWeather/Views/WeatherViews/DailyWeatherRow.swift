@@ -34,6 +34,6 @@ struct DailyWeatherRow: View {
 
 struct DailyWeatherRow_Previews: PreviewProvider {
     static var previews: some View {
-        DailyWeatherRow(dailyWeather: DailyWeather.previewData.first!)
+        DailyWeatherRow(dailyWeather: DailyWeather.preview.first!)
     }
 }

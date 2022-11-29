@@ -15,7 +15,6 @@
 		F812D9892853DD5F00FC8223 /* WeatherScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F812D9882853DD5F00FC8223 /* WeatherScreen.swift */; };
 		F812D98B2853F24C00FC8223 /* DailyWeatherRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F812D98A2853F24C00FC8223 /* DailyWeatherRow.swift */; };
 		F812D98D2853F4AD00FC8223 /* HourlyWeatherRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F812D98C2853F4AD00FC8223 /* HourlyWeatherRow.swift */; };
-		F812D98F2854574000FC8223 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F812D98E2854574000FC8223 /* PreviewData.swift */; };
 		F812D99128549C1600FC8223 /* PaneShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F812D99028549C1600FC8223 /* PaneShadow.swift */; };
 		F81CFD3D286A3C2B002CCE51 /* VerticalSizeClassStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81CFD3C286A3C2B002CCE51 /* VerticalSizeClassStack.swift */; };
 		F83B0A25275CEC44001F4F3A /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83B0A19275CEC44001F4F3A /* Coordinates.swift */; };
@@ -63,6 +62,11 @@
 		F8C5ABBE26EF6F6900466C34 /* Celsius.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C5ABBD26EF6F6900466C34 /* Celsius.swift */; };
 		F8CEA31F268B69FF0070DEE0 /* Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CEA31E268B69FF0070DEE0 /* Formatting.swift */; };
 		F8DB82BD269EDEAF00B3936B /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DB82BC269EDEAF00B3936B /* NetworkingError.swift */; };
+		F8EB4CA829364AAD00BAE881 /* CurrentWeather+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EB4CA729364AAD00BAE881 /* CurrentWeather+Preview.swift */; };
+		F8EB4CAA29364AC800BAE881 /* WeatherDescription+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EB4CA929364AC800BAE881 /* WeatherDescription+Preview.swift */; };
+		F8EB4CAC29364ADA00BAE881 /* UpcomingWeather+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EB4CAB29364ADA00BAE881 /* UpcomingWeather+Preview.swift */; };
+		F8EB4CAE29364AF000BAE881 /* HourlyWeather+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EB4CAD29364AF000BAE881 /* HourlyWeather+Preview.swift */; };
+		F8EB4CB029364B0000BAE881 /* DailyWeather+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EB4CAF29364B0000BAE881 /* DailyWeather+Preview.swift */; };
 		F8EDEF6626F0CB68008CB9A7 /* TemperatureScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EDEF6526F0CB68008CB9A7 /* TemperatureScale.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,7 +79,6 @@
 		F812D9882853DD5F00FC8223 /* WeatherScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherScreen.swift; sourceTree = "<group>"; };
 		F812D98A2853F24C00FC8223 /* DailyWeatherRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherRow.swift; sourceTree = "<group>"; };
 		F812D98C2853F4AD00FC8223 /* HourlyWeatherRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherRow.swift; sourceTree = "<group>"; };
-		F812D98E2854574000FC8223 /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
 		F812D99028549C1600FC8223 /* PaneShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaneShadow.swift; sourceTree = "<group>"; };
 		F81CFD3C286A3C2B002CCE51 /* VerticalSizeClassStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalSizeClassStack.swift; sourceTree = "<group>"; };
 		F83B0A19275CEC44001F4F3A /* Coordinates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
@@ -125,6 +128,11 @@
 		F8C5ABBD26EF6F6900466C34 /* Celsius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Celsius.swift; sourceTree = "<group>"; };
 		F8CEA31E268B69FF0070DEE0 /* Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatting.swift; sourceTree = "<group>"; };
 		F8DB82BC269EDEAF00B3936B /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
+		F8EB4CA729364AAD00BAE881 /* CurrentWeather+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrentWeather+Preview.swift"; sourceTree = "<group>"; };
+		F8EB4CA929364AC800BAE881 /* WeatherDescription+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherDescription+Preview.swift"; sourceTree = "<group>"; };
+		F8EB4CAB29364ADA00BAE881 /* UpcomingWeather+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UpcomingWeather+Preview.swift"; sourceTree = "<group>"; };
+		F8EB4CAD29364AF000BAE881 /* HourlyWeather+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HourlyWeather+Preview.swift"; sourceTree = "<group>"; };
+		F8EB4CAF29364B0000BAE881 /* DailyWeather+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DailyWeather+Preview.swift"; sourceTree = "<group>"; };
 		F8EDEF6526F0CB68008CB9A7 /* TemperatureScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureScale.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -245,7 +253,11 @@
 		F87E5C98267C9E960032949A /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				F812D98E2854574000FC8223 /* PreviewData.swift */,
+				F8EB4CA729364AAD00BAE881 /* CurrentWeather+Preview.swift */,
+				F8EB4CA929364AC800BAE881 /* WeatherDescription+Preview.swift */,
+				F8EB4CAB29364ADA00BAE881 /* UpcomingWeather+Preview.swift */,
+				F8EB4CAD29364AF000BAE881 /* HourlyWeather+Preview.swift */,
+				F8EB4CAF29364B0000BAE881 /* DailyWeather+Preview.swift */,
 				F87E5C99267C9E960032949A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -418,23 +430,27 @@
 				F83B0A25275CEC44001F4F3A /* Coordinates.swift in Sources */,
 				F812D98B2853F24C00FC8223 /* DailyWeatherRow.swift in Sources */,
 				F867BC29275E0725001CBA62 /* CurrentWeatherView.swift in Sources */,
+				F8EB4CB029364B0000BAE881 /* DailyWeather+Preview.swift in Sources */,
 				F87E5CB8267CA53B0032949A /* WeatherViewModel.swift in Sources */,
 				F897EE3428E728CF00A9C504 /* NetworkRequest.swift in Sources */,
 				F8A45FC026ECEC5900C34631 /* WeatherIcon.swift in Sources */,
 				F8ABC7B428EC3D3300475BF3 /* InvalidURLMessage.swift in Sources */,
 				F897EE3628E728E300A9C504 /* APIRequest.swift in Sources */,
 				F867BC33275E0725001CBA62 /* DataAttributionView.swift in Sources */,
+				F8EB4CAC29364ADA00BAE881 /* UpcomingWeather+Preview.swift in Sources */,
 				F80559F22757AD5A00F167E9 /* Fahrenheit.swift in Sources */,
 				F812D98D2853F4AD00FC8223 /* HourlyWeatherRow.swift in Sources */,
 				F812D99128549C1600FC8223 /* PaneShadow.swift in Sources */,
 				F8C5ABBE26EF6F6900466C34 /* Celsius.swift in Sources */,
 				F867BC31275E0725001CBA62 /* TemperatureScalePickerView.swift in Sources */,
 				F867BC27275E0725001CBA62 /* HourlyWeatherView.swift in Sources */,
-				F812D98F2854574000FC8223 /* PreviewData.swift in Sources */,
 				F81CFD3D286A3C2B002CCE51 /* VerticalSizeClassStack.swift in Sources */,
+				F8EB4CA829364AAD00BAE881 /* CurrentWeather+Preview.swift in Sources */,
+				F8EB4CAE29364AF000BAE881 /* HourlyWeather+Preview.swift in Sources */,
 				F867BC30275E0725001CBA62 /* HorizontalSizeClassStack.swift in Sources */,
 				F83B0A28275CEC44001F4F3A /* CurrentWeather.swift in Sources */,
 				F867BC2D275E0725001CBA62 /* BackgroundView.swift in Sources */,
+				F8EB4CAA29364AC800BAE881 /* WeatherDescription+Preview.swift in Sources */,
 				F800ABEC2693B44E00060ACF /* PaneBackground.swift in Sources */,
 				F8ABC7BE28EC680F00475BF3 /* WeatherDetailView.swift in Sources */,
 				F812D9892853DD5F00FC8223 /* WeatherScreen.swift in Sources */,

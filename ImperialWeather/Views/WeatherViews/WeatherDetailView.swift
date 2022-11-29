@@ -11,7 +11,7 @@ import SwiftUI
 struct WeatherDetailView: View {
     let dailyWeather: [DailyWeather]
     let initialSelection: DailyWeather
-    @State private var selection: DailyWeather = DailyWeather.previewData[0]
+    @State private var selection: DailyWeather = DailyWeather.preview[0]
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -113,6 +113,6 @@ struct WeatherDetailView: View {
 
 struct WeatherDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        WeatherDetailView(dailyWeather: DailyWeather.previewData, initialSelection: DailyWeather.previewData[0])
+        WeatherDetailView(dailyWeather: DailyWeather.preview, initialSelection: DailyWeather.preview[0])
     }
 }
