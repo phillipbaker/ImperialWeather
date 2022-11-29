@@ -161,15 +161,9 @@
 		F8164F9E275CEB47000EAE55 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F8EB4CB1293652D600BAE881 /* Entities */,
 				F8CEA31E268B69FF0070DEE0 /* Formatting.swift */,
-				F83B0A1C275CEC44001F4F3A /* CurrentWeatherRaw.swift */,
-				F83B0A20275CEC44001F4F3A /* UpcomingWeatherRaw.swift */,
-				F83B0A1E275CEC44001F4F3A /* HourlyWeatherRaw.swift */,
-				F812D9802853B00200FC8223 /* DailyWeatherRaw.swift */,
-				F83B0A1A275CEC44001F4F3A /* ConditionsRaw.swift */,
-				F83B0A19275CEC44001F4F3A /* CoordinatesRaw.swift */,
-				F83B0A1B275CEC44001F4F3A /* TemperatureRaw.swift */,
-				F83B0A21275CEC44001F4F3A /* WeatherDescriptionRaw.swift */,
+				F8EB4CB2293652F200BAE881 /* Raw */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -334,6 +328,28 @@
 				F87E5CB7267CA53B0032949A /* WeatherViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F8EB4CB1293652D600BAE881 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		F8EB4CB2293652F200BAE881 /* Raw */ = {
+			isa = PBXGroup;
+			children = (
+				F83B0A1C275CEC44001F4F3A /* CurrentWeatherRaw.swift */,
+				F83B0A20275CEC44001F4F3A /* UpcomingWeatherRaw.swift */,
+				F83B0A1E275CEC44001F4F3A /* HourlyWeatherRaw.swift */,
+				F812D9802853B00200FC8223 /* DailyWeatherRaw.swift */,
+				F83B0A1A275CEC44001F4F3A /* ConditionsRaw.swift */,
+				F83B0A19275CEC44001F4F3A /* CoordinatesRaw.swift */,
+				F83B0A1B275CEC44001F4F3A /* TemperatureRaw.swift */,
+				F83B0A21275CEC44001F4F3A /* WeatherDescriptionRaw.swift */,
+			);
+			path = Raw;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
