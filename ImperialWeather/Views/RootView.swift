@@ -11,20 +11,13 @@ struct RootView: View {
     @StateObject private var viewModel = WeatherViewModel()
     
     var body: some View {
-        ZStack {
-            Color.weatherBackground
-                .ignoresSafeArea()
-            
-            switch viewModel.authorizationStatus {
-            case .restricted, .denied:
-                ErrorScreen(error: .locationPermission)
-            case .authorizedAlways, .authorizedWhenInUse:
-                LoadingScreen(viewModel: viewModel)
-            case .notDetermined:
-                EmptyView()
-            @unknown default:
-                ErrorScreen(error: .locationError)
-            }
+        switch viewModel.authorizationStatus {
+        case .restricted, .denied, .notDetermined:
+            ErrorView(error: .locationPermission)
+        case .authorizedAlways, .authorizedWhenInUse:
+            WeatherScreen(viewModel: viewModel)
+        @unknown default:
+            ErrorView(error: .locationError)
         }
     }
 }
