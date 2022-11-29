@@ -23,7 +23,7 @@ extension Date {
 
 extension Double {
     var fahrenheitString: String {
-        ((self * 1.8) + 32).formatted(.number.precision(.significantDigits(1)))
+        ((self * 1.8) + 32).formatted(.number.precision(.significantDigits(2)))
     }
 
     var celsiusString: String {
