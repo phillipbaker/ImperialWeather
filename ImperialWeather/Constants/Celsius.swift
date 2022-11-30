@@ -8,6 +8,6 @@
 import Foundation
 
 enum Celsius {
-    static let short = "ºC"
+    static let abbreviated = "ºC"
     static let full = "º Celsius"
 }

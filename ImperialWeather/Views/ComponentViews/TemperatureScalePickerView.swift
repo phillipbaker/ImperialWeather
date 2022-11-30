@@ -13,10 +13,10 @@ struct TemperatureScalePickerView: View {
     var body: some View {
         Picker("Temperature Scale Picker", selection: $temperatureScale) {
             Group {
-                Text(Celsius.short)
+                Text(Celsius.abbreviated)
                     .tag(TemperatureScale.celsius)
                     .accessibility(label: Text(Celsius.full))
-                Text(Fahrenheit.short)
+                Text(Fahrenheit.abbreviated)
                     .tag(TemperatureScale.fahrenheit)
                     .accessibility(label: Text(Fahrenheit.full))
             }

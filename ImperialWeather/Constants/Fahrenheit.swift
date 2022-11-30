@@ -8,6 +8,6 @@
 import Foundation
 
 enum Fahrenheit {
-    static let short = "ºF"
+    static let abbreviated = "ºF"
     static let full = "º Fahrenheit"
 }

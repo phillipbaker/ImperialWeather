@@ -13,8 +13,8 @@ struct PrimaryTemperatureView: View {
     
     var body: some View {
         Text(temperatureScale == .celsius
-             ? temperature.celsius + Celsius.short
-             : temperature.fahrenheit + Fahrenheit.short
+             ? temperature.celsius + Celsius.abbreviated
+             : temperature.fahrenheit + Fahrenheit.abbreviated
         )
         .fontWeight(.medium)
         .frame(minWidth: 40)
