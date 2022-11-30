@@ -8,33 +8,32 @@
 import SwiftUI
 
 struct CurrentWeatherView: View {
-    
-    var weather: CurrentWeatherRaw
+    var weather: CurrentWeather
     
     var body: some View {
         VStack(spacing: 32) {
             VerticalSizeClassStack(spacing: 32) {
                 VStack(spacing: 4) {
-                    Text(weather.location ?? "Unknown")
+                    Text(weather.location)
                         .font(.system(.largeTitle, design: .rounded))
                         .fontWeight(.bold)
-                    Text(weather.description.first?.description ?? "Unknown")
+                    Text(weather.description)
                 }
                 .opacity(0.9)
                 
                 HStack(spacing: 16) {
-                    WeatherImageView(imageName: WeatherDescriptionRaw.mapFirstIcon(from: weather.description))
+                    WeatherImageView(imageName: weather.icon)
                         .font(.system(size: 48))
                     
                     Divider()
                         .frame(maxHeight: 100)
                     
                     VStack(alignment: .leading, spacing: 4) {
-                        PrimaryTemperatureView(temperature: weather.conditions.temperature)
+                        PrimaryTemperatureView(temperature: weather.temperature)
                             .font(.largeTitle)
                             .opacity(0.9)
                         
-                        SecondaryTemperatureView(temperature: weather.conditions.temperature)
+                        SecondaryTemperatureView(temperature: weather.temperature)
                     }
                 }
             }
@@ -49,7 +48,7 @@ struct CurrentWeatherView: View {
 
 struct CurrentWeatherView_Previews: PreviewProvider {
     static var previews: some View {
-        CurrentWeatherView(weather: CurrentWeatherRaw.preview)
+        CurrentWeatherView(weather: CurrentWeather.preview)
             .padding()
             .backgroundView()
     }

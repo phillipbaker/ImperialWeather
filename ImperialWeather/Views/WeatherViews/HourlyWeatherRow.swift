@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct HourlyWeatherRow: View {
-    var hourlyWeather: HourlyWeatherRaw
+    var hourlyWeather: HourlyWeather
     
     var body: some View {
         VStack(spacing: 16) {
-            Text(hourlyWeather.hour.nowHourFormat)
+            Text(hourlyWeather.hour.narrowHour)
                 .frame(minWidth: 44)
                 .font(.callout)
                 .textCase(.uppercase)
                 .foregroundColor(.secondary)
             
-            WeatherImageView(imageName: WeatherDescriptionRaw.mapFirstIcon(from: hourlyWeather.description))
+            WeatherImageView(imageName: hourlyWeather.icon)
                 .frame(minWidth: 28, minHeight: 28, alignment: .top)
                 .imageScale(.large)
             
@@ -33,6 +33,6 @@ struct HourlyWeatherRow: View {
 
 struct HourlyWeatherRow_Previews: PreviewProvider {
     static var previews: some View {
-        HourlyWeatherRow(hourlyWeather: HourlyWeatherRaw.preview.first!)
+        HourlyWeatherRow(hourlyWeather: HourlyWeather.preview.first!)
     }
 }

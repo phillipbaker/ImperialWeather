@@ -9,9 +9,9 @@ import Charts
 import SwiftUI
 
 struct WeatherDetailView: View {
-    let dailyWeather: [DailyWeatherRaw]
-    let initialSelection: DailyWeatherRaw
-    @State private var selection: DailyWeatherRaw = DailyWeatherRaw.preview[0]
+    let dailyWeather: [DailyWeather]
+    let initialSelection: DailyWeather
+    @State private var selection: DailyWeather = DailyWeather.preview.first!
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -47,17 +47,17 @@ struct WeatherDetailView: View {
                         .paneBackground()
                         
                         HStack(spacing: 16) {
-                            WeatherImageView(imageName: WeatherDescriptionRaw.mapFirstIcon(from: selection.description))
+                            WeatherImageView(imageName: selection.icon)
                                 .font(.system(size: 48))
                             
                             Divider()
                             
                             VStack(alignment: .leading, spacing: 4) {
-                                PrimaryTemperatureView(temperature: selection.temperature.max)
+                                PrimaryTemperatureView(temperature: selection.temperature)
                                     .font(.largeTitle)
                                     .opacity(0.9)
                                 
-                                SecondaryTemperatureView(temperature: selection.temperature.max)
+                                SecondaryTemperatureView(temperature: selection.temperature)
                             }
                             Spacer()
                             
@@ -113,6 +113,9 @@ struct WeatherDetailView: View {
 
 struct WeatherDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        WeatherDetailView(dailyWeather: DailyWeatherRaw.preview, initialSelection: DailyWeatherRaw.preview[0])
+        WeatherDetailView(
+            dailyWeather: DailyWeather.preview,
+            initialSelection: DailyWeather.preview.first!
+        )
     }
 }

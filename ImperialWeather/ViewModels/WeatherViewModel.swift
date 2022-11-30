@@ -10,20 +10,14 @@ import Foundation
 
 @MainActor
 final class WeatherViewModel: NSObject, ObservableObject {
-    // MARK: - Properties
-    
     @Published private(set) var error: Error?
+    @Published private(set) var weather: HomeWeather?
     @Published private(set) var loadingState: LoadingState?
-    @Published private(set) var currentWeather: CurrentWeatherRaw?
-    @Published private(set) var upcomingWeather: UpcomingWeatherRaw?
     @Published private(set) var authorizationStatus: CLAuthorizationStatus
-    
-    private var currentWeatherRequest: APIRequest<CurrentWeatherResource>?
-    private var upcomingWeatherRequest: APIRequest<UpcomingWeatherResource>?
     
     private let locationManager = CLLocationManager()
     
-    // MARK: - Methods
+    var getWeatherUseCase = GetWeather()
     
     @MainActor
     override init() {
@@ -39,49 +33,24 @@ final class WeatherViewModel: NSObject, ObservableObject {
         locationManager.requestWhenInUseAuthorization()
     }
     
-    func fetchWeather(for location: CLLocationCoordinate2D) async {
+    private func getWeather(lat: String, lon: String) async throws {
         guard loadingState != .loading else { return }
         loadingState = .loading
         
-        let currentWeatherResource = CurrentWeatherResource(latitude: String(location.latitude), longitude: String(location.longitude))
-        let currentRequest = APIRequest(resource: currentWeatherResource)
-        self.currentWeatherRequest = currentRequest
-
-        let upcomingWeatherResource = UpcomingWeatherResource(latitude: String(location.latitude), longitude: String(location.longitude))
-        let upcomingRequest = APIRequest(resource: upcomingWeatherResource)
-        self.upcomingWeatherRequest = upcomingRequest
-        
         do {
-            currentWeather = try await currentRequest.execute()
-            var upcoming = try await upcomingRequest.execute()
-            upcomingWeather = upcoming?.removeCurrentDayFromDailyWeather()
+            weather = try await getWeatherUseCase.weather(lat: lat, lon: lon)
             loadingState = .loaded
         } catch {
-            switch error {
-            case NetworkingError.invalidUrl:
-                loadingState = .failed(.invalidUrl)
-            case NetworkingError.locationError:
-                loadingState = .failed(.locationError)
-            case NetworkingError.invalidResponse:
-                loadingState = .failed(.invalidResponse)
-            case NetworkingError.invalidData:
-                loadingState = .failed(.invalidData)
-            case NetworkingError.networkError:
-                loadingState = .failed(.networkError)
-            default:
-                loadingState = .failed(.invalidData)
-            }
+            loadingState = .failed(.invalidData)
         }
     }
 }
 
 extension WeatherViewModel: CLLocationManagerDelegate {
-    // MARK: - CLLocationManager Delegate Methods
-    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last?.coordinate {
             locationManager.stopUpdatingLocation()
-            Task { await fetchWeather(for: location) }
+            Task { try await getWeather(lat: String(location.latitude), lon: String(location.longitude)) }
         }
     }
     

@@ -12,7 +12,9 @@ struct HourlyWeather: Identifiable {
     let hour: Date
     let icon: String
     let temperature: Double
-    
+}
+
+extension HourlyWeather {
     static func mapHourlyWeatherFromData(data: [HourlyWeatherPlain]) -> [HourlyWeather] {
         return data.map { hourlyWeatherPlain in
             mapHourlyWeather(plain: hourlyWeatherPlain)
@@ -26,9 +28,5 @@ struct HourlyWeather: Identifiable {
             icon: plain.icon,
             temperature: plain.temperature
         )
-    }
-    
-    private func hourFormat() -> String {
-        return hour <= Date.now ? "Now" : hour.formatted(.dateTime.hour())
     }
 }

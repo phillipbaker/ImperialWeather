@@ -14,15 +14,18 @@ struct WeatherView: View {
         ScrollView(.vertical) {
             HorizontalSizeClassStack(verticalAlignment: .top, spacing: 16) {
                 VStack(spacing: 16) {
-                    if let currentWeather = viewModel.currentWeather {
+                    if let currentWeather = viewModel.weather?.current {
                         CurrentWeatherView(weather: currentWeather)
                     }
                 }
                 
                 VStack(spacing: 16) {
-                    if let upcomingWeather = viewModel.upcomingWeather {
-                        HourlyWeatherView(hourlyWeather: upcomingWeather.hourlyWeather)
-                        DailyWeatherView(dailyWeather: upcomingWeather.dailyWeather)
+                    if let hourlyWeather = viewModel.weather?.hourly {
+                        HourlyWeatherView(hourlyWeather: hourlyWeather)
+                    }
+                    
+                    if let dailyWeather = viewModel.weather?.daily {
+                        DailyWeatherView(dailyWeather: dailyWeather)
                     }
                     
                     DataAttributionView()

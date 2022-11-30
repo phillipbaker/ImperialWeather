@@ -13,7 +13,9 @@ struct CurrentWeather: Identifiable {
     let location: String
     let description: String
     let temperature: Double
-    
+}
+
+extension CurrentWeather {
     static func mapCurrentWeatherFromData(data: CurrentWeatherPlain) -> CurrentWeather {
         return CurrentWeather(
             id: UUID(),

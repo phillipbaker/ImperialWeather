@@ -10,34 +10,34 @@ import SwiftUI
 
 @available(iOS 16.0, *)
 struct WeatherDetailChartView: View {
-    let dailyWeather: [DailyWeatherRaw]
+    let dailyWeather: [DailyWeather]
     
     var body: some View {
         Chart(dailyWeather) { day in
             LineMark(
                 x: .value("Day", day.day, unit: .day),
-                y: .value("Temperature", day.temperature.max)
+                y: .value("Temperature", day.temperature)
             )
             .interpolationMethod(.catmullRom)
             
             PointMark(
                 x: .value("Day", day.day, unit: .day),
-                y: .value("Temperature", day.temperature.max)
+                y: .value("Temperature", day.temperature)
             )
             .annotation(position: .bottom, spacing: 16) {
-                Text("\(day.temperature.max, format: .number.precision(.significantDigits(2)))")
+                Text("\(day.temperature)")
                     .font(.caption)
                     .foregroundColor(.secondary)
             }
             .accessibilityLabel("\(day.day)")
-            .accessibilityValue("\(day.temperature.max) degrees celsius")
+            .accessibilityValue("\(day.temperature) degrees celsius")
             
             PointMark(
                 x: .value("Day", day.day, unit: .day),
-                y: .value("Temperature", day.temperature.max)
+                y: .value("Temperature", day.temperature)
             )
             .annotation(position: .overlay) {
-                WeatherImageView(imageName: WeatherDescriptionRaw.mapFirstIcon(from: day.description))
+                WeatherImageView(imageName: day.icon)
             }
         }
         .chartXAxis {
@@ -68,7 +68,7 @@ struct WeatherDetailChartView: View {
 @available(iOS 16.0, *)
 struct WeatherDetailChartView_Previews: PreviewProvider {
     static var previews: some View {
-        WeatherDetailChartView(dailyWeather: DailyWeatherRaw.preview)
+        WeatherDetailChartView(dailyWeather: DailyWeather.preview)
             .padding(.horizontal)
     }
 }

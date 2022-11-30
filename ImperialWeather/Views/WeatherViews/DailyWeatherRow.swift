@@ -8,23 +8,23 @@
 import SwiftUI
 
 struct DailyWeatherRow: View {
-    var dailyWeather: DailyWeatherRaw
+    var dailyWeather: DailyWeather
     
     var body: some View {
         SizeCategoryStackView {
-            Text(dailyWeather.day.wideWeekdayFormat)
+            Text(dailyWeather.day.wideWeekday)
                 .frame(minWidth: 92, alignment: .leading)
                 .opacity(0.9)
             
             Spacer()
             
-            WeatherImageView(imageName: WeatherDescriptionRaw.mapFirstIcon(from: dailyWeather.description))
+            WeatherImageView(imageName: dailyWeather.icon)
             
             Spacer()
             
             Group {
-                PrimaryTemperatureView(temperature: dailyWeather.temperature.max).opacity(0.9)
-                SecondaryTemperatureView(temperature: dailyWeather.temperature.max)
+                PrimaryTemperatureView(temperature: dailyWeather.temperature).opacity(0.9)
+                SecondaryTemperatureView(temperature: dailyWeather.temperature)
             }
             .font(.system(.body, design: .rounded))
             .multilineTextAlignment(.trailing)
@@ -34,6 +34,6 @@ struct DailyWeatherRow: View {
 
 struct DailyWeatherRow_Previews: PreviewProvider {
     static var previews: some View {
-        DailyWeatherRow(dailyWeather: DailyWeatherRaw.preview.first!)
+        DailyWeatherRow(dailyWeather: DailyWeather.preview.first!)
     }
 }

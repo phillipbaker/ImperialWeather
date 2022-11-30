@@ -8,15 +8,15 @@
 import Foundation
 
 extension Date {
-    var nowHourFormat: String {
+    var narrowHour: String {
         self <= Date.now ? "Now" : self.formatted(.dateTime.hour())
     }
 
-    var wideWeekdayFormat: String {
+    var wideWeekday: String {
         self.formatted(.dateTime.weekday(.wide))
     }
     
-    var narrowDayFormat: String {
+    var narrowWeekday: String {
         self.formatted(.dateTime.weekday(.narrow))
     }
 }

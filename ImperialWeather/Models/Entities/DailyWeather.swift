@@ -7,12 +7,14 @@
 
 import Foundation
 
-struct DailyWeather: Identifiable {
+struct DailyWeather: Identifiable, Equatable {
     let id: UUID
     let day: Date
     let icon: String
     let temperature: Double
-    
+}
+
+extension DailyWeather {
     static func mapDailyWeatherFromData(data: [DailyWeatherPlain]) -> [DailyWeather] {
         return data.map { dailyWeatherPlain in
             mapDailyWeather(plain: dailyWeatherPlain)
@@ -26,17 +28,5 @@ struct DailyWeather: Identifiable {
             icon: plain.icon,
             temperature: plain.temperature
         )
-    }
-
-    private static func mapFahrenheit(from temperature: Double) -> Double {
-        return ((temperature * 1.8) + 32)
-    }
-    
-    private func wide() -> String {
-        return day.formatted(.dateTime.weekday(.wide))
-    }
-    
-    private func narrow() -> String {
-        return day.formatted(.dateTime.weekday(.narrow))
     }
 }

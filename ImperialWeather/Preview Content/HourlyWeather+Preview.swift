@@ -7,57 +7,85 @@
 
 import Foundation
 
-extension HourlyWeatherRaw {
-    static let preview: [HourlyWeatherRaw] = [
-        .init(
+extension HourlyWeather {
+    static let preview = [
+        HourlyWeather(
+            id: UUID(),
             hour: Date.now,
-            temperature: 79.0,
-            description: [WeatherDescriptionRaw.preview]
+            icon: WeatherIcon.cloud,
+            temperature: 17.4
         ),
-        .init(
+        HourlyWeather(
+            id: UUID(),
             hour: Calendar.current.date(byAdding: .hour, value: 1, to: Date.now)!,
-            temperature: 77.0,
-            description: [WeatherDescriptionRaw.preview]
+            icon: WeatherIcon.drizzle,
+            temperature: 19.2
         ),
-        .init(
-            hour: Calendar.current.date(byAdding: .hour, value: 2, to: Date.now)!,
-            temperature: 77.0,
-            description: [WeatherDescriptionRaw.preview]
+        HourlyWeather(
+            id: UUID(),
+            hour: Calendar.current.date(byAdding: .hour, value: 1, to: Date.now)!,
+            icon: WeatherIcon.heavyRain,
+            temperature: 22.0
         ),
-        .init(
-            hour: Calendar.current.date(byAdding: .hour, value: 3, to: Date.now)!,
-            temperature: 77.0,
-            description: [WeatherDescriptionRaw.preview]
+        HourlyWeather(
+            id: UUID(),
+            hour: Calendar.current.date(byAdding: .hour, value: 1, to: Date.now)!,
+            icon: WeatherIcon.rain,
+            temperature: 26.0
         ),
-        .init(
-            hour: Calendar.current.date(byAdding: .hour, value: 4, to: Date.now)!,
-            temperature: 76.0,
-            description: [WeatherDescriptionRaw.preview]
+        HourlyWeather(
+            id: UUID(),
+            hour: Calendar.current.date(byAdding: .hour, value: 1, to: Date.now)!,
+            icon: WeatherIcon.thunderstorm,
+            temperature: 19.7
         ),
-        .init(
-            hour: Calendar.current.date(byAdding: .hour, value: 5, to: Date.now)!,
-            temperature: 75.0,
-            description: [WeatherDescriptionRaw.preview]
+        HourlyWeather(
+            id: UUID(),
+            hour: Calendar.current.date(byAdding: .hour, value: 1, to: Date.now)!,
+            icon: WeatherIcon.snow,
+            temperature: 16.9
         ),
-        .init(
-            hour: Calendar.current.date(byAdding: .hour, value: 6, to: Date.now)!,
-            temperature: 75.0,
-            description: [WeatherDescriptionRaw.preview]
+        HourlyWeather(
+            id: UUID(),
+            hour: Calendar.current.date(byAdding: .hour, value: 1, to: Date.now)!,
+            icon: WeatherIcon.sun,
+            temperature: 14.5
         ),
-        .init(
-            hour: Calendar.current.date(byAdding: .hour, value: 7, to: Date.now)!,
-            temperature: 74.0,
-            description: [WeatherDescriptionRaw.preview]
+        HourlyWeather(
+            id: UUID(),
+            hour: Calendar.current.date(byAdding: .hour, value: 1, to: Date.now)!,
+            icon: WeatherIcon.placeholder,
+            temperature: 16.0
         ),
-        .init(
-            hour: Calendar.current.date(byAdding: .hour, value: 8, to: Date.now)!,
-            temperature: 73.0,
-            description: [WeatherDescriptionRaw.preview]
+        HourlyWeather(
+            id: UUID(),
+            hour: Calendar.current.date(byAdding: .hour, value: 1, to: Date.now)!,
+            icon: WeatherIcon.dust,
+            temperature: 21.0
         ),
-        .init(
-            hour: Calendar.current.date(byAdding: .hour, value: 9, to: Date.now)!,
-            temperature: 73.0,
-            description: [WeatherDescriptionRaw.preview]
+        HourlyWeather(
+            id: UUID(),
+            hour: Calendar.current.date(byAdding: .hour, value: 1, to: Date.now)!,
+            icon: WeatherIcon.fog,
+            temperature: 19.5
+        ),
+        HourlyWeather(
+            id: UUID(),
+            hour: Calendar.current.date(byAdding: .hour, value: 1, to: Date.now)!,
+            icon: WeatherIcon.haze,
+            temperature: 17.6
+        ),
+        HourlyWeather(
+            id: UUID(),
+            hour: Calendar.current.date(byAdding: .hour, value: 1, to: Date.now)!,
+            icon: WeatherIcon.ice,
+            temperature: 15.0
+        ),
+        HourlyWeather(
+            id: UUID(),
+            hour: Calendar.current.date(byAdding: .hour, value: 1, to: Date.now)!,
+            icon: WeatherIcon.moonStars,
+            temperature: 14.5
         )
     ]
 }
