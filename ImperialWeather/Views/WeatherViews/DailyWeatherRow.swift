@@ -18,7 +18,7 @@ struct DailyWeatherRow: View {
             
             Spacer()
             
-            WeatherImageView(imageName: dailyWeather.description.first?.conditionName ?? WeatherIcon.dashedSquare)
+            WeatherImageView(imageName: WeatherDescriptionRaw.mapFirstIcon(from: dailyWeather.description))
             
             Spacer()
             

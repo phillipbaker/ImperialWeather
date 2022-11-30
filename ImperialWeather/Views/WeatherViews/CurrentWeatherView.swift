@@ -23,7 +23,7 @@ struct CurrentWeatherView: View {
                 .opacity(0.9)
                 
                 HStack(spacing: 16) {
-                    WeatherImageView(imageName: weather.description.first?.conditionName ?? WeatherIcon.dashedSquare)
+                    WeatherImageView(imageName: WeatherDescriptionRaw.mapFirstIcon(from: weather.description))
                         .font(.system(size: 48))
                     
                     Divider()

@@ -12,8 +12,16 @@ struct WeatherDescriptionRaw: Codable {
     let description: String
     let icon: String
     let id: Int
-
-    var conditionName: String {
+    
+    static func mapFirstDescription(from weatherDescriptionsRaw: [WeatherDescriptionRaw]) -> String {
+        return weatherDescriptionsRaw.first?.description ?? "No Description"
+    }
+    
+    static func mapFirstIcon(from weatherDescriptionsRaw: [WeatherDescriptionRaw]) -> String {
+        return weatherDescriptionsRaw.first?.mapIcon() ?? WeatherIcon.placeholder
+    }
+    
+    func mapIcon() -> String {
         switch id {
         case 200...210, 212...232:
             return WeatherIcon.thunderstorm
@@ -50,16 +58,16 @@ struct WeatherDescriptionRaw: Codable {
         case 781:
             return WeatherIcon.tornado
         case 800:
-            if icon.contains("d") {
-                return WeatherIcon.sun
-            } else {
-                return WeatherIcon.moonStars
-            }
+            return isDaytime() ? WeatherIcon.sun : WeatherIcon.moonStars
         case 801...804:
             return WeatherIcon.cloud
         default:
-            return WeatherIcon.dashedSquare
+            return WeatherIcon.placeholder
         }
+    }
+    
+    private func isDaytime() -> Bool {
+        return icon.contains("d") ? true : false
     }
 }
 

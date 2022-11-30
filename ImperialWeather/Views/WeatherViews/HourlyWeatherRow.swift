@@ -18,7 +18,7 @@ struct HourlyWeatherRow: View {
                 .textCase(.uppercase)
                 .foregroundColor(.secondary)
             
-            WeatherImageView(imageName: hourlyWeather.description.first?.conditionName ?? WeatherIcon.dashedSquare)
+            WeatherImageView(imageName: WeatherDescriptionRaw.mapFirstIcon(from: hourlyWeather.description))
                 .frame(minWidth: 28, minHeight: 28, alignment: .top)
                 .imageScale(.large)
             

@@ -8,6 +8,5 @@
 import Foundation
 
 struct TemperatureRaw: Codable {
-    let min: Double
     let max: Double
 }

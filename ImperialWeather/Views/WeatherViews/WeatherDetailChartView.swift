@@ -37,7 +37,7 @@ struct WeatherDetailChartView: View {
                 y: .value("Temperature", day.temperature.max)
             )
             .annotation(position: .overlay) {
-                WeatherImageView(imageName: day.description[0].conditionName)
+                WeatherImageView(imageName: WeatherDescriptionRaw.mapFirstIcon(from: day.description))
             }
         }
         .chartXAxis {

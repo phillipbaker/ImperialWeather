@@ -8,17 +8,24 @@
 import Foundation
 
 struct CurrentWeatherRaw: Codable {
-    let coordinates: CoordinatesRaw
-    let description: [WeatherDescriptionRaw]
-    let conditions: ConditionsRaw
     let location: String?
+    let conditions: ConditionsRaw
+    let description: [WeatherDescriptionRaw]
+    
+    func mapToPlain() -> CurrentWeatherPlain {
+        return CurrentWeatherPlain(
+            icon: WeatherDescriptionRaw.mapFirstIcon(from: description),
+            location: location ?? "Unknown Location",
+            description: WeatherDescriptionRaw.mapFirstDescription(from: description),
+            temperature: conditions.temperature
+        )
+    }
 }
 
 extension CurrentWeatherRaw {
     enum CodingKeys: String, CodingKey {
-        case coordinates = "coord"
-        case description = "weather"
-        case conditions = "main"
         case location = "name"
+        case conditions = "main"
+        case description = "weather"
     }
 }

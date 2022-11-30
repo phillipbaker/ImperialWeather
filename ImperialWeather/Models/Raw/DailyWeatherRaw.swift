@@ -7,11 +7,26 @@
 
 import Foundation
 
-struct DailyWeatherRaw: Codable, Identifiable {
+struct DailyWeatherRaw: Decodable, Identifiable {
     let id = UUID()
     let day: Date
     let temperature: TemperatureRaw
     let description: [WeatherDescriptionRaw]
+    
+    func mapToPlain() -> DailyWeatherPlain {
+        return DailyWeatherPlain(
+            day: day,
+            icon: WeatherDescriptionRaw.mapFirstIcon(from: description),
+            temperature: temperature.max
+        )
+    }
+    
+    static func mapDailyWeatherRawToPlain(dailyWeatherRaw: [DailyWeatherRaw]) -> [DailyWeatherPlain] {
+        return dailyWeatherRaw.map { dailyWeather in
+            dailyWeather.mapToPlain()
+        }
+    }
+    
 }
 
 extension DailyWeatherRaw {

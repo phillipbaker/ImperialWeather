@@ -8,8 +8,9 @@
 import Foundation
 
 enum WeatherIcon {
+    static let placeholder = "square.dashed"
+
     static let cloud = "cloud.fill"
-    static let dashedSquare = "square.dashed"
     static let drizzle = "cloud.drizzle.fill"
     static let dust = "sun.dust.fill"
     static let fog = "cloud.fog.fill"
