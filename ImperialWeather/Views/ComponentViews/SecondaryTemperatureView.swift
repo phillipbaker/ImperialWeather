@@ -14,8 +14,8 @@ struct SecondaryTemperatureView: View {
 
     var body: some View {
         Text(temperatureScale == .fahrenheit
-             ? temperature.celsiusString + Celsius.short
-             : temperature.fahrenheitString + Fahrenheit.short
+             ? temperature.celsius + Celsius.short
+             : temperature.fahrenheit + Fahrenheit.short
         )
         .foregroundColor(.secondary)
         .frame(minWidth: 40)

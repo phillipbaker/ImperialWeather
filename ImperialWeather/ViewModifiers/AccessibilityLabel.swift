@@ -16,8 +16,8 @@ struct AccessibilityLabel: ViewModifier {
         content
             .accessibility(
                 label: Text(temperatureScale == .celsius
-                    ? temperature.celsiusString
-                    : temperature.fahrenheitString
+                    ? temperature.celsius
+                    : temperature.fahrenheit
                 )
             )
     }
