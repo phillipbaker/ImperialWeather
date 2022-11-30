@@ -18,7 +18,7 @@ struct DailyWeatherRow: View {
             
             Spacer()
             
-            WeatherImageView(imageName: dailyWeather.icon)
+            WeatherImage(systemName: dailyWeather.icon)
             
             Spacer()
             

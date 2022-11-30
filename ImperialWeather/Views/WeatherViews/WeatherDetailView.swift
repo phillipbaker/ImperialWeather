@@ -47,7 +47,7 @@ struct WeatherDetailView: View {
                         .paneBackground()
                         
                         HStack(spacing: 16) {
-                            WeatherImageView(imageName: selection.icon)
+                            WeatherImage(systemName: selection.icon)
                                 .font(.system(size: 48))
                             
                             Divider()

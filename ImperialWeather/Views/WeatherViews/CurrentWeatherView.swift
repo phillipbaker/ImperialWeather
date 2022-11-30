@@ -22,7 +22,7 @@ struct CurrentWeatherView: View {
                 .opacity(0.9)
                 
                 HStack(spacing: 16) {
-                    WeatherImageView(imageName: weather.icon)
+                    WeatherImage(systemName: weather.icon)
                         .font(.system(size: 48))
                     
                     Divider()

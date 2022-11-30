@@ -1,17 +1,17 @@
 //
-//  WeatherImageView.swift
+//  WeatherImage.swift
 //  ImperialWeather
 //
-//  Created by Phillip Baker on 9/15/21.
+//  Created by Phillip Baker on 11/30/22.
 //
 
 import SwiftUI
 
-struct WeatherImageView: View {
-    var imageName: String
+struct WeatherImage: View {
+    var systemName: String
     
     var body: some View {
-        Image(systemName: imageName)
+        Image(systemName: systemName)
             .renderingMode(.original)
             .aspectRatio(contentMode: .fit)
             .imageScale(.large)

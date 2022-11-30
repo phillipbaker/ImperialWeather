@@ -18,7 +18,7 @@ struct HourlyWeatherRow: View {
                 .textCase(.uppercase)
                 .foregroundColor(.secondary)
             
-            WeatherImageView(imageName: hourlyWeather.icon)
+            WeatherImage(systemName: hourlyWeather.icon)
                 .frame(minWidth: 28, minHeight: 28, alignment: .top)
                 .imageScale(.large)
             
