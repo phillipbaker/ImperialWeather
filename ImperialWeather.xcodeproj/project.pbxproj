@@ -73,6 +73,7 @@
 		F8EB4CBF2936A81E00BAE881 /* HourlyWeatherPlain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EB4CBE2936A81E00BAE881 /* HourlyWeatherPlain.swift */; };
 		F8EB4CC12936A83A00BAE881 /* DailyWeatherPlain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EB4CC02936A83A00BAE881 /* DailyWeatherPlain.swift */; };
 		F8EB4CCA29377E4F00BAE881 /* UpcomingWeatherPlain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EB4CC929377E4F00BAE881 /* UpcomingWeatherPlain.swift */; };
+		F8EB4CCC2937838B00BAE881 /* HomeWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EB4CCB2937838B00BAE881 /* HomeWeather.swift */; };
 		F8EDEF6626F0CB68008CB9A7 /* TemperatureScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EDEF6526F0CB68008CB9A7 /* TemperatureScale.swift */; };
 /* End PBXBuildFile section */
 
@@ -145,6 +146,7 @@
 		F8EB4CBE2936A81E00BAE881 /* HourlyWeatherPlain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherPlain.swift; sourceTree = "<group>"; };
 		F8EB4CC02936A83A00BAE881 /* DailyWeatherPlain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherPlain.swift; sourceTree = "<group>"; };
 		F8EB4CC929377E4F00BAE881 /* UpcomingWeatherPlain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingWeatherPlain.swift; sourceTree = "<group>"; };
+		F8EB4CCB2937838B00BAE881 /* HomeWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWeather.swift; sourceTree = "<group>"; };
 		F8EDEF6526F0CB68008CB9A7 /* TemperatureScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureScale.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -346,6 +348,7 @@
 		F8EB4CB1293652D600BAE881 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				F8EB4CCB2937838B00BAE881 /* HomeWeather.swift */,
 				F8EB4CB32936609D00BAE881 /* CurrentWeather.swift */,
 				F8EB4CB7293661C700BAE881 /* HourlyWeather.swift */,
 				F8EB4CB5293660E000BAE881 /* DailyWeather.swift */,
@@ -482,6 +485,7 @@
 				F897EE3628E728E300A9C504 /* APIRequest.swift in Sources */,
 				F867BC33275E0725001CBA62 /* DataAttributionView.swift in Sources */,
 				F8EB4CAC29364ADA00BAE881 /* UpcomingWeather+Preview.swift in Sources */,
+				F8EB4CCC2937838B00BAE881 /* HomeWeather.swift in Sources */,
 				F80559F22757AD5A00F167E9 /* Fahrenheit.swift in Sources */,
 				F812D98D2853F4AD00FC8223 /* HourlyWeatherRow.swift in Sources */,
 				F812D99128549C1600FC8223 /* PaneShadow.swift in Sources */,
