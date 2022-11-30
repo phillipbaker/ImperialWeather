@@ -177,7 +177,6 @@
 			children = (
 				F8CEA31E268B69FF0070DEE0 /* Formatting.swift */,
 				F8EB4CB2293652F200BAE881 /* Raw */,
-				F8EB4CB92936A75000BAE881 /* Plain */,
 				F8EB4CB1293652D600BAE881 /* Entities */,
 			);
 			path = Models;
@@ -348,6 +347,7 @@
 		F8EB4CB1293652D600BAE881 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				F8EB4CB92936A75000BAE881 /* Plain */,
 				F8EB4CCB2937838B00BAE881 /* HomeWeather.swift */,
 				F8EB4CB32936609D00BAE881 /* CurrentWeather.swift */,
 				F8EB4CB7293661C700BAE881 /* HourlyWeather.swift */,
