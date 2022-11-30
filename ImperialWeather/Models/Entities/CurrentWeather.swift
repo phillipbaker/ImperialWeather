@@ -14,13 +14,13 @@ struct CurrentWeather: Identifiable {
     let description: String
     let temperature: Double
     
-    static func mapCurrentWeather(plain: CurrentWeatherPlain) -> CurrentWeather {
+    static func mapCurrentWeatherFromData(data: CurrentWeatherPlain) -> CurrentWeather {
         return CurrentWeather(
             id: UUID(),
-            icon: plain.icon,
-            location: plain.location,
-            description: plain.description,
-            temperature: plain.temperature
+            icon: data.icon,
+            location: data.location,
+            description: data.description,
+            temperature: data.temperature
         )
     }
 }
