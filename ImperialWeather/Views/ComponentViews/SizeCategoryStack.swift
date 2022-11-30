@@ -1,5 +1,5 @@
 //
-//  SizeCategoryStackView.swift
+//  SizeCategoryStack.swift
 //  ImperialWeather
 //
 //  Created by Phillip Baker on 8/10/21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SizeCategoryStackView<Content: View>: View {
+struct SizeCategoryStack<Content: View>: View {
     @Environment(\.sizeCategory) private var sizeCategory
 
     var spacing: CGFloat?

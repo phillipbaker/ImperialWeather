@@ -1,5 +1,5 @@
 //
-//  TemperatureScalePickerView.swift
+//  TemperatureScalePicker.swift
 //  ImperialWeather
 //
 //  Created by Phillip Baker on 6/18/21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TemperatureScalePickerView: View {
+struct TemperatureScalePicker: View {
     @AppStorage("temperatureScale") private var temperatureScale: TemperatureScale = .celsius
 
     var body: some View {
@@ -25,8 +25,8 @@ struct TemperatureScalePickerView: View {
     }
 }
 
-struct TemperatureScalePickerView_Previews: PreviewProvider {
+struct TemperatureScalePicker_Previews: PreviewProvider {
     static var previews: some View {
-        TemperatureScalePickerView()
+        TemperatureScalePicker()
     }
 }

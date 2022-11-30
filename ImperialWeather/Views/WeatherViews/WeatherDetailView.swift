@@ -63,7 +63,7 @@ struct WeatherDetailView: View {
                             
                             VStack {
                                 Spacer()
-                                TemperatureScalePickerView()
+                                TemperatureScalePicker()
                                     .frame(maxWidth: 124)
                             }
                         }

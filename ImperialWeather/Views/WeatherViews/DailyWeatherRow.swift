@@ -11,7 +11,7 @@ struct DailyWeatherRow: View {
     var dailyWeather: DailyWeather
     
     var body: some View {
-        SizeCategoryStackView {
+        SizeCategoryStack {
             Text(dailyWeather.day.wideWeekday)
                 .frame(minWidth: 92, alignment: .leading)
                 .opacity(0.9)

@@ -18,3 +18,9 @@ struct WeatherImage: View {
             .paneShadow()
     }
 }
+
+struct WeatherImage_Previews: PreviewProvider {
+    static var previews: some View {
+        WeatherImage(systemName: WeatherIcon.thunderstorm)
+    }
+}
