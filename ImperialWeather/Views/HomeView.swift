@@ -14,8 +14,8 @@ struct HomeView: View {
         switch viewModel.state {
         case .loading:
             ProgressView()
-        case .success:
-            WeatherView(viewModel: viewModel)
+        case .success(let weather):
+            WeatherView(weather: weather)
         case .error(let error):
             ErrorView(error: error)
         }

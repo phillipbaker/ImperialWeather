@@ -19,38 +19,12 @@ final class HomeViewModel: NSObject, ObservableObject {
     // Weather
     var getWeatherUseCase = GetWeather()
     
-    @Published private(set) var weather: HomeWeather
     @Published private(set) var state: HomeState = .loading
     
     @MainActor
     override init() {
         authorizationStatus = locationManager.authorizationStatus
-        
-        weather = HomeWeather(
-            current: CurrentWeather(
-                id: UUID(),
-                icon: WeatherIcon.placeholder,
-                location: "Unknown Location",
-                description: "Unknown Weather",
-                temperature: 0.0),
-            hourly: [
-                HourlyWeather(
-                    id: UUID(),
-                    hour: Date.now,
-                    icon: WeatherIcon.placeholder,
-                    temperature: 0.0
-                )
-            ],
-            daily: [
-                DailyWeather(
-                    id: UUID(),
-                    day: Date.now,
-                    icon: WeatherIcon.placeholder,
-                    temperature: 0.0
-                )
-            ]
-        )
-        
+                
         super.init()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -63,8 +37,7 @@ final class HomeViewModel: NSObject, ObservableObject {
     
     private func getWeather(lat: String, lon: String) async throws {
         do {
-            weather = try await getWeatherUseCase.weather(lat: lat, lon: lon)
-            state = HomeState.success(weather)
+            state = HomeState.success(try await getWeatherUseCase.weather(lat: lat, lon: lon))
         } catch {
             state = HomeState.error(.invalidData)
         }

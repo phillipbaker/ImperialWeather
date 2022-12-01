@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct WeatherView: View {
-    @ObservedObject private(set) var viewModel: HomeViewModel
+    let weather: HomeWeather
     
     var body: some View {
         ScrollView(.vertical) {
             HorizontalSizeClassStack(verticalAlignment: .top, spacing: 16) {
                 
-                CurrentWeatherView(weather: viewModel.weather.current)
+                CurrentWeatherView(weather: weather.current)
                 
                 VStack(spacing: 16) {
-                    HourlyWeatherView(hourlyWeather: viewModel.weather.hourly)
+                    HourlyWeatherView(hourlyWeather: weather.hourly)
                     
-                    DailyWeatherView(dailyWeather: viewModel.weather.daily)
+                    DailyWeatherView(dailyWeather: weather.daily)
                     
                     DataAttributionView()
                         .padding(.leading)
@@ -33,7 +33,7 @@ struct WeatherView: View {
 
 struct WeatherView_Previews: PreviewProvider {
     static var previews: some View {
-        WeatherView(viewModel: .init())
+        WeatherView(weather: HomeWeather.preview)
             .backgroundView()
     }
 }
