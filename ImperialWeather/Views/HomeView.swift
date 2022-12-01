@@ -24,7 +24,7 @@ struct HomeView: View {
 
 struct WeatherContentView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(viewModel: .init())
+        HomeView(viewModel: .init(latitude: "0.0", longitude: "0.0"))
             .backgroundView()
     }
 }

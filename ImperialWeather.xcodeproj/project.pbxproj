@@ -75,6 +75,7 @@
 		F8EB4CD129378E7300BAE881 /* HomeWeatherPlain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EB4CD029378E7300BAE881 /* HomeWeatherPlain.swift */; };
 		F8EB4CD92937FE9B00BAE881 /* WeatherImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EB4CD82937FE9B00BAE881 /* WeatherImage.swift */; };
 		F8EB4CDB2938B5C800BAE881 /* HomeWeather+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EB4CDA2938B5C800BAE881 /* HomeWeather+Preview.swift */; };
+		F8EB4CDD2938BB7700BAE881 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EB4CDC2938BB7700BAE881 /* LocationViewModel.swift */; };
 		F8EDEF6626F0CB68008CB9A7 /* TemperatureScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EDEF6526F0CB68008CB9A7 /* TemperatureScale.swift */; };
 /* End PBXBuildFile section */
 
@@ -149,6 +150,7 @@
 		F8EB4CD029378E7300BAE881 /* HomeWeatherPlain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWeatherPlain.swift; sourceTree = "<group>"; };
 		F8EB4CD82937FE9B00BAE881 /* WeatherImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherImage.swift; sourceTree = "<group>"; };
 		F8EB4CDA2938B5C800BAE881 /* HomeWeather+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeWeather+Preview.swift"; sourceTree = "<group>"; };
+		F8EB4CDC2938BB7700BAE881 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 		F8EDEF6526F0CB68008CB9A7 /* TemperatureScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureScale.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -342,6 +344,7 @@
 			children = (
 				F87FB916269728BB00E38184 /* HomeState.swift */,
 				F87E5CB7267CA53B0032949A /* HomeViewModel.swift */,
+				F8EB4CDC2938BB7700BAE881 /* LocationViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				F897EE2628E64B3400A9C504 /* LocationErrorMessage.swift in Sources */,
 				F867BC28275E0725001CBA62 /* DailyWeatherView.swift in Sources */,
 				F875DCA5268DF98C0025386F /* WeatherBackground.swift in Sources */,
+				F8EB4CDD2938BB7700BAE881 /* LocationViewModel.swift in Sources */,
 				F867BC2C275E0725001CBA62 /* SizeCategoryStack.swift in Sources */,
 				F83B0A26275CEC44001F4F3A /* ConditionsRaw.swift in Sources */,
 				F8EB4CB6293660E000BAE881 /* DailyWeather.swift in Sources */,

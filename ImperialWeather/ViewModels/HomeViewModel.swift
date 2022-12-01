@@ -5,34 +5,22 @@
 //  Created by Phillip Baker on 6/18/21.
 //
 
-import CoreLocation
 import Foundation
 
-@MainActor
-final class HomeViewModel: NSObject, ObservableObject {
-    // Location
-    @Published private(set) var error: Error?
-    @Published private(set) var authorizationStatus: CLAuthorizationStatus
-    
-    private let locationManager = CLLocationManager()
+@MainActor final class HomeViewModel: NSObject, ObservableObject {
 
-    // Weather
+    let latitude: String
+    let longitude: String
     var getWeatherUseCase = GetWeather()
     
     @Published private(set) var state: HomeState = .loading
     
-    @MainActor
-    override init() {
-        authorizationStatus = locationManager.authorizationStatus
-                
+    @MainActor init(latitude: String, longitude: String) {
+        self.latitude = latitude
+        self.longitude = longitude
         super.init()
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.startUpdatingLocation()
-    }
-    
-    func requestPermission() {
-        locationManager.requestWhenInUseAuthorization()
+        
+        Task { try await getWeather(lat: self.latitude, lon: self.longitude) }
     }
     
     private func getWeather(lat: String, lon: String) async throws {
@@ -41,25 +29,5 @@ final class HomeViewModel: NSObject, ObservableObject {
         } catch {
             state = HomeState.error(.invalidData)
         }
-    }
-}
-
-extension HomeViewModel: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.last?.coordinate {
-            locationManager.stopUpdatingLocation()
-            Task { try await getWeather(lat: String(location.latitude), lon: String(location.longitude)) }
-        }
-    }
-    
-    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        authorizationStatus = manager.authorizationStatus
-        if authorizationStatus == .notDetermined {
-            requestPermission()
-        }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        self.error = error
     }
 }
