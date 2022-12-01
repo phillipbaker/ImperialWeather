@@ -1,5 +1,5 @@
 //
-//  WeatherScreen.swift
+//  HomeView.swift
 //  ImperialWeather
 //
 //  Created by Phillip Baker on 6/30/21.
@@ -7,18 +7,16 @@
 
 import SwiftUI
 
-struct WeatherScreen: View {
-    @ObservedObject private(set) var viewModel: WeatherViewModel
+struct HomeView: View {
+    @ObservedObject private(set) var viewModel: HomeViewModel
     
     var body: some View {
-        switch viewModel.loadingState {
-        case .none, .idle:
-            EmptyView()
+        switch viewModel.state {
         case .loading:
             ProgressView()
-        case .loaded:
+        case .success:
             WeatherView(viewModel: viewModel)
-        case .failed(let error):
+        case .error(let error):
             ErrorView(error: error)
         }
     }
@@ -26,7 +24,7 @@ struct WeatherScreen: View {
 
 struct WeatherContentView_Previews: PreviewProvider {
     static var previews: some View {
-        WeatherScreen(viewModel: .init())
+        HomeView(viewModel: .init())
             .backgroundView()
     }
 }

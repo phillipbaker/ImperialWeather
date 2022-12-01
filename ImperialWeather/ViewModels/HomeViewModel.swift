@@ -9,20 +9,48 @@ import CoreLocation
 import Foundation
 
 @MainActor
-final class WeatherViewModel: NSObject, ObservableObject {
+final class HomeViewModel: NSObject, ObservableObject {
+    // Location
     @Published private(set) var error: Error?
-    @Published private(set) var weather: HomeWeather?
-    @Published private(set) var loadingState: LoadingState?
     @Published private(set) var authorizationStatus: CLAuthorizationStatus
     
     private let locationManager = CLLocationManager()
-    
+
+    // Weather
     var getWeatherUseCase = GetWeather()
+    
+    @Published private(set) var weather: HomeWeather
+    @Published private(set) var state: HomeState = .loading
     
     @MainActor
     override init() {
         authorizationStatus = locationManager.authorizationStatus
-
+        
+        weather = HomeWeather(
+            current: CurrentWeather(
+                id: UUID(),
+                icon: WeatherIcon.placeholder,
+                location: "Unknown Location",
+                description: "Unknown Weather",
+                temperature: 0.0),
+            hourly: [
+                HourlyWeather(
+                    id: UUID(),
+                    hour: Date.now,
+                    icon: WeatherIcon.placeholder,
+                    temperature: 0.0
+                )
+            ],
+            daily: [
+                DailyWeather(
+                    id: UUID(),
+                    day: Date.now,
+                    icon: WeatherIcon.placeholder,
+                    temperature: 0.0
+                )
+            ]
+        )
+        
         super.init()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -34,19 +62,16 @@ final class WeatherViewModel: NSObject, ObservableObject {
     }
     
     private func getWeather(lat: String, lon: String) async throws {
-        guard loadingState != .loading else { return }
-        loadingState = .loading
-        
         do {
             weather = try await getWeatherUseCase.weather(lat: lat, lon: lon)
-            loadingState = .loaded
+            state = HomeState.success(weather)
         } catch {
-            loadingState = .failed(.invalidData)
+            state = HomeState.error(.invalidData)
         }
     }
 }
 
-extension WeatherViewModel: CLLocationManagerDelegate {
+extension HomeViewModel: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last?.coordinate {
             locationManager.stopUpdatingLocation()

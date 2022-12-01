@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct RootView: View {
-    @StateObject private var viewModel = WeatherViewModel()
+    @StateObject private var viewModel = HomeViewModel()
     
     var body: some View {
         switch viewModel.authorizationStatus {
         case .restricted, .denied, .notDetermined:
             ErrorView(error: .locationPermission)
         case .authorizedAlways, .authorizedWhenInUse:
-            WeatherScreen(viewModel: viewModel)
+            HomeView(viewModel: viewModel)
         @unknown default:
             ErrorView(error: .locationError)
         }
