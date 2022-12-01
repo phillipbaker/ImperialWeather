@@ -27,7 +27,7 @@ struct WeatherView: View {
             }
             .padding()
         }
-        .background(Color.weatherBackground)
+        .backgroundView()
     }
 }
 

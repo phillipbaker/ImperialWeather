@@ -15,12 +15,7 @@ struct RootView: View {
         case .restricted, .denied, .notDetermined:
             ErrorView(error: .locationPermission)
         case .authorizedAlways, .authorizedWhenInUse:
-            HomeView(
-                viewModel: HomeViewModel(
-                    latitude: viewModel.latitude,
-                    longitude: viewModel.longitude
-                )
-            )
+            HomeView(viewModel: HomeViewModel(latitude: viewModel.latitude, longitude: viewModel.longitude))
         @unknown default:
             ErrorView(error: .locationError)
         }
