@@ -8,31 +8,26 @@
 import Foundation
 
 class GetWeather {        
-    func weather(lat: String, lon: String) async throws -> HomeWeather {
-        
-        let currentWeatherResource = CurrentWeatherResource(latitude: lat, longitude: lon)
+    func weather(latitude: String, longitude: String) async throws -> HomeWeather {
+        let currentWeatherResource = CurrentWeatherResource(latitude: latitude, longitude: longitude)
         let currentRequest = APIRequest(resource: currentWeatherResource)
         
-        let upcomingWeatherResource = UpcomingWeatherResource(latitude: lat, longitude: lon)
+        let upcomingWeatherResource = UpcomingWeatherResource(latitude: latitude, longitude: longitude)
         let upcomingRequest = APIRequest(resource: upcomingWeatherResource)
         
-        do {
-            guard let currentWeather = try await currentRequest.execute()?.mapToPlain() else {
-                throw NetworkingError.invalidData
-            }
-            guard let upcomingWeather = try await upcomingRequest.execute()?.mapToPlain() else {
-                throw NetworkingError.invalidData
-            }
-            
-            let homeWeatherPlain = HomeWeatherPlain(
-                current: currentWeather,
-                hourly: upcomingWeather.hourly,
-                daily: upcomingWeather.daily)
-            
-            return HomeWeather.mapHomeWeatherFromData(data: homeWeatherPlain)
-            
-        } catch {
+        guard let currentWeather = try await currentRequest.execute()?.mapToPlain() else {
             throw NetworkingError.invalidData
         }
+        
+        guard let upcomingWeather = try await upcomingRequest.execute()?.mapToPlain() else {
+            throw NetworkingError.invalidData
+        }
+        
+        let homeWeatherPlain = HomeWeatherPlain(
+            current: currentWeather,
+            hourly: upcomingWeather.hourly,
+            daily: upcomingWeather.daily)
+        
+        return HomeWeather.mapHomeWeatherFromData(data: homeWeatherPlain)
     }
 }

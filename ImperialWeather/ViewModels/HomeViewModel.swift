@@ -11,7 +11,7 @@ import Foundation
 
     let latitude: String
     let longitude: String
-    var getWeatherUseCase = GetWeather()
+    let getWeatherUseCase = GetWeather()
     
     @Published private(set) var state: HomeState = .loading
     
@@ -20,14 +20,23 @@ import Foundation
         self.longitude = longitude
         super.init()
         
-        Task { try await getWeather(lat: self.latitude, lon: self.longitude) }
+        Task { try await getWeather() }
     }
     
-    private func getWeather(lat: String, lon: String) async throws {
+    private func getWeather() async throws {
         do {
-            state = HomeState.success(try await getWeatherUseCase.weather(lat: lat, lon: lon))
+            state = .success(try await getWeatherUseCase.weather(latitude: self.latitude, longitude: self.longitude))
+        } catch NetworkingError.invalidUrl {
+            state = .error(.invalidUrl)
+        } catch NetworkingError.networkError {
+            state = .error(.networkError)
+        } catch NetworkingError.invalidResponse {
+            state = .error(.invalidResponse)
+        } catch NetworkingError.invalidData {
+            state = .error(.invalidData)
         } catch {
-            state = HomeState.error(.invalidData)
+            state = .error(.invalidData)
+            print("Unexpected error: \(error)")
         }
     }
 }
