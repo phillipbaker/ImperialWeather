@@ -206,6 +206,11 @@
 				F812D98A2853F24C00FC8223 /* DailyWeatherRow.swift */,
 				F8ABC7BD28EC680F00475BF3 /* WeatherDetailView.swift */,
 				F8ABC7BF28ED7DBC00475BF3 /* WeatherDetailChartView.swift */,
+				F8EB4CD82937FE9B00BAE881 /* WeatherImage.swift */,
+				F867BC18275E0725001CBA62 /* PrimaryTemperatureView.swift */,
+				F867BC1C275E0725001CBA62 /* SecondaryTemperatureView.swift */,
+				F867BC1F275E0725001CBA62 /* TemperatureScalePicker.swift */,
+				F867BC21275E0725001CBA62 /* DataAttributionView.swift */,
 			);
 			path = WeatherViews;
 			sourceTree = "<group>";
@@ -213,14 +218,9 @@
 		F867BC17275E0725001CBA62 /* ComponentViews */ = {
 			isa = PBXGroup;
 			children = (
-				F8EB4CD82937FE9B00BAE881 /* WeatherImage.swift */,
 				F867BC1E275E0725001CBA62 /* HorizontalSizeClassStack.swift */,
 				F81CFD3C286A3C2B002CCE51 /* VerticalSizeClassStack.swift */,
 				F867BC1A275E0725001CBA62 /* SizeCategoryStack.swift */,
-				F867BC18275E0725001CBA62 /* PrimaryTemperatureView.swift */,
-				F867BC1C275E0725001CBA62 /* SecondaryTemperatureView.swift */,
-				F867BC1F275E0725001CBA62 /* TemperatureScalePicker.swift */,
-				F867BC21275E0725001CBA62 /* DataAttributionView.swift */,
 			);
 			path = ComponentViews;
 			sourceTree = "<group>";
