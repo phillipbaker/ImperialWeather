@@ -13,14 +13,10 @@ struct CurrentWeatherView: View {
     var body: some View {
         VStack(spacing: 32) {
             VerticalSizeClassStack(spacing: 32) {
-                LocationAndWeatherDescription(weather: weather)
+                LocationAndDescriptionView(weather: weather)
                 
                 HStack(spacing: 16) {
-                    WeatherImage(systemName: weather.icon)
-                        .font(.system(size: 48))
-                    Divider()
-                        .frame(maxHeight: 100)
-                    CurrentTemperatureView(temperature: weather.temperature)
+                    IconAndTemperatureView(icon: weather.icon, temperature: weather.temperature)
                 }
             }
             

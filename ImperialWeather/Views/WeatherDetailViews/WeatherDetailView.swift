@@ -47,18 +47,8 @@ struct WeatherDetailView: View {
                         .paneBackground()
                         
                         HStack(spacing: 16) {
-                            WeatherImage(systemName: selection.icon)
-                                .font(.system(size: 48))
+                            IconAndTemperatureView(icon: selection.icon, temperature: selection.temperature)
                             
-                            Divider()
-                            
-                            VStack(alignment: .leading, spacing: 4) {
-                                PrimaryTemperatureView(temperature: selection.temperature)
-                                    .font(.largeTitle)
-                                    .opacity(0.9)
-                                
-                                SecondaryTemperatureView(temperature: selection.temperature)
-                            }
                             Spacer()
                             
                             VStack {

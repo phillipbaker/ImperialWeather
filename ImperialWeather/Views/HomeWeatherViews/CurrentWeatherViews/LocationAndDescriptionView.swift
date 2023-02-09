@@ -1,5 +1,5 @@
 //
-//  LocationAndWeatherDescription.swift
+//  LocationAndDescriptionView.swift
 //  ImperialWeather
 //
 //  Created by Phillip Baker on 12/1/22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LocationAndWeatherDescription: View {
+struct LocationAndDescriptionView: View {
     let weather: CurrentWeather
     
     var body: some View {
