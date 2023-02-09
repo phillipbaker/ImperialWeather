@@ -23,6 +23,8 @@ struct DailyWeatherView: View {
             ForEach(dailyWeather) { day in
                 Divider()
                 DailyWeatherRow(dailyWeather: day)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .contentShape(Rectangle())
                     .sheet(isPresented: $detailPresented) {
                         WeatherDetailView (dailyWeather: dailyWeather, initialSelection: selection ?? dailyWeather.first!)
                     }
