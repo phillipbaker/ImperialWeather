@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DailyWeatherRow: View {
-    var dailyWeather: DailyWeather
+    let dailyWeather: DailyWeather
     
     var body: some View {
         SizeCategoryStack {
