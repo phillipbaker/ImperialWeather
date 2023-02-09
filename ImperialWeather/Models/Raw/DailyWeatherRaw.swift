@@ -22,11 +22,8 @@ struct DailyWeatherRaw: Decodable, Identifiable {
     }
     
     static func mapDailyWeatherRawToPlain(dailyWeatherRaw: [DailyWeatherRaw]) -> [DailyWeatherPlain] {
-        return dailyWeatherRaw.map { dailyWeather in
-            dailyWeather.mapToPlain()
-        }
+        return dailyWeatherRaw[1..<8].map { $0.mapToPlain() }
     }
-    
 }
 
 extension DailyWeatherRaw {

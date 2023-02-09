@@ -9,18 +9,13 @@ import Foundation
 
 struct UpcomingWeatherRaw: Decodable {
     let hourlyWeather: [HourlyWeatherRaw]
-    var dailyWeather: [DailyWeatherRaw]
+    let dailyWeather: [DailyWeatherRaw]
     
     func mapToPlain() -> UpcomingWeatherPlain {
         return UpcomingWeatherPlain(
             hourly: HourlyWeatherRaw.mapHourlyWeatherRawToPlain(hourlyWeatherRaw: hourlyWeather),
             daily: DailyWeatherRaw.mapDailyWeatherRawToPlain(dailyWeatherRaw: dailyWeather)
         )
-    }
-    
-    mutating func removeCurrentDayFromDailyWeather() -> UpcomingWeatherRaw {
-        self.dailyWeather.remove(at: 0)
-        return self
     }
 }
 
