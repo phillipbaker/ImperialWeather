@@ -10,9 +10,8 @@ import SwiftUI
 
 struct WeatherDetailView: View {
     let dailyWeather: [DailyWeather]
-    let initialSelection: DailyWeather
-    @State private var selection: DailyWeather = DailyWeather.preview.first!
-    @Environment(\.presentationMode) var presentationMode
+    @Binding var selection: DailyWeather
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         NavigationView {
@@ -90,13 +89,10 @@ struct WeatherDetailView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Done") {
-                        presentationMode.wrappedValue.dismiss()
+                        dismiss()
                     }
                 }
             }
-        }
-        .onAppear {
-            selection = initialSelection
         }
     }
 }
@@ -105,7 +101,7 @@ struct WeatherDetailView_Previews: PreviewProvider {
     static var previews: some View {
         WeatherDetailView(
             dailyWeather: DailyWeather.preview,
-            initialSelection: DailyWeather.preview.first!
+            selection: .constant(DailyWeather.preview.first!)
         )
     }
 }

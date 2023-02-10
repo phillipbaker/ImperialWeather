@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -44,6 +44,7 @@
 		F87E5CB4267CA46C0032949A /* CurrentWeatherResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E5CB3267CA46C0032949A /* CurrentWeatherResource.swift */; };
 		F87E5CB8267CA53B0032949A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E5CB7267CA53B0032949A /* HomeViewModel.swift */; };
 		F87FB917269728BB00E38184 /* HomeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87FB916269728BB00E38184 /* HomeState.swift */; };
+		F88DC0B2299655C80029E1F4 /* SwiftUINavigation in Frameworks */ = {isa = PBXBuildFile; productRef = F88DC0B1299655C80029E1F4 /* SwiftUINavigation */; };
 		F897EE2428E64B0800A9C504 /* LocationPermissionMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F897EE2328E64B0800A9C504 /* LocationPermissionMessage.swift */; };
 		F897EE2628E64B3400A9C504 /* LocationErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F897EE2528E64B3400A9C504 /* LocationErrorMessage.swift */; };
 		F897EE2828E64B5400A9C504 /* NetworkErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F897EE2728E64B5400A9C504 /* NetworkErrorMessage.swift */; };
@@ -165,6 +166,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F88DC0B2299655C80029E1F4 /* SwiftUINavigation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +462,9 @@
 			dependencies = (
 			);
 			name = ImperialWeather;
+			packageProductDependencies = (
+				F88DC0B1299655C80029E1F4 /* SwiftUINavigation */,
+			);
 			productName = ImperialWeather;
 			productReference = F87E5C8F267C9E950032949A /* ImperialWeather.app */;
 			productType = "com.apple.product-type.application";
@@ -487,6 +492,9 @@
 				Base,
 			);
 			mainGroup = F87E5C86267C9E950032949A;
+			packageReferences = (
+				F88DC0B0299655C80029E1F4 /* XCRemoteSwiftPackageReference "swiftui-navigation" */,
+			);
 			productRefGroup = F87E5C90267C9E950032949A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -772,6 +780,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F88DC0B0299655C80029E1F4 /* XCRemoteSwiftPackageReference "swiftui-navigation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swiftui-navigation";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F88DC0B1299655C80029E1F4 /* SwiftUINavigation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F88DC0B0299655C80029E1F4 /* XCRemoteSwiftPackageReference "swiftui-navigation" */;
+			productName = SwiftUINavigation;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F87E5C87267C9E950032949A /* Project object */;
 }

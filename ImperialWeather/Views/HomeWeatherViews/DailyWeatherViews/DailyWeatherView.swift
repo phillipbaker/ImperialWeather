@@ -6,11 +6,15 @@
 //
 
 import SwiftUI
+import SwiftUINavigation
 
 struct DailyWeatherView: View {
     let dailyWeather: [DailyWeather]
-    @State private var detailPresented = false
-    @State private var selection: DailyWeather?
+    @State private var destination: Destination?
+    
+    enum Destination {
+        case detail(DailyWeather)
+    }
     
     var body: some View {
         VStack(spacing: 12) {
@@ -25,12 +29,13 @@ struct DailyWeatherView: View {
                 DailyWeatherRow(dailyWeather: day)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .contentShape(Rectangle())
-                    .sheet(isPresented: $detailPresented) {
-                        WeatherDetailView (dailyWeather: dailyWeather, initialSelection: selection ?? dailyWeather.first!)
-                    }
+                
                     .onTapGesture {
-                        selection = day
-                        detailPresented = true
+                        destination = .detail(day)
+                    }
+                
+                    .sheet(unwrapping: self.$destination, case: /Destination.detail) { $selection in
+                        WeatherDetailView(dailyWeather: dailyWeather, selection: $selection)
                     }
             }
         }
