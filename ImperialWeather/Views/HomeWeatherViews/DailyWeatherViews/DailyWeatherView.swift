@@ -10,11 +10,7 @@ import SwiftUINavigation
 
 struct DailyWeatherView: View {
     let dailyWeather: [DailyWeather]
-    @State private var destination: Destination?
-    
-    enum Destination {
-        case detail(DailyWeather)
-    }
+    @State private var selection: DailyWeather?
     
     var body: some View {
         VStack(spacing: 12) {
@@ -31,10 +27,10 @@ struct DailyWeatherView: View {
                     .contentShape(Rectangle())
                 
                     .onTapGesture {
-                        destination = .detail(day)
+                        selection = day
                     }
                 
-                    .sheet(unwrapping: self.$destination, case: /Destination.detail) { $selection in
+                    .sheet(unwrapping: self.$selection) { $selection in
                         WeatherDetailView(dailyWeather: dailyWeather, selection: $selection)
                     }
             }
