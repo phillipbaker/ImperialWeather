@@ -91,6 +91,7 @@ struct WeatherDetailView: View {
                     Button("Done") {
                         dismiss()
                     }
+                    .fontWeight(.semibold)
                 }
             }
         }
