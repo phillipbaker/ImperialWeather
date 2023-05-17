@@ -19,24 +19,25 @@ struct WeatherDetailView: View {
                 ScrollViewReader { value in
                     VStack(spacing: 20) {
                         ScrollView(.horizontal, showsIndicators: false) {
-                            HStack(spacing: 16) {
+                            LazyHStack(spacing: 16) {
                                 ForEach(dailyWeather) { dailyWeather in
-                                    VStack(spacing: 8) {
-                                        Text(dailyWeather.day.formatted(.dateTime.weekday()).uppercased())
-                                            .foregroundColor(.secondary)
-                                        
-                                        ZStack {
-                                            Circle()
-                                                .opacity(dailyWeather == selection ? 1 : 0)
-                                                .foregroundColor(Color.selectionBackground)
-                                            Text(dailyWeather.day.formatted(.dateTime.day()))
-                                                .foregroundColor(dailyWeather == selection ? .white : nil)
-                                        }
-                                        .frame(minWidth: 40, minHeight: 40)
-                                    }
-                                    .font(.callout)
-                                    .onTapGesture {
+                                    Button {
                                         selection = dailyWeather
+                                    } label: {
+                                        VStack(spacing: 8) {
+                                            Text(dailyWeather.day.formatted(.dateTime.weekday()).uppercased())
+                                                .foregroundColor(.secondary)
+                                            ZStack {
+                                                Circle()
+                                                    .opacity(dailyWeather == selection ? 1 : 0)
+                                                    .foregroundColor(Color.selectionBackground)
+                                                Text(dailyWeather.day.formatted(.dateTime.day()))
+                                                    .foregroundColor(dailyWeather == selection ? .white : nil)
+                                            }
+                                            .frame(minWidth: 40, minHeight: 40)
+                                        }
+                                        .tint(.primary)
+                                        .font(.callout)
                                     }
                                     
                                     Divider()
@@ -66,12 +67,12 @@ struct WeatherDetailView: View {
                                 .font(.callout)
                                 .textCase(.uppercase)
                                 .foregroundColor(.secondary)
-
+                            
                             if #available(iOS 16.0, *) {
                                 WeatherDetailChartView(dailyWeather: dailyWeather)
                                     .frame(minHeight: 320)
                             }
-
+                            
                             DataAttributionView()
                         }
                         .paneBackground()

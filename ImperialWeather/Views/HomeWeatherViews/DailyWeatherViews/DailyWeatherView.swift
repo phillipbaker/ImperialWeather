@@ -22,17 +22,17 @@ struct DailyWeatherView: View {
             
             ForEach(dailyWeather) { day in
                 Divider()
-                DailyWeatherRow(dailyWeather: day)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .contentShape(Rectangle())
-                
-                    .onTapGesture {
-                        selection = day
-                    }
-                
-                    .sheet(unwrapping: self.$selection) { $selection in
-                        WeatherDetailView(dailyWeather: dailyWeather, selection: $selection)
-                    }
+                Button {
+                    selection = day
+                } label: {
+                    DailyWeatherRow(dailyWeather: day)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .contentShape(Rectangle())
+                }
+                .tint(.primary)
+                .sheet(unwrapping: self.$selection) { $selection in
+                    WeatherDetailView(dailyWeather: dailyWeather, selection: $selection)
+                }
             }
         }
         .paneBackground()
