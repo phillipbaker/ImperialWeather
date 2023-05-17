@@ -16,6 +16,7 @@ struct IconAndTemperatureView: View {
             .font(.system(size: 48))
         
         Divider()
+            .frame(maxHeight: 100)
         
         CurrentTemperatureView(temperature: temperature)
     }
