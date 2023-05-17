@@ -31,11 +31,6 @@ struct WeatherDetailChartView: View {
             }
             .accessibilityLabel("\(day.day)")
             .accessibilityValue("\(day.temperature) degrees celsius")
-            
-            PointMark(
-                x: .value("Day", day.day, unit: .day),
-                y: .value("Temperature", day.temperature)
-            )
             .annotation(position: .overlay) {
                 WeatherImage(systemName: day.icon)
             }
@@ -56,7 +51,7 @@ struct WeatherDetailChartView: View {
                     AxisGridLine()
                     AxisValueLabel {
                         Text("\(temp, format: .number.precision(.significantDigits(2)))")
-                            .foregroundColor(.primary)
+                            .foregroundColor(.gray)
                     }
                 }
             }
