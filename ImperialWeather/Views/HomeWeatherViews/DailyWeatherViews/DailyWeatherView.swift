@@ -36,7 +36,6 @@ struct DailyWeatherView: View {
             }
         }
         .paneBackground()
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 
