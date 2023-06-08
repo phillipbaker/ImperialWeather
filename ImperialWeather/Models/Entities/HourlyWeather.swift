@@ -11,7 +11,21 @@ struct HourlyWeather: Identifiable {
     let id: UUID
     let hour: Date
     let icon: String
-    let temperature: Double
+    let celsius: Measurement<UnitTemperature>
+    let fahrenheit: Measurement<UnitTemperature>
+    
+    init(
+        id: UUID = UUID(),
+        hour: Date,
+        icon: String,
+        celsius: Measurement<UnitTemperature>
+    ) {
+        self.id = id
+        self.hour = hour
+        self.icon = icon
+        self.celsius = celsius
+        self.fahrenheit = self.celsius.converted(to: .fahrenheit)
+    }
 }
 
 extension HourlyWeather {
@@ -23,10 +37,9 @@ extension HourlyWeather {
     
     private static func mapHourlyWeather(plain: HourlyWeatherPlain) -> HourlyWeather {
         return HourlyWeather(
-            id: UUID(),
             hour: plain.hour,
             icon: plain.icon,
-            temperature: plain.temperature
+            celsius: Measurement(value: plain.temperature, unit: .celsius)
         )
     }
 }

@@ -11,16 +11,17 @@ struct TemperatureScalePicker: View {
     @AppStorage("temperatureScale") private var temperatureScale: TemperatureScale = .celsius
 
     var body: some View {
-        Picker("Temperature Scale Picker", selection: $temperatureScale) {
+        Picker(WeatherLabel.temperatureScalePicker, selection: $temperatureScale) {
             Group {
-                Text(Celsius.abbreviated)
+                Text(UnitTemperature.celsius.symbol)
                     .tag(TemperatureScale.celsius)
-                    .accessibility(label: Text(Celsius.full))
-                Text(Fahrenheit.abbreviated)
+                    .accessibilityLabel(WeatherLabel.celsius)
+                Text(UnitTemperature.fahrenheit.symbol)
                     .tag(TemperatureScale.fahrenheit)
-                    .accessibility(label: Text(Fahrenheit.full))
+                    .accessibilityLabel(WeatherLabel.fahrenheit)
             }
         }
+        .accessibilityLabel(WeatherLabel.temperatureScalePicker)
         .pickerStyle(SegmentedPickerStyle())
     }
 }

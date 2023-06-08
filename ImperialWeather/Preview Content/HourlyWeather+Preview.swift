@@ -12,80 +12,80 @@ extension HourlyWeather {
         HourlyWeather(
             id: UUID(),
             hour: Date.now,
-            icon: WeatherIcon.cloud,
-            temperature: 17.4
+            icon: WeatherSymbol.cloud,
+            celsius: Measurement(value: 32.0, unit: .celsius)
         ),
         HourlyWeather(
             id: UUID(),
             hour: Calendar.current.date(byAdding: .hour, value: 1, to: Date.now)!,
-            icon: WeatherIcon.drizzle,
-            temperature: 19.2
+            icon: WeatherSymbol.drizzle,
+            celsius: Measurement(value: 32.0, unit: .celsius)
         ),
         HourlyWeather(
             id: UUID(),
             hour: Calendar.current.date(byAdding: .hour, value: 1, to: Date.now)!,
-            icon: WeatherIcon.heavyRain,
-            temperature: 22.0
+            icon: WeatherSymbol.heavyRain,
+            celsius: Measurement(value: 17.0, unit: .celsius)
         ),
         HourlyWeather(
             id: UUID(),
             hour: Calendar.current.date(byAdding: .hour, value: 1, to: Date.now)!,
-            icon: WeatherIcon.rain,
-            temperature: 26.0
+            icon: WeatherSymbol.rain,
+            celsius: Measurement(value: 15.0, unit: .celsius)
         ),
         HourlyWeather(
             id: UUID(),
             hour: Calendar.current.date(byAdding: .hour, value: 1, to: Date.now)!,
-            icon: WeatherIcon.thunderstorm,
-            temperature: 19.7
+            icon: WeatherSymbol.thunderstorm,
+            celsius: Measurement(value: 16.0, unit: .celsius)
         ),
         HourlyWeather(
             id: UUID(),
             hour: Calendar.current.date(byAdding: .hour, value: 1, to: Date.now)!,
-            icon: WeatherIcon.snow,
-            temperature: 16.9
+            icon: WeatherSymbol.snow,
+            celsius: Measurement(value: 32.0, unit: .celsius)
         ),
         HourlyWeather(
             id: UUID(),
             hour: Calendar.current.date(byAdding: .hour, value: 1, to: Date.now)!,
-            icon: WeatherIcon.sun,
-            temperature: 14.5
+            icon: WeatherSymbol.sun,
+            celsius: Measurement(value: 26.0, unit: .celsius)
         ),
         HourlyWeather(
             id: UUID(),
             hour: Calendar.current.date(byAdding: .hour, value: 1, to: Date.now)!,
-            icon: WeatherIcon.placeholder,
-            temperature: 16.0
+            icon: WeatherSymbol.placeholder,
+            celsius: Measurement(value: 21.0, unit: .celsius)
         ),
         HourlyWeather(
             id: UUID(),
             hour: Calendar.current.date(byAdding: .hour, value: 1, to: Date.now)!,
-            icon: WeatherIcon.dust,
-            temperature: 21.0
+            icon: WeatherSymbol.dust,
+            celsius: Measurement(value: 22.0, unit: .celsius)
         ),
         HourlyWeather(
             id: UUID(),
             hour: Calendar.current.date(byAdding: .hour, value: 1, to: Date.now)!,
-            icon: WeatherIcon.fog,
-            temperature: 19.5
+            icon: WeatherSymbol.fog,
+            celsius: Measurement(value: 34.0, unit: .celsius)
         ),
         HourlyWeather(
             id: UUID(),
             hour: Calendar.current.date(byAdding: .hour, value: 1, to: Date.now)!,
-            icon: WeatherIcon.haze,
-            temperature: 17.6
+            icon: WeatherSymbol.haze,
+            celsius: Measurement(value: 29.0, unit: .celsius)
         ),
         HourlyWeather(
             id: UUID(),
             hour: Calendar.current.date(byAdding: .hour, value: 1, to: Date.now)!,
-            icon: WeatherIcon.ice,
-            temperature: 15.0
+            icon: WeatherSymbol.ice,
+            celsius: Measurement(value: 32.0, unit: .celsius)
         ),
         HourlyWeather(
             id: UUID(),
             hour: Calendar.current.date(byAdding: .hour, value: 1, to: Date.now)!,
-            icon: WeatherIcon.moonStars,
-            temperature: 14.5
+            icon: WeatherSymbol.moonStars,
+            celsius: Measurement(value: 36.0, unit: .celsius)
         )
     ]
 }

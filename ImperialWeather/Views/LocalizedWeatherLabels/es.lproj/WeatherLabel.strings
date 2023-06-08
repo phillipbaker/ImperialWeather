@@ -1,0 +1,36 @@
+/* Label for the daily weather forecast for the next seven days. */
+"7-Day Forecast" = "Pronóstico para los proximos 7 días";
+
+/* Label for the chart that shows daily weather for the upcoming week. */
+"Daily Forecast" = "Pronóstico diario";
+
+/* Label for the x-axis of weather chart that shows days of the week. */
+"Day" = "Día";
+
+/* Label instructing VoiceOver to read ‘Celsius‘ in full instead of ‘ºC’. */
+"degrees Celsius" = "grados celsius";
+
+/* Label instructing VoiceOver to read ‘Fahrenheit’ in full instead of ‘ºF’. */
+"degrees Fahrenheit" = "grados Fahrenheit";
+
+/* Generic button title to confirm an action. */
+"Done" = "Hecho";
+
+/* Label for the hourly weather forecast. */
+"Hourly Forecast" = "Pronóstico por hora";
+
+/* Label for the current hour’s weather forecast. */
+"Now" = "Ahora";
+
+/* A label that denotes the source of weather data. */
+"Source: OpenWeather" = "Autor: OpenWeather";
+
+/* Label for the y-axis of weather chart that shows temperature data. */
+"Temperature" = "Temperatura";
+
+/* Label for the segmented control that selects the primary temperature scale (Celsius or Fahrenheit). */
+"Temperature Scale Picker" = "Selector de escala de temperatura";
+
+/* Label displayed when the location name is missing from a forecast. */
+"Unknown Location" = "Ubicación desconocida";
+

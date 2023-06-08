@@ -1,0 +1,48 @@
+/* Button title directing the user to grant permission for location access in the system Settings app. */
+"Check Location Permissions in Settings" = "Comprobar los permisos de ubicación en Configuración";
+
+/* Button title directing user to check their network connection in the system Settings app. */
+"Check network connection in Settings" = "Comprobar la conexión de red en Configuración";
+
+/* Error message title when the user has not given permission for the app to access their location. */
+"Imperial Weather Cannot Access Your Location" = "Imperial Weather no puede acceder a tu ubicación";
+
+/* Error message description when the weather data request failed because an invalid URL was constructed. */
+"Imperial Weather could not access weather at this URL." = "Imperial Weather no pudo acceder al clima en esta URL.";
+
+/* Error message description when forecast data was received in an invalid format and cannot be displayed. */
+"Imperial Weather could not create a forecast from the data provided." = "Imperial Weather no pudo crear un pronóstico a partir de los datos proporcionados.";
+
+/* Error message description when the weather service could not create forecast data. */
+"Imperial Weather could not retrieve a forecast from the weather provider." = "Imperial Weather no pudo recuperar un pronóstico del proveedor meteorológico.";
+
+/* Error message description when the app needs location access to provide a weather forecast. */
+"Imperial Weather needs your location to show you the weather where you are." = "Imperial Weather necesita tu ubicación para mostrarte el clima donde te encuentras.";
+
+/* Error message description when the app was not able to establish the user’s location. */
+"Imperial Weather was unable to establish your location." = "Imperial Weather no pudo establecer su ubicación.";
+
+/* Error message title when the weather service could not create forecast data. */
+"Invalid API Key" = "API no válida Llave";
+
+/* Error message title when forecast data was received in an invalid format and cannot be displayed. */
+"Invalid Data" = "Datos no válidos";
+
+/* Error message title when the app could not construct a valid URL to request weather data. */
+"Invalid URL" = "URL no válida";
+
+/* Button title directing the user to report their problem to the app developer. */
+"Report this Problem" = "Informar de este problema";
+
+/* Error message description when the user is not connected to the Internet. */
+"The weather can’t be displayed because your device is currently offline." = "El tiempo no se puede mostrar porque el dispositivo está actualmente sin conexión.";
+
+/* Button title directing the user to enable location services in the system Settings app. */
+"Turn On Location Services in Settings" = "Activar los servicios de ubicación en Configuración";
+
+/* Error message title when the device was not able to calculate the user’s location for any reason. */
+"Unable to Establish Your Location" = "No se puede establecer su ubicación";
+
+/* Error message title when the user is not connected to the Internet. */
+"You Are Not Connected to the Internet" = "No está conectado a Internet";
+

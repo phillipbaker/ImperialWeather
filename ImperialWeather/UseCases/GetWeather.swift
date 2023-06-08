@@ -7,24 +7,25 @@
 
 import Foundation
 
-class GetWeather {        
+class GetWeather {
+    let locationSource: LocationDataSource
+    let weatherSource: WeatherDataSource
+    
+    init(locationSource: LocationDataSource, weatherSource: WeatherDataSource) {
+        self.locationSource = locationSource
+        self.weatherSource = weatherSource
+    }
+    
     func weather(latitude: String, longitude: String) async throws -> HomeWeather {
-        let currentWeatherResource = CurrentWeatherResource(latitude: latitude, longitude: longitude)
-        let currentRequest = APIRequest(resource: currentWeatherResource)
+        let locationName = try await locationSource.location(latitude: latitude, longitude: longitude)
         
-        let upcomingWeatherResource = UpcomingWeatherResource(latitude: latitude, longitude: longitude)
-        let upcomingRequest = APIRequest(resource: upcomingWeatherResource)
-        
-        guard let currentWeather = try await currentRequest.execute()?.mapToPlain() else {
-            throw NetworkingError.invalidData
-        }
-        
-        guard let upcomingWeather = try await upcomingRequest.execute()?.mapToPlain() else {
-            throw NetworkingError.invalidData
-        }
+        let currentWeather = try await weatherSource.getCurrentWeather(latitude: latitude, longitude: longitude)
+        let upcomingWeather = try await weatherSource.getUpcomingWeather(latitude: latitude, longitude: longitude)
+
+        let currentWeatherPlain = CurrentWeatherPlain(icon: currentWeather.icon, location: locationName, description: currentWeather.description, temperature: currentWeather.temperature)
         
         let homeWeatherPlain = HomeWeatherPlain(
-            current: currentWeather,
+            current: currentWeatherPlain,
             hourly: upcomingWeather.hourly,
             daily: upcomingWeather.daily)
         

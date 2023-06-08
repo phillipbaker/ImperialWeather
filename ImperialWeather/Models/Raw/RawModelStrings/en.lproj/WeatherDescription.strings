@@ -1,0 +1,48 @@
+/* Label to describe volcanic ash. */
+"Ash" = "Ash";
+
+/* Label to describe a clear sky without many clouds. */
+"Clear" = "Clear";
+
+/* Label to describe cloudy conditions. */
+"Cloud" = "Cloud";
+
+/* Label to describe light rainfall. */
+"Drizzle" = "Drizzle";
+
+/* Label to describe sand/dust whirls. */
+"Dust" = "Dust";
+
+/* Label to describe foggy conditions. */
+"Fog" = "Fog";
+
+/* Label to describe hazy conditions. */
+"Haze" = "Haze";
+
+/* Label to describe misty conditions. */
+"Mist" = "Mist";
+
+/* Label displayed when the weather description is missing from a forecast. */
+"No Description" = "No Description";
+
+/* Label to describe rainy conditions. */
+"Rain" = "Rain";
+
+/* Label to describe sand or dust whirls or a sand or dust storm. */
+"Sand" = "Sand";
+
+/* Label to describe smoke as it pertains to the weather. */
+"Smoke" = "Smoke";
+
+/* Label to describe snowfall. */
+"Snow" = "Snow";
+
+/* Label to describe ocean or coastal squalls. */
+"Squall" = "Squall";
+
+/* Label to describe a thunderstorm. */
+"Thunderstorm" = "Thunderstorm";
+
+/* Label to describe a tornado. */
+"Tornado" = "Tornado";
+

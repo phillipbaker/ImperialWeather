@@ -11,7 +11,7 @@ import Foundation
 
     let latitude: String
     let longitude: String
-    let getWeatherUseCase = GetWeather()
+    let getWeatherUseCase = GetWeather(locationSource: .init(), weatherSource: .init())
     
     @Published private(set) var state: HomeState = .loading
     

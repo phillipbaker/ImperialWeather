@@ -9,7 +9,8 @@ import SwiftUI
 
 struct IconAndTemperatureView: View {
     let icon: String
-    let temperature: Double
+    let celsius: Measurement<UnitTemperature>
+    let fahrenheit: Measurement<UnitTemperature>
     
     var body: some View {
         WeatherImage(systemName: icon)
@@ -18,7 +19,7 @@ struct IconAndTemperatureView: View {
         Divider()
             .frame(maxHeight: 100)
         
-        CurrentTemperatureView(temperature: temperature)
+        CurrentTemperatureView(celsius: celsius, fahrenheit: fahrenheit)
     }
 }
 
@@ -26,7 +27,8 @@ struct IconAndTemperatureView_Previews: PreviewProvider {
     static var previews: some View {
         IconAndTemperatureView(
             icon: CurrentWeather.preview.icon,
-            temperature: CurrentWeather.preview.temperature
+            celsius: CurrentWeather.preview.celsius,
+            fahrenheit: CurrentWeather.preview.fahrenheit
         )
     }
 }

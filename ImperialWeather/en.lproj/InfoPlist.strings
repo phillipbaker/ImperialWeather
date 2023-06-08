@@ -1,0 +1,5 @@
+/* Bundle name */
+"CFBundleName" = "ImperialWeather";
+
+/* Privacy - Location When In Use Usage Description */
+"NSLocationWhenInUseUsageDescription" = "Imperial Weather needs your location to show you the weather where you are.";

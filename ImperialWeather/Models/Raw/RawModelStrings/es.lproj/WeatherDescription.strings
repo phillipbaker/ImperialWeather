@@ -1,0 +1,48 @@
+/* Label to describe volcanic ash. */
+"Ash" = "Ceniza";
+
+/* Label to describe a clear sky without many clouds. */
+"Clear" = "Despejado";
+
+/* Label to describe cloudy conditions. */
+"Cloud" = "Nubes";
+
+/* Label to describe light rainfall. */
+"Drizzle" = "Drizzle";
+
+/* Label to describe sand/dust whirls. */
+"Dust" = "Polvo";
+
+/* Label to describe foggy conditions. */
+"Fog" = "Niebla";
+
+/* Label to describe hazy conditions. */
+"Haze" = "Neblina";
+
+/* Label to describe misty conditions. */
+"Mist" = "Niebla";
+
+/* Label displayed when the weather description is missing from a forecast. */
+"No Description" = "Sin descripción";
+
+/* Label to describe rainy conditions. */
+"Rain" = "Lloviznar";
+
+/* Label to describe sand or dust whirls or a sand or dust storm. */
+"Sand" = "Arena";
+
+/* Label to describe smoke as it pertains to the weather. */
+"Smoke" = "Humo";
+
+/* Label to describe snowfall. */
+"Snow" = "Nieve";
+
+/* Label to describe ocean or coastal squalls. */
+"Squall" = "Chubasco";
+
+/* Label to describe a thunderstorm. */
+"Thunderstorm" = "Tormenta";
+
+/* Label to describe a tornado. */
+"Tornado" = "Tornado";
+

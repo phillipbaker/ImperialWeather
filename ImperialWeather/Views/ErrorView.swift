@@ -15,23 +15,31 @@ struct ErrorView: View {
             Color.weatherBackground
                 .ignoresSafeArea()
             
-            VStack(spacing: 16) {
-                VStack(spacing: 10) {
+            VStack(spacing: 24) {
+                VStack(spacing: 12) {
                     Image(systemName: error.message.image)
                         .font(.largeTitle)
+                        .padding(.vertical)
                     
                     Text(error.message.title)
+                        .padding(.horizontal, 24)
+                        .multilineTextAlignment(.center)
                         .font(.headline)
+                    
+                    Text(error.message.description)
+                        .frame(maxWidth: .infinity)
+                        .foregroundColor(.secondary)
                         .multilineTextAlignment(.center)
                 }
                 
-                Text(error.message.description)
-                    .foregroundColor(.secondary)
-                
-                Button(error.message.buttonTitle) {
+                Button {
                     error.message.buttonAction()
+                } label: {
+                    Text(error.message.buttonTitle)
+                        .frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.borderedProminent)
+                .padding(.bottom)
             }
             .paneBackground()
             .padding()
@@ -41,7 +49,15 @@ struct ErrorView: View {
 
 struct ErrorScreen_Previews: PreviewProvider {
     static var previews: some View {
-        ErrorView(error: .networkError)
-            .backgroundView()
+        ScrollView {
+            VStack(spacing: 20) {
+                ErrorView(error: .locationPermission)
+                ErrorView(error: .locationError)
+                ErrorView(error: .invalidUrl)
+                ErrorView(error: .networkError)
+                ErrorView(error: .invalidResponse)
+                ErrorView(error: .invalidData)
+            }
+        }
     }
 }

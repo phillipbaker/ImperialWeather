@@ -9,21 +9,22 @@ import SwiftUI
 
 struct PrimaryTemperatureView: View {
     @AppStorage("temperatureScale") private var temperatureScale: TemperatureScale = .celsius
-    var temperature: Double
+    
+    let celsius: Measurement<UnitTemperature>
+    let fahrenheit: Measurement<UnitTemperature>
     
     var body: some View {
-        Text(temperatureScale == .celsius
-             ? temperature.celsius + Celsius.abbreviated
-             : temperature.fahrenheit + Fahrenheit.abbreviated
-        )
-        .fontWeight(.medium)
-        .frame(minWidth: 40)
-        .accessibilityLabel()
+        Text((temperatureScale == .celsius ? celsius : fahrenheit).formatted)
+            .fontWeight(.medium)
+            .frame(minWidth: 40)
     }
 }
 
 struct PrimaryTemperatureView_Previews: PreviewProvider {
     static var previews: some View {
-        PrimaryTemperatureView(temperature: 15.0)
+        PrimaryTemperatureView(
+            celsius: Measurement(value: 21.0, unit: .celsius),
+            fahrenheit: Measurement(value: 39.0, unit: .fahrenheit)
+        )
     }
 }

@@ -9,11 +9,13 @@ import SwiftUI
 
 struct DataAttributionView: View {
     var body: some View {
-        SizeCategoryStack(spacing: 4) {
-            Text("Source:")
-            Link("OpenWeatherMap", destination: URL(string: "https://openweathermap.org")!)
+        Link(destination: URL(string: "https://openweathermap.org")!) {
+            SizeCategoryStack(spacing: 4) {
+                Text(WeatherLabel.source)
+            }
         }
         .font(.caption)
+        .textCase(.uppercase)
         .foregroundColor(.secondary)
         .frame(maxWidth: .infinity, alignment: .leading)
     }

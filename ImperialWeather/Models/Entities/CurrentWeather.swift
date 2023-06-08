@@ -12,17 +12,32 @@ struct CurrentWeather: Identifiable {
     let icon: String
     let location: String
     let description: String
-    let temperature: Double
+    let celsius: Measurement<UnitTemperature>
+    let fahrenheit: Measurement<UnitTemperature>
+    
+    init(
+        id: UUID = UUID(),
+        icon: String,
+        location: String,
+        description: String,
+        celsius: Measurement<UnitTemperature>
+    ) {
+        self.id = id
+        self.icon = icon
+        self.location = location
+        self.description = description
+        self.celsius = celsius
+        self.fahrenheit = self.celsius.converted(to: .fahrenheit)
+    }
 }
 
 extension CurrentWeather {
     static func mapCurrentWeatherFromData(data: CurrentWeatherPlain) -> CurrentWeather {
         return CurrentWeather(
-            id: UUID(),
             icon: data.icon,
             location: data.location,
             description: data.description,
-            temperature: data.temperature
+            celsius: Measurement(value: data.temperature, unit: .celsius)
         )
     }
 }

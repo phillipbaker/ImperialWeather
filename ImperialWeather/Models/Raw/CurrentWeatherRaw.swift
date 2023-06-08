@@ -15,7 +15,7 @@ struct CurrentWeatherRaw: Codable {
     func mapToPlain() -> CurrentWeatherPlain {
         return CurrentWeatherPlain(
             icon: WeatherDescriptionRaw.mapFirstIcon(from: description),
-            location: location ?? "Unknown Location",
+            location: location ?? WeatherLabel.unknownLocation,
             description: WeatherDescriptionRaw.mapFirstDescription(from: description),
             temperature: conditions.temperature
         )
