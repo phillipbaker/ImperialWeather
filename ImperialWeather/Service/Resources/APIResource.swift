@@ -29,7 +29,7 @@ extension APIResource {
         
         components.queryItems = [
             URLQueryItem(name: "units", value: "metric"),
-            URLQueryItem(name: "appid", value: "288024cdc4c54aff1f4587c80792e725"),
+            URLQueryItem(name: "appid", value: "INSERT_API_KEY_HERE"),
             URLQueryItem(name: "lat", value: latitude),
             URLQueryItem(name: "lon", value: longitude)
         ]
