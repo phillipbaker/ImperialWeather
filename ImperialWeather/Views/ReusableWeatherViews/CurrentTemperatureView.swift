@@ -19,5 +19,6 @@ struct CurrentTemperatureView: View {
             
             SecondaryTemperatureView(celsius: celsius, fahrenheit: fahrenheit)
         }
+        .accessibilityElement(children: .combine)
     }
 }

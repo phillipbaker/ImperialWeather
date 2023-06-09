@@ -269,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				F855EDAD2938D2F50034DDF7 /* WeatherImage.swift */,
+				F8EB4CDE2938D0BF00BAE881 /* CurrentTemperatureView.swift */,
 				F855EDAC2938D2F40034DDF7 /* DataAttributionView.swift */,
 				F855EDAE2938D2F50034DDF7 /* PrimaryTemperatureView.swift */,
 				F855EDAF2938D2F50034DDF7 /* SecondaryTemperatureView.swift */,
@@ -484,7 +485,6 @@
 			children = (
 				F867BC16275E0725001CBA62 /* CurrentWeatherView.swift */,
 				F8EB4CE12938D0F300BAE881 /* LocationAndDescriptionView.swift */,
-				F8EB4CDE2938D0BF00BAE881 /* CurrentTemperatureView.swift */,
 			);
 			path = CurrentWeather;
 			sourceTree = "<group>";
