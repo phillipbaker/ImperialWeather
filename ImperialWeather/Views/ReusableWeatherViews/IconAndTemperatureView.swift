@@ -13,13 +13,15 @@ struct IconAndTemperatureView: View {
     let fahrenheit: Measurement<UnitTemperature>
     
     var body: some View {
-        WeatherImage(systemName: icon)
-            .font(.system(size: 48))
-        
-        Divider()
-            .frame(maxHeight: 100)
-        
-        CurrentTemperatureView(celsius: celsius, fahrenheit: fahrenheit)
+        HStack {
+            WeatherImage(systemName: icon)
+                .font(.system(size: 48))
+            
+            Divider()
+                .frame(maxHeight: 100)
+            
+            CurrentTemperatureView(celsius: celsius, fahrenheit: fahrenheit)
+        }
     }
 }
 
