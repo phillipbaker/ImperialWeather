@@ -49,19 +49,14 @@ struct WeatherDetailView: View {
                         }
                         .paneBackground()
                         
-                        HStack(spacing: 16) {
+                        VStack(spacing: 16) {
                             IconAndTemperatureView(
                                 icon: selection.icon,
                                 celsius: selection.celsius,
                                 fahrenheit: selection.fahrenheit
                             )
                             
-                            Spacer()
-                            
-                            VStack {
-                                Spacer()
-                                TemperatureScalePicker()
-                            }
+                            TemperatureScalePicker()
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .paneBackground()
