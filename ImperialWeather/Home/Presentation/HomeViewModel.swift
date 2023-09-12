@@ -11,7 +11,12 @@ import Foundation
 
     let latitude: String
     let longitude: String
-    let getWeatherUseCase = GetWeather(locationSource: .init(), weatherSource: .init())
+    let getWeatherUseCase = GetWeather(
+        source: GetWeatherSourceImpl(
+            locationDataSourceLocal: LocationLocalDataGateway(),
+            weatherDataSourceRemote: WeatherRemoteDataGateway(service: WeatherServiceImpl())
+        )
+    )
     
     @Published private(set) var state: HomeState = .loading
     
@@ -25,7 +30,7 @@ import Foundation
     
     private func getWeather() async throws {
         do {
-            state = .success(try await getWeatherUseCase.weather(latitude: self.latitude, longitude: self.longitude))
+            state = .success(try await getWeatherUseCase.weather(forLatitude: self.latitude, andLongitude: self.longitude))
         } catch NetworkingError.invalidUrl {
             state = .error(.invalidUrl)
         } catch NetworkingError.networkError {

@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct RootView: View {
-    @StateObject private var viewModel = LocationViewModel()
+    @StateObject private var locationManager = LocationManager()
     
     var body: some View {
-        switch viewModel.authorizationStatus {
+        switch locationManager.authorizationStatus {
         case .restricted, .denied, .notDetermined:
             ErrorView(error: .locationPermission)
         case .authorizedAlways, .authorizedWhenInUse:
-            HomeView(viewModel: HomeViewModel(latitude: viewModel.latitude, longitude: viewModel.longitude))
+            if let latitude = locationManager.latitude, let longitude = locationManager.longitude {
+                HomeView(viewModel: HomeViewModel(latitude: latitude, longitude: longitude))
+            }
         @unknown default:
             ErrorView(error: .locationError)
         }

@@ -13,7 +13,7 @@ struct HomeView: View {
     var body: some View {
         switch viewModel.state {
         case .loading:
-            ProgressView()
+            LoadingView()
         case .success(let weather):
             WeatherView(weather: weather)
         case .error(let error):

@@ -29,6 +29,7 @@ struct DailyWeatherRow: View {
             .font(.system(.body, design: .rounded))
             .multilineTextAlignment(.trailing)
         }
+        .frame(maxWidth: .infinity)
     }
 }
 
