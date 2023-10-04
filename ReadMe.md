@@ -6,8 +6,6 @@ The app shows current and upcoming temperatures in both scales. A toggle switche
 
 It’s built with **SwiftUI**, **SwiftCharts**, **CoreLocation**, **Codable** and data from OpenWeather.
 
-Limiting the functionality enabled me to explore SwiftUI layout, app architecture, accessibility and localization.
-
 [Read about the app, my approach and learning experiences](https://phillipbaker.me/imperial-weather/) on my website.
 
 ---
