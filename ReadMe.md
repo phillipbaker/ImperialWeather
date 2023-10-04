@@ -2,7 +2,7 @@
 
 A weather app that displays temperatures in Fahrenheit and Celsius side-by-side. 
 
-The app shows current and upcoming temperatures in both temperature scales. A toggle switches the primary scale. It’s built with **SwiftUI**, **SwiftCharts**, **CoreLocation**, **Codable** and data from OpenWeather.
+The app shows current and upcoming temperatures in both scales. A toggle switches the primary scale. It’s built with **SwiftUI**, **SwiftCharts**, **CoreLocation**, **Codable** and data from OpenWeather.
 
 Limiting the functionality enabled me to explore SwiftUI layout, app architecture, accessibility and localization. For example, I’ve refactored the app towards a clean architecture, which is total overkill for a project of this size, but has been an invaluable learning experience. 
 
