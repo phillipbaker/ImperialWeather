@@ -7,12 +7,17 @@
 
 import SwiftUI
 
-extension View {
-    func paneBackground() -> some View {
-        self
+struct PaneBackground: ViewModifier {
+    func body(content: Content) -> some View {
+        content
             .padding()
             .background(.ultraThinMaterial)
             .cornerRadius(12)
             .paneShadow()
+    }
+}
+extension View {
+    func paneBackground() -> some View {
+        modifier(PaneBackground())
     }
 }
