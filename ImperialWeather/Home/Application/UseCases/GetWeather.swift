@@ -14,7 +14,7 @@ class GetWeather {
         self.source = source
     }
     
-    func weather(forLatitude latitude: String, andLongitude longitude: String) async throws -> HomeWeather {
+    @MainActor func weather(forLatitude latitude: String, andLongitude longitude: String) async throws -> HomeWeather {
         HomeWeather.mapHomeWeatherFromData(data: try await source.weather(forLatitude: latitude, andLongitude: longitude))
     }
 }

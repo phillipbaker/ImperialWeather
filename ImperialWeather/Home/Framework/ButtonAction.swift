@@ -8,14 +8,14 @@
 import SwiftUI
 
 enum ButtonAction {
-    static func launchAppSettings() {
+    @MainActor static func launchAppSettings() async {
         guard let bundleId = Bundle.main.bundleIdentifier else { return }
         let url = URL(string: "\(UIApplication.openSettingsURLString)&path=LOCATION/\(bundleId)")!
-        UIApplication.shared.open(url)
+        Task { await UIApplication.shared.open(url) }
     }
     
-    static func submitFeedback() {
+    @MainActor static func submitFeedback() async {
         let url = URL(string: "mailto:INSERTEMAILHERE")!
-        UIApplication.shared.open(url)
+        Task { await UIApplication.shared.open(url) }
     }
 }

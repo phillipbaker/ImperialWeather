@@ -12,5 +12,5 @@ struct LocationPermissionMessage: ErrorMessage {
     var title: String { ErrorTitle.locationPermission }
     var description: String { ErrorDescription.locationPermission }
     var buttonTitle: String { ErrorButtonTitle.locationServices }
-    var buttonAction: () -> Void { ButtonAction.launchAppSettings }
+    var buttonAction: () async -> Void { ButtonAction.launchAppSettings }
 }

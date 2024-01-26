@@ -8,7 +8,7 @@
 import CoreLocation
 import Foundation
 
-@MainActor final class LocationManager: NSObject, ObservableObject {
+final class LocationManager: NSObject, ObservableObject {
     @Published private(set) var error: Error?
     @Published private(set) var latitude: String?
     @Published private(set) var longitude: String?

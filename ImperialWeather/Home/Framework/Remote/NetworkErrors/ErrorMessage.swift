@@ -12,5 +12,5 @@ protocol ErrorMessage {
     var title: String { get }
     var description: String { get }
     var buttonTitle: String { get }
-    var buttonAction: () -> Void { get }
+    var buttonAction: () async -> Void { get }
 }

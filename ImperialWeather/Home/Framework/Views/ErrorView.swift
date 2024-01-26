@@ -33,7 +33,7 @@ struct ErrorView: View {
                 }
                 
                 Button {
-                    error.message.buttonAction()
+                    Task { await error.message.buttonAction() }
                 } label: {
                     Text(error.message.buttonTitle)
                         .frame(maxWidth: .infinity)
