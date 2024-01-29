@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol WeatherService {
+protocol WeatherService: Sendable {
     func fetchWeather(latitude: String, longitude: String) async throws -> HomeWeatherRaw
 }

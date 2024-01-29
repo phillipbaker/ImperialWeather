@@ -7,7 +7,7 @@
 
 import Foundation
 
-class WeatherRemoteDataGateway: WeatherDataSourceRemote {
+final class WeatherRemoteDataGateway: WeatherDataSourceRemote {
     let service: WeatherService
     
     init(service: WeatherService) {

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class WeatherServiceImpl: WeatherService {
+final class WeatherServiceImpl: WeatherService {
     func fetchWeather(latitude: String, longitude: String) async throws -> HomeWeatherRaw {
         let currentWeatherResource = CurrentWeatherResource(latitude: latitude, longitude: longitude)
         let currentWeatherRequest = APIRequest(resource: currentWeatherResource)
