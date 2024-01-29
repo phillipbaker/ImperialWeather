@@ -25,10 +25,10 @@ import Foundation
         self.longitude = longitude
         super.init()
         
-        Task { try await getWeather() }
+        Task { await getWeather() }
     }
     
-    private func getWeather() async throws {
+    private func getWeather() async {
         do {
             state = .success(try await getWeatherUseCase.weather(forLatitude: self.latitude, andLongitude: self.longitude))
         } catch NetworkingError.invalidUrl {
