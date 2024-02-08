@@ -60,7 +60,6 @@
 		F867BC2C275E0725001CBA62 /* SizeCategoryStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F867BC1A275E0725001CBA62 /* SizeCategoryStack.swift */; };
 		F867BC2D275E0725001CBA62 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F867BC1B275E0725001CBA62 /* BackgroundView.swift */; };
 		F867BC30275E0725001CBA62 /* HorizontalSizeClassStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F867BC1E275E0725001CBA62 /* HorizontalSizeClassStack.swift */; };
-		F875DCA5268DF98C0025386F /* WeatherBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = F875DCA4268DF98C0025386F /* WeatherBackground.swift */; };
 		F8791BC52A49ABA100813C1E /* GetWeatherSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8791BC42A49ABA100813C1E /* GetWeatherSource.swift */; };
 		F8791BC92A49B47F00813C1E /* GetWeatherSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8791BC82A49B47F00813C1E /* GetWeatherSourceImpl.swift */; };
 		F8791BCE2A49BA0500813C1E /* WeatherRemoteDataGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8791BCD2A49BA0500813C1E /* WeatherRemoteDataGateway.swift */; };
@@ -182,7 +181,6 @@
 		F867BC1A275E0725001CBA62 /* SizeCategoryStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeCategoryStack.swift; sourceTree = "<group>"; };
 		F867BC1B275E0725001CBA62 /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		F867BC1E275E0725001CBA62 /* HorizontalSizeClassStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalSizeClassStack.swift; sourceTree = "<group>"; };
-		F875DCA4268DF98C0025386F /* WeatherBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherBackground.swift; sourceTree = "<group>"; };
 		F8791BC42A49ABA100813C1E /* GetWeatherSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWeatherSource.swift; sourceTree = "<group>"; };
 		F8791BC82A49B47F00813C1E /* GetWeatherSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWeatherSourceImpl.swift; sourceTree = "<group>"; };
 		F8791BCD2A49BA0500813C1E /* WeatherRemoteDataGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRemoteDataGateway.swift; sourceTree = "<group>"; };
@@ -419,7 +417,6 @@
 				F87E5CB7267CA53B0032949A /* HomeViewModel.swift */,
 				F8CEA31E268B69FF0070DEE0 /* Formatting.swift */,
 				F8EDEF6526F0CB68008CB9A7 /* TemperatureScale.swift */,
-				F875DCA4268DF98C0025386F /* WeatherBackground.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -704,7 +701,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1520;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					F85931D32B72693400E3355E = {
 						CreatedOnToolsVersion = 15.2;
@@ -851,7 +848,6 @@
 				F8791BD72A4A111000813C1E /* HomeWeatherLocationPlain.swift in Sources */,
 				F812D9812853B00200FC8223 /* DailyWeatherRaw.swift in Sources */,
 				F867BC28275E0725001CBA62 /* DailyWeatherView.swift in Sources */,
-				F875DCA5268DF98C0025386F /* WeatherBackground.swift in Sources */,
 				F855EDB12938D2F60034DDF7 /* DataAttributionView.swift in Sources */,
 				F8EB4CDD2938BB7700BAE881 /* LocationManager.swift in Sources */,
 				F82C4A1E2A1CBD9900CEA518 /* NetworkErrorMessage.swift in Sources */,
@@ -976,6 +972,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -1038,6 +1035,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
