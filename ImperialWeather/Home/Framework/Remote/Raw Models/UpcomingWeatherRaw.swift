@@ -7,14 +7,7 @@
 
 import Foundation
 
-struct UpcomingWeatherRaw: Decodable {
-    let hourlyWeather: [HourlyWeatherRaw]
-    let dailyWeather: [DailyWeatherRaw]
-}
-
-extension UpcomingWeatherRaw {
-    enum CodingKeys: String, CodingKey {
-        case hourlyWeather = "hourly"
-        case dailyWeather = "daily"
-    }
+struct UpcomingWeatherRaw: Decodable, Equatable {
+    let hourly: [HourlyWeatherRaw]
+    let daily: [DailyWeatherRaw]
 }

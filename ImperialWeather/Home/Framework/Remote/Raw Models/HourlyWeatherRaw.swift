@@ -7,17 +7,16 @@
 
 import Foundation
 
-struct HourlyWeatherRaw: Decodable, Identifiable {
-    let id = UUID()
-    let hour: Date
-    let temperature: Double
-    let description: [WeatherDescriptionRaw]
+struct HourlyWeatherRaw: Decodable, Equatable {
+    let dt: Date
+    let temp: Double
+    let weather: [WeatherDescriptionRaw]
     
     func mapToPlain() -> HourlyWeatherPlain {
         return HourlyWeatherPlain(
-            hour: hour,
-            icon: WeatherDescriptionRaw.mapFirstIcon(from: description),
-            temperature: temperature
+            hour: dt,
+            icon: WeatherDescriptionRaw.mapFirstIcon(from: weather),
+            temperature: temp
         )
     }
     
@@ -25,13 +24,5 @@ struct HourlyWeatherRaw: Decodable, Identifiable {
         return hourlyWeatherRaw.map { hourlyWeather in
             hourlyWeather.mapToPlain()
         }
-    }
-}
-
-extension HourlyWeatherRaw {
-    enum CodingKeys: String, CodingKey {
-        case hour = "dt"
-        case temperature = "temp"
-        case description = "weather"
     }
 }

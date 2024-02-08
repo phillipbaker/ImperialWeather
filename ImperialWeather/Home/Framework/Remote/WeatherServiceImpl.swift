@@ -25,8 +25,8 @@ final class WeatherServiceImpl: WeatherService {
         
         return HomeWeatherRaw(
             currentWeather: currentWeatherRaw,
-            hourlyWeather: upcomingWeatherRaw.hourlyWeather,
-            dailyWeather: upcomingWeatherRaw.dailyWeather
+            hourlyWeather: upcomingWeatherRaw.hourly,
+            dailyWeather: upcomingWeatherRaw.daily
         )
     }
 }

@@ -7,35 +7,22 @@
 
 import Foundation
 
-struct DailyWeatherRaw: Decodable, Identifiable {
-    let id = UUID()
-    let day: Date
-    let temperature: TemperatureRaw
-    let description: [WeatherDescriptionRaw]
+struct DailyWeatherRaw: Decodable, Equatable {
+    let dt: Date
+    let temp: TemperatureRaw
+    let weather: [WeatherDescriptionRaw]
     
     func mapToPlain() -> DailyWeatherPlain {
         return DailyWeatherPlain(
-            day: day,
-            icon: WeatherDescriptionRaw.mapFirstIcon(from: description),
-            temperature: temperature.max
+            day: dt,
+            icon: WeatherDescriptionRaw.mapFirstIcon(from: weather),
+            temperature: temp.max
         )
     }
     
     static func mapDailyWeatherRawToPlain(dailyWeatherRaw: [DailyWeatherRaw]) -> [DailyWeatherPlain] {
-        return dailyWeatherRaw[1..<8].map { $0.mapToPlain() }
-    }
-}
-
-extension DailyWeatherRaw {
-    enum CodingKeys: String, CodingKey {
-        case day = "dt"
-        case temperature = "temp"
-        case description = "weather"
-    }
-}
-
-extension DailyWeatherRaw: Equatable {
-    static func == (lhs: DailyWeatherRaw, rhs: DailyWeatherRaw) -> Bool {
-        lhs.id == rhs.id
+        return dailyWeatherRaw
+            .filter { !Calendar.current.isDateInToday($0.dt) }
+            .map { $0.mapToPlain() }
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct HourlyWeatherPlain {
+struct HourlyWeatherPlain: Equatable {
     let hour: Date
     let icon: String
     let temperature: Double

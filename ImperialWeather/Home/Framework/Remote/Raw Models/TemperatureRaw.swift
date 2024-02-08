@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct TemperatureRaw: Codable {
+struct TemperatureRaw: Decodable, Equatable {
     let max: Double
 }

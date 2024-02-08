@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct WeatherDescriptionRaw: Codable {
+struct WeatherDescriptionRaw: Decodable, Equatable {
     let icon: String
     let id: Int
     
@@ -104,12 +104,5 @@ struct WeatherDescriptionRaw: Codable {
     
     private func isDaytime() -> Bool {
         return icon.contains("d") ? true : false
-    }
-}
-
-extension WeatherDescriptionRaw {
-    enum CodingKeys: String, CodingKey {
-        case icon
-        case id
     }
 }

@@ -7,12 +7,6 @@
 
 import Foundation
 
-struct ConditionsRaw: Codable {
-    let temperature: Double
-}
-
-extension ConditionsRaw {
-    enum CodingKeys: String, CodingKey {
-        case temperature = "temp"
-    }
+struct ConditionsRaw: Decodable, Equatable {
+    let temp: Double
 }

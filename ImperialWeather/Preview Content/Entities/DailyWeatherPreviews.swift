@@ -18,13 +18,13 @@ extension DailyWeather {
         DailyWeather(
             id: UUID(),
             day: Calendar.current.date(byAdding: .day, value: 1, to: Date.now)!,
-            icon: WeatherSymbol.sun,
+            icon: WeatherSymbol.rain,
             celsius: Measurement(value: 25.0, unit: .celsius)
         ),
         DailyWeather(
             id: UUID(),
             day: Calendar.current.date(byAdding: .day, value: 2, to: Date.now)!,
-            icon: WeatherSymbol.sun,
+            icon: WeatherSymbol.cloud,
             celsius: Measurement(value: 39.0, unit: .celsius)
         ),
         DailyWeather(

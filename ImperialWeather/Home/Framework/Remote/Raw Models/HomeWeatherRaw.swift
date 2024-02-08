@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct HomeWeatherRaw {
+struct HomeWeatherRaw: Equatable {
     let currentWeather: CurrentWeatherRaw
     let hourlyWeather: [HourlyWeatherRaw]
     let dailyWeather: [DailyWeatherRaw]

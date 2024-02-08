@@ -7,25 +7,17 @@
 
 import Foundation
 
-struct CurrentWeatherRaw: Codable {
-    let location: String?
-    let conditions: ConditionsRaw
-    let description: [WeatherDescriptionRaw]
+struct CurrentWeatherRaw: Decodable, Equatable {
+    let name: String?
+    let main: ConditionsRaw
+    let weather: [WeatherDescriptionRaw]
     
     func mapToPlain() -> CurrentWeatherPlain {
         return CurrentWeatherPlain(
-            icon: WeatherDescriptionRaw.mapFirstIcon(from: description),
-            location: location ?? WeatherLabel.unknownLocation,
-            description: WeatherDescriptionRaw.mapFirstDescription(from: description),
-            temperature: conditions.temperature
+            icon: WeatherDescriptionRaw.mapFirstIcon(from: weather),
+            location: name ?? WeatherLabel.unknownLocation,
+            description: WeatherDescriptionRaw.mapFirstDescription(from: weather),
+            temperature: main.temp
         )
-    }
-}
-
-extension CurrentWeatherRaw {
-    enum CodingKeys: String, CodingKey {
-        case location = "name"
-        case conditions = "main"
-        case description = "weather"
     }
 }
