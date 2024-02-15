@@ -12,5 +12,5 @@ struct InvalidURLMessage: ErrorMessage {
     var title: String { ErrorTitle.invalidURL }
     var description: String { ErrorDescription.invalidURL }
     var buttonTitle: String { ErrorButtonTitle.reportProblem }
-    var buttonAction: () async -> Void { ButtonAction.submitFeedback }
+    var buttonAction: () async -> Void { Application.live.submitFeedback }
 }

@@ -12,5 +12,5 @@ struct NetworkErrorMessage: ErrorMessage {
     var title: String { ErrorTitle.networkError }
     var description: String { ErrorDescription.networkError }
     var buttonTitle: String { ErrorButtonTitle.networkError }
-    var buttonAction: () async -> Void { ButtonAction.launchAppSettings }
+    var buttonAction: () async -> Void { Application.live.launchAppSettings }
 }

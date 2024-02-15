@@ -46,7 +46,7 @@
 		F85931EC2B72728500E3355E /* HourlyWeatherFakes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85931E62B7271A500E3355E /* HourlyWeatherFakes.swift */; };
 		F85931EE2B7272B600E3355E /* DailyWeatherFakes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85931ED2B7272B600E3355E /* DailyWeatherFakes.swift */; };
 		F85931F02B7272DA00E3355E /* HomeWeatherFakes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85931EF2B7272DA00E3355E /* HomeWeatherFakes.swift */; };
-		F860B2BC2A31E5C700F3C8D7 /* ButtonAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F860B2BB2A31E5C700F3C8D7 /* ButtonAction.swift */; };
+		F860B2BC2A31E5C700F3C8D7 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = F860B2BB2A31E5C700F3C8D7 /* Application.swift */; };
 		F860B2CC2A31E7CE00F3C8D7 /* ErrorMessage.strings in Resources */ = {isa = PBXBuildFile; fileRef = F860B2CA2A31E7CE00F3C8D7 /* ErrorMessage.strings */; };
 		F860B2CF2A31E7CE00F3C8D7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F860B2CD2A31E7CE00F3C8D7 /* InfoPlist.strings */; };
 		F860B2D22A31E7CE00F3C8D7 /* WeatherDescription.strings in Resources */ = {isa = PBXBuildFile; fileRef = F860B2D02A31E7CE00F3C8D7 /* WeatherDescription.strings */; };
@@ -163,7 +163,7 @@
 		F85931EA2B72727600E3355E /* CurrentWeatherFakes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherFakes.swift; sourceTree = "<group>"; };
 		F85931ED2B7272B600E3355E /* DailyWeatherFakes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherFakes.swift; sourceTree = "<group>"; };
 		F85931EF2B7272DA00E3355E /* HomeWeatherFakes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWeatherFakes.swift; sourceTree = "<group>"; };
-		F860B2BB2A31E5C700F3C8D7 /* ButtonAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonAction.swift; sourceTree = "<group>"; };
+		F860B2BB2A31E5C700F3C8D7 /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		F860B2DB2A31ECA600F3C8D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WeatherLabel.strings; sourceTree = "<group>"; };
 		F860B2DC2A31ECE000F3C8D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WeatherDescription.strings; sourceTree = "<group>"; };
 		F860B2DD2A31ED2400F3C8D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -444,7 +444,7 @@
 				F867BC0D275E0725001CBA62 /* Views */,
 				F8791BCC2A49B9E200813C1E /* Remote */,
 				F8791BD52A49C86300813C1E /* Local */,
-				F860B2BB2A31E5C700F3C8D7 /* ButtonAction.swift */,
+				F860B2BB2A31E5C700F3C8D7 /* Application.swift */,
 			);
 			path = Framework;
 			sourceTree = "<group>";
@@ -794,7 +794,7 @@
 				F87E5C93267C9E950032949A /* ImperialWeatherApp.swift in Sources */,
 				F867BC25275E0725001CBA62 /* ErrorView.swift in Sources */,
 				F812D9832853D34500FC8223 /* UpcomingWeatherResource.swift in Sources */,
-				F860B2BC2A31E5C700F3C8D7 /* ButtonAction.swift in Sources */,
+				F860B2BC2A31E5C700F3C8D7 /* Application.swift in Sources */,
 				F8791BC52A49ABA100813C1E /* GetWeatherSource.swift in Sources */,
 				F8EB4CDF2938D0BF00BAE881 /* CurrentTemperatureView.swift in Sources */,
 				F82DEAFA2A233AC000B2FB97 /* PlottableMeasurement.swift in Sources */,

@@ -12,5 +12,5 @@ struct InvalidDataMessage: ErrorMessage {
     var title: String { ErrorTitle.invalidData }
     var description: String { ErrorDescription.invalidData }
     var buttonTitle: String { ErrorButtonTitle.reportProblem }
-    var buttonAction: () async -> Void { ButtonAction.submitFeedback }
+    var buttonAction: () async -> Void { Application.live.submitFeedback }
 }
