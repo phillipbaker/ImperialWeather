@@ -7,7 +7,7 @@
 
 import Foundation
 
-class APIRequest<Resource: APIResource> {
+final class APIRequest<Resource: APIResource>: Sendable where Resource: Sendable {
     let resource: Resource
     
     init(resource: Resource) {
@@ -16,7 +16,7 @@ class APIRequest<Resource: APIResource> {
 }
 
 extension APIRequest: NetworkRequest {
-    func decode(_ data: Data) throws -> Resource.ModelType? {
+    func decode(_ data: Data) throws -> Resource.ModelType {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .secondsSince1970
         guard let result = try? decoder.decode(ModelType.self, from: data) else {
@@ -26,7 +26,7 @@ extension APIRequest: NetworkRequest {
         return result
     }
     
-    func execute() async throws -> Resource.ModelType? {
+    func execute() async throws -> Resource.ModelType {
         guard let url = resource.url else {
             throw NetworkError.invalidUrl
         }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol APIResource {
+protocol APIResource: Sendable {
     associatedtype ModelType: Decodable
     var path: String { get }
     var latitude: String { get }

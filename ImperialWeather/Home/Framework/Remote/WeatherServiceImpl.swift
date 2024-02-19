@@ -12,18 +12,13 @@ final class WeatherServiceImpl: WeatherService {
         let currentWeatherResource = CurrentWeatherResource(latitude: latitude, longitude: longitude)
         let currentWeatherRequest = APIRequest(resource: currentWeatherResource)
         
-        guard let currentWeatherRaw = try await currentWeatherRequest.execute() else {
-            throw NetworkError.invalidData
-        }
-        
         let upcomingWeatherResource = UpcomingWeatherResource(latitude: latitude, longitude: longitude)
         let upcomingWeatherRequest = APIRequest(resource: upcomingWeatherResource)
         
-        guard let upcomingWeatherRaw = try await upcomingWeatherRequest.execute() else {
-            throw NetworkError.invalidData
-        }
+        async let currentWeatherRaw = currentWeatherRequest.execute()
+        async let upcomingWeatherRaw = upcomingWeatherRequest.execute()
         
-        return HomeWeatherRaw(
+        return try await HomeWeatherRaw(
             currentWeather: currentWeatherRaw,
             hourlyWeather: upcomingWeatherRaw.hourly,
             dailyWeather: upcomingWeatherRaw.daily
