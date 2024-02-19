@@ -7,7 +7,7 @@
 
 import Foundation
 
-@MainActor final class HomeViewModel: NSObject, ObservableObject {
+@MainActor final class HomeViewModel: ObservableObject {
 
     let latitude: String
     let longitude: String
@@ -23,7 +23,6 @@ import Foundation
     @MainActor init(latitude: String, longitude: String) {
         self.latitude = latitude
         self.longitude = longitude
-        super.init()
         
         Task { await getWeather() }
     }
