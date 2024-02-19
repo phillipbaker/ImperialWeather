@@ -30,13 +30,13 @@ import Foundation
     private func getWeather() async {
         do {
             state = .success(try await getWeatherUseCase.weather(forLatitude: self.latitude, andLongitude: self.longitude))
-        } catch NetworkingError.invalidUrl {
+        } catch NetworkError.invalidUrl {
             state = .error(.invalidUrl)
-        } catch NetworkingError.networkError {
+        } catch NetworkError.networkError {
             state = .error(.networkError)
-        } catch NetworkingError.invalidResponse {
+        } catch NetworkError.invalidResponse {
             state = .error(.invalidResponse)
-        } catch NetworkingError.invalidData {
+        } catch NetworkError.invalidData {
             state = .error(.invalidData)
         } catch {
             state = .error(.invalidData)

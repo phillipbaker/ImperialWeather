@@ -18,7 +18,7 @@ extension NetworkRequest {
         let (data, response) = try await URLSession.shared.data(from: url)
         
         guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-            throw NetworkingError.invalidResponse
+            throw NetworkError.invalidResponse
         }
 
         return try self.decode(data)

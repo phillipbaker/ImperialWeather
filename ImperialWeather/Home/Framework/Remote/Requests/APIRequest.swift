@@ -20,7 +20,7 @@ extension APIRequest: NetworkRequest {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .secondsSince1970
         guard let result = try? decoder.decode(ModelType.self, from: data) else {
-            throw NetworkingError.invalidData
+            throw NetworkError.invalidData
         }
         
         return result
@@ -28,7 +28,7 @@ extension APIRequest: NetworkRequest {
     
     func execute() async throws -> Resource.ModelType? {
         guard let url = resource.url else {
-            throw NetworkingError.invalidUrl
+            throw NetworkError.invalidUrl
         }
         
         return try await load(url)

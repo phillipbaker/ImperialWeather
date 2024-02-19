@@ -1,5 +1,5 @@
 //
-//  NetworkingError.swift
+//  NetworkError.swift
 //  ImperialWeather
 //
 //  Created by Phillip Baker on 7/14/21.
@@ -7,8 +7,7 @@
 
 import Foundation
 
-enum NetworkingError: Error {
-    
+enum NetworkError: Error {
     case locationPermission
     case locationError
     case invalidUrl

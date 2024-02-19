@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ErrorView: View {
-    let error: NetworkingError
+    let error: NetworkError
     
     var body: some View {
         ZStack {
