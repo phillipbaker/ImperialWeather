@@ -11,7 +11,7 @@ extension CurrentWeather {
     static let preview = CurrentWeather(
         id: UUID(),
         icon: WeatherSymbol.cloud,
-        location: "Test Location",
+        location: "London",
         description: "Sunny",
         celsius: Measurement(value: 21.0, unit: .celsius)
     )

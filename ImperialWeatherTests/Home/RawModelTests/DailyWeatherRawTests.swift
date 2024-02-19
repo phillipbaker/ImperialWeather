@@ -11,31 +11,29 @@ import XCTest
 final class DailyWeatherRawTests: XCTestCase {
     
     func test_mapToPlain_shouldMapDailyWeatherRaw_toDailyWeatherPlain() {
-        let result = dailyWeatherRawToday.mapToPlain()
-        XCTAssertEqual(dailyWeatherPlainToday, result)
+        let result = DailyWeatherRaw.mock_today.mapToPlain()
+        XCTAssertEqual(DailyWeatherPlain.mock_today, result)
     }
     
     func test_mapDailyWeatherRawToPlain_shouldMapArrayOfDailyWeatherRaw_toArrayOfDailyWeatherPlain() {
-        let result = DailyWeatherRaw
-            .mapDailyWeatherRawToPlain(
-                dailyWeatherRaw: [
-                    dailyWeatherRawTomorrow,
-                    dailyWeatherRawInTwoDays
-                ]
-            )
+        let result = DailyWeatherRaw.mapDailyWeatherRawToPlain(
+            dailyWeatherRaw: [
+                .mock_tomorrow,
+                .mock_inTwoDays
+            ]
+        )
         
-        XCTAssertEqual([dailyWeatherPlainTomorrow, dailyWeatherPlainInTwoDays], result)
+        XCTAssertEqual([DailyWeatherPlain.mock_tomorrow, DailyWeatherPlain.mock_inTwoDays], result)
     }
     
     func test_mapDailyWeatherRawToPlain_shouldMapArrayOfDailyWeatherRaw_toArrayOfDailyWeatherPlain_excludingTodayForecast() {
-        let result = DailyWeatherRaw
-            .mapDailyWeatherRawToPlain(
-                dailyWeatherRaw: [
-                    dailyWeatherRawToday,
-                    dailyWeatherRawTomorrow
-                ]
-            )
+        let result = DailyWeatherRaw.mapDailyWeatherRawToPlain(
+            dailyWeatherRaw: [
+                .mock_today,
+                .mock_tomorrow
+            ]
+        )
         
-        XCTAssertEqual([dailyWeatherPlainTomorrow], result)
+        XCTAssertEqual([DailyWeatherPlain.mock_tomorrow], result)
     }
 }

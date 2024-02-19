@@ -9,14 +9,13 @@
 import XCTest
 
 final class CurrentWeatherRawTests: XCTestCase {
-
     func test_mapToPlain_shouldMapCurrentWeatherRaw_toCurrentWeatherPlain() {
-        let result = currentWeatherRaw.mapToPlain()
-        XCTAssertEqual(currentWeatherPlain, result)
+        let result = CurrentWeatherRaw.mock.mapToPlain()
+        XCTAssertEqual(CurrentWeatherPlain.mock, result)
     }
     
-    func test_mapToPlain_shouldMapCurrentWeatherRaw_toCurrentWeatherPlain_withNoLocation() {
-        let result = currentWeatherRawNoLocation.mapToPlain()
-        XCTAssertEqual(currentWeatherPlainNoLocation, result)
+    func test_mapToPlain_shouldMapCurrentWeatherRaw_toCurrentWeatherPlain_withNilLocation() {
+        let result = CurrentWeatherRaw.mock_withNilLocation.mapToPlain()
+        XCTAssertEqual(CurrentWeatherPlain.mock_withNilLocation, result)
     }
 }

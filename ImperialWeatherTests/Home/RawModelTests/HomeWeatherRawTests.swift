@@ -11,7 +11,7 @@ import XCTest
 final class HomeWeatherRawTests: XCTestCase {
     
     func test_mapToPlain_shouldMapHomeWeatherRaw_toHomeWeatherPlain() {
-        let result = homeWeatherRaw.mapToPlain()
-        XCTAssertEqual(homeWeatherPlain, result)
+        let result = HomeWeatherRaw.mock.mapToPlain()
+        XCTAssertEqual(HomeWeatherPlain.mock, result)
     }
 }

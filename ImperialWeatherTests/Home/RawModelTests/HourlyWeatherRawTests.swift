@@ -11,18 +11,18 @@ import XCTest
 final class HourlyWeatherRawTests: XCTestCase {
     
     func test_mapToPlain_shouldMapHourlyWeatherRaw_toHourlyWeatherPlain() {
-        let result = hourlyWeatherRawCurrentHour.mapToPlain()
-        XCTAssertEqual(hourlyWeatherPlainCurrentHour, result)
+        let result = HourlyWeatherRaw.mock_currentHour.mapToPlain()
+        XCTAssertEqual(.mock_currentHour, result)
     }
     
     func test_mapHourlyWeatherRawToPlain_shouldMapArrayOfHourlyWeatherRaw_toArrayOfHourlyWeatherPlain() {
         let result = HourlyWeatherRaw.mapHourlyWeatherRawToPlain(
             hourlyWeatherRaw: [
-                hourlyWeatherRawCurrentHour,
-                hourlyWeatherNextHour,
-                hourlyWeatherInTwoHours
+                .mock_currentHour,
+                .mock_nextHour,
+                .mock_inTwoHours
             ]
         )
-        XCTAssertEqual([hourlyWeatherPlainCurrentHour, hourlyWeatherPlainNextHour, hourlyWeatherPlainInTwoHours], result)
+        XCTAssertEqual(.mock, result)
     }
 }

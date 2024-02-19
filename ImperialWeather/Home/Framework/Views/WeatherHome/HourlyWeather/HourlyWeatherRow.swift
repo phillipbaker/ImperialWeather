@@ -34,6 +34,6 @@ struct HourlyWeatherRow: View {
 
 struct HourlyWeatherRow_Previews: PreviewProvider {
     static var previews: some View {
-        HourlyWeatherRow(hourlyWeather: HourlyWeather.preview.first!)
+        HourlyWeatherRow(hourlyWeather: .preview_currentHour)
     }
 }

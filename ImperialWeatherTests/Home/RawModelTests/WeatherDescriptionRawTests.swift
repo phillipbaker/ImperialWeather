@@ -13,74 +13,74 @@ final class WeatherDescriptionRawTests: XCTestCase {
     func test_mapFirstDescription_shouldMapFirstRawWeatherDescriptionId_toWeatherDescriptionString() {
         let description = WeatherDescriptionRaw
             .mapFirstDescription(from:  [
-                weatherDescriptionRawRain,
-                weatherDescriptionRawSnow,
-                weatherDescriptionRawFog
+                .mock_rain,
+                .mock_snow,
+                .mock_fog
             ])
         
         XCTAssertEqual(WeatherDescription.drizzle, description)
     }
     
     func test_mapFirstDescription_shouldMapInvalidRawWeatherDescriptionId_toNoDescriptionString() {
-        let description = WeatherDescriptionRaw.mapFirstDescription(from: [weatherDescriptionRawInvalidId])
+        let description = WeatherDescriptionRaw.mapFirstDescription(from: [.mock_invalidID])
         XCTAssertEqual(WeatherDescription.noDescription, description)
     }
     
     func test_mapFirstIcon_shouldMapFirstRawWeatherDescriptionId_toWeatherSymbolString() {
         let result = WeatherDescriptionRaw
             .mapFirstIcon(from: [
-                weatherDescriptionRawFog,
-                weatherDescriptionRawRain,
-                weatherDescriptionRawDrizzle
+                .mock_fog,
+                .mock_rain,
+                .mock_drizzle
             ])
         
         XCTAssertEqual(WeatherSymbol.fog, result)
     }
     
     func test_mapFirstIcon_shouldMapInvalidRawWeatherDescriptionId_toPlaceholderSymbolString() {
-        let placeholder = WeatherDescriptionRaw.mapFirstIcon(from: [weatherDescriptionRawInvalidId])
+        let placeholder = WeatherDescriptionRaw.mapFirstIcon(from: [.mock_invalidID])
         XCTAssertEqual(WeatherSymbol.placeholder, placeholder)
     }
     
     func test_mapIcon_shouldMapRawWeatherDescriptionId_toWeatherSymbolString() {
-        let drizzle = weatherDescriptionRawDrizzle.mapIcon()
+        let drizzle = WeatherDescriptionRaw.mock_drizzle.mapIcon()
         XCTAssertEqual(WeatherSymbol.drizzle, drizzle)
         
-        let rain = weatherDescriptionRawRain.mapIcon()
+        let rain = WeatherDescriptionRaw.mock_rain.mapIcon()
         XCTAssertEqual(WeatherSymbol.rain, rain)
         
-        let ice = weatherDescriptionRawIce.mapIcon()
+        let ice = WeatherDescriptionRaw.mock_ice.mapIcon()
         XCTAssertEqual(WeatherSymbol.ice, ice)
     }
     
     func test_mapIcon_shouldMapInvalidRawWeatherDescriptionId_toPlaceholderSymbolString() {
-        let placeholder = weatherDescriptionRawInvalidId.mapIcon()
+        let placeholder = WeatherDescriptionRaw.mock_invalidID.mapIcon()
         XCTAssertEqual(WeatherSymbol.placeholder, placeholder)
     }
     
     func test_mapIcon_shouldMapClearDayIconString_toClearDaySymbolString() {
-        let day = weatherDescriptionRawClearDay.mapIcon()
+        let day = WeatherDescriptionRaw.mock_clearDay.mapIcon()
         XCTAssertEqual(WeatherSymbol.sun, day)
     }
     
     func test_mapIcon_shouldMapClearNightIconString_toClearNightSymbolString() {
-        let night = weatherDescriptionRawClearNight.mapIcon()
+        let night = WeatherDescriptionRaw.mock_clearNight.mapIcon()
         XCTAssertEqual(WeatherSymbol.moonStars, night)
     }
 
     func test_mapDescription_shouldMapRawWeatherDescriptionId_toWeatherDescriptionString() {
-        let thunderstorm = weatherDescriptionRawThunderstorm.mapDescription()
+        let thunderstorm = WeatherDescriptionRaw.mock_thunderstorm.mapDescription()
         XCTAssertEqual(WeatherDescription.thunderstorm, thunderstorm)
         
-        let haze = weatherDescriptionRawHaze.mapDescription()
+        let haze = WeatherDescriptionRaw.mock_haze.mapDescription()
         XCTAssertEqual(WeatherDescription.haze, haze)
         
-        let tornado = weatherDescriptionRawTornado.mapDescription()
+        let tornado = WeatherDescriptionRaw.mock_tornado.mapDescription()
         XCTAssertEqual(WeatherDescription.tornado, tornado)
     }
     
     func test_mapDescription_shouldMapInvalidRawWeatherDescriptionId_toNoDescriptionString() {
-        let description = weatherDescriptionRawInvalidId.mapDescription()
+        let description = WeatherDescriptionRaw.mock_invalidID.mapDescription()
         XCTAssertEqual(WeatherDescription.noDescription, description)
     }
 }

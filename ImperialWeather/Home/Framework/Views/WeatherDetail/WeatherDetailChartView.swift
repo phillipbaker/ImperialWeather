@@ -80,7 +80,7 @@ struct WeatherDetailChartView: View {
 @available(iOS 16.0, *)
 struct WeatherDetailChartView_Previews: PreviewProvider {
     static var previews: some View {
-        WeatherDetailChartView(dailyWeather: DailyWeather.preview)
+        WeatherDetailChartView(dailyWeather: .preview)
             .padding(.horizontal)
     }
 }

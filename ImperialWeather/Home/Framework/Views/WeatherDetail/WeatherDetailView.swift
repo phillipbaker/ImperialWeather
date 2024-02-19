@@ -105,8 +105,8 @@ struct WeatherDetailView: View {
 struct WeatherDetailView_Previews: PreviewProvider {
     static var previews: some View {
         WeatherDetailView(
-            dailyWeather: DailyWeather.preview,
-            selection: .constant(DailyWeather.preview.first!)
+            dailyWeather: .preview,
+            selection: .constant(.preview_today)
         )
     }
 }

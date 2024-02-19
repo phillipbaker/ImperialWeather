@@ -9,8 +9,8 @@ import Foundation
 
 extension HomeWeather {
     static let preview = HomeWeather(
-        current: CurrentWeather.preview,
-        hourly: HourlyWeather.preview,
-        daily: DailyWeather.preview
+        current: .preview,
+        hourly: .preview,
+        daily: .preview
     )
 }
