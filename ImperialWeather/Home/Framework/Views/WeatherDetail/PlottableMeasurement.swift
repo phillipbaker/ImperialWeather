@@ -8,19 +8,37 @@
 import Charts
 import Foundation
 
-struct PlottableMeasurement<UnitType: Unit> {
+struct PlottableCelsius<UnitType: Unit> {
     var measurement: Measurement<UnitType>
 }
 
-extension PlottableMeasurement: Plottable where UnitType == UnitTemperature {
+extension PlottableCelsius: Plottable where UnitType == UnitTemperature {
     var primitivePlottable: Double {
         self.measurement.converted(to: .celsius).value
     }
     
     init?(primitivePlottable: Double) {
-        self.init(measurement: Measurement(
+        self.init(measurement:
+                    Measurement(
             value: primitivePlottable,
             unit: .celsius)
+        )
+    }
+}
+
+struct PlottableFahrenheit<UnitType: Unit> {
+    var measurement: Measurement<UnitType>
+}
+
+extension PlottableFahrenheit: Plottable  where UnitType == UnitTemperature {
+    var primitivePlottable: Double {
+        self.measurement.converted(to: .fahrenheit).value
+    }
+    
+    init?(primitivePlottable: Double) {
+        self.init(measurement: Measurement(
+            value: primitivePlottable,
+            unit: .fahrenheit)
         )
     }
 }

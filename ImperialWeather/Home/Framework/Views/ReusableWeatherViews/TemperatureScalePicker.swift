@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct TemperatureScalePicker: View {
-    @AppStorage("temperatureScale") private var temperatureScale: TemperatureScale = .celsius
+    @AppStorage("temperatureScale") private var scale: TemperatureScale = .celsius
 
     var body: some View {
-        Picker(WeatherLabel.temperatureScalePicker, selection: $temperatureScale) {
+        Picker(WeatherLabel.temperatureScalePicker, selection: $scale) {
             Group {
                 Text(UnitTemperature.celsius.symbol)
                     .tag(TemperatureScale.celsius)

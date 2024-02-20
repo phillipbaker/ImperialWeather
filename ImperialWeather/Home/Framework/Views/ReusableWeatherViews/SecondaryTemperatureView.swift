@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct SecondaryTemperatureView: View {
-    @AppStorage("temperatureScale") private var temperatureScale: TemperatureScale = .celsius
+    @AppStorage("temperatureScale") private var scale: TemperatureScale = .celsius
     
     let celsius: Measurement<UnitTemperature>
     let fahrenheit: Measurement<UnitTemperature>
     
     var body: some View {
-        Text((temperatureScale == .fahrenheit ? celsius : fahrenheit).formatted)
+        Text((scale == .fahrenheit ? celsius : fahrenheit).formatted)
             .foregroundColor(.secondary)
             .frame(minWidth: 40)
     }

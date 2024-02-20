@@ -13,8 +13,7 @@ struct DailyWeather: Identifiable, Equatable {
     let icon: String
     let celsius: Measurement<UnitTemperature>
     let fahrenheit: Measurement<UnitTemperature>
-    let plottableCelsius: PlottableMeasurement<UnitTemperature>
-    let plottableFahrenheit: PlottableMeasurement<UnitTemperature>
+    let plottableCelsius: PlottableCelsius<UnitTemperature>
     
     init(
         id: UUID = UUID(),
@@ -27,8 +26,7 @@ struct DailyWeather: Identifiable, Equatable {
         self.icon = icon
         self.celsius = celsius
         self.fahrenheit = self.celsius.converted(to: .fahrenheit)
-        self.plottableCelsius = PlottableMeasurement(measurement: self.celsius)
-        self.plottableFahrenheit = PlottableMeasurement(measurement: self.fahrenheit)
+        self.plottableCelsius = PlottableCelsius(measurement: self.celsius)
     }
     
     static func == (lhs: DailyWeather, rhs: DailyWeather) -> Bool {
