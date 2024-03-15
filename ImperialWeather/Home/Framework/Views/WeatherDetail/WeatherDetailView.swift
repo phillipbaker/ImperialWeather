@@ -10,34 +10,38 @@ import SwiftUI
 struct WeatherDetailView: View {
     let dailyWeather: [DailyWeather]
     @Binding var selection: DailyWeather
-    @Environment(\.dismiss) var dismiss
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         NavigationView {
             ScrollView(showsIndicators: false) {
                 VStack(spacing: 20) {
-                    TemperatureScalePicker()
-                    
                     CalendarWeekView(
                         dailyWeather: dailyWeather,
                         selection: $selection
                     )
                     .paneBackground()
                     
-                    IconAndTemperatureView(
-                        icon: selection.icon,
-                        celsius: selection.celsius,
-                        fahrenheit: selection.fahrenheit
-                    )
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                    VStack(spacing: 16) {
+                        IconAndTemperatureView(
+                            icon: selection.icon,
+                            celsius: selection.celsius,
+                            fahrenheit: selection.fahrenheit
+                        )
+                        .frame(minHeight: 100)
+                        
+                        TemperatureScalePicker()
+                    }
+                    .frame(maxWidth: .infinity)
                     .paneBackground()
                     
                     VStack(spacing: 16) {
                         if #available(iOS 16.0, *) {
-                            Text(WeatherLabel.dailyForecast)
+                            Label(WeatherLabel.dailyForecast, systemImage: "calendar")
                                 .frame(maxWidth: .infinity, alignment: .leading)
-                                .font(.callout)
+                                .font(.subheadline)
                                 .textCase(.uppercase)
+                                .fontWeight(.semibold)
                                 .foregroundColor(.secondary)
                             
                             TemperatureChartView(dailyWeather: dailyWeather)
@@ -48,9 +52,9 @@ struct WeatherDetailView: View {
                     .paneBackground()
                     
                     DataAttributionView()
-                        .padding(.leading)
+                        .padding(.horizontal)
                 }
-                .font(.system(.title2, design: .rounded))
+                .font(.title2)
                 .padding()
             }
             .backgroundView()
@@ -59,11 +63,12 @@ struct WeatherDetailView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(WeatherLabel.done) {
-                        dismiss()
+                        self.dismiss()
                     }
-                    .fontWeight(.semibold)
+                    .fontWeight(.bold)
                 }
             }
+            .toolbarBackground(Color.weatherBackground, for: .navigationBar)
         }
     }
 }

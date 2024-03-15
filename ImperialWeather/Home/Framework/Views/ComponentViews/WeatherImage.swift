@@ -15,6 +15,7 @@ struct WeatherImage: View {
             .renderingMode(.original)
             .aspectRatio(contentMode: .fit)
             .imageScale(.large)
+            .opacity(0.9)
             .paneShadow()
     }
 }

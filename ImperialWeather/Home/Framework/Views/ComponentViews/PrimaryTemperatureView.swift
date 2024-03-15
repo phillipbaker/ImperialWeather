@@ -14,17 +14,21 @@ struct PrimaryTemperatureView: View {
     let fahrenheit: Measurement<UnitTemperature>
     
     var body: some View {
-        Text((scale == .celsius ? celsius : fahrenheit).formatted)
-            .fontWeight(.medium)
+        Text(temperature.formatted)
             .frame(minWidth: 40)
+            .monospacedDigit()
+            .opacity(0.9)
     }
+    
+    private var temperature: Measurement<UnitTemperature> {
+        return scale == .celsius ? celsius : fahrenheit
+    }
+    
 }
 
-struct PrimaryTemperatureView_Previews: PreviewProvider {
-    static var previews: some View {
-        PrimaryTemperatureView(
-            celsius: Measurement(value: 21.0, unit: .celsius),
-            fahrenheit: Measurement(value: 39.0, unit: .fahrenheit)
-        )
-    }
+#Preview {
+    PrimaryTemperatureView(
+        celsius: Measurement(value: 21.0, unit: .celsius),
+        fahrenheit: Measurement(value: 39.0, unit: .fahrenheit)
+    )
 }

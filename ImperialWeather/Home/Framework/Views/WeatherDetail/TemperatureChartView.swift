@@ -68,12 +68,14 @@ struct TemperatureChartView: View {
                     case .celsius:
                         if let temperature = value.as(PlottableCelsius.self) {
                             Text(temperature.measurement.formatted)
-                                .foregroundColor(.gray)
+                                .foregroundColor(.secondary)
+                                .fontWeight(.medium)
                         }
                     case .fahrenheit:
                         if let temperature = value.as(PlottableFahrenheit.self) {
                             Text(temperature.measurement.formatted)
-                                .foregroundColor(.gray)
+                                .foregroundColor(.secondary)
+                                .fontWeight(.medium)
                         }
                     }
                 }

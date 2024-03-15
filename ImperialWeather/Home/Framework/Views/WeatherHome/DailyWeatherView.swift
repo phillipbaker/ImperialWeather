@@ -14,14 +14,16 @@ struct DailyWeatherView: View {
     
     var body: some View {
         VStack(spacing: 12) {
-            Text(WeatherLabel.sevenDayForecast)
+            Label(WeatherLabel.sevenDayForecast, systemImage: "calendar")
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .font(.callout)
+                .font(.subheadline)
                 .textCase(.uppercase)
+                .fontWeight(.semibold)
                 .foregroundColor(.secondary)
             
             ForEach(dailyWeather) { day in
                 Divider()
+                
                 Button {
                     selection = day
                 } label: {
@@ -39,10 +41,8 @@ struct DailyWeatherView: View {
     }
 }
 
-struct DailyWeatherView_Previews: PreviewProvider {
-    static var previews: some View {
-        DailyWeatherView(dailyWeather: .preview)
-            .padding(.horizontal)
-            .backgroundView()
-    }
+#Preview {
+    DailyWeatherView(dailyWeather: .preview)
+        .padding(.horizontal)
+        .backgroundView()
 }

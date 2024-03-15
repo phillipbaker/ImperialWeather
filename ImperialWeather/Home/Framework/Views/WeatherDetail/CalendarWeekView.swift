@@ -24,6 +24,7 @@ struct CalendarWeekView: View {
                                 selection: $selection
                             )
                         }
+                        .tint(.primary)
                         
                         Divider()
                     }

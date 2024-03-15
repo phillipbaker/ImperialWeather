@@ -16,18 +16,24 @@ struct TemperatureScalePicker: View {
                 Text(UnitTemperature.celsius.symbol)
                     .tag(TemperatureScale.celsius)
                     .accessibilityLabel(WeatherLabel.celsius)
+                
                 Text(UnitTemperature.fahrenheit.symbol)
                     .tag(TemperatureScale.fahrenheit)
                     .accessibilityLabel(WeatherLabel.fahrenheit)
             }
+            .opacity(0.9)
         }
         .accessibilityLabel(WeatherLabel.temperatureScalePicker)
-        .pickerStyle(SegmentedPickerStyle())
+        .pickerStyle(.segmented)
     }
 }
 
-struct TemperatureScalePicker_Previews: PreviewProvider {
-    static var previews: some View {
+#Preview {
+    ZStack {
+        Color.weatherBackground
+            .ignoresSafeArea()
+        
         TemperatureScalePicker()
+            .padding()
     }
 }

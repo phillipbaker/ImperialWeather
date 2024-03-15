@@ -13,24 +13,32 @@ struct IconAndTemperatureView: View {
     let fahrenheit: Measurement<UnitTemperature>
     
     var body: some View {
-        HStack {
+        HStack(spacing: 20) {
             WeatherImage(systemName: icon)
-                .font(.system(size: 48))
+                .font(.system(size: 60))
             
-            Divider()
-                .frame(maxHeight: 100)
-            
-            CurrentTemperatureView(celsius: celsius, fahrenheit: fahrenheit)
+            VStack(alignment: .leading, spacing: 4) {
+                PrimaryTemperatureView(celsius: celsius, fahrenheit: fahrenheit)
+                    .font(.largeTitle)
+
+                SecondaryTemperatureView(celsius: celsius, fahrenheit: fahrenheit)
+                    .font(.subheadline)
+            }
+            .fontWeight(.semibold)
+            .accessibilityElement(children: .combine)
         }
     }
 }
 
-struct IconAndTemperatureView_Previews: PreviewProvider {
-    static var previews: some View {
+#Preview {
+    ZStack {
+        Color.weatherBackground
+            .ignoresSafeArea()
         IconAndTemperatureView(
             icon: CurrentWeather.preview.icon,
             celsius: CurrentWeather.preview.celsius,
             fahrenheit: CurrentWeather.preview.fahrenheit
         )
+        .paneBackground()
     }
 }

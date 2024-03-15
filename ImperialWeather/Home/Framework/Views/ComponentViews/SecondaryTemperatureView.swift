@@ -14,17 +14,20 @@ struct SecondaryTemperatureView: View {
     let fahrenheit: Measurement<UnitTemperature>
     
     var body: some View {
-        Text((scale == .fahrenheit ? celsius : fahrenheit).formatted)
-            .foregroundColor(.secondary)
+        Text(temperature.formatted)
             .frame(minWidth: 40)
+            .monospacedDigit()
+            .foregroundColor(.secondary)
+    }
+    
+    private var temperature: Measurement<UnitTemperature> {
+        return scale == .celsius ? fahrenheit : celsius
     }
 }
 
-struct SecondaryTemperatureView_Previews: PreviewProvider {
-    static var previews: some View {
-        SecondaryTemperatureView(
-            celsius: Measurement(value: 15.0, unit: .celsius),
-            fahrenheit: Measurement(value: 32.0, unit: .fahrenheit)
-        )
-    }
+#Preview {
+    SecondaryTemperatureView(
+        celsius: Measurement(value: 15.0, unit: .celsius),
+        fahrenheit: Measurement(value: 32.0, unit: .fahrenheit)
+    )
 }

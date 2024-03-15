@@ -9,7 +9,7 @@ import Foundation
 
 extension Date {
     var complete: String {
-        self.formatted(.dateTime.weekday().month().day())
+        self.formatted(.dateTime.weekday(.wide).month(.wide).day())
     }
     
     var monthAndDay: String {

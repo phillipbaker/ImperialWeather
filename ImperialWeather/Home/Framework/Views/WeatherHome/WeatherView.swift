@@ -9,31 +9,38 @@ import SwiftUI
 
 struct WeatherView: View {
     let weather: HomeWeather
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     
     var body: some View {
+        let layout = horizontalSizeClassIsCompact
+        ? AnyLayout(VStackLayout(spacing: 16))
+        : AnyLayout(HStackLayout(alignment: .top, spacing: 16))
+        
         ScrollView(.vertical) {
-            HorizontalSizeClassStack(verticalAlignment: .top, spacing: 16) {
-                
+            layout {
                 CurrentWeatherView(weather: weather.current)
                 
                 VStack(spacing: 16) {
                     HourlyWeatherView(hourlyWeather: weather.hourly)
                     
                     DailyWeatherView(dailyWeather: weather.daily)
-                    
-                    DataAttributionView()
-                        .padding(.leading)
                 }
+                
             }
             .padding()
+            
+            DataAttributionView()
+                .padding(.horizontal)
+                .padding(.horizontal)
         }
-        .backgroundView()
+    }
+    
+    private var horizontalSizeClassIsCompact: Bool {
+        return horizontalSizeClass == .compact
     }
 }
 
-struct WeatherView_Previews: PreviewProvider {
-    static var previews: some View {
-        WeatherView(weather: .preview)
-            .backgroundView()
-    }
+#Preview {
+    WeatherView(weather: .preview)
+        .backgroundView()
 }

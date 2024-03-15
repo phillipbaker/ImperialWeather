@@ -8,21 +8,20 @@
 import SwiftUI
 
 struct DataAttributionView: View {
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+    
     var body: some View {
         Link(destination: URL(string: "https://openweathermap.org")!) {
-            SizeCategoryStack(spacing: 4) {
-                Text(WeatherLabel.source)
-            }
+            Text(WeatherLabel.source)
         }
         .font(.caption)
         .textCase(.uppercase)
+        .fontWeight(.semibold)
         .foregroundColor(.secondary)
-        .frame(maxWidth: .infinity, alignment: .leading)
+        .frame( maxWidth: .infinity, alignment: dynamicTypeSize.isAccessibilitySize ? .center : .leading)
     }
 }
 
-struct DataAttributionView_Previews: PreviewProvider {
-    static var previews: some View {
-        DataAttributionView()
-    }
+#Preview {
+    DataAttributionView()
 }
