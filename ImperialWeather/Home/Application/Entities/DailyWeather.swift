@@ -7,13 +7,14 @@
 
 import Foundation
 
-struct DailyWeather: Identifiable, Equatable {
+struct DailyWeather: Identifiable, Equatable, Sendable {
     let id: UUID
     let day: Date
     let icon: String
     let celsius: Measurement<UnitTemperature>
     let fahrenheit: Measurement<UnitTemperature>
     let plottableCelsius: PlottableCelsius<UnitTemperature>
+    let plottableFahrenheit: PlottableFahrenheit<UnitTemperature>
     
     init(
         id: UUID = UUID(),
@@ -27,6 +28,7 @@ struct DailyWeather: Identifiable, Equatable {
         self.celsius = celsius
         self.fahrenheit = self.celsius.converted(to: .fahrenheit)
         self.plottableCelsius = PlottableCelsius(measurement: self.celsius)
+        self.plottableFahrenheit = PlottableFahrenheit(measurement: self.fahrenheit)
     }
     
     static func == (lhs: DailyWeather, rhs: DailyWeather) -> Bool {

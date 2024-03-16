@@ -21,8 +21,8 @@ struct TemperatureChartView: View {
                 y: .value(
                     WeatherLabel.temperature,
                     scale == .celsius
-                    ? day.plottableCelsius.measurement.value
-                    : day.plottableCelsius.measurement.converted(to: .fahrenheit).value
+                    ? day.plottableCelsius.primitivePlottable
+                    : day.plottableFahrenheit.primitivePlottable
                 )
             )
             .foregroundStyle(Color.secondary.opacity(0.5))
@@ -34,15 +34,15 @@ struct TemperatureChartView: View {
                 y: .value(
                     WeatherLabel.temperature,
                     scale == .celsius
-                    ? day.plottableCelsius.measurement.value
-                    : day.plottableCelsius.measurement.converted(to: .fahrenheit).value
+                    ? day.plottableCelsius.primitivePlottable
+                    : day.plottableFahrenheit.primitivePlottable
                 )
             )
             .accessibilityLabel(day.day.complete)
             .accessibilityValue(
                 Text((scale == .celsius
                       ? day.plottableCelsius.measurement
-                      : day.plottableCelsius.measurement.converted(to: .fahrenheit)
+                      : day.plottableFahrenheit.measurement
                      ).formatted
                 )
             )

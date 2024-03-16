@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol GetWeatherSource {
+protocol GetWeatherSource: Sendable {
     func weather(forLatitude latitude: String, andLongitude longitude: String) async throws -> HomeWeatherLocationPlain
 }

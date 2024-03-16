@@ -8,8 +8,8 @@
 import Charts
 import Foundation
 
-struct PlottableCelsius<UnitType: Unit> {
-    var measurement: Measurement<UnitType>
+struct PlottableCelsius<UnitType: Unit>: Sendable where UnitType: Sendable {
+    let measurement: Measurement<UnitType>
 }
 
 extension PlottableCelsius: Plottable where UnitType == UnitTemperature {
@@ -26,11 +26,11 @@ extension PlottableCelsius: Plottable where UnitType == UnitTemperature {
     }
 }
 
-struct PlottableFahrenheit<UnitType: Unit> {
-    var measurement: Measurement<UnitType>
+struct PlottableFahrenheit<UnitType: Unit>: Sendable where UnitType: Sendable {
+    let measurement: Measurement<UnitType>
 }
 
-extension PlottableFahrenheit: Plottable  where UnitType == UnitTemperature {
+extension PlottableFahrenheit: Plottable where UnitType == UnitTemperature {
     var primitivePlottable: Double {
         self.measurement.converted(to: .fahrenheit).value
     }

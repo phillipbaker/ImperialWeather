@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct Application {
-    var submitFeedback: () -> Void
-    var launchAppSettings: () -> Void
+    var submitFeedback: @Sendable () -> Void
+    var launchAppSettings: @Sendable () -> Void
 }
 
 extension Application {
