@@ -15,7 +15,10 @@ struct HourlyWeatherView: View {
             LazyHStack(spacing: 24) {
                 ForEach(hourlyWeather) { hourlyWeather in
                     HourlyWeatherRow(hourlyWeather: hourlyWeather)
-                    Divider()
+                    
+                    if hourlyWeather != self.hourlyWeather.last {
+                        VerticalSeparator()
+                    }
                 }
             }
             .accessibilityLabel(WeatherLabel.hourlyForecast)

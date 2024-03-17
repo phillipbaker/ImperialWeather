@@ -32,7 +32,7 @@ struct IconAndTemperatureView: View {
 
 #Preview {
     ZStack {
-        Color.weatherBackground
+        Color.classicBackground
             .ignoresSafeArea()
         IconAndTemperatureView(
             icon: CurrentWeather.preview.icon,

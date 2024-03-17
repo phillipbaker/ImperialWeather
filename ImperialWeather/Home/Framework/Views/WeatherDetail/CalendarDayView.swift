@@ -17,17 +17,17 @@ struct CalendarDayView: View {
                 .font(.subheadline)
                 .textCase(.uppercase)
                 .fontWeight(.semibold)
-                .foregroundColor(.secondary)
+                .foregroundStyle(.secondary)
             
             ZStack {
                 Circle()
                     .opacity(day == selection ? 1 : 0)
-                    .foregroundColor(Color.selectionBackground)
+                    .foregroundStyle(.classicSelectionBackground)
                 
                 Text(day.day.date)
                     .fontWeight(day == selection ? .bold : .medium)
                     .accessibilityLabel(day.day.monthAndDay)
-                    .foregroundColor(day == selection ? .white : nil)
+                    .foregroundStyle(day == selection ? .white : .primary)
                     .opacity(day == selection ? 1.0 : 0.9)
             }
             .frame(minWidth: 40, minHeight: 40)

@@ -17,7 +17,7 @@ struct HourlyWeatherRow: View {
                 .font(.subheadline)
                 .textCase(.uppercase)
                 .fontWeight(.semibold)
-                .foregroundColor(.secondary)
+                .foregroundStyle(.secondary)
             
             WeatherImage(systemName: hourlyWeather.icon)
                 .frame(minWidth: 28, minHeight: 50, alignment: .top)

@@ -12,7 +12,7 @@ struct ErrorView: View {
     
     var body: some View {
         ZStack {
-            Color.weatherBackground
+            Color.classicBackground
                 .ignoresSafeArea()
             
             VStack(spacing: 24) {

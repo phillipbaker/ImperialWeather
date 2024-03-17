@@ -15,9 +15,9 @@ struct DataAttributionView: View {
             Text(WeatherLabel.source)
         }
         .font(.caption)
-        .textCase(.uppercase)
-        .fontWeight(.semibold)
-        .foregroundColor(.secondary)
+//        .textCase(.uppercase)
+//        .fontWeight(.medium)
+        .foregroundStyle(.secondary)
         .frame( maxWidth: .infinity, alignment: dynamicTypeSize.isAccessibilitySize ? .center : .leading)
     }
 }

@@ -17,7 +17,7 @@ struct SecondaryTemperatureView: View {
         Text(temperature.formatted)
             .frame(minWidth: 40)
             .monospacedDigit()
-            .foregroundColor(.secondary)
+            .foregroundStyle(.secondary)
     }
     
     private var temperature: Measurement<UnitTemperature> {

@@ -40,6 +40,8 @@
 		F85931EC2B72728500E3355E /* HourlyWeatherMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85931E62B7271A500E3355E /* HourlyWeatherMocks.swift */; };
 		F85931EE2B7272B600E3355E /* DailyWeatherMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85931ED2B7272B600E3355E /* DailyWeatherMocks.swift */; };
 		F85931F02B7272DA00E3355E /* HomeWeatherMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85931EF2B7272DA00E3355E /* HomeWeatherMocks.swift */; };
+		F85FC0C02BA5622C0010A6D4 /* VerticalSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85FC0BF2BA5622C0010A6D4 /* VerticalSeparator.swift */; };
+		F85FC0C22BA563400010A6D4 /* HorizontalSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85FC0C12BA563400010A6D4 /* HorizontalSeparator.swift */; };
 		F860B2BC2A31E5C700F3C8D7 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = F860B2BB2A31E5C700F3C8D7 /* Application.swift */; };
 		F860B2CC2A31E7CE00F3C8D7 /* ErrorMessage.strings in Resources */ = {isa = PBXBuildFile; fileRef = F860B2CA2A31E7CE00F3C8D7 /* ErrorMessage.strings */; };
 		F860B2CF2A31E7CE00F3C8D7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F860B2CD2A31E7CE00F3C8D7 /* InfoPlist.strings */; };
@@ -148,6 +150,8 @@
 		F85931EA2B72727600E3355E /* CurrentWeatherMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherMocks.swift; sourceTree = "<group>"; };
 		F85931ED2B7272B600E3355E /* DailyWeatherMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherMocks.swift; sourceTree = "<group>"; };
 		F85931EF2B7272DA00E3355E /* HomeWeatherMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWeatherMocks.swift; sourceTree = "<group>"; };
+		F85FC0BF2BA5622C0010A6D4 /* VerticalSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalSeparator.swift; sourceTree = "<group>"; };
+		F85FC0C12BA563400010A6D4 /* HorizontalSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSeparator.swift; sourceTree = "<group>"; };
 		F860B2BB2A31E5C700F3C8D7 /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		F860B2DB2A31ECA600F3C8D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WeatherLabel.strings; sourceTree = "<group>"; };
 		F860B2DC2A31ECE000F3C8D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WeatherDescription.strings; sourceTree = "<group>"; };
@@ -286,6 +290,8 @@
 				F855EDAE2938D2F50034DDF7 /* PrimaryTemperatureView.swift */,
 				F855EDAF2938D2F50034DDF7 /* SecondaryTemperatureView.swift */,
 				F8D94ACD29953A4600808209 /* IconAndTemperatureView.swift */,
+				F85FC0BF2BA5622C0010A6D4 /* VerticalSeparator.swift */,
+				F85FC0C12BA563400010A6D4 /* HorizontalSeparator.swift */,
 			);
 			path = ComponentViews;
 			sourceTree = "<group>";
@@ -375,8 +381,8 @@
 			children = (
 				F87FB916269728BB00E38184 /* HomeState.swift */,
 				F87E5CB7267CA53B0032949A /* HomeViewModel.swift */,
-				F8CEA31E268B69FF0070DEE0 /* Formatting.swift */,
 				F8EDEF6526F0CB68008CB9A7 /* TemperatureScale.swift */,
+				F8CEA31E268B69FF0070DEE0 /* Formatting.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -729,6 +735,7 @@
 				F860B2BC2A31E5C700F3C8D7 /* Application.swift in Sources */,
 				F8791BC52A49ABA100813C1E /* GetWeatherSource.swift in Sources */,
 				F82DEAFA2A233AC000B2FB97 /* PlottableMeasurement.swift in Sources */,
+				F85FC0C22BA563400010A6D4 /* HorizontalSeparator.swift in Sources */,
 				F8ABC7C028ED7DBC00475BF3 /* TemperatureChartView.swift in Sources */,
 				F8D94ACE29953A4600808209 /* IconAndTemperatureView.swift in Sources */,
 				F855EDB22938D2F60034DDF7 /* WeatherImage.swift in Sources */,
@@ -758,6 +765,7 @@
 				F8EB4CDB2938B5C800BAE881 /* HomeWeatherPreviews.swift in Sources */,
 				F812D99128549C1600FC8223 /* PaneShadow.swift in Sources */,
 				F82DEAFC2A24606100B2FB97 /* LocationDataSourceLocal.swift in Sources */,
+				F85FC0C02BA5622C0010A6D4 /* VerticalSeparator.swift in Sources */,
 				F855EDB32938D2F60034DDF7 /* PrimaryTemperatureView.swift in Sources */,
 				F867BC27275E0725001CBA62 /* HourlyWeatherView.swift in Sources */,
 				F855EDB42938D2F60034DDF7 /* SecondaryTemperatureView.swift in Sources */,

@@ -12,7 +12,7 @@ struct HomeView: View {
     
     var body: some View {
         ZStack {
-            Color.weatherBackground.ignoresSafeArea()
+            Color.classicBackground.ignoresSafeArea()
             
             switch viewModel.state {
             case .loading:

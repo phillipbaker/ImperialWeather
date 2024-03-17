@@ -26,12 +26,14 @@ struct CalendarWeekView: View {
                         }
                         .tint(.primary)
                         
-                        Divider()
+                        if dailyWeather != self.dailyWeather.last {
+                            VerticalSeparator()
+                        }
                     }
                 }
                 .accessibilityLabel("Daily Forecast Picker")
                 .onAppear {
-                    value.scrollTo(selection.id)
+                    value.scrollTo(selection.id, anchor: .center)
                 }
             }
         }

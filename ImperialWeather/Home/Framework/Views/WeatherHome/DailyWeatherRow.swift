@@ -19,7 +19,7 @@ struct DailyWeatherRow: View {
         layout {
             GridRow {
                 Text(dailyWeather.day.wideWeekday)
-                    .frame(minWidth: 100, alignment: .leading)
+                    .frame(minWidth: 100, minHeight: 28, alignment: .leading)
                     .fontWeight(.medium)
                     .opacity(0.9)
                 

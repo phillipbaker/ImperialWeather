@@ -9,7 +9,6 @@ import Foundation
 
 extension Array where Element == DailyWeather {
     static let preview: [DailyWeather] = [
-        .preview_today,
         .preview_tomorrow,
         .preview_inTwoDays,
         .preview_inThreeDays,

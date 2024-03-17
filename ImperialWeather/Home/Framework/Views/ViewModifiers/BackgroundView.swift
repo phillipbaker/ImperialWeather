@@ -10,7 +10,7 @@ import SwiftUI
 struct BackgroundView: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .background(Color.weatherBackground.ignoresSafeArea())
+            .background(Color.classicBackground.ignoresSafeArea())
     }
 }
 

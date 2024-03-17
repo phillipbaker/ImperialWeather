@@ -30,7 +30,7 @@ struct TemperatureScalePicker: View {
 
 #Preview {
     ZStack {
-        Color.weatherBackground
+        Color.classicBackground
             .ignoresSafeArea()
         
         TemperatureScalePicker()

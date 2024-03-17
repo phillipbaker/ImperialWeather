@@ -42,7 +42,7 @@ struct WeatherDetailView: View {
                                 .font(.subheadline)
                                 .textCase(.uppercase)
                                 .fontWeight(.semibold)
-                                .foregroundColor(.secondary)
+                                .foregroundStyle(.secondary)
                             
                             TemperatureChartView(dailyWeather: dailyWeather)
                                 .frame(minHeight: 320)
@@ -68,7 +68,7 @@ struct WeatherDetailView: View {
                     .fontWeight(.bold)
                 }
             }
-            .toolbarBackground(Color.weatherBackground, for: .navigationBar)
+            .toolbarBackground(.classicBackground, for: .navigationBar)
         }
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct HourlyWeather: Identifiable {
+struct HourlyWeather: Identifiable, Equatable {
     let id: UUID
     let hour: Date
     let icon: String

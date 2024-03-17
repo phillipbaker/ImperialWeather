@@ -25,7 +25,7 @@ struct TemperatureChartView: View {
                     : day.plottableFahrenheit.primitivePlottable
                 )
             )
-            .foregroundStyle(Color.secondary.opacity(0.5))
+            .foregroundStyle(.secondary.opacity(0.5))
             .accessibilityHidden(true)
             .interpolationMethod(.catmullRom)
             
@@ -54,10 +54,7 @@ struct TemperatureChartView: View {
             AxisMarks(values: .stride(by: .day)) { value in
                 AxisGridLine()
                 AxisTick()
-                AxisValueLabel(
-                    format: .dateTime.weekday(.narrow),
-                    centered: true
-                )
+                AxisValueLabel( format: .dateTime.weekday(.narrow), centered: true)
             }
         }
         .chartYAxis {
@@ -68,13 +65,11 @@ struct TemperatureChartView: View {
                     case .celsius:
                         if let temperature = value.as(PlottableCelsius.self) {
                             Text(temperature.measurement.formatted)
-                                .foregroundColor(.secondary)
                                 .fontWeight(.medium)
                         }
                     case .fahrenheit:
                         if let temperature = value.as(PlottableFahrenheit.self) {
                             Text(temperature.measurement.formatted)
-                                .foregroundColor(.secondary)
                                 .fontWeight(.medium)
                         }
                     }

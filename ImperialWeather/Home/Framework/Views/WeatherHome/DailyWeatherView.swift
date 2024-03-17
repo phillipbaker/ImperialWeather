@@ -19,10 +19,10 @@ struct DailyWeatherView: View {
                 .font(.subheadline)
                 .textCase(.uppercase)
                 .fontWeight(.semibold)
-                .foregroundColor(.secondary)
+                .foregroundStyle(.secondary)
             
             ForEach(dailyWeather) { day in
-                Divider()
+                HorizontalSeparator()
                 
                 Button {
                     selection = day
