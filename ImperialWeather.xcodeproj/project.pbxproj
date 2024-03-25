@@ -40,6 +40,9 @@
 		F85931EC2B72728500E3355E /* HourlyWeatherMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85931E62B7271A500E3355E /* HourlyWeatherMocks.swift */; };
 		F85931EE2B7272B600E3355E /* DailyWeatherMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85931ED2B7272B600E3355E /* DailyWeatherMocks.swift */; };
 		F85931F02B7272DA00E3355E /* HomeWeatherMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85931EF2B7272DA00E3355E /* HomeWeatherMocks.swift */; };
+		F85C43292BA884B500EDBC74 /* ImperialWeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85C43282BA884B500EDBC74 /* ImperialWeatherUITests.swift */; };
+		F85C432B2BA884B500EDBC74 /* ImperialWeatherUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85C432A2BA884B500EDBC74 /* ImperialWeatherUITestsLaunchTests.swift */; };
+		F85C43322BA8851B00EDBC74 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85C43312BA8851B00EDBC74 /* SnapshotHelper.swift */; };
 		F85FC0C02BA5622C0010A6D4 /* VerticalSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85FC0BF2BA5622C0010A6D4 /* VerticalSeparator.swift */; };
 		F85FC0C22BA563400010A6D4 /* HorizontalSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85FC0C12BA563400010A6D4 /* HorizontalSeparator.swift */; };
 		F860B2BC2A31E5C700F3C8D7 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = F860B2BB2A31E5C700F3C8D7 /* Application.swift */; };
@@ -113,6 +116,13 @@
 			remoteGlobalIDString = F87E5C8E267C9E950032949A;
 			remoteInfo = ImperialWeather;
 		};
+		F85C432C2BA884B500EDBC74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F87E5C87267C9E950032949A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F87E5C8E267C9E950032949A;
+			remoteInfo = ImperialWeather;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -150,6 +160,10 @@
 		F85931EA2B72727600E3355E /* CurrentWeatherMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherMocks.swift; sourceTree = "<group>"; };
 		F85931ED2B7272B600E3355E /* DailyWeatherMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherMocks.swift; sourceTree = "<group>"; };
 		F85931EF2B7272DA00E3355E /* HomeWeatherMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWeatherMocks.swift; sourceTree = "<group>"; };
+		F85C43262BA884B500EDBC74 /* ImperialWeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImperialWeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F85C43282BA884B500EDBC74 /* ImperialWeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImperialWeatherUITests.swift; sourceTree = "<group>"; };
+		F85C432A2BA884B500EDBC74 /* ImperialWeatherUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImperialWeatherUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F85C43312BA8851B00EDBC74 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		F85FC0BF2BA5622C0010A6D4 /* VerticalSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalSeparator.swift; sourceTree = "<group>"; };
 		F85FC0C12BA563400010A6D4 /* HorizontalSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSeparator.swift; sourceTree = "<group>"; };
 		F860B2BB2A31E5C700F3C8D7 /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
@@ -222,6 +236,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		F85931D12B72693400E3355E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F85C43232BA884B500EDBC74 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -348,6 +369,16 @@
 			path = RawModelMocks;
 			sourceTree = "<group>";
 		};
+		F85C43272BA884B500EDBC74 /* ImperialWeatherUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F85C43312BA8851B00EDBC74 /* SnapshotHelper.swift */,
+				F85C43282BA884B500EDBC74 /* ImperialWeatherUITests.swift */,
+				F85C432A2BA884B500EDBC74 /* ImperialWeatherUITestsLaunchTests.swift */,
+			);
+			path = ImperialWeatherUITests;
+			sourceTree = "<group>";
+		};
 		F867BC0D275E0725001CBA62 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -455,6 +486,7 @@
 			children = (
 				F87E5C91267C9E950032949A /* ImperialWeather */,
 				F85931D52B72693400E3355E /* ImperialWeatherTests */,
+				F85C43272BA884B500EDBC74 /* ImperialWeatherUITests */,
 				F87E5C90267C9E950032949A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -464,6 +496,7 @@
 			children = (
 				F87E5C8F267C9E950032949A /* ImperialWeather.app */,
 				F85931D42B72693400E3355E /* ImperialWeatherTests.xctest */,
+				F85C43262BA884B500EDBC74 /* ImperialWeatherUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -613,6 +646,24 @@
 			productReference = F85931D42B72693400E3355E /* ImperialWeatherTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		F85C43252BA884B500EDBC74 /* ImperialWeatherUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F85C43302BA884B500EDBC74 /* Build configuration list for PBXNativeTarget "ImperialWeatherUITests" */;
+			buildPhases = (
+				F85C43222BA884B500EDBC74 /* Sources */,
+				F85C43232BA884B500EDBC74 /* Frameworks */,
+				F85C43242BA884B500EDBC74 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F85C432D2BA884B500EDBC74 /* PBXTargetDependency */,
+			);
+			name = ImperialWeatherUITests;
+			productName = ImperialWeatherUITests;
+			productReference = F85C43262BA884B500EDBC74 /* ImperialWeatherUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		F87E5C8E267C9E950032949A /* ImperialWeather */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F87E5C9E267C9E960032949A /* Build configuration list for PBXNativeTarget "ImperialWeather" */;
@@ -640,11 +691,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastSwiftUpdateCheck = 1520;
+				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					F85931D32B72693400E3355E = {
 						CreatedOnToolsVersion = 15.2;
+						TestTargetID = F87E5C8E267C9E950032949A;
+					};
+					F85C43252BA884B500EDBC74 = {
+						CreatedOnToolsVersion = 15.3;
 						TestTargetID = F87E5C8E267C9E950032949A;
 					};
 					F87E5C8E267C9E950032949A = {
@@ -671,12 +726,20 @@
 			targets = (
 				F87E5C8E267C9E950032949A /* ImperialWeather */,
 				F85931D32B72693400E3355E /* ImperialWeatherTests */,
+				F85C43252BA884B500EDBC74 /* ImperialWeatherUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		F85931D22B72693400E3355E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F85C43242BA884B500EDBC74 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -713,6 +776,16 @@
 				F879EA1A2B73B247009526C4 /* WeatherDescriptionRawTests.swift in Sources */,
 				F85931F02B7272DA00E3355E /* HomeWeatherMocks.swift in Sources */,
 				F879EA182B73B0F8009526C4 /* CurrentWeatherRawTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F85C43222BA884B500EDBC74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F85C432B2BA884B500EDBC74 /* ImperialWeatherUITestsLaunchTests.swift in Sources */,
+				F85C43292BA884B500EDBC74 /* ImperialWeatherUITests.swift in Sources */,
+				F85C43322BA8851B00EDBC74 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -810,6 +883,11 @@
 			target = F87E5C8E267C9E950032949A /* ImperialWeather */;
 			targetProxy = F85931D82B72693400E3355E /* PBXContainerItemProxy */;
 		};
+		F85C432D2BA884B500EDBC74 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F87E5C8E267C9E950032949A /* ImperialWeather */;
+			targetProxy = F85C432C2BA884B500EDBC74 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -898,6 +976,51 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImperialWeather.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ImperialWeather";
+			};
+			name = Release;
+		};
+		F85C432E2BA884B500EDBC74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H5BFNRJ7J5;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mycompany.ImperialWeatherUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ImperialWeather;
+			};
+			name = Debug;
+		};
+		F85C432F2BA884B500EDBC74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H5BFNRJ7J5;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mycompany.ImperialWeatherUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ImperialWeather;
 			};
 			name = Release;
 		};
@@ -1075,6 +1198,15 @@
 			buildConfigurations = (
 				F85931DA2B72693400E3355E /* Debug */,
 				F85931DB2B72693400E3355E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F85C43302BA884B500EDBC74 /* Build configuration list for PBXNativeTarget "ImperialWeatherUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F85C432E2BA884B500EDBC74 /* Debug */,
+				F85C432F2BA884B500EDBC74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

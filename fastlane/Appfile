@@ -1,0 +1,9 @@
+# The bundle identifier of your app
+app_identifier "com.mycompany.ImperialWeather"
+
+# Your Apple Developer Portal username
+apple_id "phillipbaker@hey.com" 
+
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile
