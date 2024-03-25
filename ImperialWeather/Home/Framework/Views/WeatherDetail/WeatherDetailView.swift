@@ -36,19 +36,16 @@ struct WeatherDetailView: View {
                     .paneBackground()
                     
                     VStack(spacing: 16) {
-                        if #available(iOS 16.0, *) {
-                            Label(WeatherLabel.dailyForecast, systemImage: "calendar")
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                                .font(.subheadline)
-                                .textCase(.uppercase)
-                                .fontWeight(.semibold)
-                                .foregroundStyle(.secondary)
-                            
-                            TemperatureChartView(dailyWeather: dailyWeather)
-                                .frame(minHeight: 320)
-                        }
+                        Label(WeatherLabel.dailyForecast, systemImage: "calendar")
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .font(.subheadline)
+                            .textCase(.uppercase)
+                            .fontWeight(.semibold)
+                            .foregroundStyle(.secondary)
+                        
+                        TemperatureChartView(dailyWeather: dailyWeather)
+                            .frame(minHeight: 320)
                     }
-                    .padding(.bottom)
                     .paneBackground()
                     
                     DataAttributionView()

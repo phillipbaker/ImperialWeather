@@ -12,10 +12,11 @@ struct PrimaryTemperatureView: View {
     
     let celsius: Measurement<UnitTemperature>
     let fahrenheit: Measurement<UnitTemperature>
+    var alignment: Alignment = .center
     
     var body: some View {
         Text(temperature.formatted)
-            .frame(minWidth: 40)
+            .frame(minWidth: 50, alignment: alignment)
             .monospacedDigit()
             .opacity(0.9)
     }

@@ -15,49 +15,50 @@ struct ErrorView: View {
             Color.classicBackground
                 .ignoresSafeArea()
             
-            VStack(spacing: 24) {
-                VStack(spacing: 12) {
-                    Image(systemName: error.message.image)
-                        .font(.largeTitle)
-                        .padding(.vertical)
-                    
-                    Text(error.message.title)
-                        .padding(.horizontal, 24)
-                        .multilineTextAlignment(.center)
-                        .font(.headline)
-                    
-                    Text(error.message.description)
-                        .frame(maxWidth: .infinity)
-                        .foregroundColor(.secondary)
-                        .multilineTextAlignment(.center)
+            GeometryReader { geometry in
+                ScrollView {
+                    ZStack {
+                        VStack(spacing: 24) {
+                            VStack(spacing: 12) {
+                                Image(systemName: error.message.image)
+                                    .font(.system(size: 50))
+                                    .foregroundColor(.secondary)
+                                
+                                Text(error.message.title)
+                                    .padding(.horizontal, 24)
+                                    .multilineTextAlignment(.center)
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                
+                                Text(error.message.description)
+                                    .frame(maxWidth: .infinity)
+                                    .foregroundColor(.secondary)
+                                    .multilineTextAlignment(.center)
+                            }
+                            
+                            Button {
+                                Task { await error.message.buttonAction() }
+                            } label: {
+                                Text(error.message.buttonTitle)
+                                    .frame(maxWidth: .infinity)
+                                    .padding(4)
+                                    .font(.subheadline)
+                                    .fontWeight(.bold)
+                            }
+                            .buttonStyle(.borderedProminent)
+                            .padding(.bottom)
+                        }
+                        .frame(maxWidth: 600)
+                        .paneBackground()
+                        .padding()
+                    }
+                    .frame(maxWidth: geometry.size.width, minHeight: geometry.size.height)
                 }
-                
-                Button {
-                    Task { await error.message.buttonAction() }
-                } label: {
-                    Text(error.message.buttonTitle)
-                        .frame(maxWidth: .infinity)
-                }
-                .buttonStyle(.borderedProminent)
-                .padding(.bottom)
             }
-            .paneBackground()
-            .padding()
         }
     }
 }
 
-struct ErrorScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        ScrollView {
-            VStack(spacing: 20) {
-                ErrorView(error: .locationPermission)
-                ErrorView(error: .locationError)
-                ErrorView(error: .invalidUrl)
-                ErrorView(error: .networkError)
-                ErrorView(error: .invalidResponse)
-                ErrorView(error: .invalidData)
-            }
-        }
-    }
+#Preview {
+    ErrorView(error: .locationPermission)
 }

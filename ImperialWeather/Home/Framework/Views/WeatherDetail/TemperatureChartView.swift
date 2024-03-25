@@ -8,7 +8,6 @@
 import Charts
 import SwiftUI
 
-@available(iOS 16.0, *)
 struct TemperatureChartView: View {
     @AppStorage("temperatureScale") private var scale: TemperatureScale = .celsius
     
@@ -80,7 +79,6 @@ struct TemperatureChartView: View {
     }
 }
 
-@available(iOS 16.0, *)
 #Preview {
     TemperatureChartView(dailyWeather: .preview)
         .padding(.horizontal)

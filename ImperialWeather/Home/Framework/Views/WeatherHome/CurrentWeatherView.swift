@@ -14,10 +14,10 @@ struct CurrentWeatherView: View {
     
     var body: some View {
         let layout = sizeClassIsCompact 
-        ? AnyLayout(HStackLayout(spacing: 32))
-        : AnyLayout(VStackLayout(spacing: 32))
+        ? AnyLayout(HStackLayout(spacing: 16))
+        : AnyLayout(VStackLayout(spacing: 24))
         
-        VStack(spacing: 32) {
+        VStack(spacing: sizeClassIsCompact ? 16 : 32) {
             layout {
                 VStack(alignment: sizeClassIsCompact ? .leading : .center, spacing: 4) {
                     Text(weather.location)
@@ -40,7 +40,7 @@ struct CurrentWeatherView: View {
             
             TemperatureScalePicker()
         }
-        .padding(.top, 8)
+        .padding(.top, sizeClassIsCompact ? 0 : 8)
         .paneBackground()
     }
     

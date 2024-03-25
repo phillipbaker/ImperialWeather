@@ -17,7 +17,7 @@ extension Date {
     }
     
     var narrowHour: String {
-        self <= Date.now ? WeatherLabel.now : self.formatted(.dateTime.hour())
+        self <= Date.now ? WeatherLabel.now : self.formatted(.dateTime.hour(.defaultDigits(amPM: .abbreviated)))
     }
     
     var date: String {

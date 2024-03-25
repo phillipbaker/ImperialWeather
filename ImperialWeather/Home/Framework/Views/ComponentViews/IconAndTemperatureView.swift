@@ -18,11 +18,19 @@ struct IconAndTemperatureView: View {
                 .font(.system(size: 60))
             
             VStack(alignment: .leading, spacing: 4) {
-                PrimaryTemperatureView(celsius: celsius, fahrenheit: fahrenheit)
-                    .font(.largeTitle)
-
-                SecondaryTemperatureView(celsius: celsius, fahrenheit: fahrenheit)
-                    .font(.subheadline)
+                PrimaryTemperatureView(
+                    celsius: celsius,
+                    fahrenheit: fahrenheit,
+                    alignment: .leading
+                )
+                .font(.largeTitle)
+                
+                SecondaryTemperatureView(
+                    celsius: celsius,
+                    fahrenheit: fahrenheit,
+                    alignment: .leading
+                )
+                .font(.subheadline)
             }
             .fontWeight(.semibold)
             .accessibilityElement(children: .combine)

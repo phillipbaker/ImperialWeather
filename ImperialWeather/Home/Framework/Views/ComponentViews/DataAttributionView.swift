@@ -8,17 +8,15 @@
 import SwiftUI
 
 struct DataAttributionView: View {
-    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
-    
     var body: some View {
         Link(destination: URL(string: "https://openweathermap.org")!) {
             Text(WeatherLabel.source)
+                .multilineTextAlignment(.leading)
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
         .font(.caption)
-//        .textCase(.uppercase)
-//        .fontWeight(.medium)
+        .fontWeight(.medium)
         .foregroundStyle(.secondary)
-        .frame( maxWidth: .infinity, alignment: dynamicTypeSize.isAccessibilitySize ? .center : .leading)
     }
 }
 

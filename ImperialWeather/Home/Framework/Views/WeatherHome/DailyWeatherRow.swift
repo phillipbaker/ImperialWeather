@@ -19,31 +19,32 @@ struct DailyWeatherRow: View {
         layout {
             GridRow {
                 Text(dailyWeather.day.wideWeekday)
-                    .frame(minWidth: 100, minHeight: 28, alignment: .leading)
-                    .fontWeight(.medium)
+                    .frame(
+                        maxWidth: .infinity,
+                        alignment: dynamicTypeSize.isAccessibilitySize ? .center : .leading
+                    )
                     .opacity(0.9)
                 
-                Spacer()
-                
                 WeatherImage(systemName: dailyWeather.icon)
+                    .frame(minHeight: 32)
                 
-                Spacer()
-                
-                PrimaryTemperatureView(
-                    celsius: dailyWeather.celsius,
-                    fahrenheit: dailyWeather.fahrenheit
-                )
-                .frame(minWidth: 50, alignment: .trailing)
-                .fontWeight(.medium)
-                
-                SecondaryTemperatureView(
-                    celsius: dailyWeather.celsius,
-                    fahrenheit: dailyWeather.fahrenheit
-                )
-                .frame(minWidth: 50, alignment: .trailing)
-                .fontWeight(.medium)
+                HStack {
+                    PrimaryTemperatureView(
+                        celsius: dailyWeather.celsius,
+                        fahrenheit: dailyWeather.fahrenheit,
+                        alignment: .trailing
+                    )
+                    
+                    SecondaryTemperatureView(
+                        celsius: dailyWeather.celsius,
+                        fahrenheit: dailyWeather.fahrenheit,
+                        alignment: .trailing
+                    )
+                }
+                .frame(maxWidth: .infinity, alignment: dynamicTypeSize.isAccessibilitySize ? .center : .trailing)
             }
-            .frame(maxWidth: .infinity, alignment: dynamicTypeSize.isAccessibilitySize ? .center : .trailing)
+            .frame(maxWidth: .infinity)
+            .fontWeight(.medium)
         }
     }
 }
