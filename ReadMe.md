@@ -8,4 +8,5 @@ It’s built with **SwiftUI**, **SwiftCharts**, **CoreLocation**, **Codable** an
 
 [Read about the app, my approach and learning experiences](https://phillipbaker.me/imperial-weather/) on my website.
 
+---
 ![iw-collage](https://github.com/phillipbaker/ImperialWeather/assets/16352712/3c7d13ca-c108-41d2-8e27-ec7200d7de43)
