@@ -31,6 +31,7 @@ struct ErrorView: View {
                                     .fontWeight(.bold)
                                 
                                 Text(error.message.description)
+                                    .font(.subheadline)
                                     .frame(maxWidth: .infinity)
                                     .foregroundColor(.secondary)
                                     .multilineTextAlignment(.center)
@@ -43,7 +44,7 @@ struct ErrorView: View {
                                     .frame(maxWidth: .infinity)
                                     .padding(4)
                                     .font(.subheadline)
-                                    .fontWeight(.bold)
+                                    .fontWeight(.semibold)
                             }
                             .buttonStyle(.borderedProminent)
                             .padding(.bottom)

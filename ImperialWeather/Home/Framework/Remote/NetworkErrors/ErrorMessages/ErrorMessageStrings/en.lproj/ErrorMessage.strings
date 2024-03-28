@@ -17,7 +17,7 @@
 "Imperial Weather could not retrieve a forecast from the weather provider." = "Imperial Weather could not retrieve a forecast from the weather provider.";
 
 /* Error message description when the app needs location access to provide a weather forecast. */
-"Imperial Weather needs your location to show you the weather where you are." = "Imperial Weather needs your location to show the weather where you are.";
+"Imperial Weather needs your location to show you the weather where you are." = "Imperial Weather needs your location to show you the weather where you are.";
 
 /* Error message description when the app was not able to establish the user’s location. */
 "Imperial Weather was unable to establish your location." = "Imperial Weather was unable to establish your location.";
