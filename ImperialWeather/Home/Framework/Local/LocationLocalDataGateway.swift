@@ -5,21 +5,20 @@
 //  Created by Phillip Baker on 6/26/23.
 //
 
-import CoreLocation
 import Foundation
 
-final class LocationLocalDataGateway: LocationDataSourceLocal {    
-    func locationName(fromLatitude latitude: String, andLongitude longitude: String) async throws -> String {
-        guard let latitude = CLLocationDegrees(latitude), let longitude = CLLocationDegrees(longitude) else {
-            throw GeocodingError.coordinateError
-        }
-        
-        let location = CLLocation(latitude: latitude, longitude: longitude)
-        
-        guard let locationName = try await CLGeocoder().reverseGeocodeLocation(location).first?.locality else {
-            throw GeocodingError.geocodingError
-        }
-        
-        return locationName
+final class LocationLocalDataGateway: LocationDataSourceLocal {
+    let service: LocationService
+    
+    init(service: LocationService) {
+        self.service = service
+    }
+    
+    func fetchLocation() async throws -> (latitude: String, longitude: String) {
+        return try await service.fetchLocation()
+    }
+    
+    func locationName(for latitude: String, and longitude: String) async throws -> String {
+        return try await service.fetchPlaceName(for: latitude, and: longitude)
     }
 }

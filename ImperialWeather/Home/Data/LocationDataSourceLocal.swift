@@ -8,5 +8,6 @@
 import Foundation
 
 protocol LocationDataSourceLocal: Sendable {
-    func locationName(fromLatitude latitude: String, andLongitude longitude: String) async throws -> String
+    func fetchLocation() async throws -> (latitude: String, longitude: String)
+    func locationName(for latitude: String, and longitude: String) async throws -> String
 }

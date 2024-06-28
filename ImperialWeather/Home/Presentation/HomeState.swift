@@ -10,5 +10,5 @@ import Foundation
 enum HomeState {
     case loading
     case success(HomeWeather)
-    case error(NetworkError)
+    case error(ErrorMessage)
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    @ObservedObject private(set) var viewModel: HomeViewModel
+    @ObservedObject var viewModel: HomeViewModel
     
     var body: some View {
         ZStack {
@@ -19,13 +19,16 @@ struct HomeView: View {
                 ProgressView()
             case .success(let weather):
                 WeatherView(weather: weather)
-            case .error(let error):
-                ErrorView(error: error)
+            case .error(let message):
+                ErrorView(message: message)
             }
+        }
+        .task {
+            await viewModel.handleIntent(intent: HomeIntent.GetWeather)
         }
     }
 }
 
 #Preview {
-    HomeView(viewModel: .init(latitude: "0.0", longitude: "0.0"))
+    HomeView(viewModel: HomeViewModel())
 }
