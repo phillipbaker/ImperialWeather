@@ -8,39 +8,39 @@
 import Foundation
 
 @MainActor final class HomeViewModel: ObservableObject {
-
-    let latitude: String
-    let longitude: String
-    let getWeatherUseCase = GetWeather(
-        source: GetWeatherSourceImpl(
-            locationDataSourceLocal: LocationLocalDataGateway(),
-            weatherDataSourceRemote: WeatherRemoteDataGateway(service: WeatherServiceImpl())
-        )
+    let getWeatherUseCase = GetWeather(source: GetWeatherSourceImpl(
+        locationDataSourceLocal: LocationLocalDataGateway(service: LocationServiceImpl()),
+        weatherDataSourceRemote: WeatherRemoteDataGateway(service: WeatherServiceImpl()))
     )
     
-    @Published private(set) var state: HomeState = .loading
+    @Published var state: HomeState = .loading
     
-    @MainActor init(latitude: String, longitude: String) {
-        self.latitude = latitude
-        self.longitude = longitude
-        
-        Task { await getWeather() }
+    func handleIntent(intent: HomeIntent) async {
+        switch intent {
+        case .GetWeather:
+            await getWeather()
+        }
     }
     
     private func getWeather() async {
         do {
-            state = .success(try await getWeatherUseCase.weather(forLatitude: self.latitude, andLongitude: self.longitude))
+            state = .success(try await getWeatherUseCase.weather())
+        } catch LocationError.coordinateError {
+            state = .error(LocationError.coordinateError.message)
+        } catch LocationError.geocodingError {
+            state = .error(LocationError.geocodingError.message)
+        } catch LocationError.permissionError {
+            state = .error(LocationError.permissionError.message)
         } catch NetworkError.invalidUrl {
-            state = .error(.invalidUrl)
+            state = .error(NetworkError.invalidUrl.message)
         } catch NetworkError.networkError {
-            state = .error(.networkError)
+            state = .error(NetworkError.networkError.message)
         } catch NetworkError.invalidResponse {
-            state = .error(.invalidResponse)
+            state = .error(NetworkError.invalidResponse.message)
         } catch NetworkError.invalidData {
-            state = .error(.invalidData)
+            state = .error(NetworkError.invalidData.message)
         } catch {
-            state = .error(.invalidData)
-            print("Unexpected error: \(error)")
+            state = .error(NetworkError.invalidData.message)
         }
     }
 }

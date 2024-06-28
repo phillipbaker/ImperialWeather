@@ -8,5 +8,5 @@
 import Foundation
 
 protocol WeatherDataSourceRemote: Sendable {
-    func fetchWeather(latitude: String, longitude: String) async throws -> HomeWeatherPlain
+    func fetchWeather(for latitude: String, and longitude: String) async throws -> HomeWeatherPlain
 }

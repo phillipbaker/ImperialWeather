@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct ImperialWeatherApp: App {
+    @StateObject var viewModel = HomeViewModel()
     var body: some Scene {
         WindowGroup {
-            RootView()
+            HomeView(viewModel: viewModel)
         }
     }
 }

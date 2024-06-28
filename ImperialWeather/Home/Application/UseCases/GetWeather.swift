@@ -7,14 +7,14 @@
 
 import Foundation
 
-class GetWeather {
+final class GetWeather: Sendable {
     let source: GetWeatherSource
     
     init(source: GetWeatherSource) {
         self.source = source
     }
     
-    @MainActor func weather(forLatitude latitude: String, andLongitude longitude: String) async throws -> HomeWeather {
-        HomeWeather.mapHomeWeatherFromData(data: try await source.weather(forLatitude: latitude, andLongitude: longitude))
+    func weather() async throws -> HomeWeather {
+        HomeWeather.mapHomeWeatherFromData(data: try await source.weather())
     }
 }

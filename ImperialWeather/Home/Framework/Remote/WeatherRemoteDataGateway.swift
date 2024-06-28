@@ -14,7 +14,7 @@ final class WeatherRemoteDataGateway: WeatherDataSourceRemote {
         self.service = service
     }
     
-    func fetchWeather(latitude: String, longitude: String) async throws -> HomeWeatherPlain {
-        return try await service.fetchWeather(latitude: latitude, longitude: longitude).mapToPlain()
+    func fetchWeather(for latitude: String, and longitude: String) async throws -> HomeWeatherPlain {
+        return try await service.fetchWeather(for: latitude, and: longitude).mapToPlain()
     }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ErrorView: View {
-    let error: NetworkError
+    let message: ErrorMessage
     
     var body: some View {
         ZStack {
@@ -20,17 +20,17 @@ struct ErrorView: View {
                     ZStack {
                         VStack(spacing: 24) {
                             VStack(spacing: 12) {
-                                Image(systemName: error.message.image)
+                                Image(systemName: message.image)
                                     .font(.system(size: 50))
                                     .foregroundColor(.secondary)
                                 
-                                Text(error.message.title)
+                                Text(message.title)
                                     .padding(.horizontal, 24)
                                     .multilineTextAlignment(.center)
                                     .font(.title2)
                                     .fontWeight(.bold)
                                 
-                                Text(error.message.description)
+                                Text(message.description)
                                     .font(.subheadline)
                                     .frame(maxWidth: .infinity)
                                     .foregroundColor(.secondary)
@@ -38,9 +38,9 @@ struct ErrorView: View {
                             }
                             
                             Button {
-                                Task { await error.message.buttonAction() }
+                                Task { await message.buttonAction() }
                             } label: {
-                                Text(error.message.buttonTitle)
+                                Text(message.buttonTitle)
                                     .frame(maxWidth: .infinity)
                                     .padding(4)
                                     .font(.subheadline)
@@ -61,5 +61,5 @@ struct ErrorView: View {
 }
 
 #Preview {
-    ErrorView(error: .locationPermission)
+    ErrorView(message: LocationError.permissionError.message)
 }

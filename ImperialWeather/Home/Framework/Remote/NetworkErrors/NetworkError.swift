@@ -8,8 +8,6 @@
 import Foundation
 
 enum NetworkError: Error {
-    case locationPermission
-    case locationError
     case invalidUrl
     case networkError
     case invalidResponse
@@ -17,10 +15,6 @@ enum NetworkError: Error {
 
     var message: ErrorMessage {
         switch self {
-        case .locationPermission:
-            return LocationPermissionMessage()
-        case .locationError:
-            return LocationErrorMessage()
         case .invalidUrl:
             return InvalidURLMessage()
         case .networkError:
