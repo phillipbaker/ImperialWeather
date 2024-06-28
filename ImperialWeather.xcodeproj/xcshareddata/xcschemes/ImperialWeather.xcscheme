@@ -31,7 +31,17 @@
       region = "US"
       systemAttachmentLifetime = "keepNever"
       preferredScreenCaptureFormat = "screenshots"
-      codeCoverageEnabled = "YES">
+      codeCoverageEnabled = "YES"
+      onlyGenerateCoverageForSpecifiedTargets = "YES">
+      <CodeCoverageTargets>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "F87E5C8E267C9E950032949A"
+            BuildableName = "ImperialWeather.app"
+            BlueprintName = "ImperialWeather"
+            ReferencedContainer = "container:ImperialWeather.xcodeproj">
+         </BuildableReference>
+      </CodeCoverageTargets>
       <Testables>
          <TestableReference
             skipped = "NO"
