@@ -358,7 +358,6 @@
 		F85931DF2B726BF700E3355E /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				F85931E92B72723400E3355E /* RawModelMocks */,
 				F89A42EB2B73CC18007DDCB6 /* RawModelTests */,
 			);
 			path = Home;
@@ -581,6 +580,7 @@
 				F879EA152B73B09D009526C4 /* HourlyWeatherRawTests.swift */,
 				F879EA172B73B0F8009526C4 /* CurrentWeatherRawTests.swift */,
 				F879EA192B73B247009526C4 /* WeatherDescriptionRawTests.swift */,
+				F85931E92B72723400E3355E /* RawModelMocks */,
 			);
 			path = RawModelTests;
 			sourceTree = "<group>";
