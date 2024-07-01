@@ -9,111 +9,111 @@ import Foundation
 
 extension Array where Element == HourlyWeather {
     static let preview: [HourlyWeather] = [
-        .preview_currentHour,
-        .preview_nextHour,
-        .preview_inTwoHours,
-        .preview_inThreeHours,
-        .preview_inFourHours,
-        .preview_inFiveHours,
-        .preview_inSixHours,
-        .preview_inSevenHours,
-        .preview_inEightHours,
-        .preview_inNineHours,
-        .preview_inTenHours,
-        .preview_inElevenHours,
-        .preview_inTwelveHours
+        .currentHourPreview,
+        .nextHourPreview,
+        .inTwoHoursPreview,
+        .inThreeHoursPreview,
+        .inFourHoursPreview,
+        .inFiveHoursPreview,
+        .inSixHoursPreview,
+        .inSevenHoursPreview,
+        .inEightHoursPreview,
+        .inNineHoursPreview,
+        .inTenHoursPreview,
+        .inElevenHoursPreview,
+        .inTwelveHoursPreview
     ]
 }
 
 extension HourlyWeather {
-    static let preview_currentHour = HourlyWeather(
+    static let currentHourPreview = HourlyWeather(
         id: UUID(),
         hour: .currentDateTime,
-        icon: WeatherSymbol.cloud,
+        icon: WeatherSymbol.cloud.rawValue,
         celsius: Measurement(value: 32.0, unit: .celsius)
     )
     
-    static let preview_nextHour =  HourlyWeather(
+    static let nextHourPreview =  HourlyWeather(
         id: UUID(),
         hour: Calendar.current.date(byAdding: .hour, value: 1, to: .currentDateTime)!,
-        icon: WeatherSymbol.drizzle,
+        icon: WeatherSymbol.drizzle.rawValue,
         celsius: Measurement(value: 24.0, unit: .celsius)
     )
     
-    static let preview_inTwoHours = HourlyWeather(
+    static let inTwoHoursPreview = HourlyWeather(
         id: UUID(),
         hour: Calendar.current.date(byAdding: .hour, value: 2, to: .currentDateTime)!,
-        icon: WeatherSymbol.heavyRain,
+        icon: WeatherSymbol.heavyRain.rawValue,
         celsius: Measurement(value: 17.0, unit: .celsius)
     )
     
-    static let preview_inThreeHours = HourlyWeather(
+    static let inThreeHoursPreview = HourlyWeather(
         id: UUID(),
         hour: Calendar.current.date(byAdding: .hour, value: 3, to: .currentDateTime)!,
-        icon: WeatherSymbol.rain,
+        icon: WeatherSymbol.rain.rawValue,
         celsius: Measurement(value: 15.0, unit: .celsius)
     )
     
-    static let preview_inFourHours = HourlyWeather(
+    static let inFourHoursPreview = HourlyWeather(
         id: UUID(),
         hour: Calendar.current.date(byAdding: .hour, value: 4, to: .currentDateTime)!,
-        icon: WeatherSymbol.thunderstorm,
+        icon: WeatherSymbol.thunderstorm.rawValue,
         celsius: Measurement(value: 16.0, unit: .celsius)
     )
     
-    static let preview_inFiveHours = HourlyWeather(
+    static let inFiveHoursPreview = HourlyWeather(
         id: UUID(),
         hour: Calendar.current.date(byAdding: .hour, value: 5, to: .currentDateTime)!,
-        icon: WeatherSymbol.snow,
+        icon: WeatherSymbol.snow.rawValue,
         celsius: Measurement(value: 32.0, unit: .celsius)
     )
     
-    static let preview_inSixHours = HourlyWeather(
+    static let inSixHoursPreview = HourlyWeather(
         id: UUID(),
         hour: Calendar.current.date(byAdding: .hour, value: 6, to: .currentDateTime)!,
-        icon: WeatherSymbol.sun,
+        icon: WeatherSymbol.clearDay.rawValue,
         celsius: Measurement(value: 26.0, unit: .celsius)
     )
     
-    static let preview_inSevenHours = HourlyWeather(
+    static let inSevenHoursPreview = HourlyWeather(
         id: UUID(),
         hour: Calendar.current.date(byAdding: .hour, value: 7, to: .currentDateTime)!,
-        icon: WeatherSymbol.placeholder,
+        icon: WeatherSymbol.invalidId.rawValue,
         celsius: Measurement(value: 21.0, unit: .celsius)
     )
 
-    static let preview_inEightHours = HourlyWeather(
+    static let inEightHoursPreview = HourlyWeather(
         id: UUID(),
         hour: Calendar.current.date(byAdding: .hour, value: 8, to: .currentDateTime)!,
-        icon: WeatherSymbol.dust,
+        icon: WeatherSymbol.dust.rawValue,
         celsius: Measurement(value: 22.0, unit: .celsius)
     )
     
-    static let preview_inNineHours = HourlyWeather(
+    static let inNineHoursPreview = HourlyWeather(
         id: UUID(),
         hour: Calendar.current.date(byAdding: .hour, value: 9, to: .currentDateTime)!,
-        icon: WeatherSymbol.fog,
+        icon: WeatherSymbol.fog.rawValue,
         celsius: Measurement(value: 34.0, unit: .celsius)
     )
     
-    static let preview_inTenHours = HourlyWeather(
+    static let inTenHoursPreview = HourlyWeather(
         id: UUID(),
         hour: Calendar.current.date(byAdding: .hour, value: 10, to: .currentDateTime)!,
-        icon: WeatherSymbol.haze,
+        icon: WeatherSymbol.haze.rawValue,
         celsius: Measurement(value: 29.0, unit: .celsius)
     )
     
-    static let preview_inElevenHours = HourlyWeather(
+    static let inElevenHoursPreview = HourlyWeather(
         id: UUID(),
         hour: Calendar.current.date(byAdding: .hour, value: 11, to: .currentDateTime)!,
-        icon: WeatherSymbol.ice,
+        icon: WeatherSymbol.ice.rawValue,
         celsius: Measurement(value: 32.0, unit: .celsius)
     )
     
-    static let preview_inTwelveHours = HourlyWeather(
+    static let inTwelveHoursPreview = HourlyWeather(
         id: UUID(),
         hour: Calendar.current.date(byAdding: .hour, value: 12, to: .currentDateTime)!,
-        icon: WeatherSymbol.moonStars,
+        icon: WeatherSymbol.clearNight.rawValue,
         celsius: Measurement(value: 36.0, unit: .celsius)
     )
 }

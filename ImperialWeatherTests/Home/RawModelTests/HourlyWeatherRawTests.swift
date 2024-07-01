@@ -6,23 +6,16 @@
 //
 
 @testable import ImperialWeather
-import XCTest
+import Testing
 
-final class HourlyWeatherRawTests: XCTestCase {
-    
-    func test_mapToPlain_shouldMapHourlyWeatherRaw_toHourlyWeatherPlain() {
-        let result = HourlyWeatherRaw.mock_currentHour.mapToPlain()
-        XCTAssertEqual(.mock_currentHour, result)
+@Suite(.tags(.rawModels, .dataMappping))
+struct HourlyWeatherRawTests {
+    @Test func mapHourlyWeatherRawToPlain() {
+        #expect(HourlyWeatherRaw.currentHourMock.mapToPlain() == HourlyWeatherPlain.currentHourMock)
     }
     
-    func test_mapHourlyWeatherRawToPlain_shouldMapArrayOfHourlyWeatherRaw_toArrayOfHourlyWeatherPlain() {
-        let result = HourlyWeatherRaw.mapHourlyWeatherRawToPlain(
-            hourlyWeatherRaw: [
-                .mock_currentHour,
-                .mock_nextHour,
-                .mock_inTwoHours
-            ]
-        )
-        XCTAssertEqual(.mock, result)
+    @Test func mapArrayOfHoulyWeatherRawToPlain() {
+        let mappedHourlyWeatherRawMock = HourlyWeatherRaw.mapHourlyWeatherRawToPlain(hourlyWeatherRaw: .mock)
+        #expect(mappedHourlyWeatherRawMock == [HourlyWeatherPlain].mock)
     }
 }

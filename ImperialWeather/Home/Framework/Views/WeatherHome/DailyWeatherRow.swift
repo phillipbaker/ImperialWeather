@@ -50,5 +50,5 @@ struct DailyWeatherRow: View {
 }
 
 #Preview {
-    DailyWeatherRow(dailyWeather: .preview_today)
+    DailyWeatherRow(dailyWeather: .todayPreview)
 }

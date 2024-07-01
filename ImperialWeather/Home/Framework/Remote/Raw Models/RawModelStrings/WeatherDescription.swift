@@ -8,12 +8,6 @@
 import Foundation
 
 enum WeatherDescription {
-    static let noDescription = NSLocalizedString(
-        "No Description",
-        tableName: "WeatherDescription",
-        comment: "Label displayed when the weather description is missing from a forecast."
-    )
-
     static let ash = NSLocalizedString(
         "Ash",
         tableName: "WeatherDescription",
@@ -56,6 +50,24 @@ enum WeatherDescription {
         comment: "Label to describe hazy conditions."
     )
     
+    static let heavyRain = NSLocalizedString(
+        "Heavy Rain",
+        tableName: "WeatherDescription",
+        comment: "Label to describe heavy rain."
+    )
+    
+    static let ice = NSLocalizedString(
+        "Freezing Rain",
+        tableName: "WeatherDescription",
+        comment: "Label to describe freezing rain."
+    )
+    
+    static let invalidId = NSLocalizedString(
+        "No Description",
+        tableName: "WeatherDescription",
+        comment: "Label displayed when the weather description is missing from a forecast."
+    )
+    
     static let mist = NSLocalizedString(
         "Mist",
         tableName: "WeatherDescription",
@@ -72,6 +84,12 @@ enum WeatherDescription {
         "Sand",
         tableName: "WeatherDescription",
         comment: "Label to describe sand or dust whirls or a sand or dust storm."
+    )
+    
+    static let sleet = NSLocalizedString(
+        "Sleet",
+        tableName: "WeatherDescription",
+        comment: "Label to describe mixed rain and snow conditions."
     )
     
     static let smoke = NSLocalizedString(

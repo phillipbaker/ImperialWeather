@@ -21,6 +21,6 @@ struct WeatherImage: View {
 
 struct WeatherImage_Previews: PreviewProvider {
     static var previews: some View {
-        WeatherImage(systemName: WeatherSymbol.thunderstorm)
+        WeatherImage(systemName: WeatherSymbol.thunderstorm.rawValue)
     }
 }

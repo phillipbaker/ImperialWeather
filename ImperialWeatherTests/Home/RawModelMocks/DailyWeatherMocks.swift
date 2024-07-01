@@ -9,49 +9,49 @@ import Foundation
 @testable import ImperialWeather
 
 extension Array where Element == DailyWeatherRaw {
-    static let mock: [DailyWeatherRaw] = [.mock_today, .mock_tomorrow, .mock_inTwoDays]
+    static let mock: [DailyWeatherRaw] = [.todayMock, .tomorrowMock, .inTwoDaysMock]
 }
 
 extension DailyWeatherRaw {
-    static let mock_today = DailyWeatherRaw(
+    static let todayMock = DailyWeatherRaw(
         dt: .currentDateTime,
         temp: TemperatureRaw(max: 22.0),
-        weather: [.mock_thunderstorm, .mock_drizzle, .mock_fog]
+        weather: [.thunderstormMock, .drizzleMock, .fogMock]
     )
     
-    static let mock_tomorrow = DailyWeatherRaw(
+    static let tomorrowMock = DailyWeatherRaw(
         dt: .tomorrow,
         temp: TemperatureRaw(max: 24.0),
-        weather: [.mock_drizzle, .mock_thunderstorm, .mock_haze]
+        weather: [.drizzleMock, .thunderstormMock, .hazeMock]
     )
     
-    static let mock_inTwoDays = DailyWeatherRaw(
+    static let inTwoDaysMock = DailyWeatherRaw(
         dt: .inTwoDays,
         temp: TemperatureRaw(max: 39.0),
-        weather: [.mock_invalidID, .mock_thunderstorm, .mock_drizzle]
+        weather: [.invalidIdMock, .thunderstormMock, .drizzleMock]
     )
 }
 
 extension Array where Element == DailyWeatherPlain {
-    static let mock: [DailyWeatherPlain] = [.mock_tomorrow, .mock_inTwoDays]
+    static let mock: [DailyWeatherPlain] = [.tomorrowMock, .inTwoDaysMock]
 }
 
 extension DailyWeatherPlain {
-    static let mock_today = DailyWeatherPlain(
+    static let todayMock = DailyWeatherPlain(
         day: .currentDateTime,
-        icon: WeatherSymbol.thunderstorm,
+        icon: WeatherSymbol.thunderstorm.rawValue,
         temperature: 22.0
     )
     
-    static let mock_tomorrow = DailyWeatherPlain(
+    static let tomorrowMock = DailyWeatherPlain(
         day: .tomorrow,
-        icon: WeatherSymbol.drizzle,
+        icon: WeatherSymbol.drizzle.rawValue,
         temperature: 24.0
     )
     
-    static let mock_inTwoDays = DailyWeatherPlain(
+    static let inTwoDaysMock = DailyWeatherPlain(
         day: .inTwoDays,
-        icon: WeatherSymbol.placeholder,
+        icon: WeatherSymbol.invalidId.rawValue,
         temperature: 39.0
     )
 }

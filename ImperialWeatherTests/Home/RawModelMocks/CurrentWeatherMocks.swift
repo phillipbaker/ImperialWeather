@@ -17,32 +17,32 @@ extension CurrentWeatherRaw {
         name: "London",
         main: .mock,
         weather: [
-            .mock_drizzle,
-            .mock_invalidID,
-            .mock_thunderstorm
+            .drizzleMock,
+            .invalidIdMock,
+            .thunderstormMock
         ]
     )
     
-    public static let mock_withNilLocation = CurrentWeatherRaw(
+    static let nilLocationMock = CurrentWeatherRaw(
         name: nil,
         main: .mock,
         weather: [
-            .mock_thunderstorm,
-            .mock_drizzle
+            .thunderstormMock,
+            .drizzleMock
         ]
     )
 }
 
 extension CurrentWeatherPlain {
     public static let mock = CurrentWeatherPlain(
-        icon: WeatherSymbol.drizzle,
+        icon: WeatherSymbol.drizzle.rawValue,
         location: "London",
         description: WeatherDescription.drizzle,
         temperature: 21.0
     )
     
-    public static let mock_withNilLocation = CurrentWeatherPlain(
-        icon: WeatherSymbol.thunderstorm,
+    public static let nilLocationMock = CurrentWeatherPlain(
+        icon: WeatherSymbol.thunderstorm.rawValue,
         location: WeatherLabel.unknownLocation,
         description: WeatherDescription.thunderstorm,
         temperature: 21.0

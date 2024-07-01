@@ -10,7 +10,7 @@ import Foundation
 extension CurrentWeather {
     static let preview = CurrentWeather(
         id: UUID(),
-        icon: WeatherSymbol.cloud,
+        icon: WeatherSymbol.cloud.rawValue,
         location: "London",
         description: "Sunny",
         celsius: Measurement(value: 21.0, unit: .celsius)

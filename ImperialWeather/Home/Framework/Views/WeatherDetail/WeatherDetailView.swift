@@ -73,6 +73,6 @@ struct WeatherDetailView: View {
 #Preview {
     WeatherDetailView(
         dailyWeather: .preview,
-        selection: .constant(.preview_today)
+        selection: .constant(.todayPreview)
     )
 }

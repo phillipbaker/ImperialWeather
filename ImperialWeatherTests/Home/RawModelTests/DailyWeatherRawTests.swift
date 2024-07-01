@@ -6,34 +6,25 @@
 //
 
 @testable import ImperialWeather
-import XCTest
+import Testing
 
-final class DailyWeatherRawTests: XCTestCase {
-    
-    func test_mapToPlain_shouldMapDailyWeatherRaw_toDailyWeatherPlain() {
-        let result = DailyWeatherRaw.mock_today.mapToPlain()
-        XCTAssertEqual(DailyWeatherPlain.mock_today, result)
+@Suite(.tags(.rawModels, .dataMappping))
+struct DailyWeatherRawTests {
+    @Test func mapDailyWeatherRawToPlain() {
+        #expect(DailyWeatherRaw.todayMock.mapToPlain() == DailyWeatherPlain.todayMock)
     }
     
-    func test_mapDailyWeatherRawToPlain_shouldMapArrayOfDailyWeatherRaw_toArrayOfDailyWeatherPlain() {
-        let result = DailyWeatherRaw.mapDailyWeatherRawToPlain(
-            dailyWeatherRaw: [
-                .mock_tomorrow,
-                .mock_inTwoDays
-            ]
+    @Test func mapArrayofDailyWeatherRawToPlain() {
+        let mappedDailyWeatherRawMock = DailyWeatherRaw.mapDailyWeatherRawToPlain(
+            dailyWeatherRaw: [.tomorrowMock, .inTwoDaysMock]
         )
-        
-        XCTAssertEqual([DailyWeatherPlain.mock_tomorrow, DailyWeatherPlain.mock_inTwoDays], result)
+        #expect(mappedDailyWeatherRawMock == [DailyWeatherPlain.tomorrowMock, DailyWeatherPlain.inTwoDaysMock])
     }
     
-    func test_mapDailyWeatherRawToPlain_shouldMapArrayOfDailyWeatherRaw_toArrayOfDailyWeatherPlain_excludingTodayForecast() {
-        let result = DailyWeatherRaw.mapDailyWeatherRawToPlain(
-            dailyWeatherRaw: [
-                .mock_today,
-                .mock_tomorrow
-            ]
+    @Test func mapArrayofDailyWeatherRawToPlainExcludingCurrentDay() {
+        let mappedDailyWeatherRawMockWithCurrentDay = DailyWeatherRaw.mapDailyWeatherRawToPlain(
+            dailyWeatherRaw: [DailyWeatherRaw].mock
         )
-        
-        XCTAssertEqual([DailyWeatherPlain.mock_tomorrow], result)
+        #expect(mappedDailyWeatherRawMockWithCurrentDay == [DailyWeatherPlain].mock)
     }
 }

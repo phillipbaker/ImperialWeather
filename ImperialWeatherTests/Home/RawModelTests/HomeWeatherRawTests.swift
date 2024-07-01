@@ -6,12 +6,11 @@
 //
 
 @testable import ImperialWeather
-import XCTest
+import Testing
 
-final class HomeWeatherRawTests: XCTestCase {
-    
-    func test_mapToPlain_shouldMapHomeWeatherRaw_toHomeWeatherPlain() {
-        let result = HomeWeatherRaw.mock.mapToPlain()
-        XCTAssertEqual(HomeWeatherPlain.mock, result)
+@Suite(.tags(.rawModels, .dataMappping))
+struct HomeWeatherRawTests {
+    @Test func mapHomeWeatherRawToPlain() {
+        #expect(HomeWeatherRaw.mock.mapToPlain() == HomeWeatherPlain.mock)
     }
 }

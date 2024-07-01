@@ -37,7 +37,7 @@ struct CalendarDayView: View {
 
 #Preview {
     CalendarDayView(
-        day: .preview_today,
-        selection: .constant(.preview_tomorrow)
+        day: .todayPreview,
+        selection: .constant(.tomorrowPreview)
     )
 }

@@ -6,16 +6,15 @@
 //
 
 @testable import ImperialWeather
-import XCTest
+import Testing
 
-final class CurrentWeatherRawTests: XCTestCase {
-    func test_mapToPlain_shouldMapCurrentWeatherRaw_toCurrentWeatherPlain() {
-        let result = CurrentWeatherRaw.mock.mapToPlain()
-        XCTAssertEqual(CurrentWeatherPlain.mock, result)
+@Suite(.tags(.rawModels, .dataMappping))
+struct CurrentWeatherRawTests {
+    @Test func mapCurrentWeatherRawToPlain() {
+        #expect(CurrentWeatherRaw.mock.mapToPlain() == CurrentWeatherPlain.mock)
     }
     
-    func test_mapToPlain_shouldMapCurrentWeatherRaw_toCurrentWeatherPlain_withNilLocation() {
-        let result = CurrentWeatherRaw.mock_withNilLocation.mapToPlain()
-        XCTAssertEqual(CurrentWeatherPlain.mock_withNilLocation, result)
+    @Test func mapCurrentWeatherRawToPlainWithNilLocation() {
+        #expect(CurrentWeatherRaw.nilLocationMock.mapToPlain() == CurrentWeatherPlain.nilLocationMock)
     }
 }

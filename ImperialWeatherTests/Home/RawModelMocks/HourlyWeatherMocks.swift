@@ -9,61 +9,61 @@ import Foundation
 @testable import ImperialWeather
 
 extension Array where Element == HourlyWeatherRaw {
-    static let mock: [HourlyWeatherRaw] = [.mock_currentHour, .mock_nextHour, .mock_inTwoHours]
+    static let mock: [HourlyWeatherRaw] = [.currentHourMock, .nextHourMock, .inTwoHoursMock]
 }
 
 extension HourlyWeatherRaw {
-    static let mock_currentHour = HourlyWeatherRaw(
+    static let currentHourMock = HourlyWeatherRaw(
         dt: .currentDateTime,
         temp: 27.0,
         weather: [
-            .mock_thunderstorm,
-            .mock_drizzle,
-            .mock_invalidID
+            .thunderstormMock,
+            .drizzleMock,
+            .invalidIdMock
         ]
     )
     
-    static let mock_nextHour = HourlyWeatherRaw(
+    static let nextHourMock = HourlyWeatherRaw(
         dt: .nextHour,
         temp: 29.0,
         weather: [
-            .mock_drizzle,
-            .mock_thunderstorm,
-            .mock_invalidID
+            .drizzleMock,
+            .thunderstormMock,
+            .invalidIdMock
         ]
     )
     
-    static let mock_inTwoHours = HourlyWeatherRaw(
+    static let inTwoHoursMock = HourlyWeatherRaw(
         dt: .inTwoHours,
         temp: 20.0,
         weather: [
-            .mock_invalidID,
-            .mock_thunderstorm,
-            .mock_drizzle
+            .invalidIdMock,
+            .thunderstormMock,
+            .drizzleMock
         ]
     )
 }
 
 extension Array where Element == HourlyWeatherPlain {
-    static let mock: [HourlyWeatherPlain] = [.mock_currentHour, .mock_nextHour, .mock_inTwoHours]
+    static let mock: [HourlyWeatherPlain] = [.currentHourMock, .nextHourMock, .inTwoHoursMock]
 }
 
 extension HourlyWeatherPlain {
-    static let mock_currentHour = HourlyWeatherPlain(
+    static let currentHourMock = HourlyWeatherPlain(
         hour: .currentDateTime,
-        icon: WeatherSymbol.thunderstorm,
+        icon: WeatherSymbol.thunderstorm.rawValue,
         temperature: 27.0
     )
     
-    static let mock_nextHour = HourlyWeatherPlain(
+    static let nextHourMock = HourlyWeatherPlain(
         hour: .nextHour,
-        icon: WeatherSymbol.drizzle,
+        icon: WeatherSymbol.drizzle.rawValue,
         temperature: 29.0
     )
     
-    static let mock_inTwoHours = HourlyWeatherPlain(
+    static let inTwoHoursMock = HourlyWeatherPlain(
         hour: .inTwoHours,
-        icon: WeatherSymbol.placeholder,
+        icon: WeatherSymbol.invalidId.rawValue,
         temperature: 20.0
     )
 }

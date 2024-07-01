@@ -12,69 +12,65 @@ struct WeatherDescriptionRaw: Decodable, Equatable {
     let icon: String
     let id: Int
     
-    static func mapFirstDescription(from weatherDescriptionsRaw: [WeatherDescriptionRaw]) -> String {
-        return weatherDescriptionsRaw.first?.mapDescription() ?? WeatherDescription.noDescription
+    func mapIcon() -> String {
+        switch id {
+        case 200...232:
+            return WeatherSymbol.thunderstorm.rawValue
+        case 300, 310, 500, 520:
+            return WeatherSymbol.drizzle.rawValue
+        case 301, 311, 313, 321, 501, 521:
+            return WeatherSymbol.rain.rawValue
+        case 302, 312, 314, 502, 503, 504, 522, 531, 771:
+            return WeatherSymbol.heavyRain.rawValue
+        case 511:
+            return WeatherSymbol.ice.rawValue
+        case 600...602:
+            return WeatherSymbol.snow.rawValue
+        case 611...622:
+            return WeatherSymbol.sleet.rawValue
+        case 701, 741:
+            return WeatherSymbol.fog.rawValue
+        case 711, 762:
+            return WeatherSymbol.smoke.rawValue
+        case 721:
+            return WeatherSymbol.haze.rawValue
+        case 731, 751, 761:
+            return WeatherSymbol.dust.rawValue
+        case 781:
+            return WeatherSymbol.tornado.rawValue
+        case 800:
+            return isDaytime() ? WeatherSymbol.clearDay.rawValue : WeatherSymbol.clearNight.rawValue
+        case 801...804:
+            return WeatherSymbol.cloud.rawValue
+        default:
+            return WeatherSymbol.invalidId.rawValue
+        }
+    }
+    
+    private func isDaytime() -> Bool {
+        return icon.contains("d") ? true : false
     }
     
     static func mapFirstIcon(from weatherDescriptionsRaw: [WeatherDescriptionRaw]) -> String {
-        return weatherDescriptionsRaw.first?.mapIcon() ?? WeatherSymbol.placeholder
-    }
-    
-    func mapIcon() -> String {
-        switch id {
-        case 200...210, 212...232:
-            return WeatherSymbol.thunderstorm
-        case 211:
-            return WeatherSymbol.lightning
-        case 300, 310, 313:
-            return WeatherSymbol.drizzle
-        case 301, 311, 321:
-            return WeatherSymbol.rain
-        case 302, 312, 314:
-            return WeatherSymbol.heavyRain
-        case 500, 501, 520, 521:
-            return WeatherSymbol.rain
-        case 502, 503, 504, 522, 531:
-            return WeatherSymbol.heavyRain
-        case 511:
-            return WeatherSymbol.ice
-        case 600...602:
-            return WeatherSymbol.snow
-        case 611...622:
-            return WeatherSymbol.sleet
-        case 701:
-            return WeatherSymbol.fog
-        case 711, 762:
-            return WeatherSymbol.smoke
-        case 721:
-            return WeatherSymbol.haze
-        case 731, 751, 761:
-            return WeatherSymbol.dust
-        case 741:
-            return WeatherSymbol.fog
-        case 771:
-            return WeatherSymbol.heavyRain
-        case 781:
-            return WeatherSymbol.tornado
-        case 800:
-            return isDaytime() ? WeatherSymbol.sun : WeatherSymbol.moonStars
-        case 801...804:
-            return WeatherSymbol.cloud
-        default:
-            return WeatherSymbol.placeholder
-        }
+        return weatherDescriptionsRaw.first?.mapIcon() ?? WeatherSymbol.invalidId.rawValue
     }
     
     func mapDescription() -> String {
         switch id {
         case 200...232:
             return WeatherDescription.thunderstorm
-        case 300...321:
+        case 300, 310, 500, 520:
             return WeatherDescription.drizzle
-        case 500...531:
+        case 301, 311, 313, 321, 501, 521:
             return WeatherDescription.rain
-        case 600...622:
+        case 302, 312, 314, 502, 503, 504, 522, 531:
+            return WeatherDescription.heavyRain
+        case 511:
+            return WeatherDescription.ice
+        case 600...602:
             return WeatherDescription.snow
+        case 611...622:
+            return WeatherDescription.sleet
         case 701:
             return WeatherDescription.mist
         case 711:
@@ -98,11 +94,11 @@ struct WeatherDescriptionRaw: Decodable, Equatable {
         case 801...804:
             return WeatherDescription.cloud
         default:
-            return WeatherDescription.noDescription
+            return WeatherDescription.invalidId
         }
     }
     
-    private func isDaytime() -> Bool {
-        return icon.contains("d") ? true : false
+    static func mapFirstDescription(from weatherDescriptionsRaw: [WeatherDescriptionRaw]) -> String {
+        return weatherDescriptionsRaw.first?.mapDescription() ?? WeatherDescription.invalidId
     }
 }

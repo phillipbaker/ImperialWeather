@@ -43,6 +43,6 @@ struct CalendarWeekView: View {
 #Preview {
     CalendarWeekView(
         dailyWeather: .preview,
-        selection: .constant(.preview_today)
+        selection: .constant(.todayPreview)
     )
 }

@@ -41,5 +41,5 @@ struct HourlyWeatherRow: View {
 }
 
 #Preview {
-    HourlyWeatherRow(hourlyWeather: .preview_currentHour)
+    HourlyWeatherRow(hourlyWeather: .currentHourPreview)
 }
