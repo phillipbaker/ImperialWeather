@@ -379,6 +379,7 @@
 			children = (
 				F8164FCD2C32DD7900261EF8 /* EntitiesTests */,
 				F89A42EB2B73CC18007DDCB6 /* RawModelTests */,
+				F85931E92B72723400E3355E /* DataModelMocks */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -394,7 +395,7 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
-		F85931E92B72723400E3355E /* RawModelMocks */ = {
+		F85931E92B72723400E3355E /* DataModelMocks */ = {
 			isa = PBXGroup;
 			children = (
 				F85931EF2B7272DA00E3355E /* HomeWeatherMocks.swift */,
@@ -403,7 +404,7 @@
 				F85931EA2B72727600E3355E /* CurrentWeatherMocks.swift */,
 				F84CEEF72B739EF3003D36AB /* WeatherDescriptionMocks.swift */,
 			);
-			path = RawModelMocks;
+			path = DataModelMocks;
 			sourceTree = "<group>";
 		};
 		F85C43272BA884B500EDBC74 /* ImperialWeatherUITests */ = {
@@ -600,7 +601,6 @@
 				F879EA152B73B09D009526C4 /* HourlyWeatherRawTests.swift */,
 				F879EA172B73B0F8009526C4 /* CurrentWeatherRawTests.swift */,
 				F879EA192B73B247009526C4 /* WeatherDescriptionRawTests.swift */,
-				F85931E92B72723400E3355E /* RawModelMocks */,
 			);
 			path = RawModelTests;
 			sourceTree = "<group>";
