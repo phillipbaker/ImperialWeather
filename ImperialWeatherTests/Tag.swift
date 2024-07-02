@@ -8,6 +8,7 @@
 import Testing
 
 extension Tag {
+    @Tag static var entities: Self
+    @Tag static var dataMapping: Self
     @Tag static var rawModels: Self
-    @Tag static var dataMappping: Self
 }

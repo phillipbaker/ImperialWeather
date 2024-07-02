@@ -23,3 +23,18 @@ extension HomeWeatherPlain {
         daily: .mock
     )
 }
+
+extension HomeWeatherLocationPlain {
+    static let mock = HomeWeatherLocationPlain(
+        location: "London",
+        weather: .mock
+    )
+}
+
+extension HomeWeather {
+    static let mock = HomeWeather(
+        current: .mock,
+        hourly: .mock,
+        daily: .mock
+    )
+}

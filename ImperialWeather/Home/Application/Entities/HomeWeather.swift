@@ -7,10 +7,14 @@
 
 import Foundation
 
-struct HomeWeather {
+struct HomeWeather: Equatable {
     let current: CurrentWeather
     let hourly: [HourlyWeather]
     let daily: [DailyWeather]
+    
+    static func == (lhs: HomeWeather, rhs: HomeWeather) -> Bool {
+        return lhs.current == rhs.current && lhs.hourly == rhs.hourly && lhs.daily == rhs.daily
+    }
     
     static func mapHomeWeatherFromData(data: HomeWeatherLocationPlain) -> HomeWeather {
         return HomeWeather(

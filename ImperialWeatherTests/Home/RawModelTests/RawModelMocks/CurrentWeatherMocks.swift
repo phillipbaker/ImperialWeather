@@ -34,17 +34,35 @@ extension CurrentWeatherRaw {
 }
 
 extension CurrentWeatherPlain {
-    public static let mock = CurrentWeatherPlain(
+    static let mock = CurrentWeatherPlain(
         icon: WeatherSymbol.drizzle.rawValue,
         location: "London",
         description: WeatherDescription.drizzle,
         temperature: 21.0
     )
     
-    public static let nilLocationMock = CurrentWeatherPlain(
+    static let nilLocationMock = CurrentWeatherPlain(
         icon: WeatherSymbol.thunderstorm.rawValue,
         location: WeatherLabel.unknownLocation,
         description: WeatherDescription.thunderstorm,
         temperature: 21.0
+    )
+}
+
+extension CurrentWeather {
+    static let mock = CurrentWeather(
+        id: UUID(uuidString: "00000000-0000-0000-0000-000000000000")!,
+        icon: WeatherSymbol.drizzle.rawValue,
+        location: "London",
+        description: WeatherDescription.drizzle,
+        celsius: Measurement(value: 21.0, unit: .celsius)
+    )
+    
+    static let nilLocationMock = CurrentWeather(
+        id: UUID(uuidString: "00000000-0000-0000-000000000000")!,
+        icon: WeatherSymbol.thunderstorm.rawValue,
+        location: WeatherLabel.unknownLocation,
+        description: WeatherDescription.thunderstorm,
+        celsius: Measurement(value: 21.0, unit: .celsius)
     )
 }

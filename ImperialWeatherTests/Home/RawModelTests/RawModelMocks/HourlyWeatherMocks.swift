@@ -67,3 +67,27 @@ extension HourlyWeatherPlain {
         temperature: 20.0
     )
 }
+
+extension Array where Element == HourlyWeather {
+    static let mock: [HourlyWeather] = [.currentHourMock, .nextHourMock, .inTwoHoursMock]
+}
+
+extension HourlyWeather {
+    static let currentHourMock = HourlyWeather(
+        hour: .currentDateTime,
+        icon: WeatherSymbol.thunderstorm.rawValue,
+        celsius: Measurement(value: 27.0, unit: .celsius)
+    )
+    
+    static let nextHourMock = HourlyWeather(
+        hour: .nextHour,
+        icon: WeatherSymbol.drizzle.rawValue,
+        celsius: Measurement(value: 29.0, unit: .celsius)
+    )
+    
+    static let inTwoHoursMock = HourlyWeather(
+        hour: .inTwoHours,
+        icon: WeatherSymbol.invalidId.rawValue,
+        celsius: Measurement(value: 20.0, unit: .celsius)
+    )
+}

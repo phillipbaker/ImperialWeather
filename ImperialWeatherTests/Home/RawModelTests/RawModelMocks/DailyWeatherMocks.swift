@@ -55,3 +55,27 @@ extension DailyWeatherPlain {
         temperature: 39.0
     )
 }
+
+extension Array where Element == DailyWeather {
+    static let mock: [DailyWeather] = [.tomorrowMock, .inTwoDaysMock]
+}
+
+extension DailyWeather {
+    static let todayMock = DailyWeather(
+        day: .currentDateTime,
+        icon: WeatherSymbol.thunderstorm.rawValue,
+        celsius: Measurement(value: 22.0, unit: .celsius)
+    )
+    
+    static let tomorrowMock = DailyWeather(
+        day: .tomorrow,
+        icon: WeatherSymbol.drizzle.rawValue,
+        celsius: Measurement(value: 24.0, unit: .celsius)
+    )
+    
+    static let inTwoDaysMock = DailyWeather(
+        day: .inTwoDays,
+        icon: WeatherSymbol.invalidId.rawValue,
+        celsius: Measurement(value: 39.0, unit: .celsius)
+    )
+}

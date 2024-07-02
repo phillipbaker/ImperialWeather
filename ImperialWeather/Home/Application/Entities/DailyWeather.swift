@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DailyWeather: Identifiable, Equatable, Sendable {
+struct DailyWeather: Equatable, Identifiable, Sendable {
     let id: UUID
     let day: Date
     let icon: String
@@ -32,7 +32,7 @@ struct DailyWeather: Identifiable, Equatable, Sendable {
     }
     
     static func == (lhs: DailyWeather, rhs: DailyWeather) -> Bool {
-        return lhs.id == rhs.id
+        return lhs.day == rhs.day && lhs.icon == rhs.icon && lhs.celsius == rhs.celsius
     }
 }
 

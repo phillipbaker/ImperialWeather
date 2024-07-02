@@ -8,7 +8,7 @@
 @testable import ImperialWeather
 import Testing
 
-@Suite(.tags(.rawModels, .dataMappping))
+@Suite(.tags(.rawModels, .dataMapping))
 struct WeatherDescriptionRawTests {
     @Test(arguments: zip(WeatherDescriptionRaw.iconMocks, WeatherSymbol.allValues))
     func map(weatherDescriptionRaw: WeatherDescriptionRaw, toIconString icon: String) {

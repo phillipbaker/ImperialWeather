@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CurrentWeather: Identifiable {
+struct CurrentWeather: Equatable, Identifiable {
     let id: UUID
     let icon: String
     let location: String
@@ -28,6 +28,10 @@ struct CurrentWeather: Identifiable {
         self.description = description
         self.celsius = celsius
         self.fahrenheit = self.celsius.converted(to: .fahrenheit)
+    }
+    
+    static func == (lhs: CurrentWeather, rhs: CurrentWeather) -> Bool {
+        return lhs.icon == rhs.icon && lhs.location == rhs.location && lhs.description == rhs.description && lhs.celsius == rhs.celsius
     }
 }
 

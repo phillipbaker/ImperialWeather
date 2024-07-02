@@ -8,7 +8,7 @@
 @testable import ImperialWeather
 import Testing
 
-@Suite(.tags(.rawModels, .dataMappping))
+@Suite(.tags(.rawModels, .dataMapping))
 struct CurrentWeatherRawTests {
     @Test func mapCurrentWeatherRawToPlain() {
         #expect(CurrentWeatherRaw.mock.mapToPlain() == CurrentWeatherPlain.mock)
