@@ -56,7 +56,7 @@ extension WeatherDescriptionRaw {
     static let dustMock = WeatherDescriptionRaw(icon: "50d", id: [731, 761].randomElement()!)
     static let fogMock = WeatherDescriptionRaw(icon: "50d", id: 741)
     static let hazeMock = WeatherDescriptionRaw(icon: "50d", id: 721)
-    static let heavyRainMock = WeatherDescriptionRaw(icon: "09d", id: [302, 312, 314, 502, 503, 504, 522, 53].randomElement()!)
+    static let heavyRainMock = WeatherDescriptionRaw(icon: "09d", id: [302, 312, 314, 502, 503, 504, 522, 531].randomElement()!)
     static let iceMock = WeatherDescriptionRaw(icon: "13d", id: 511)
     static let mistMock = WeatherDescriptionRaw(icon: "50d", id: 701)
     static let clearNightMock = WeatherDescriptionRaw(icon: "01n", id: 800)
