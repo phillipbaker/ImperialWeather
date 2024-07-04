@@ -1,0 +1,43 @@
+{
+    "coord":{
+        "lon":0,
+        "lat":0
+    },
+    "weather":[
+        {
+            "id":804,
+            "main":"Clouds",
+            "description":"overcast clouds",
+            "icon":"04d"
+        }
+    ],
+    "base":"stations",
+    "main":{
+        "temp":24.45,
+        "feels_like":24.96,
+        "temp_min":24.45,
+        "temp_max":24.45,
+        "pressure":1014,
+        "humidity":77,
+        "sea_level":1014,
+        "grnd_level":1014
+    },
+    "visibility":10000,
+    "wind":{
+        "speed":7.28,
+        "deg":176,
+        "gust":7.04
+    },
+    "clouds":{
+        "all":100
+    },
+    "dt":1719924924,
+    "sys":{
+        "sunrise":1719900020,
+        "sunset":1719943653
+    },
+    "timezone":0,
+    "id":6295630,
+    "name":"Globe",
+    "cod":200
+}
