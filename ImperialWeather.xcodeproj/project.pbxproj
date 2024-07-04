@@ -25,6 +25,8 @@
 		F8164FD32C32E00700261EF8 /* CurrentWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8164FD22C32E00100261EF8 /* CurrentWeatherTests.swift */; };
 		F8164FD52C32E32C00261EF8 /* HourlyWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8164FD42C32E32700261EF8 /* HourlyWeatherTests.swift */; };
 		F8164FD72C32EF9500261EF8 /* DailyWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8164FD62C32EF9500261EF8 /* DailyWeatherTests.swift */; };
+		F8164FDB2C34164300261EF8 /* APIResourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8164FDA2C34160400261EF8 /* APIResourceTests.swift */; };
+		F8164FDD2C34177600261EF8 /* WeatherServiceMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8164FDC2C34177100261EF8 /* WeatherServiceMocks.swift */; };
 		F82C4A042A179D1F00CEA518 /* WeatherLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82C4A032A179D1F00CEA518 /* WeatherLabel.swift */; };
 		F82C4A062A1B87D900CEA518 /* ErrorSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82C4A052A1B87D900CEA518 /* ErrorSymbol.swift */; };
 		F82C4A082A1B87F200CEA518 /* ErrorTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82C4A072A1B87F200CEA518 /* ErrorTitle.swift */; };
@@ -152,6 +154,8 @@
 		F8164FD22C32E00100261EF8 /* CurrentWeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherTests.swift; sourceTree = "<group>"; };
 		F8164FD42C32E32700261EF8 /* HourlyWeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherTests.swift; sourceTree = "<group>"; };
 		F8164FD62C32EF9500261EF8 /* DailyWeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherTests.swift; sourceTree = "<group>"; };
+		F8164FDA2C34160400261EF8 /* APIResourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResourceTests.swift; sourceTree = "<group>"; };
+		F8164FDC2C34177100261EF8 /* WeatherServiceMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceMocks.swift; sourceTree = "<group>"; };
 		F82C4A032A179D1F00CEA518 /* WeatherLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherLabel.swift; sourceTree = "<group>"; };
 		F82C4A052A1B87D900CEA518 /* ErrorSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorSymbol.swift; sourceTree = "<group>"; };
 		F82C4A072A1B87F200CEA518 /* ErrorTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTitle.swift; sourceTree = "<group>"; };
@@ -380,6 +384,7 @@
 				F8164FCD2C32DD7900261EF8 /* EntitiesTests */,
 				F89A42EB2B73CC18007DDCB6 /* RawModelTests */,
 				F85931E92B72723400E3355E /* DataModelMocks */,
+				F8DE25E52C36A7120086BCD5 /* WeatherServiceTests */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -615,6 +620,15 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		F8DE25E52C36A7120086BCD5 /* WeatherServiceTests */ = {
+			isa = PBXGroup;
+			children = (
+				F8164FDA2C34160400261EF8 /* APIResourceTests.swift */,
+				F8164FDC2C34177100261EF8 /* WeatherServiceMocks.swift */,
+			);
+			path = WeatherServiceTests;
+			sourceTree = "<group>";
+		};
 		F8EB4CB1293652D600BAE881 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
@@ -810,6 +824,7 @@
 				F85931EB2B72727600E3355E /* CurrentWeatherMocks.swift in Sources */,
 				F84CEEF62B735DB3003D36AB /* DailyWeatherRawTests.swift in Sources */,
 				F85931EC2B72728500E3355E /* HourlyWeatherMocks.swift in Sources */,
+				F8164FDD2C34177600261EF8 /* WeatherServiceMocks.swift in Sources */,
 				F84CEEF82B739EF3003D36AB /* WeatherDescriptionMocks.swift in Sources */,
 				F8164FCF2C32DD9600261EF8 /* HomeWeatherTests.swift in Sources */,
 				F8164FD72C32EF9500261EF8 /* DailyWeatherTests.swift in Sources */,
@@ -818,6 +833,7 @@
 				F8164FCC2C32CB7500261EF8 /* Tag.swift in Sources */,
 				F8164FD52C32E32C00261EF8 /* HourlyWeatherTests.swift in Sources */,
 				F879EA1C2B73C348009526C4 /* HomeWeatherRawTests.swift in Sources */,
+				F8164FDB2C34164300261EF8 /* APIResourceTests.swift in Sources */,
 				F879EA1A2B73B247009526C4 /* WeatherDescriptionRawTests.swift in Sources */,
 				F85931F02B7272DA00E3355E /* HomeWeatherMocks.swift in Sources */,
 				F879EA182B73B0F8009526C4 /* CurrentWeatherRawTests.swift in Sources */,
