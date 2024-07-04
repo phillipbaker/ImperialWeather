@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum LocationError: Error {
+enum LocationError: Error, WeatherError {
     case coordinateError
     case geocodingError
     case permissionError

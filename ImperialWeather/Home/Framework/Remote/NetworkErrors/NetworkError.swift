@@ -7,12 +7,12 @@
 
 import Foundation
 
-enum NetworkError: Error {
+enum NetworkError: Error, WeatherError {
     case invalidUrl
     case networkError
     case invalidResponse
     case invalidData
-
+    
     var message: ErrorMessage {
         switch self {
         case .invalidUrl:

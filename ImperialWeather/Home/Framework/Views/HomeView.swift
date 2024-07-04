@@ -19,8 +19,8 @@ struct HomeView: View {
                 ProgressView()
             case .success(let weather):
                 WeatherView(weather: weather)
-            case .error(let message):
-                ErrorView(message: message)
+            case .error(let error):
+                ErrorView(error: error)
             }
         }
         .task {
