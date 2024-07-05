@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct HomeWeatherLocationPlain {
+struct HomeWeatherLocationPlain: Equatable {
     let location: String
     let weather: HomeWeatherPlain
 }
