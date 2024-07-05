@@ -15,7 +15,7 @@ struct WeatherDescriptionRawTests {
         #expect(weatherDescriptionRaw.mapIcon() == icon)
     }
     
-    @Test("") func mapFirstIdToIcon() {
+    @Test func mapFirstIdToIcon() {
         let firstIcon = WeatherDescriptionRaw.mapFirstIcon(from: WeatherDescriptionRaw.iconMocks)
         #expect(firstIcon == WeatherSymbol.clearDay.rawValue)
     }

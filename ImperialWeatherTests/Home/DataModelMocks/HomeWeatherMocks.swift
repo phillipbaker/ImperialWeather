@@ -5,7 +5,6 @@
 //  Created by Phillip Baker on 06/02/2024.
 //
 
-import Foundation
 @testable import ImperialWeather
 
 extension HomeWeatherRaw {
