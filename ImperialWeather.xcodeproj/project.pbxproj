@@ -407,12 +407,12 @@
 		F85931DF2B726BF700E3355E /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				F8DE25FC2C36EB720086BCD5 /* LocationErrorMessageTests.swift */,
-				F8DE25FA2C36E8CA0086BCD5 /* NetworkErrorMessageTests.swift */,
 				F8DE25F22C36DBDC0086BCD5 /* MockWeatherError.swift */,
 				F8DE25F02C36DB2B0086BCD5 /* MockWeatherSource.swift */,
 				F8DE25F82C36E7B60086BCD5 /* MockWeatherService.swift */,
 				F8DE25EE2C36AE190086BCD5 /* HomeViewModelTests.swift */,
+				F8DE25FA2C36E8CA0086BCD5 /* NetworkErrorMessageTests.swift */,
+				F8DE25FC2C36EB720086BCD5 /* LocationErrorMessageTests.swift */,
 				F8DE25FE2C3714280086BCD5 /* LocationLocalDataGatewayTests.swift */,
 				F8C6964E2C37C1EF00FC1816 /* MockLocationService.swift */,
 				F8DE25F62C36E62E0086BCD5 /* WeatherRemoteDataGatewayTests.swift */,
