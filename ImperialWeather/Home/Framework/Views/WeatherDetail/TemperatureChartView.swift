@@ -42,7 +42,7 @@ struct TemperatureChartView: View {
                 Text((scale == .celsius
                       ? day.plottableCelsius.measurement
                       : day.plottableFahrenheit.measurement
-                     ).formatted
+                     ).abbreviated
                 )
             )
             .annotation(position: .overlay) {
@@ -63,12 +63,12 @@ struct TemperatureChartView: View {
                     switch scale {
                     case .celsius:
                         if let temperature = value.as(PlottableCelsius.self) {
-                            Text(temperature.measurement.formatted)
+                            Text(temperature.measurement.abbreviated)
                                 .fontWeight(.medium)
                         }
                     case .fahrenheit:
                         if let temperature = value.as(PlottableFahrenheit.self) {
-                            Text(temperature.measurement.formatted)
+                            Text(temperature.measurement.abbreviated)
                                 .fontWeight(.medium)
                         }
                     }

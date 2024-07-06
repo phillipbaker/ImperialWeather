@@ -15,7 +15,7 @@ struct PrimaryTemperatureView: View {
     var alignment: Alignment = .center
     
     var body: some View {
-        Text(temperature.formatted)
+        Text(temperature.abbreviated)
             .frame(minWidth: 50, alignment: alignment)
             .monospacedDigit()
             .opacity(0.9)
@@ -24,7 +24,6 @@ struct PrimaryTemperatureView: View {
     private var temperature: Measurement<UnitTemperature> {
         return scale == .celsius ? celsius : fahrenheit
     }
-    
 }
 
 #Preview {

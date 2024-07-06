@@ -34,11 +34,13 @@ extension Date {
 }
 
 extension Measurement<UnitTemperature> {
-    var formatted: String {
-        self.formatted(.measurement(
-            width: .abbreviated,
-            usage: .asProvided,
-            numberFormatStyle: .number.precision(.fractionLength(0))
-        ))
+    var abbreviated: String {
+        self.formatted(
+            .measurement(
+                width: .abbreviated,
+                usage: .asProvided,
+                numberFormatStyle: .number.precision(.fractionLength(0))
+            )
+        )
     }
 }

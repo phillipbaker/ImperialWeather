@@ -15,7 +15,7 @@ struct SecondaryTemperatureView: View {
     var alignment: Alignment = .center
     
     var body: some View {
-        Text(temperature.formatted)
+        Text(temperature.abbreviated)
             .frame(minWidth: 50, alignment: alignment)
             .monospacedDigit()
             .foregroundStyle(.secondary)
