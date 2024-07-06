@@ -18,11 +18,7 @@ extension PlottableCelsius: Plottable where UnitType == UnitTemperature {
     }
     
     init?(primitivePlottable: Double) {
-        self.init(measurement:
-                    Measurement(
-            value: primitivePlottable,
-            unit: .celsius)
-        )
+        self.init(measurement: Measurement(value: primitivePlottable, unit: .celsius))
     }
 }
 
@@ -36,9 +32,6 @@ extension PlottableFahrenheit: Plottable where UnitType == UnitTemperature {
     }
     
     init?(primitivePlottable: Double) {
-        self.init(measurement: Measurement(
-            value: primitivePlottable,
-            unit: .fahrenheit)
-        )
+        self.init(measurement: Measurement(value: primitivePlottable, unit: .fahrenheit))
     }
 }
