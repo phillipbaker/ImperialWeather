@@ -8,25 +8,20 @@
 import SwiftUI
 
 struct Application {
-    var submitFeedback: @Sendable () -> Void
-    var launchAppSettings: @Sendable () -> Void
+    var submitFeedback: @Sendable () async -> Void
+    var launchAppSettings: @Sendable () async -> Void
 }
 
 extension Application {
     static let live = Self(
         submitFeedback: {
-            let url = URL(string: "mailto:INSERTEMAILHERE")!
-            Task { await MainActor.run { UIApplication.shared.open(url) } }
+            guard let url = URL(string: "mailto:INSERTEMAILHERE") else { return }
+            UIApplication.shared.open(url)
         },
         launchAppSettings: {
             guard let bundleId = Bundle.main.bundleIdentifier else { return }
-            
-            Task {
-                await MainActor.run {
-                    let url = URL(string: "\(UIApplication.openSettingsURLString)&path=LOCATION/\(bundleId)")!
-                    UIApplication.shared.open(url)
-                }
-            }
+            guard let url = URL(string: "\(UIApplication.openSettingsURLString)&path=LOCATION/\(bundleId)") else { return }
+            UIApplication.shared.open(url)
         }
     )
 }
