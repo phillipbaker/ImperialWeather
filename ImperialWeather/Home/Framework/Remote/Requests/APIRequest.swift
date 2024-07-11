@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class APIRequest<Resource: APIResource>: Sendable where Resource: Sendable {
+final class APIRequest<Resource: APIResource>: Sendable {
     let resource: Resource
     
     init(resource: Resource) {
