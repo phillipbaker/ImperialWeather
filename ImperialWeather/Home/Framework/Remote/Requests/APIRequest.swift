@@ -9,9 +9,14 @@ import Foundation
 
 final class APIRequest<Resource: APIResource>: Sendable {
     let resource: Resource
+    let apiClient: APIClientProtocol
     
-    init(resource: Resource) {
+    init(
+        resource: Resource,
+        apiClient: APIClientProtocol = APIClient()
+    ) {
         self.resource = resource
+        self.apiClient = apiClient
     }
 }
 
@@ -31,6 +36,7 @@ extension APIRequest: NetworkRequest {
             throw NetworkError.invalidUrl
         }
         
-        return try await load(url)
+        let data = try await apiClient.data(from: url)
+        return try decode(data)
     }
 }
