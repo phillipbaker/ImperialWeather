@@ -35,4 +35,10 @@ final class APIRequestTests {
             try upcomingWeatherRequest.decode(.invalidDataMock())
         }
     }
+    
+    @Test func executeSuccess() async throws {
+        let request = APIRequest(resource: CurrentWeatherResource.validResourceMock(), apiClient: MockAPIClientSuccess())
+        let decodedData = try await request.execute() 
+        #expect(decodedData == CurrentWeatherRaw.validDataMock())
+    }
 }

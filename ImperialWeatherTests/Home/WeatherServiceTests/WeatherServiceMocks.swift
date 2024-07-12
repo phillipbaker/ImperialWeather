@@ -8,6 +8,20 @@
 import Foundation
 @testable import ImperialWeather
 
+extension URLSession {
+    static func mockURLProtocolSession() -> URLSession {
+        let configuration = URLSessionConfiguration.ephemeral
+        configuration.protocolClasses = [MockURLProtocol.self]
+        return URLSession(configuration: configuration)
+    }
+}
+
+final class MockAPIClientSuccess: APIClientProtocol {
+    func data(from: URL) async throws -> Data {
+        return try Data.validCurrentWeatherDataMock()
+    }
+}
+
 extension CurrentWeatherResource {
     static func validResourceMock() -> CurrentWeatherResource {
         CurrentWeatherResource(latitude: "0.0", longitude: "0.0")

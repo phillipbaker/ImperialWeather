@@ -87,7 +87,10 @@
 		F87E5CB8267CA53B0032949A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E5CB7267CA53B0032949A /* HomeViewModel.swift */; };
 		F87FB917269728BB00E38184 /* HomeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87FB916269728BB00E38184 /* HomeState.swift */; };
 		F88804762C3FDF7A005637F9 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88804752C3FDF6C005637F9 /* APIClient.swift */; };
+		F888047C2C402762005637F9 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F888047B2C40275B005637F9 /* MockURLProtocol.swift */; };
+		F888047E2C4027C6005637F9 /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F888047D2C4027C2005637F9 /* APIClientTests.swift */; };
 		F88DC0B2299655C80029E1F4 /* SwiftUINavigation in Frameworks */ = {isa = PBXBuildFile; productRef = F88DC0B1299655C80029E1F4 /* SwiftUINavigation */; };
+		F89722372C41342200C66322 /* MockRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89722362C41341900C66322 /* MockRequest.swift */; };
 		F897EE2E28E64BA300A9C504 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F897EE2D28E64BA300A9C504 /* ErrorMessage.swift */; };
 		F897EE3228E7014400A9C504 /* APIResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F897EE3128E7014400A9C504 /* APIResource.swift */; };
 		F897EE3428E728CF00A9C504 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F897EE3328E728CF00A9C504 /* NetworkRequest.swift */; };
@@ -248,6 +251,9 @@
 		F87E5CB7267CA53B0032949A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F87FB916269728BB00E38184 /* HomeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeState.swift; sourceTree = "<group>"; };
 		F88804752C3FDF6C005637F9 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		F888047B2C40275B005637F9 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
+		F888047D2C4027C2005637F9 /* APIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
+		F89722362C41341900C66322 /* MockRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRequest.swift; sourceTree = "<group>"; };
 		F897EE2D28E64BA300A9C504 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		F897EE3128E7014400A9C504 /* APIResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResource.swift; sourceTree = "<group>"; };
 		F897EE3328E728CF00A9C504 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
@@ -692,6 +698,9 @@
 		F8DE25E52C36A7120086BCD5 /* WeatherServiceTests */ = {
 			isa = PBXGroup;
 			children = (
+				F888047D2C4027C2005637F9 /* APIClientTests.swift */,
+				F89722362C41341900C66322 /* MockRequest.swift */,
+				F888047B2C40275B005637F9 /* MockURLProtocol.swift */,
 				F8DE25E62C36A85E0086BCD5 /* APIRequestTests.swift */,
 				F8164FDA2C34160400261EF8 /* APIResourceTests.swift */,
 				F8164FDC2C34177100261EF8 /* WeatherServiceMocks.swift */,
@@ -917,10 +926,12 @@
 				F8DE25F72C36E63B0086BCD5 /* WeatherRemoteDataGatewayTests.swift in Sources */,
 				F8DE25FD2C36EB780086BCD5 /* LocationErrorMessageTests.swift in Sources */,
 				F8164FD52C32E32C00261EF8 /* HourlyWeatherTests.swift in Sources */,
+				F89722372C41342200C66322 /* MockRequest.swift in Sources */,
 				F8DE26032C371A4C0086BCD5 /* MockWeatherRemoteDataGateway.swift in Sources */,
 				F879EA1C2B73C348009526C4 /* HomeWeatherRawTests.swift in Sources */,
 				F8DE26072C3726D90086BCD5 /* GetWeatherTests.swift in Sources */,
 				F8164FDB2C34164300261EF8 /* APIResourceTests.swift in Sources */,
+				F888047C2C402762005637F9 /* MockURLProtocol.swift in Sources */,
 				F879EA1A2B73B247009526C4 /* WeatherDescriptionRawTests.swift in Sources */,
 				F8C696512C38021A00FC1816 /* NetworkErrorTests.swift in Sources */,
 				F8DE25FB2C36E8D50086BCD5 /* NetworkErrorMessageTests.swift in Sources */,
@@ -929,6 +940,7 @@
 				F8DE26052C371A750086BCD5 /* MockLocationLocalDataGateway.swift in Sources */,
 				F8C696552C39130F00FC1816 /* TemperatureScaleTests.swift in Sources */,
 				F879EA182B73B0F8009526C4 /* CurrentWeatherRawTests.swift in Sources */,
+				F888047E2C4027C6005637F9 /* APIClientTests.swift in Sources */,
 				F8C696592C39198A00FC1816 /* PlottableMeasurementTests.swift in Sources */,
 				F8DE25FF2C37142F0086BCD5 /* LocationLocalDataGatewayTests.swift in Sources */,
 			);
