@@ -6,8 +6,11 @@
 //
 
 import Foundation
+import CoreLocation
 
 protocol LocationService: Sendable {
-    func fetchLocation() async throws -> (latitude: String, longitude: String)
-    func fetchPlaceName(for latitude: String, and longitude: String) async throws -> String
+    func startUpdatingLocation()
+    func requestWhenInUseAuthorization()
+    func locationName(for location: CLLocation) async throws -> String
+    var locationEvents: AsyncStream<LocationEvent> { get }
 }

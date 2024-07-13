@@ -8,68 +8,56 @@
 import CoreLocation
 import Foundation
 
-final class LocationServiceImpl: NSObject, CLLocationManagerDelegate, LocationService, @unchecked Sendable {
+final class LocationServiceImpl: NSObject, @unchecked Sendable, LocationService {
     private let geocoder: CLGeocoder
     private let locationManager: CLLocationManager
-    private var authorizationStatus: CLAuthorizationStatus
-    private var locationContinuation: CheckedContinuation<(latitude: String, longitude: String), Error>?
     
-    override init() {
-        self.geocoder = CLGeocoder()
-        self.locationManager = CLLocationManager()
-        authorizationStatus = locationManager.authorizationStatus
-        
+    let (locationEvents, continuation) = AsyncStream.makeStream(of: LocationEvent.self)
+    
+    init(
+        geocoder: CLGeocoder = CLGeocoder(),
+        locationManager: CLLocationManager = CLLocationManager()
+    ) {
+        self.geocoder = geocoder
+        self.locationManager = locationManager
+
         super.init()
         locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
     
-    func fetchLocation() async throws -> (latitude: String, longitude: String) {
-        switch authorizationStatus {
-        case .notDetermined:
-            locationManager.requestWhenInUseAuthorization()
-            throw LocationError.permissionError
-        case .restricted, .denied:
-            throw LocationError.permissionError
-        case .authorizedAlways, .authorizedWhenInUse:
-            return try await withCheckedThrowingContinuation { continuation in
-                self.locationContinuation = continuation
-                locationManager.requestLocation()
-            }
-        @unknown default:
-            throw LocationError.permissionError
-        }
+    func requestWhenInUseAuthorization() {
+        locationManager.requestWhenInUseAuthorization()
     }
     
-    func fetchPlaceName(for latitude: String, and longitude: String) async throws -> String {
-        guard let latitude = CLLocationDegrees(latitude), let longitude = CLLocationDegrees(longitude) else {
-            throw LocationError.coordinateError
-        }
-        
-        let location = CLLocation(latitude: latitude, longitude: longitude)
-        
-        guard let locationName = try await self.geocoder.reverseGeocodeLocation(location).first?.locality else {
+    func startUpdatingLocation() {
+        locationManager.startUpdatingLocation()
+    }
+    
+    private func stopUpdatingLocation() {
+        locationManager.stopUpdatingLocation()
+    }
+    
+    func locationName(for location: CLLocation) async throws -> String {
+        guard let name = try await self.geocoder.reverseGeocodeLocation(location).first?.locality else {
             throw LocationError.geocodingError
         }
-        
-        return locationName
+
+        return name
     }
+}
     
-    // MARK: - Location Delegate
-    
+extension LocationServiceImpl: CLLocationManagerDelegate {
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        authorizationStatus = manager.authorizationStatus
+        continuation.yield(.didChangeAuthorization(manager.authorizationStatus))
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
-            locationContinuation?.resume(returning: (location.coordinate.latitude.description, location.coordinate.longitude.description))
-            locationContinuation = nil
+            continuation.yield(.didUpdateLocations(location))
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        locationContinuation?.resume(throwing: error)
-        locationContinuation = nil
+        continuation.yield(.didFailWithError(error))
     }
 }

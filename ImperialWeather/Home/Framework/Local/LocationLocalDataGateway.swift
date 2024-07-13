@@ -14,11 +14,30 @@ final class LocationLocalDataGateway: LocationDataSourceLocal {
         self.service = service
     }
     
-    func fetchLocation() async throws -> (latitude: String, longitude: String) {
-        return try await service.fetchLocation()
-    }
-    
-    func locationName(for latitude: String, and longitude: String) async throws -> String {
-        return try await service.fetchPlaceName(for: latitude, and: longitude)
+    func fetchLocation() async throws -> LocationPlain {
+        for await event in service.locationEvents {
+            switch event {
+            case let .didChangeAuthorization(status):
+                switch status {
+                case .notDetermined:
+                    service.requestWhenInUseAuthorization()
+                case .restricted, .denied:
+                    throw LocationError.permissionError
+                case .authorizedAlways, .authorizedWhenInUse:
+                    service.startUpdatingLocation()
+                @unknown default:
+                    throw LocationError.permissionError
+                }
+            case let .didUpdateLocations(location):
+                return LocationPlain(
+                    name: try await service.locationName(for: location),
+                    latitude: location.coordinate.latitude.description,
+                    longitude: location.coordinate.longitude.description
+                )
+            case .didFailWithError:
+                throw LocationError.coordinateError
+            }
+        }
+        throw LocationError.coordinateError
     }
 }

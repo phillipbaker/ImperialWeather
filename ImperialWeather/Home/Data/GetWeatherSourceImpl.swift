@@ -21,8 +21,9 @@ final class GetWeatherSourceImpl: GetWeatherSource {
     
     func weather() async throws -> HomeWeatherLocationPlain {
         let location = try await locationDataSourceLocal.fetchLocation()
-        async let locationName = locationDataSourceLocal.locationName(for: location.latitude, and: location.longitude)
-        async let weather = weatherDataSourceRemote.fetchWeather(for: location.latitude, and: location.longitude)
-        return try await HomeWeatherLocationPlain(location: locationName, weather: weather)
+        return HomeWeatherLocationPlain(
+            location: location.name,
+            weather: try await weatherDataSourceRemote.fetchWeather(for: location.latitude, and: location.longitude)
+        )
     }
 }

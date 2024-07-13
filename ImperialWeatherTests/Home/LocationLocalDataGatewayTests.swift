@@ -10,12 +10,11 @@ import Testing
 
 struct LocationLocalDataGatewayTests {
     @Test func fetchLocation() async throws {
-        let locationGateway = LocationLocalDataGateway(service: MockLocationService())
-        #expect(try await locationGateway.fetchLocation() == (latitude: "0.0", longitude: "0.0"))
-    }
-    
-    @Test func locationName() async throws {
-        let locationGateway = LocationLocalDataGateway(service: MockLocationService())
-        #expect(try await locationGateway.locationName(for: "0.0", and: "0.0") == "London")
+        let locationGateway = LocationLocalDataGateway(
+            service: MockLocationService(
+                mockEvent: .didUpdateLocation
+            )
+        )
+        #expect(try await locationGateway.fetchLocation() == LocationPlain.mock)
     }
 }

@@ -5,14 +5,26 @@
 //  Created by Phillip Baker on 05/07/2024.
 //
 
+import CoreLocation
 @testable import ImperialWeather
 
 final class MockLocationService: LocationService {
-    func fetchLocation() async throws -> (latitude: String, longitude: String) {
-        return (latitude: "0.0", longitude: "0.0")
+    let mockEvent: LocationEvent
+    
+    init(mockEvent: LocationEvent) {
+        self.mockEvent = mockEvent
     }
     
-    func fetchPlaceName(for latitude: String, and longitude: String) async throws -> String {
+    func locationName(for location: CLLocation) async throws -> String {
         return "London"
     }
+    
+    var locationEvents: AsyncStream<LocationEvent> {
+        AsyncStream { continuation in
+            continuation.yield(mockEvent)
+        }
+    }
+    
+    func startUpdatingLocation() {}
+    func requestWhenInUseAuthorization() {}
 }
