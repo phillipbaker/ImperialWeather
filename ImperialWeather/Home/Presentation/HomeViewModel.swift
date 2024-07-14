@@ -41,6 +41,8 @@ import Foundation
             state = .error(LocationError.coordinateError)
         } catch LocationError.geocodingError {
             state = .error(LocationError.geocodingError)
+        } catch LocationError.locationError {
+            state = .error(LocationError.locationError)
         } catch LocationError.permissionError {
             state = .error(LocationError.permissionError)
         } catch NetworkError.invalidUrl {
