@@ -9,12 +9,47 @@
 import Testing
 
 struct LocationLocalDataGatewayTests {
-    @Test func fetchLocation() async throws {
-        let locationGateway = LocationLocalDataGateway(
-            service: MockLocationService(
-                mockEvent: .didUpdateLocation
-            )
-        )
+    @Test func didUpdateLocationWhenInUse() async throws {
+        let mockLocationService = MockLocationService(mockEvent: .didUpdateLocation, authorizationStatus: .authorizedWhenInUse)
+        let locationGateway = LocationLocalDataGateway(service: mockLocationService)
         #expect(try await locationGateway.fetchLocation() == LocationPlain.mock)
+    }
+    
+    @Test func didUpdateLocationAlways() async throws {
+        let mockLocationService = MockLocationService(mockEvent: .didUpdateLocation, authorizationStatus: .authorizedAlways)
+        let locationGateway = LocationLocalDataGateway(service: mockLocationService)
+        #expect(try await locationGateway.fetchLocation() == LocationPlain.mock)
+    }
+    
+    @Test func didFailWithCoordinateError() async throws {
+        let mockLocationService = MockLocationService(mockEvent: .didFailWithCoordinateError)
+        let locationGateway = LocationLocalDataGateway(service: mockLocationService)
+        await #expect(throws: LocationError.coordinateError) {
+            try await locationGateway.fetchLocation()
+        }
+    }
+    
+    @Test func didFailWithGeocodingError() async throws {
+        let mockLocationService = MockLocationService(mockEvent: .didFailWithGeocodingError)
+        let locationGateway = LocationLocalDataGateway(service: mockLocationService)
+        await #expect(throws: LocationError.geocodingError) {
+            try await locationGateway.fetchLocation()
+        }
+    }
+    
+    @Test func didFailWithLocationError() async throws {
+        let mockLocationService = MockLocationService(mockEvent: .didFailWithLocationError)
+        let locationGateway = LocationLocalDataGateway(service: mockLocationService)
+        await #expect(throws: LocationError.locationError) {
+            try await locationGateway.fetchLocation()
+        }
+    }
+    
+    @Test func didFailWithPermissionError() async throws {
+        let mockLocationService = MockLocationService(mockEvent: .didFailWithPermissionError)
+        let locationGateway = LocationLocalDataGateway(service: mockLocationService)
+        await #expect(throws: LocationError.permissionError) {
+            try await locationGateway.fetchLocation()
+        }
     }
 }

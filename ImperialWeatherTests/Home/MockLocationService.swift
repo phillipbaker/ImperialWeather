@@ -8,23 +8,25 @@
 import CoreLocation
 @testable import ImperialWeather
 
-final class MockLocationService: LocationService {
-    let mockEvent: LocationEvent
+struct MockLocationService: LocationService {
+    let mockEvent: LocationUpdate
+    let authorizationStatus: CLAuthorizationStatus
     
-    init(mockEvent: LocationEvent) {
-        self.mockEvent = mockEvent
-    }
-    
-    func locationName(for location: CLLocation) async throws -> String {
-        return "London"
-    }
-    
-    var locationEvents: AsyncStream<LocationEvent> {
+    var locationUpdates: AsyncStream<LocationUpdate> {
         AsyncStream { continuation in
             continuation.yield(mockEvent)
         }
     }
     
-    func startUpdatingLocation() {}
-    func requestWhenInUseAuthorization() {}
+    init(
+        mockEvent: LocationUpdate,
+        authorizationStatus: CLAuthorizationStatus = .authorizedWhenInUse
+    ) {
+        self.mockEvent = mockEvent
+        self.authorizationStatus = authorizationStatus
+    }
+    
+    func locationName(for location: CLLocation) async throws -> String {
+        return "London"
+    }
 }

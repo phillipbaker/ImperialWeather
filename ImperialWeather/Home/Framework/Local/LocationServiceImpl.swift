@@ -12,7 +12,7 @@ final class LocationServiceImpl: NSObject, @unchecked Sendable, LocationService 
     private let geocoder: CLGeocoder
     private let locationManager: CLLocationManager
     
-    let (locationEvents, continuation) = AsyncStream.makeStream(of: LocationEvent.self)
+    let (locationUpdates, continuation) = AsyncStream.makeStream(of: LocationUpdate.self)
     
     init(
         geocoder: CLGeocoder = CLGeocoder(),
@@ -48,16 +48,28 @@ final class LocationServiceImpl: NSObject, @unchecked Sendable, LocationService 
     
 extension LocationServiceImpl: CLLocationManagerDelegate {
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        continuation.yield(.didChangeAuthorization(manager.authorizationStatus))
+        switch manager.authorizationStatus {
+        case .notDetermined:
+            requestWhenInUseAuthorization()
+        case .restricted, .denied:
+            continuation.yield(.didFailWithError(.permissionError))
+            stopUpdatingLocation()
+        case .authorizedAlways, .authorizedWhenInUse:
+            startUpdatingLocation()
+        @unknown default:
+            continuation.yield(.didFailWithError(.permissionError))
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
-            continuation.yield(.didUpdateLocations(location))
+            continuation.yield(.didUpdateLocation(location))
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        continuation.yield(.didFailWithError(error))
+        continuation.yield(.didFailWithError(.locationError))
     }
 }
+
+

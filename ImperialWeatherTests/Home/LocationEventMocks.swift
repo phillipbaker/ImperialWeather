@@ -8,18 +8,13 @@
 import CoreLocation
 @testable import ImperialWeather
 
-extension LocationEvent {
-    static let didUpdateLocation =  LocationEvent.didUpdateLocations(
+extension LocationUpdate {
+    static let didUpdateLocation =  LocationUpdate.didUpdateLocation(
         CLLocation(latitude: 0.0, longitude: 0.0)
     )
     
-    static let failedWithError = LocationEvent.didFailWithError(
-        LocationError.coordinateError
-    )
-    
-    static let didChangAuthorizationDenied = LocationEvent.didChangeAuthorization(.denied)
-    static let didChangAuthorizationRestricted = LocationEvent.didChangeAuthorization(.restricted)
-    static let didChangAuthorizationAlways = LocationEvent.didChangeAuthorization(.authorizedAlways)
-    static let didChangAuthorizationNotDetermined = LocationEvent.didChangeAuthorization(.notDetermined)
-    static let didChangAuthorizationWhenInUse = LocationEvent.didChangeAuthorization(.authorizedWhenInUse)
+    static let didFailWithCoordinateError = LocationUpdate.didFailWithError(.coordinateError)
+    static let didFailWithGeocodingError = LocationUpdate.didFailWithError(.geocodingError)
+    static let didFailWithLocationError = LocationUpdate.didFailWithError(.locationError)
+    static let didFailWithPermissionError = LocationUpdate.didFailWithError(.permissionError)
 }

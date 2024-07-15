@@ -15,29 +15,27 @@ final class LocationLocalDataGateway: LocationDataSourceLocal {
     }
     
     func fetchLocation() async throws -> LocationPlain {
-        for await event in service.locationEvents {
+        for await event in service.locationUpdates {
             switch event {
-            case let .didChangeAuthorization(status):
-                switch status {
-                case .notDetermined:
-                    service.requestWhenInUseAuthorization()
-                case .restricted, .denied:
-                    throw LocationError.permissionError
-                case .authorizedAlways, .authorizedWhenInUse:
-                    service.startUpdatingLocation()
-                @unknown default:
-                    throw LocationError.permissionError
-                }
-            case let .didUpdateLocations(location):
+            case let .didUpdateLocation(location):
                 return LocationPlain(
                     name: try await service.locationName(for: location),
                     latitude: location.coordinate.latitude.description,
                     longitude: location.coordinate.longitude.description
                 )
-            case .didFailWithError:
-                throw LocationError.coordinateError
+            case let .didFailWithError(error):
+                switch error {
+                case .coordinateError :
+                    throw LocationError.coordinateError
+                case .geocodingError:
+                    throw LocationError.geocodingError
+                case .permissionError:
+                    throw LocationError.permissionError
+                case .locationError:
+                    throw LocationError.locationError
+                }
             }
         }
-        throw LocationError.coordinateError
+        throw LocationError.locationError
     }
 }
