@@ -21,16 +21,28 @@ struct HomeStateTests {
         #expect(lhs != rhs)
     }
     
-    @Test func locationErrorEquality() {
-        let lhs = HomeState.error(LocationError.coordinateError)
-        let rhs = HomeState.error(LocationError.coordinateError)
+    @Test func locationPermissionErrorEquality() {
+        let lhs = HomeState.error(LocationError.permissionError)
+        let rhs = HomeState.error(LocationError.permissionError)
+        #expect(lhs == rhs)
+    }
+    
+    @Test func locationDataErrorEquality() {
+        let lhs = HomeState.error(LocationError.locationError)
+        let rhs = HomeState.error(LocationError.locationError)
         #expect(lhs == rhs)
     }
     
     @Test func locationErrorInequality() {
-        let lhs = HomeState.error(LocationError.coordinateError)
+        let lhs = HomeState.error(LocationError.locationError)
         let rhs = HomeState.error(LocationError.permissionError)
         #expect(lhs != rhs)
+    }
+    
+    @Test func geocodingErrorEquality() {
+        let lhs = HomeState.error(GeocodingError.geocodingError)
+        let rhs = HomeState.error(GeocodingError.geocodingError)
+        #expect(lhs == rhs)
     }
     
     @Test func networkErrorEquality() {
@@ -40,7 +52,7 @@ struct HomeStateTests {
     }
     
     @Test func networkErrorInequality() {
-        let lhs = HomeState.error(NetworkError.invalidUrl)
+        let lhs = HomeState.error(NetworkError.invalidData)
         let rhs = HomeState.error(NetworkError.networkError)
         #expect(lhs != rhs)
     }

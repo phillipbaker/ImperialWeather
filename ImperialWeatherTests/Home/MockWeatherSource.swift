@@ -10,7 +10,6 @@
 final class MockWeatherSource: GetWeatherSource {
     enum Response: CaseIterable {
         case success
-        case coordinateError
         case geocodingError
         case permissionError
         case invalidUrl
@@ -22,8 +21,7 @@ final class MockWeatherSource: GetWeatherSource {
     
     static var allValues: [HomeState] = [
         .success(HomeWeather.mock),
-        .error(LocationError.coordinateError),
-        .error(LocationError.geocodingError),
+        .error(GeocodingError.geocodingError),
         .error(LocationError.permissionError),
         .error(NetworkError.invalidUrl),
         .error(NetworkError.networkError),
@@ -42,10 +40,8 @@ final class MockWeatherSource: GetWeatherSource {
         switch response {
         case .success:
             return HomeWeatherLocationPlain.mock
-        case .coordinateError:
-            throw LocationError.coordinateError
         case .geocodingError:
-            throw LocationError.geocodingError
+            throw GeocodingError.geocodingError
         case .permissionError:
             throw LocationError.permissionError
         case .invalidUrl:

@@ -39,7 +39,7 @@ final class LocationServiceImpl: NSObject, @unchecked Sendable, LocationService 
     
     func locationName(for location: CLLocation) async throws -> String {
         guard let name = try await self.geocoder.reverseGeocodeLocation(location).first?.locality else {
-            throw LocationError.geocodingError
+            throw GeocodingError.geocodingError
         }
 
         return name

@@ -12,9 +12,7 @@ extension LocationUpdate {
     static let didUpdateLocation =  LocationUpdate.didUpdateLocation(
         CLLocation(latitude: 0.0, longitude: 0.0)
     )
-    
-    static let didFailWithCoordinateError = LocationUpdate.didFailWithError(.coordinateError)
-    static let didFailWithGeocodingError = LocationUpdate.didFailWithError(.geocodingError)
+
     static let didFailWithLocationError = LocationUpdate.didFailWithError(.locationError)
     static let didFailWithPermissionError = LocationUpdate.didFailWithError(.permissionError)
 }

@@ -9,13 +9,13 @@
 import Testing
 
 struct LocationErrorTests {
-    @Test func coordinateError() {
-        let error = LocationError.coordinateError
+    @Test func locationError() {
+        let error = LocationError.locationError
         #expect(error.message is LocationErrorMessage)
     }
     
     @Test func geocodingError() {
-        let error = LocationError.geocodingError
+        let error = GeocodingError.geocodingError
         #expect(error.message is LocationErrorMessage)
     }
     

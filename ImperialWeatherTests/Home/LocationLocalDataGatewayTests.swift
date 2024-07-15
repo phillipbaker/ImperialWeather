@@ -21,22 +21,6 @@ struct LocationLocalDataGatewayTests {
         #expect(try await locationGateway.fetchLocation() == LocationPlain.mock)
     }
     
-    @Test func didFailWithCoordinateError() async throws {
-        let mockLocationService = MockLocationService(mockEvent: .didFailWithCoordinateError)
-        let locationGateway = LocationLocalDataGateway(service: mockLocationService)
-        await #expect(throws: LocationError.coordinateError) {
-            try await locationGateway.fetchLocation()
-        }
-    }
-    
-    @Test func didFailWithGeocodingError() async throws {
-        let mockLocationService = MockLocationService(mockEvent: .didFailWithGeocodingError)
-        let locationGateway = LocationLocalDataGateway(service: mockLocationService)
-        await #expect(throws: LocationError.geocodingError) {
-            try await locationGateway.fetchLocation()
-        }
-    }
-    
     @Test func didFailWithLocationError() async throws {
         let mockLocationService = MockLocationService(mockEvent: .didFailWithLocationError)
         let locationGateway = LocationLocalDataGateway(service: mockLocationService)

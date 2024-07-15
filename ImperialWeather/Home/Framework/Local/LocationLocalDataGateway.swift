@@ -25,10 +25,6 @@ final class LocationLocalDataGateway: LocationDataSourceLocal {
                 )
             case let .didFailWithError(error):
                 switch error {
-                case .coordinateError :
-                    throw LocationError.coordinateError
-                case .geocodingError:
-                    throw LocationError.geocodingError
                 case .permissionError:
                     throw LocationError.permissionError
                 case .locationError:

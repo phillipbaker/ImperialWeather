@@ -8,17 +8,23 @@
 import Foundation
 
 enum LocationError: Error, WeatherError {
-    case coordinateError
-    case geocodingError
     case permissionError
     case locationError
     
     var message: ErrorMessage {
         switch self {
-        case .coordinateError, .geocodingError, .locationError:
+        case .locationError:
             return LocationErrorMessage()
         case .permissionError:
             return LocationPermissionMessage()
         }
+    }
+}
+
+enum GeocodingError: Error, WeatherError {
+    case geocodingError
+    
+    var message: ErrorMessage {
+        return LocationErrorMessage()
     }
 }

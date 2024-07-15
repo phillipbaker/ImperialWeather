@@ -20,6 +20,6 @@ struct HomeViewModelTests {
     @Test func homeStateInequality() async {
         let homeViewModel = HomeViewModel(getWeatherUseCase: GetWeather(source: MockWeatherSource(response: .success)))
         await homeViewModel.handleIntent(intent: .GetWeather)
-        #expect(homeViewModel.state != .error(LocationError.coordinateError))
+        #expect(homeViewModel.state != .error(LocationError.locationError))
     }
 }

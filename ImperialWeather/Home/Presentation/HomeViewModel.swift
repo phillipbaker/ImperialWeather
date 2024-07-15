@@ -37,10 +37,8 @@ import Foundation
     private func getWeather() async {
         do {
             state = .success(try await getWeatherUseCase.weather())
-        } catch LocationError.coordinateError {
-            state = .error(LocationError.coordinateError)
-        } catch LocationError.geocodingError {
-            state = .error(LocationError.geocodingError)
+        } catch GeocodingError.geocodingError {
+            state = .error(GeocodingError.geocodingError)
         } catch LocationError.locationError {
             state = .error(LocationError.locationError)
         } catch LocationError.permissionError {
