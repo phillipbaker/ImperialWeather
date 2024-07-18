@@ -11,7 +11,7 @@ struct WeatherDetailView: View {
     let dailyWeather: [DailyWeather]
     @Binding var selection: DailyWeather
     @Environment(\.dismiss) private var dismiss
-    
+
     var body: some View {
         NavigationView {
             ScrollView(showsIndicators: false) {
@@ -21,7 +21,7 @@ struct WeatherDetailView: View {
                         selection: $selection
                     )
                     .paneBackground()
-                    
+
                     VStack(spacing: 16) {
                         IconAndTemperatureView(
                             icon: selection.icon,
@@ -29,12 +29,12 @@ struct WeatherDetailView: View {
                             fahrenheit: selection.fahrenheit
                         )
                         .frame(minHeight: 100)
-                        
+
                         TemperatureScalePicker()
                     }
                     .frame(maxWidth: .infinity)
                     .paneBackground()
-                    
+
                     VStack(spacing: 16) {
                         Label(WeatherLabel.dailyForecast, systemImage: "calendar")
                             .frame(maxWidth: .infinity, alignment: .leading)
@@ -42,12 +42,12 @@ struct WeatherDetailView: View {
                             .textCase(.uppercase)
                             .fontWeight(.semibold)
                             .foregroundStyle(.secondary)
-                        
+
                         TemperatureChartView(dailyWeather: dailyWeather)
                             .frame(minHeight: 320)
                     }
                     .paneBackground()
-                    
+
                     DataAttributionView()
                         .padding(.horizontal)
                 }

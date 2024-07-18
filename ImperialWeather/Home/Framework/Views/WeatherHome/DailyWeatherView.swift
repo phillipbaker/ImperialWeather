@@ -11,7 +11,7 @@ import SwiftUINavigation
 struct DailyWeatherView: View {
     let dailyWeather: [DailyWeather]
     @State private var selection: DailyWeather?
-    
+
     var body: some View {
         VStack(spacing: 12) {
             Label(WeatherLabel.sevenDayForecast, systemImage: "calendar")
@@ -20,10 +20,10 @@ struct DailyWeatherView: View {
                 .textCase(.uppercase)
                 .fontWeight(.semibold)
                 .foregroundStyle(.secondary)
-            
+
             ForEach(dailyWeather) { day in
                 HorizontalSeparator()
-                
+
                 Button {
                     selection = day
                 } label: {

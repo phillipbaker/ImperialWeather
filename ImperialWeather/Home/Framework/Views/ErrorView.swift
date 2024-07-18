@@ -9,12 +9,12 @@ import SwiftUI
 
 struct ErrorView: View {
     let error: WeatherError
-    
+
     var body: some View {
         ZStack {
             Color.classicBackground
                 .ignoresSafeArea()
-            
+
             GeometryReader { geometry in
                 ScrollView {
                     ZStack {
@@ -23,20 +23,20 @@ struct ErrorView: View {
                                 Image(systemName: error.message.image)
                                     .font(.system(size: 50))
                                     .foregroundColor(.secondary)
-                                
+
                                 Text(error.message.title)
                                     .padding(.horizontal, 24)
                                     .multilineTextAlignment(.center)
                                     .font(.title2)
                                     .fontWeight(.bold)
-                                
+
                                 Text(error.message.description)
                                     .font(.subheadline)
                                     .frame(maxWidth: .infinity)
                                     .foregroundColor(.secondary)
                                     .multilineTextAlignment(.center)
                             }
-                            
+
                             Button {
                                 Task { await error.message.buttonAction() }
                             } label: {

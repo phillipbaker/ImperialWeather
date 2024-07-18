@@ -10,7 +10,7 @@ import Foundation
 enum LocationError: Error, WeatherError {
     case permissionError
     case locationError
-    
+
     var message: ErrorMessage {
         switch self {
         case .locationError:
@@ -23,7 +23,7 @@ enum LocationError: Error, WeatherError {
 
 enum GeocodingError: Error, WeatherError {
     case geocodingError
-    
+
     var message: ErrorMessage {
         return LocationErrorMessage()
     }

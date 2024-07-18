@@ -9,11 +9,11 @@ import Foundation
 
 final class LocationLocalDataGateway: LocationDataSourceLocal {
     let service: LocationService
-    
+
     init(service: LocationService) {
         self.service = service
     }
-    
+
     func fetchLocation() async throws -> LocationPlain {
         for await event in service.locationUpdates {
             switch event {

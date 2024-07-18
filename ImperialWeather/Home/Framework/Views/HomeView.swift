@@ -9,11 +9,11 @@ import SwiftUI
 
 struct HomeView: View {
     @ObservedObject var viewModel: HomeViewModel
-    
+
     var body: some View {
         ZStack {
             Color.classicBackground.ignoresSafeArea()
-            
+
             switch viewModel.state {
             case .loading:
                 ProgressView()
@@ -24,7 +24,7 @@ struct HomeView: View {
             }
         }
         .task {
-            await viewModel.handleIntent(intent: HomeIntent.GetWeather)
+            await viewModel.handleIntent(intent: HomeIntent.getWeather)
         }
     }
 }

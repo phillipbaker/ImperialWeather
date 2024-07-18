@@ -11,7 +11,7 @@ struct HourlyWeatherRaw: Decodable, Equatable {
     let dt: Date
     let temp: Double
     let weather: [WeatherDescriptionRaw]
-    
+
     func mapToPlain() -> HourlyWeatherPlain {
         return HourlyWeatherPlain(
             hour: dt,
@@ -19,7 +19,7 @@ struct HourlyWeatherRaw: Decodable, Equatable {
             temperature: temp
         )
     }
-    
+
     static func mapHourlyWeatherRawToPlain(hourlyWeatherRaw: [HourlyWeatherRaw]) -> [HourlyWeatherPlain] {
         return hourlyWeatherRaw.map { hourlyWeather in
             hourlyWeather.mapToPlain()

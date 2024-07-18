@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WeatherImage: View {
     var systemName: String
-    
+
     var body: some View {
         Image(systemName: systemName)
             .renderingMode(.original)

@@ -11,7 +11,7 @@ struct DailyWeatherRaw: Decodable, Equatable {
     let dt: Date
     let temp: TemperatureRaw
     let weather: [WeatherDescriptionRaw]
-    
+
     func mapToPlain() -> DailyWeatherPlain {
         return DailyWeatherPlain(
             day: dt,
@@ -19,7 +19,7 @@ struct DailyWeatherRaw: Decodable, Equatable {
             temperature: temp.max
         )
     }
-    
+
     static func mapDailyWeatherRawToPlain(dailyWeatherRaw: [DailyWeatherRaw]) -> [DailyWeatherPlain] {
         return dailyWeatherRaw
             .filter { !Calendar.current.isDateInToday($0.dt) }

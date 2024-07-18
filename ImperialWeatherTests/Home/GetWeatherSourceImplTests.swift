@@ -14,7 +14,7 @@ struct GetWeatherSourceImplTests {
             locationDataSourceLocal: MockLocationLocalDataGateway(),
             weatherDataSourceRemote: MockWeatherRemoteDataGateway()
         )
-        
+
         let homeWeatherLocationPlain = try await getWeatherSource.weather()
         #expect(homeWeatherLocationPlain == HomeWeatherLocationPlain.mock)
     }

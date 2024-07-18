@@ -11,7 +11,7 @@ struct CurrentWeatherRaw: Decodable, Equatable {
     let name: String?
     let main: ConditionsRaw
     let weather: [WeatherDescriptionRaw]
-    
+
     func mapToPlain() -> CurrentWeatherPlain {
         return CurrentWeatherPlain(
             icon: WeatherDescriptionRaw.mapFirstIcon(from: weather),

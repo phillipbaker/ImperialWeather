@@ -25,7 +25,7 @@ enum ErrorButtonTitle {
         tableName: "ErrorMessage",
         comment: "Button title directing user to check their network connection in the system Settings app."
     )
-    
+
     static let reportProblem = NSLocalizedString(
         "Report this Problem",
         tableName: "ErrorMessage",

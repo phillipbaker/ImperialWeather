@@ -17,15 +17,15 @@ final class APIClient: APIClientProtocol {
     init(urlSession: URLSession = URLSession.shared) {
         self.urlSession = urlSession
     }
-    
+
     func data(from url: URL) async throws -> Data {
         let request = URLRequest(url: url)
         let (data, response) = try await urlSession.data(for: request)
-        
+
         guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
             throw NetworkError.invalidResponse
         }
-        
+
         return data
     }
 }

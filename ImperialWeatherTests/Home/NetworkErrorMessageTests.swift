@@ -17,7 +17,7 @@ struct NetworkErrorMessageTests {
         #expect(message.buttonTitle == ErrorButtonTitle.reportProblem)
         #expect(await message.buttonAction() == Application.live.submitFeedback())
     }
-    
+
     @Test func networkError() async {
         let message = NetworkErrorMessage()
         #expect(message.image == ErrorSymbol.networkError)
@@ -26,7 +26,7 @@ struct NetworkErrorMessageTests {
         #expect(message.buttonTitle == ErrorButtonTitle.networkError)
         #expect(await message.buttonAction() == Application.live.launchAppSettings())
     }
-    
+
     @Test func invalidResponseMessage() async {
         let message = InvalidResponseMessage()
         #expect(message.image == ErrorSymbol.dataError)
@@ -35,7 +35,7 @@ struct NetworkErrorMessageTests {
         #expect(message.buttonTitle == ErrorButtonTitle.reportProblem)
         #expect(await message.buttonAction() == Application.live.submitFeedback())
     }
-    
+
     @Test func invalidDataMessage() async {
         let message = InvalidDataMessage()
         #expect(message.image == ErrorSymbol.dataError)

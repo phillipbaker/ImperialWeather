@@ -20,7 +20,11 @@ extension Application {
         },
         launchAppSettings: {
             guard let bundleId = Bundle.main.bundleIdentifier else { return }
-            guard let url = URL(string: "\(UIApplication.openSettingsURLString)&path=LOCATION/\(bundleId)") else { return }
+            guard let url = URL(
+                string: "\(UIApplication.openSettingsURLString)&path=LOCATION/\(bundleId)"
+            ) else {
+                return
+            }
             UIApplication.shared.open(url)
         }
     )

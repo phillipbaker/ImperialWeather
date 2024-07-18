@@ -11,7 +11,7 @@ struct HomeWeatherRaw: Equatable {
     let currentWeather: CurrentWeatherRaw
     let hourlyWeather: [HourlyWeatherRaw]
     let dailyWeather: [DailyWeatherRaw]
-    
+
     func mapToPlain() -> HomeWeatherPlain {
         HomeWeatherPlain(
             current: currentWeather.mapToPlain(),

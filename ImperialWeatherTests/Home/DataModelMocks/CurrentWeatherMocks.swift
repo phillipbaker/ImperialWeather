@@ -22,7 +22,7 @@ extension CurrentWeatherRaw {
             .thunderstormMock
         ]
     )
-    
+
     static let nilLocationMock = CurrentWeatherRaw(
         name: nil,
         main: .mock,
@@ -40,7 +40,7 @@ extension CurrentWeatherPlain {
         description: WeatherDescription.drizzle,
         temperature: 21.0
     )
-    
+
     static let nilLocationMock = CurrentWeatherPlain(
         icon: WeatherSymbol.thunderstorm.rawValue,
         location: WeatherLabel.unknownLocation,
@@ -56,7 +56,7 @@ extension CurrentWeather {
         description: WeatherDescription.drizzle,
         celsius: Measurement(value: 21.0, unit: .celsius)
     )
-    
+
     static let nilLocationMock = CurrentWeather(
         icon: WeatherSymbol.thunderstorm.rawValue,
         location: WeatherLabel.unknownLocation,

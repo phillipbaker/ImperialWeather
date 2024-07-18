@@ -10,9 +10,9 @@ import SwiftUI
 
 struct TemperatureChartView: View {
     @AppStorage("temperatureScale") private var scale: TemperatureScale = .celsius
-    
+
     let dailyWeather: [DailyWeather]
-    
+
     var body: some View {
         Chart(dailyWeather) { day in
             LineMark(
@@ -27,7 +27,7 @@ struct TemperatureChartView: View {
             .foregroundStyle(.secondary.opacity(0.5))
             .accessibilityHidden(true)
             .interpolationMethod(.catmullRom)
-            
+
             PointMark(
                 x: .value(WeatherLabel.day, day.day, unit: .day),
                 y: .value(
@@ -50,7 +50,7 @@ struct TemperatureChartView: View {
             }
         }
         .chartXAxis {
-            AxisMarks(values: .stride(by: .day)) { value in
+            AxisMarks(values: .stride(by: .day)) { _ in
                 AxisGridLine()
                 AxisTick()
                 AxisValueLabel( format: .dateTime.weekday(.narrow), centered: true)

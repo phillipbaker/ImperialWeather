@@ -11,19 +11,19 @@ extension Date {
     var complete: String {
         self.formatted(.dateTime.weekday(.wide).month(.wide).day())
     }
-    
+
     var monthAndDay: String {
         self.formatted(.dateTime.month().day())
     }
-    
+
     var narrowHour: String {
         self <= Date.now ? WeatherLabel.now : self.formatted(.dateTime.hour(.defaultDigits(amPM: .abbreviated)))
     }
-    
+
     var date: String {
         self.formatted(.dateTime.day())
     }
-    
+
     var weekday: String {
         self.formatted(.dateTime.weekday())
     }

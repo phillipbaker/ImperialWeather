@@ -18,7 +18,7 @@ final class MockWeatherSource: GetWeatherSource {
         case invalidData
         case unknownError
     }
-    
+
     static var allValues: [HomeState] = [
         .success(HomeWeather.mock),
         .error(GeocodingError.geocodingError),
@@ -29,13 +29,13 @@ final class MockWeatherSource: GetWeatherSource {
         .error(NetworkError.invalidData),
         .error(NetworkError.invalidData)
     ]
-    
+
     let response: Response
-    
+
     init(response: Response) {
         self.response = response
     }
-    
+
     func weather() async throws -> HomeWeatherLocationPlain {
         switch response {
         case .success:

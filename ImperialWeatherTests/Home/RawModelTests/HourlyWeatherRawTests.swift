@@ -13,7 +13,7 @@ struct HourlyWeatherRawTests {
     @Test func mapHourlyWeatherRawToPlain() {
         #expect(HourlyWeatherRaw.currentHourMock.mapToPlain() == HourlyWeatherPlain.currentHourMock)
     }
-    
+
     @Test func mapArrayOfHoulyWeatherRawToPlain() {
         let mappedHourlyWeatherRawMock = HourlyWeatherRaw.mapHourlyWeatherRawToPlain(hourlyWeatherRaw: .mock)
         #expect(mappedHourlyWeatherRawMock == [HourlyWeatherPlain].mock)

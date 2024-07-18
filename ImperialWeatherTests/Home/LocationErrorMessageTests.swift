@@ -17,7 +17,7 @@ struct LocationErrorMessageTests {
         #expect(message.buttonTitle == ErrorButtonTitle.locationServices)
         #expect(await message.buttonAction() == Application.live.launchAppSettings())
     }
-    
+
     @Test func locationErrorMessage() async {
         let message = LocationErrorMessage()
         #expect(message.image == ErrorSymbol.locationError)

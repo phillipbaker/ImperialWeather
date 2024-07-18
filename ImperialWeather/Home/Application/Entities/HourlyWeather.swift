@@ -13,7 +13,7 @@ struct HourlyWeather: Equatable, Identifiable {
     let icon: String
     let celsius: Measurement<UnitTemperature>
     let fahrenheit: Measurement<UnitTemperature>
-    
+
     init(
         id: UUID = UUID(),
         hour: Date,
@@ -26,7 +26,7 @@ struct HourlyWeather: Equatable, Identifiable {
         self.celsius = celsius
         self.fahrenheit = self.celsius.converted(to: .fahrenheit)
     }
-    
+
     static func == (lhs: HourlyWeather, rhs: HourlyWeather) -> Bool {
         return lhs.hour == rhs.hour && lhs.icon == rhs.icon && lhs.icon == rhs.icon && lhs.celsius == rhs.celsius
     }
@@ -38,7 +38,7 @@ extension HourlyWeather {
             mapHourlyWeather(plain: hourlyWeatherPlain)
         }
     }
-    
+
     private static func mapHourlyWeather(plain: HourlyWeatherPlain) -> HourlyWeather {
         return HourlyWeather(
             hour: plain.hour,

@@ -13,7 +13,7 @@ struct CurrentWeatherRawTests {
     @Test func mapCurrentWeatherRawToPlain() {
         #expect(CurrentWeatherRaw.mock.mapToPlain() == CurrentWeatherPlain.mock)
     }
-    
+
     @Test func mapCurrentWeatherRawToPlainWithNilLocation() {
         #expect(CurrentWeatherRaw.nilLocationMock.mapToPlain() == CurrentWeatherPlain.nilLocationMock)
     }

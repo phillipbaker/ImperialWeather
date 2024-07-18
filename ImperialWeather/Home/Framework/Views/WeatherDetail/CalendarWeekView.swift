@@ -10,7 +10,7 @@ import SwiftUI
 struct CalendarWeekView: View {
     let dailyWeather: [DailyWeather]
     @Binding var selection: DailyWeather
-    
+
     var body: some View {
         ScrollViewReader { value in
             ScrollView(.horizontal, showsIndicators: false) {
@@ -25,7 +25,7 @@ struct CalendarWeekView: View {
                             )
                         }
                         .tint(.primary)
-                        
+
                         if dailyWeather != self.dailyWeather.last {
                             VerticalSeparator()
                         }

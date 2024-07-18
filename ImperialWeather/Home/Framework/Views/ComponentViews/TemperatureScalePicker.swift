@@ -16,7 +16,7 @@ struct TemperatureScalePicker: View {
                 Text(UnitTemperature.celsius.symbol)
                     .tag(TemperatureScale.celsius)
                     .accessibilityLabel(WeatherLabel.celsius)
-                
+
                 Text(UnitTemperature.fahrenheit.symbol)
                     .tag(TemperatureScale.fahrenheit)
                     .accessibilityLabel(WeatherLabel.fahrenheit)
@@ -32,7 +32,7 @@ struct TemperatureScalePicker: View {
     ZStack {
         Color.classicBackground
             .ignoresSafeArea()
-        
+
         TemperatureScalePicker()
             .padding()
     }

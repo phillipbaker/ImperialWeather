@@ -18,13 +18,13 @@ extension DailyWeatherRaw {
         temp: TemperatureRaw(max: 22.0),
         weather: [.thunderstormMock, .drizzleMock, .fogMock]
     )
-    
+
     static let tomorrowMock = DailyWeatherRaw(
         dt: .tomorrow,
         temp: TemperatureRaw(max: 24.0),
         weather: [.drizzleMock, .thunderstormMock, .hazeMock]
     )
-    
+
     static let inTwoDaysMock = DailyWeatherRaw(
         dt: .inTwoDays,
         temp: TemperatureRaw(max: 39.0),
@@ -42,13 +42,13 @@ extension DailyWeatherPlain {
         icon: WeatherSymbol.thunderstorm.rawValue,
         temperature: 22.0
     )
-    
+
     static let tomorrowMock = DailyWeatherPlain(
         day: .tomorrow,
         icon: WeatherSymbol.drizzle.rawValue,
         temperature: 24.0
     )
-    
+
     static let inTwoDaysMock = DailyWeatherPlain(
         day: .inTwoDays,
         icon: WeatherSymbol.invalidId.rawValue,
@@ -66,13 +66,13 @@ extension DailyWeather {
         icon: WeatherSymbol.thunderstorm.rawValue,
         celsius: Measurement(value: 22.0, unit: .celsius)
     )
-    
+
     static let tomorrowMock = DailyWeather(
         day: .tomorrow,
         icon: WeatherSymbol.drizzle.rawValue,
         celsius: Measurement(value: 24.0, unit: .celsius)
     )
-    
+
     static let inTwoDaysMock = DailyWeather(
         day: .inTwoDays,
         icon: WeatherSymbol.invalidId.rawValue,

@@ -9,7 +9,7 @@
 
 enum MockWeatherError: Error, WeatherError {
     case unknownError
-    
+
     var message: any ErrorMessage {
         return MockWeatherErrorMessage()
     }

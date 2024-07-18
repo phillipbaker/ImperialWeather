@@ -11,7 +11,7 @@ enum HomeState: Equatable {
     case loading
     case success(HomeWeather)
     case error(WeatherError)
-    
+
     static func == (lhs: HomeState, rhs: HomeState) -> Bool {
         switch (lhs, rhs) {
         case (.success(let lhs), .success(let rhs)):

@@ -15,30 +15,33 @@ final class APIRequestTests {
         let decodedData = try currentWeatherRequest.decode(.validCurrentWeatherDataMock())
         #expect(decodedData == CurrentWeatherRaw.validDataMock())
     }
-    
+
     @Test func invalidCurrentWeatherRequest() {
         let currentWeatherRequest = APIRequest(resource: CurrentWeatherResource.validResourceMock())
         #expect(throws: NetworkError.invalidData) {
             try currentWeatherRequest.decode(.invalidDataMock())
         }
     }
-    
+
     @Test func validUpcomingWeatherRequest() throws {
         let upcomingWeatherRequest = APIRequest(resource: UpcomingWeatherResource.validResourceMock())
         let decodedData = try upcomingWeatherRequest.decode(.validUpcomingWeatherDataMock())
         #expect(decodedData == UpcomingWeatherRaw.validDataMock())
     }
-    
+
     @Test func invalidUpcomingWeatherRequest() {
         let upcomingWeatherRequest = APIRequest(resource: UpcomingWeatherResource.validResourceMock())
         #expect(throws: NetworkError.invalidData) {
             try upcomingWeatherRequest.decode(.invalidDataMock())
         }
     }
-    
+
     @Test func executeSuccess() async throws {
-        let request = APIRequest(resource: CurrentWeatherResource.validResourceMock(), apiClient: MockAPIClientSuccess())
-        let decodedData = try await request.execute() 
+        let request = APIRequest(
+            resource: CurrentWeatherResource.validResourceMock(),
+            apiClient: MockAPIClientSuccess()
+        )
+        let decodedData = try await request.execute()
         #expect(decodedData == CurrentWeatherRaw.validDataMock())
     }
 }

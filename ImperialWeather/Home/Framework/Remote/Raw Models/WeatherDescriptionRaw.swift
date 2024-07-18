@@ -1,4 +1,3 @@
-
 //
 //  WeatherDescriptionRaw.swift
 //  ImperialWeather
@@ -11,7 +10,7 @@ import Foundation
 struct WeatherDescriptionRaw: Decodable, Equatable {
     let icon: String
     let id: Int
-    
+
     func mapIcon() -> String {
         switch id {
         case 200...232:
@@ -46,15 +45,15 @@ struct WeatherDescriptionRaw: Decodable, Equatable {
             return WeatherSymbol.invalidId.rawValue
         }
     }
-    
+
     private func isDaytime() -> Bool {
         return icon.contains("d") ? true : false
     }
-    
+
     static func mapFirstIcon(from weatherDescriptionsRaw: [WeatherDescriptionRaw]) -> String {
         return weatherDescriptionsRaw.first?.mapIcon() ?? WeatherSymbol.invalidId.rawValue
     }
-    
+
     func mapDescription() -> String {
         switch id {
         case 200...232:
@@ -97,7 +96,7 @@ struct WeatherDescriptionRaw: Decodable, Equatable {
             return WeatherDescription.invalidId
         }
     }
-    
+
     static func mapFirstDescription(from weatherDescriptionsRaw: [WeatherDescriptionRaw]) -> String {
         return weatherDescriptionsRaw.first?.mapDescription() ?? WeatherDescription.invalidId
     }

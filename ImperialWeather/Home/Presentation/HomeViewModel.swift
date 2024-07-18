@@ -9,9 +9,9 @@ import Foundation
 
 @MainActor final class HomeViewModel: ObservableObject {
     let getWeatherUseCase: GetWeather
-    
+
     @Published var state: HomeState = .loading
-    
+
     init(
         getWeatherUseCase: GetWeather = GetWeather(
             source: GetWeatherSourceImpl(
@@ -26,14 +26,14 @@ import Foundation
     ) {
         self.getWeatherUseCase = getWeatherUseCase
     }
-    
+
     func handleIntent(intent: HomeIntent) async {
         switch intent {
-        case .GetWeather:
+        case .getWeather:
             await getWeather()
         }
     }
-    
+
     private func getWeather() async {
         do {
             state = .success(try await getWeatherUseCase.weather())

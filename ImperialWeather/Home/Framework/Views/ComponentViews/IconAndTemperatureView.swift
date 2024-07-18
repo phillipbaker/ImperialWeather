@@ -11,12 +11,12 @@ struct IconAndTemperatureView: View {
     let icon: String
     let celsius: Measurement<UnitTemperature>
     let fahrenheit: Measurement<UnitTemperature>
-    
+
     var body: some View {
         HStack(spacing: 20) {
             WeatherImage(systemName: icon)
                 .font(.system(size: 60))
-            
+
             VStack(alignment: .leading, spacing: 4) {
                 PrimaryTemperatureView(
                     celsius: celsius,
@@ -24,7 +24,7 @@ struct IconAndTemperatureView: View {
                     alignment: .leading
                 )
                 .font(.largeTitle)
-                
+
                 SecondaryTemperatureView(
                     celsius: celsius,
                     fahrenheit: fahrenheit,

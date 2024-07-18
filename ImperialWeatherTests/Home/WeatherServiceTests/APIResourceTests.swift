@@ -14,17 +14,17 @@ struct APIResourceTests {
         #expect(resource.scheme == "https")
         #expect(resource.host == "api.openweathermap.org")
         #expect(resource.path == "/data/2.5/weather")
-        
+
         let url = try #require(resource.url)
         #expect(url.absoluteString == .validCurrentWeatherURLStringMock())
     }
-    
+
     @Test func validResourceWithQueryItems() throws {
-        let resource = CurrentWeatherResource.validResourceWithQueryItems()        
+        let resource = CurrentWeatherResource.validResourceWithQueryItems()
         let url = try #require(resource.url)
         #expect(url.absoluteString == .validCurrentWeatherURLStringMockWithQueryItems())
     }
-    
+
     @Test func validUpcomingWeatherResourceURL() throws {
         let resource = UpcomingWeatherResource.validResourceMock()
         #expect(resource.scheme == "https")

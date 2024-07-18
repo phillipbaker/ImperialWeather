@@ -15,7 +15,7 @@ struct DailyWeather: Equatable, Identifiable, Sendable {
     let fahrenheit: Measurement<UnitTemperature>
     let plottableCelsius: PlottableCelsius<UnitTemperature>
     let plottableFahrenheit: PlottableFahrenheit<UnitTemperature>
-    
+
     init(
         id: UUID = UUID(),
         day: Date,
@@ -30,7 +30,7 @@ struct DailyWeather: Equatable, Identifiable, Sendable {
         self.plottableCelsius = PlottableCelsius(measurement: self.celsius)
         self.plottableFahrenheit = PlottableFahrenheit(measurement: self.fahrenheit)
     }
-    
+
     static func == (lhs: DailyWeather, rhs: DailyWeather) -> Bool {
         return lhs.day == rhs.day && lhs.icon == rhs.icon && lhs.celsius == rhs.celsius
     }

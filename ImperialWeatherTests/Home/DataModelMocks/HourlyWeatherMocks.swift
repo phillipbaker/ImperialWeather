@@ -22,7 +22,7 @@ extension HourlyWeatherRaw {
             .invalidIdMock
         ]
     )
-    
+
     static let nextHourMock = HourlyWeatherRaw(
         dt: .nextHour,
         temp: 29.0,
@@ -32,7 +32,7 @@ extension HourlyWeatherRaw {
             .invalidIdMock
         ]
     )
-    
+
     static let inTwoHoursMock = HourlyWeatherRaw(
         dt: .inTwoHours,
         temp: 20.0,
@@ -54,13 +54,13 @@ extension HourlyWeatherPlain {
         icon: WeatherSymbol.thunderstorm.rawValue,
         temperature: 27.0
     )
-    
+
     static let nextHourMock = HourlyWeatherPlain(
         hour: .nextHour,
         icon: WeatherSymbol.drizzle.rawValue,
         temperature: 29.0
     )
-    
+
     static let inTwoHoursMock = HourlyWeatherPlain(
         hour: .inTwoHours,
         icon: WeatherSymbol.invalidId.rawValue,
@@ -78,13 +78,13 @@ extension HourlyWeather {
         icon: WeatherSymbol.thunderstorm.rawValue,
         celsius: Measurement(value: 27.0, unit: .celsius)
     )
-    
+
     static let nextHourMock = HourlyWeather(
         hour: .nextHour,
         icon: WeatherSymbol.drizzle.rawValue,
         celsius: Measurement(value: 29.0, unit: .celsius)
     )
-    
+
     static let inTwoHoursMock = HourlyWeather(
         hour: .inTwoHours,
         icon: WeatherSymbol.invalidId.rawValue,

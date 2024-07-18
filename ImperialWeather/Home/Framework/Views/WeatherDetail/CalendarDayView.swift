@@ -10,7 +10,7 @@ import SwiftUI
 struct CalendarDayView: View {
     let day: DailyWeather
     @Binding var selection: DailyWeather
-    
+
     var body: some View {
         VStack(spacing: 8) {
             Text(day.day.weekday)
@@ -18,12 +18,12 @@ struct CalendarDayView: View {
                 .textCase(.uppercase)
                 .fontWeight(.semibold)
                 .foregroundStyle(.secondary)
-            
+
             ZStack {
                 Circle()
                     .opacity(day == selection ? 1 : 0)
                     .foregroundStyle(.classicSelectionBackground)
-                
+
                 Text(day.day.date)
                     .fontWeight(day == selection ? .bold : .medium)
                     .accessibilityLabel(day.day.monthAndDay)

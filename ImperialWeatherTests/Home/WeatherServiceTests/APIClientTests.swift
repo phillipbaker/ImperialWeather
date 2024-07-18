@@ -14,10 +14,10 @@ struct APIClientTests {
         let session = URLSession.mockURLProtocolSession()
         let apiClient = APIClient(urlSession: session)
         let url = try #require(CurrentWeatherResource.validResourceMock().url)
-        
+
         #expect(try await apiClient.data(from: url) == .validCurrentWeatherDataMock())
     }
-    
+
     @Test func invalidResponse() async throws {
         let session = URLSession.mockURLProtocolSession()
         let apiClient = APIClient(urlSession: session)

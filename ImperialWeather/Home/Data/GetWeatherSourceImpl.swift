@@ -10,7 +10,7 @@ import Foundation
 final class GetWeatherSourceImpl: GetWeatherSource {
     let locationDataSourceLocal: LocationDataSourceLocal
     let weatherDataSourceRemote: WeatherDataSourceRemote
-    
+
     init(
         locationDataSourceLocal: LocationDataSourceLocal,
         weatherDataSourceRemote: WeatherDataSourceRemote
@@ -18,7 +18,7 @@ final class GetWeatherSourceImpl: GetWeatherSource {
         self.locationDataSourceLocal = locationDataSourceLocal
         self.weatherDataSourceRemote = weatherDataSourceRemote
     }
-    
+
     func weather() async throws -> HomeWeatherLocationPlain {
         let location = try await locationDataSourceLocal.fetchLocation()
         return HomeWeatherLocationPlain(

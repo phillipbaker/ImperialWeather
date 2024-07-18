@@ -9,13 +9,13 @@ import SwiftUI
 
 struct HourlyWeatherView: View {
     var hourlyWeather: [HourlyWeather]
-    
+
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHStack(spacing: 24) {
                 ForEach(hourlyWeather) { hourlyWeather in
                     HourlyWeatherRow(hourlyWeather: hourlyWeather)
-                    
+
                     if hourlyWeather != self.hourlyWeather.last {
                         VerticalSeparator()
                     }

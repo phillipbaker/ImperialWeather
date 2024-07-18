@@ -15,42 +15,42 @@ final class MockURLProtocol: URLProtocol {
         case invalidResponse
         case requestNotFound
     }
-    
+
     static var mockRequests: Set<MockRequest> = [.success, .failure]
-    
-    override class func canInit(with request: URLRequest) -> Bool {
+
+    override static func canInit(with request: URLRequest) -> Bool {
         return true
     }
-    
-    override class func canonicalRequest(for request: URLRequest) -> URLRequest {
+
+    override static func canonicalRequest(for request: URLRequest) -> URLRequest {
         return request
     }
-    
+
     override func startLoading() {
         let foundRequest = Self.mockRequests.first { [unowned self] mockRequest in
             self.request.url?.path == mockRequest.url.path
         }
-        
+
         guard let request = foundRequest else {
             client?.urlProtocol(self, didFailWithError: MockRequestError.requestNotFound)
             return
         }
-        
+
         guard let data = request.data else {
             client?.urlProtocol(self, didFailWithError: MockRequestError.invalidData)
             return
         }
-        
+
         client?.urlProtocol(self, didLoad: data)
-        
+
         guard let response = request.response else {
             client?.urlProtocol(self, didFailWithError: MockRequestError.invalidResponse)
             return
         }
-        
+
         client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
         client?.urlProtocolDidFinishLoading(self)
     }
-    
+
     override func stopLoading() {}
 }

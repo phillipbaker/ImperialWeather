@@ -11,13 +11,13 @@ import CoreLocation
 struct MockLocationService: LocationService {
     let mockEvent: LocationUpdate
     let authorizationStatus: CLAuthorizationStatus
-    
+
     var locationUpdates: AsyncStream<LocationUpdate> {
         AsyncStream { continuation in
             continuation.yield(mockEvent)
         }
     }
-    
+
     init(
         mockEvent: LocationUpdate,
         authorizationStatus: CLAuthorizationStatus = .authorizedWhenInUse
@@ -25,7 +25,7 @@ struct MockLocationService: LocationService {
         self.mockEvent = mockEvent
         self.authorizationStatus = authorizationStatus
     }
-    
+
     func locationName(for location: CLLocation) async throws -> String {
         return "London"
     }

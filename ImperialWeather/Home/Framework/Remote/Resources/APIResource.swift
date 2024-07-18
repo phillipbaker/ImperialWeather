@@ -16,31 +16,31 @@ protocol APIResource: Sendable {
 }
 
 extension APIResource {
-    
+
     var scheme: String { "https" }
     var host: String { "api.openweathermap.org" }
-    
+
     var url: URL? {
         var components = URLComponents()
-        
+
         components.scheme = scheme
         components.host = host
         components.path = path
-        
+
         components.queryItems = [
             URLQueryItem(name: "units", value: "metric"),
             URLQueryItem(name: "appid", value: "5378ee83a13bdf24c6d0fe970cd52038"),
             URLQueryItem(name: "lat", value: latitude),
             URLQueryItem(name: "lon", value: longitude)
         ]
-        
+
         if let resourceItems = resourceQueryItems {
             components.queryItems?.append(contentsOf: resourceItems)
         }
 
         return components.url
     }
-    
+
     var resourceQueryItems: [URLQueryItem]? {
         var resourceQueryItems = [URLQueryItem]()
         if let unwrappedItems = queryItems {
@@ -49,7 +49,7 @@ extension APIResource {
                 resourceQueryItems.append(queryItem)
             }
         }
-        
+
         return resourceQueryItems
     }
 }

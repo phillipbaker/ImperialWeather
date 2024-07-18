@@ -13,7 +13,7 @@ enum ButtonAction {
         let url = URL(string: "\(UIApplication.openSettingsURLString)&path=LOCATION/\(bundleId)")!
         UIApplication.shared.open(url)
     }
-    
+
     static func submitFeeback() {
         let url = URL(string: "mailto:INSERTEMAILHERE")!
         UIApplication.shared.open(url)

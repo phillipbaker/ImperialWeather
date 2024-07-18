@@ -11,12 +11,12 @@ struct CurrentWeatherView: View {
     var weather: CurrentWeather
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @Environment(\.verticalSizeClass) private var verticalSizeClass
-    
+
     var body: some View {
-        let layout = sizeClassIsCompact 
+        let layout = sizeClassIsCompact
         ? AnyLayout(HStackLayout(spacing: 16))
         : AnyLayout(VStackLayout(spacing: 24))
-        
+
         VStack(spacing: sizeClassIsCompact ? 16 : 32) {
             layout {
                 VStack(alignment: sizeClassIsCompact ? .leading : .center, spacing: 4) {
@@ -29,7 +29,7 @@ struct CurrentWeatherView: View {
                         .fontWeight(.medium)
                 }
                 .frame(maxWidth: .infinity, alignment: sizeClassIsCompact ? .leading : .center)
-                
+
                 IconAndTemperatureView(
                     icon: weather.icon,
                     celsius: weather.celsius,
@@ -37,13 +37,13 @@ struct CurrentWeatherView: View {
                 )
             }
             .accessibilityElement(children: .combine)
-            
+
             TemperatureScalePicker()
         }
         .padding(.top, sizeClassIsCompact ? 0 : 8)
         .paneBackground()
     }
-    
+
     private var sizeClassIsCompact: Bool {
         horizontalSizeClass == .compact && verticalSizeClass == .compact
     }

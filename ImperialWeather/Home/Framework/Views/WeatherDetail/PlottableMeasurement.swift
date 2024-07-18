@@ -16,7 +16,7 @@ extension PlottableCelsius: Plottable where UnitType == UnitTemperature {
     var primitivePlottable: Double {
         self.measurement.converted(to: .celsius).value
     }
-    
+
     init?(primitivePlottable: Double) {
         self.init(measurement: Measurement(value: primitivePlottable, unit: .celsius))
     }
@@ -30,7 +30,7 @@ extension PlottableFahrenheit: Plottable where UnitType == UnitTemperature {
     var primitivePlottable: Double {
         self.measurement.converted(to: .fahrenheit).value
     }
-    
+
     init?(primitivePlottable: Double) {
         self.init(measurement: Measurement(value: primitivePlottable, unit: .fahrenheit))
     }

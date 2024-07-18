@@ -12,7 +12,7 @@ enum NetworkError: Error, WeatherError {
     case networkError
     case invalidResponse
     case invalidData
-    
+
     var message: ErrorMessage {
         switch self {
         case .invalidUrl:

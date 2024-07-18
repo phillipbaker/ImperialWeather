@@ -12,7 +12,7 @@ struct MockRequest: Hashable {
     let url: URL
     let statusCode: Int
     let data: Data?
-    
+
     var response: HTTPURLResponse? {
         return HTTPURLResponse(
             url: url,
@@ -29,7 +29,7 @@ extension MockRequest {
         statusCode: 200,
         data: try? .validCurrentWeatherDataMock()
     )
-    
+
     static let failure = MockRequest(
         url: UpcomingWeatherResource.validResourceMock().url!,
         statusCode: 404,
