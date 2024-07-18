@@ -1,0 +1,10 @@
+excluded:
+    - fastlane
+    - ImperialWeatherUITests
+cyclomatic_complexity:
+    ignores_case_statements: true
+identifier_name:
+    excluded:
+        - dt
+        - id
+        
