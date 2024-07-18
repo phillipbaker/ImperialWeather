@@ -786,6 +786,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				F8B993392C491B0100F326CE /* PBXTargetDependency */,
 				F85931D92B72693400E3355E /* PBXTargetDependency */,
 			);
 			name = ImperialWeatherTests;
@@ -822,6 +823,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				F8B9933B2C491B1000F326CE /* PBXTargetDependency */,
 			);
 			name = ImperialWeather;
 			packageProductDependencies = (
@@ -866,6 +868,7 @@
 			mainGroup = F87E5C86267C9E950032949A;
 			packageReferences = (
 				F88DC0B0299655C80029E1F4 /* XCRemoteSwiftPackageReference "swiftui-navigation" */,
+				F8B993372C4918B500F326CE /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
 			);
 			productRefGroup = F87E5C90267C9E950032949A /* Products */;
 			projectDirPath = "";
@@ -1075,6 +1078,14 @@
 			isa = PBXTargetDependency;
 			target = F87E5C8E267C9E950032949A /* ImperialWeather */;
 			targetProxy = F85C432C2BA884B500EDBC74 /* PBXContainerItemProxy */;
+		};
+		F8B993392C491B0100F326CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = F8B993382C491B0100F326CE /* SwiftLintBuildToolPlugin */;
+		};
+		F8B9933B2C491B1000F326CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = F8B9933A2C491B1000F326CE /* SwiftLintBuildToolPlugin */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1434,6 +1445,14 @@
 				kind = branch;
 			};
 		};
+		F8B993372C4918B500F326CE /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.55.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1441,6 +1460,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F88DC0B0299655C80029E1F4 /* XCRemoteSwiftPackageReference "swiftui-navigation" */;
 			productName = SwiftUINavigation;
+		};
+		F8B993382C491B0100F326CE /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F8B993372C4918B500F326CE /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
+		F8B9933A2C491B1000F326CE /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F8B993372C4918B500F326CE /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
