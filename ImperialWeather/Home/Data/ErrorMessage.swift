@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol ErrorMessage {
+protocol ErrorMessage: Sendable {
     var image: String { get }
     var title: String { get }
     var description: String { get }

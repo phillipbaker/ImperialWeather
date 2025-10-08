@@ -5,6 +5,6 @@
 //  Created by Phillip Baker on 04/07/2024.
 //
 
-protocol WeatherError {
+protocol WeatherError: Sendable {
     var message: ErrorMessage { get }
 }

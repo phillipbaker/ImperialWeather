@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum HomeState: Equatable {
+enum HomeState: Equatable, Sendable {
     case loading
     case success(HomeWeather)
     case error(WeatherError)

@@ -19,7 +19,7 @@ final class MockWeatherSource: GetWeatherSource {
         case unknownError
     }
 
-    static var allValues: [HomeState] = [
+    static let allValues: [HomeState] = [
         .success(HomeWeather.mock),
         .error(GeocodingError.geocodingError),
         .error(LocationError.permissionError),
