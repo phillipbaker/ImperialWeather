@@ -12,7 +12,7 @@ struct PaneBackground: ViewModifier {
         content
             .padding()
             .background(.classicPaneBackground)
-            .cornerRadius(12)
+            .clipShape(RoundedRectangle(cornerRadius: 20))
             .paneShadow()
     }
 }
