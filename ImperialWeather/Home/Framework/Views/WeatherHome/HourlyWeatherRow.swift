@@ -16,7 +16,7 @@ struct HourlyWeatherRow: View {
                 .frame(minWidth: 44)
                 .font(.subheadline)
                 .textCase(.uppercase)
-                .fontWeight(.semibold)
+                .fontWeight(.bold)
                 .foregroundStyle(.secondary)
 
             WeatherImage(systemName: hourlyWeather.icon)
@@ -35,7 +35,8 @@ struct HourlyWeatherRow: View {
                 )
             }
         }
-        .fontWeight(.medium)
+        .fontWeight(.semibold)
+        .opacity(0.8)
         .accessibilityElement(children: .combine)
     }
 }

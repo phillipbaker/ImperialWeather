@@ -15,7 +15,7 @@ struct DataAttributionView: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .font(.caption)
-        .fontWeight(.medium)
+        .fontWeight(.semibold)
         .foregroundStyle(.secondary)
     }
 }

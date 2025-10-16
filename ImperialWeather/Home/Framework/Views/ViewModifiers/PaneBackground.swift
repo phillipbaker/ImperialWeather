@@ -11,7 +11,7 @@ struct PaneBackground: ViewModifier {
     func body(content: Content) -> some View {
         content
             .padding()
-            .background(.classicPaneBackground)
+            .background(.ultraThinMaterial)
             .clipShape(RoundedRectangle(cornerRadius: 20))
             .paneShadow()
     }

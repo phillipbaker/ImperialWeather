@@ -16,7 +16,7 @@ struct CalendarDayView: View {
             Text(day.day.weekday)
                 .font(.subheadline)
                 .textCase(.uppercase)
-                .fontWeight(.semibold)
+                .fontWeight(.bold)
                 .foregroundStyle(.secondary)
 
             ZStack {
@@ -25,10 +25,10 @@ struct CalendarDayView: View {
                     .foregroundStyle(.classicSelectionBackground)
 
                 Text(day.day.date)
-                    .fontWeight(day == selection ? .bold : .medium)
+                    .fontWeight(day == selection ? .bold : .semibold)
                     .accessibilityLabel(day.day.monthAndDay)
                     .foregroundStyle(day == selection ? .white : .primary)
-                    .opacity(day == selection ? 1.0 : 0.9)
+                    .opacity(day == selection ? 1.0 : 0.8)
             }
             .frame(minWidth: 40, minHeight: 40)
         }

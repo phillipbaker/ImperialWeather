@@ -13,25 +13,24 @@ struct IconAndTemperatureView: View {
     let fahrenheit: Measurement<UnitTemperature>
 
     var body: some View {
-        HStack(spacing: 20) {
+        HStack(spacing: 8) {
             WeatherImage(systemName: icon)
                 .font(.system(size: 60))
 
-            VStack(alignment: .leading, spacing: 4) {
+            VStack(alignment: .leading, spacing: 0) {
                 PrimaryTemperatureView(
                     celsius: celsius,
                     fahrenheit: fahrenheit,
                     alignment: .leading
                 )
-                .font(.largeTitle)
 
                 SecondaryTemperatureView(
                     celsius: celsius,
                     fahrenheit: fahrenheit,
                     alignment: .leading
                 )
-                .font(.subheadline)
             }
+            .font(.title)
             .fontWeight(.semibold)
             .accessibilityElement(children: .combine)
         }

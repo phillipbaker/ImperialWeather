@@ -40,7 +40,7 @@ struct WeatherDetailView: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .font(.subheadline)
                             .textCase(.uppercase)
-                            .fontWeight(.semibold)
+                            .fontWeight(.bold)
                             .foregroundStyle(.secondary)
 
                         TemperatureChartView(dailyWeather: dailyWeather)
@@ -59,10 +59,16 @@ struct WeatherDetailView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(WeatherLabel.done) {
-                        self.dismiss()
+                    if #available(iOS 26.0, *) {
+                        Button(role: .close) {
+                            self.dismiss()
+                        }
+                    } else {
+                        // Fallback on earlier versions
+                        Button(WeatherLabel.done) {
+                            self.dismiss()
+                        }
                     }
-                    .fontWeight(.bold)
                 }
             }
             .toolbarBackground(.classicBackground, for: .navigationBar)

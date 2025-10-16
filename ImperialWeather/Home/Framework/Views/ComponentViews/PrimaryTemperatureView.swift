@@ -18,7 +18,7 @@ struct PrimaryTemperatureView: View {
         Text(temperature.abbreviated)
             .frame(minWidth: 50, alignment: alignment)
             .monospacedDigit()
-            .opacity(0.9)
+            .opacity(0.8)
     }
 
     private var temperature: Measurement<UnitTemperature> {

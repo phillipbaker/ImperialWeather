@@ -18,7 +18,7 @@ struct DailyWeatherView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .font(.subheadline)
                 .textCase(.uppercase)
-                .fontWeight(.semibold)
+                .fontWeight(.bold)
                 .foregroundStyle(.secondary)
 
             ForEach(dailyWeather) { day in

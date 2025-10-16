@@ -11,7 +11,7 @@ struct VerticalSeparator: View {
     var body: some View {
         Rectangle()
             .frame(width: 1)
-            .opacity(0.1)
+            .opacity(0.2)
     }
 }
 

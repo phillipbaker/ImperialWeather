@@ -21,7 +21,7 @@ struct TemperatureScalePicker: View {
                     .tag(TemperatureScale.fahrenheit)
                     .accessibilityLabel(WeatherLabel.fahrenheit)
             }
-            .opacity(0.9)
+            .opacity(0.8)
         }
         .accessibilityLabel(WeatherLabel.temperatureScalePicker)
         .pickerStyle(.segmented)

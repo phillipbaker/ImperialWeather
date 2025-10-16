@@ -23,7 +23,7 @@ struct DailyWeatherRow: View {
                         maxWidth: .infinity,
                         alignment: dynamicTypeSize.isAccessibilitySize ? .center : .leading
                     )
-                    .opacity(0.9)
+                    .opacity(0.8)
 
                 WeatherImage(systemName: dailyWeather.icon)
                     .frame(minHeight: 32)
@@ -42,9 +42,10 @@ struct DailyWeatherRow: View {
                     )
                 }
                 .frame(maxWidth: .infinity, alignment: dynamicTypeSize.isAccessibilitySize ? .center : .trailing)
+                .opacity(0.8)
             }
             .frame(maxWidth: .infinity)
-            .fontWeight(.medium)
+            .fontWeight(.semibold)
         }
     }
 }

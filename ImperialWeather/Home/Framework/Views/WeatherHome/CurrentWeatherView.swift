@@ -23,12 +23,12 @@ struct CurrentWeatherView: View {
                     Text(weather.location)
                         .font(.largeTitle)
                         .fontWeight(.bold)
-                        .opacity(0.9)
                     Text(weather.description)
                         .foregroundStyle(.secondary)
-                        .fontWeight(.medium)
+                        .fontWeight(.semibold)
                 }
                 .frame(maxWidth: .infinity, alignment: sizeClassIsCompact ? .leading : .center)
+                .opacity(0.8)
 
                 IconAndTemperatureView(
                     icon: weather.icon,
