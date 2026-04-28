@@ -92,6 +92,7 @@
 		F888047C2C402762005637F9 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F888047B2C40275B005637F9 /* MockURLProtocol.swift */; };
 		F888047E2C4027C6005637F9 /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F888047D2C4027C2005637F9 /* APIClientTests.swift */; };
 		F88DC0B2299655C80029E1F4 /* SwiftUINavigation in Frameworks */ = {isa = PBXBuildFile; productRef = F88DC0B1299655C80029E1F4 /* SwiftUINavigation */; };
+		F890ECB12FA0B861007E8217 /* Color+MaterialTint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F890ECB02FA0B85B007E8217 /* Color+MaterialTint.swift */; };
 		F89722372C41342200C66322 /* MockRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89722362C41341900C66322 /* MockRequest.swift */; };
 		F897223B2C41BDC500C66322 /* LocationPlain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F897223A2C41BDC200C66322 /* LocationPlain.swift */; };
 		F897223D2C41C58600C66322 /* LocationMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F897223C2C41C57700C66322 /* LocationMocks.swift */; };
@@ -260,6 +261,7 @@
 		F88804752C3FDF6C005637F9 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		F888047B2C40275B005637F9 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		F888047D2C4027C2005637F9 /* APIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
+		F890ECB02FA0B85B007E8217 /* Color+MaterialTint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+MaterialTint.swift"; sourceTree = "<group>"; };
 		F89722362C41341900C66322 /* MockRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRequest.swift; sourceTree = "<group>"; };
 		F897223A2C41BDC200C66322 /* LocationPlain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPlain.swift; sourceTree = "<group>"; };
 		F897223C2C41C57700C66322 /* LocationMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMocks.swift; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 		F800ABE82693AFED00060ACF /* ViewModifiers */ = {
 			isa = PBXGroup;
 			children = (
+				F890ECB02FA0B85B007E8217 /* Color+MaterialTint.swift */,
 				F867BC1B275E0725001CBA62 /* BackgroundView.swift */,
 				F800ABEB2693B44E00060ACF /* PaneBackground.swift */,
 				F812D99028549C1600FC8223 /* PaneShadow.swift */,
@@ -1045,6 +1048,7 @@
 				F8791BD22A49BA4000813C1E /* WeatherServiceImpl.swift in Sources */,
 				F8ABC7BE28EC680F00475BF3 /* WeatherDetailView.swift in Sources */,
 				F812D9892853DD5F00FC8223 /* WeatherView.swift in Sources */,
+				F890ECB12FA0B861007E8217 /* Color+MaterialTint.swift in Sources */,
 				F8791BD72A4A111000813C1E /* HomeWeatherLocationPlain.swift in Sources */,
 				F812D9812853B00200FC8223 /* DailyWeatherRaw.swift in Sources */,
 				F867BC28275E0725001CBA62 /* DailyWeatherView.swift in Sources */,

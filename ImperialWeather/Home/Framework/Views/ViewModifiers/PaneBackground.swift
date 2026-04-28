@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct PaneBackground: ViewModifier {
+    @Environment(\.colorScheme) private var colorScheme
+
     func body(content: Content) -> some View {
         content
             .padding()
             .background(.ultraThinMaterial)
-            .clipShape(RoundedRectangle(cornerRadius: 20))
+            .background(Color.materialTint(for: colorScheme))
+            .clipShape(RoundedRectangle(cornerRadius: 24, style: .continuous))
             .paneShadow()
     }
 }
