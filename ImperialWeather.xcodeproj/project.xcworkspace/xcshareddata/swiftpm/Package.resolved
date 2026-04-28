@@ -1,13 +1,13 @@
 {
-  "originHash" : "5e305d74f9de9bbc005e35813a21b3f9c13492c2e89c562d88e7b9283de0a6b7",
+  "originHash" : "c57fb621837d82c3db7edaba4aae405c74cde2a72b7f108476e1464ecffe2714",
   "pins" : [
     {
       "identity" : "swift-case-paths",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/pointfreeco/swift-case-paths",
       "state" : {
-        "revision" : "c3a42e8d1a76ff557cf565ed6d8b0aee0e6e75af",
-        "version" : "0.11.0"
+        "revision" : "206cbce3882b4de9aee19ce62ac5b7306cadd45b",
+        "version" : "1.7.3"
       }
     },
     {
@@ -15,8 +15,17 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/pointfreeco/swift-custom-dump",
       "state" : {
-        "revision" : "dd86159e25c749873f144577e5d18309bf57534f",
-        "version" : "0.8.0"
+        "revision" : "06c57924455064182d6b217f06ebc05d00cb2990",
+        "version" : "1.5.0"
+      }
+    },
+    {
+      "identity" : "swift-syntax",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swiftlang/swift-syntax",
+      "state" : {
+        "revision" : "9de99a78f099e59caf2b2beec65a4c45d54b2081",
+        "version" : "603.0.1"
       }
     },
     {
@@ -24,8 +33,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SimplyDanny/SwiftLintPlugins.git",
       "state" : {
-        "revision" : "b8431a26655378581890d56b95a0b59aba9f62da",
-        "version" : "0.55.1"
+        "revision" : "8a4640d14777685ba8f14e832373160498fbab92",
+        "version" : "0.63.2"
       }
     },
     {
@@ -34,7 +43,7 @@
       "location" : "https://github.com/pointfreeco/swiftui-navigation",
       "state" : {
         "branch" : "main",
-        "revision" : "5ccf329cf35efa40158d52c9709a7d6a4df77f86"
+        "revision" : "f0fd51da3d1edc564550d151eee9bd83b0ff221f"
       }
     },
     {
@@ -42,8 +51,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/pointfreeco/xctest-dynamic-overlay",
       "state" : {
-        "revision" : "ace21305e0dd3a9e749aef79fef14be79a3b4669",
-        "version" : "0.8.2"
+        "revision" : "dfd70507def84cb5fb821278448a262c6ff2bbad",
+        "version" : "1.9.0"
       }
     }
   ],

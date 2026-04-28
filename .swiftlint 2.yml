@@ -1,0 +1,19 @@
+disabled_rules:
+  - cyclomatic_complexity
+  - function_body_length
+  - type_body_length
+  - file_length
+  - line_length
+  - trailing_whitespace
+  - force_cast
+  - force_try
+  - force_unwrapping
+
+opt_in_rules: []
+
+excluded: []
+included: []
+
+reporter: "xcode"
+
+# No plugin configuration, only in-source linting
