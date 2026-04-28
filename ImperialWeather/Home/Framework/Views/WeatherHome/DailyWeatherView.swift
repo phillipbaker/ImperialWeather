@@ -32,7 +32,7 @@ struct DailyWeatherView: View {
                         .contentShape(Rectangle())
                 }
                 .tint(.primary)
-                .sheet(unwrapping: self.$selection) { $selection in
+                .sheet(item: self.$selection) { $selection in
                     WeatherDetailView(dailyWeather: dailyWeather, selection: $selection)
                 }
             }
