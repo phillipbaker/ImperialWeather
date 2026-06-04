@@ -35,4 +35,6 @@ jobs:
             -project ImperialWeather.xcodeproj \
             -scheme ImperialWeather \
             -destination 'platform=iOS Simulator,name=iPhone 17' \
+            -skipPackagePluginValidation \
+            -skipMacroValidation \
             | xcbeautify
