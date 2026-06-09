@@ -55,7 +55,7 @@ struct WeatherDetailView: View {
                 .padding()
             }
             .backgroundView()
-            .navigationTitle(selection.day.complete)
+            .navigationTitle(selection.day.complete())
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {

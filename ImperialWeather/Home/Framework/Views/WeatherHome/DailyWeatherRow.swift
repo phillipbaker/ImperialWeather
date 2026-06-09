@@ -18,7 +18,7 @@ struct DailyWeatherRow: View {
 
         layout {
             GridRow {
-                Text(dailyWeather.day.wideWeekday)
+                Text(dailyWeather.day.wideWeekday())
                     .frame(
                         maxWidth: .infinity,
                         alignment: dynamicTypeSize.isAccessibilitySize ? .center : .leading

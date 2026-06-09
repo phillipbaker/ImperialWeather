@@ -37,7 +37,7 @@ struct TemperatureChartView: View {
                     : day.plottableFahrenheit.primitivePlottable
                 )
             )
-            .accessibilityLabel(day.day.complete)
+            .accessibilityLabel(day.day.complete())
             .accessibilityValue(
                 Text((scale == .celsius
                       ? day.plottableCelsius.measurement

@@ -12,7 +12,7 @@ struct HourlyWeatherRow: View {
 
     var body: some View {
         VStack(spacing: 16) {
-            Text(hourlyWeather.hour.narrowHour)
+            Text(hourlyWeather.hour.narrowHour())
                 .frame(minWidth: 44)
                 .font(.subheadline)
                 .textCase(.uppercase)
