@@ -23,7 +23,7 @@ jobs:
 
       - name: Install tools
         run: |
-          brew install swiftlint xcbeautify
+          brew install swiftlint
 
       - name: Run SwiftLint
         run: swiftlint
