@@ -9,18 +9,19 @@ import CoreLocation
 import Foundation
 import XCTest
 
+@MainActor
 final class ImperialWeatherUITests: XCTestCase {
-    
+
     var app: XCUIApplication!
     var device: XCUIDevice!
     var locationAlertMonitor: (any NSObjectProtocol)!
 
-    @MainActor override func setUpWithError() throws {
+    override func setUp() async throws {
         // Device
         device = XCUIDevice.shared
         device.orientation = .portrait
         device.appearance = .light
-        
+
         // Provide default location
         device.location = XCUILocation(
             location: CLLocation(
@@ -28,20 +29,20 @@ final class ImperialWeatherUITests: XCTestCase {
                 longitude: -122.008988
             )
         )
-        
+
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-        
+
         // App
         app = XCUIApplication()
         app.launch()
-        
+
         // Setup fastlane snapshot
         setupSnapshot(app)
-        
+
         // Reset location permission
         app.resetAuthorizationStatus(for: .location)
-        
+
         // Add location alert monitor
         locationAlertMonitor = addUIInterruptionMonitor(withDescription: "Location Permission Alert") { alert in
             if alert.label.contains("to use your location?") {
@@ -54,21 +55,21 @@ final class ImperialWeatherUITests: XCTestCase {
         app.tap()
     }
 
-    override func tearDownWithError() throws {
+    override func tearDown() async throws {
         removeUIInterruptionMonitor(locationAlertMonitor)
         device = nil
         app.terminate()
         app = nil
     }
-    
-    @MainActor func test_locationDialog() async {
+
+    func test_locationDialog() async {
         XCTAssertTrue(device.orientation.isPortrait)
         XCTAssertEqual(device.appearance, .light)
         
         snapshot("0. Location Dialog")
     }
 
-    @MainActor func test_weatherHome_inLightMode() async {
+    func test_weatherHome_inLightMode() async {
         XCTAssertTrue(device.orientation.isPortrait)
         XCTAssertEqual(device.appearance, .light)
         
@@ -80,7 +81,7 @@ final class ImperialWeatherUITests: XCTestCase {
         snapshot("2. Weather Home - Landscape (Light Mode) ")
     }
     
-    @MainActor func test_weatherHome_inDarkMode() async {
+    func test_weatherHome_inDarkMode() async {
         XCTAssertTrue(device.orientation.isPortrait)
         
         device.appearance = .dark
@@ -94,7 +95,7 @@ final class ImperialWeatherUITests: XCTestCase {
         snapshot("4. Weather Home - Landscape (Dark Mode) ")
     }
     
-    @MainActor func test_weatherDetail_inLightMode() {
+    func test_weatherDetail_inLightMode() {
         XCTAssertTrue(device.orientation.isPortrait)
         XCTAssertEqual(device.appearance, .light)
     
@@ -112,7 +113,7 @@ final class ImperialWeatherUITests: XCTestCase {
 //        snapshot("6. Weather Detail - Landscape (Dark Mode)")
     }
     
-    @MainActor func test_weatherDetail_inDarkMode() {
+    func test_weatherDetail_inDarkMode() {
         XCTAssertTrue(device.orientation.isPortrait)
         XCTAssertEqual(device.appearance, .light)
         

@@ -16,7 +16,7 @@ final class MockURLProtocol: URLProtocol {
         case requestNotFound
     }
 
-    static var mockRequests: Set<MockRequest> = [.success, .failure]
+    static let mockRequests: Set<MockRequest> = [.success, .failure]
 
     override static func canInit(with request: URLRequest) -> Bool {
         return true

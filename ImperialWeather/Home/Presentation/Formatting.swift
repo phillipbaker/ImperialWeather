@@ -8,28 +8,36 @@
 import Foundation
 
 extension Date {
-    var complete: String {
-        self.formatted(.dateTime.weekday(.wide).month(.wide).day())
+    func complete(timeZone: TimeZone = .autoupdatingCurrent, locale: Locale = .autoupdatingCurrent) -> String {
+        self.formatted(.dateTime.weekday(.wide).month(.wide).day(), timeZone: timeZone, locale: locale)
     }
 
-    var monthAndDay: String {
-        self.formatted(.dateTime.month().day())
+    func monthAndDay(timeZone: TimeZone = .autoupdatingCurrent, locale: Locale = .autoupdatingCurrent) -> String {
+        self.formatted(.dateTime.month().day(), timeZone: timeZone, locale: locale)
     }
 
-    var narrowHour: String {
-        self <= Date.now ? WeatherLabel.now : self.formatted(.dateTime.hour(.defaultDigits(amPM: .abbreviated)))
+    func narrowHour(timeZone: TimeZone = .autoupdatingCurrent, locale: Locale = .autoupdatingCurrent) -> String {
+        self <= Date.now
+            ? WeatherLabel.now
+            : self.formatted(.dateTime.hour(.defaultDigits(amPM: .abbreviated)), timeZone: timeZone, locale: locale)
     }
 
-    var date: String {
-        self.formatted(.dateTime.day())
+    func date(timeZone: TimeZone = .autoupdatingCurrent, locale: Locale = .autoupdatingCurrent) -> String {
+        self.formatted(.dateTime.day(), timeZone: timeZone, locale: locale)
     }
 
-    var weekday: String {
-        self.formatted(.dateTime.weekday())
+    func weekday(timeZone: TimeZone = .autoupdatingCurrent, locale: Locale = .autoupdatingCurrent) -> String {
+        self.formatted(.dateTime.weekday(), timeZone: timeZone, locale: locale)
     }
 
-    var wideWeekday: String {
-        self.formatted(.dateTime.weekday(.wide))
+    func wideWeekday(timeZone: TimeZone = .autoupdatingCurrent, locale: Locale = .autoupdatingCurrent) -> String {
+        self.formatted(.dateTime.weekday(.wide), timeZone: timeZone, locale: locale)
+    }
+
+    private func formatted(_ style: Date.FormatStyle, timeZone: TimeZone, locale: Locale) -> String {
+        var style = style
+        style.timeZone = timeZone
+        return self.formatted(style.locale(locale))
     }
 }
 

@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - feature/**
+  pull_request:
+
+jobs:
+  lint-and-test:
+    runs-on: macos-26
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Select Xcode
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+
+      - name: Install tools
+        run: |
+          brew install swiftlint
+
+      - name: Run SwiftLint
+        run: swiftlint
+
+      - name: Run Tests
+        run: |
+          set -o pipefail
+          xcodebuild test \
+            -project ImperialWeather.xcodeproj \
+            -scheme ImperialWeather \
+            -destination 'platform=iOS Simulator,name=iPhone 17' \
+            -skipPackagePluginValidation \
+            -skipMacroValidation \
+            | xcbeautify

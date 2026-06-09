@@ -13,7 +13,7 @@ struct CalendarDayView: View {
 
     var body: some View {
         VStack(spacing: 8) {
-            Text(day.day.weekday)
+            Text(day.day.weekday())
                 .font(.subheadline)
                 .textCase(.uppercase)
                 .fontWeight(.bold)
@@ -24,9 +24,9 @@ struct CalendarDayView: View {
                     .opacity(day == selection ? 1 : 0)
                     .foregroundStyle(.classicSelectionBackground)
 
-                Text(day.day.date)
+                Text(day.day.date())
                     .fontWeight(day == selection ? .bold : .semibold)
-                    .accessibilityLabel(day.day.monthAndDay)
+                    .accessibilityLabel(day.day.monthAndDay())
                     .foregroundStyle(day == selection ? .white : .primary)
                     .opacity(day == selection ? 1.0 : 0.8)
             }
