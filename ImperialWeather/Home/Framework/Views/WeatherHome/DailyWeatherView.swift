@@ -33,8 +33,8 @@ struct DailyWeatherView: View {
                 }
                 .tint(.primary)
             }
-            .sheet(item: self.$selection) { $selection in
-                WeatherDetailView(dailyWeather: dailyWeather, selection: $selection)
+            .sheet(item: self.$selection) { selection in
+                WeatherDetailView(dailyWeather: dailyWeather, initialSelection: selection)
             }
         }
         .paneBackground()

@@ -9,8 +9,13 @@ import SwiftUI
 
 struct WeatherDetailView: View {
     let dailyWeather: [DailyWeather]
-    @Binding var selection: DailyWeather
+    @State private var selection: DailyWeather
     @Environment(\.dismiss) private var dismiss
+
+    init(dailyWeather: [DailyWeather], initialSelection: DailyWeather) {
+        self.dailyWeather = dailyWeather
+        self._selection = State(initialValue: initialSelection)
+    }
 
     var body: some View {
         NavigationView {
@@ -79,6 +84,6 @@ struct WeatherDetailView: View {
 #Preview {
     WeatherDetailView(
         dailyWeather: .preview,
-        selection: .constant(.todayPreview)
+        initialSelection: .todayPreview
     )
 }
