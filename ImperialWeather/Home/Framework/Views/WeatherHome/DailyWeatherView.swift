@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SwiftUINavigation
 
 struct DailyWeatherView: View {
     let dailyWeather: [DailyWeather]
