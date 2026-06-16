@@ -91,7 +91,6 @@
 		F88804762C3FDF7A005637F9 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88804752C3FDF6C005637F9 /* APIClient.swift */; };
 		F888047C2C402762005637F9 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F888047B2C40275B005637F9 /* MockURLProtocol.swift */; };
 		F888047E2C4027C6005637F9 /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F888047D2C4027C2005637F9 /* APIClientTests.swift */; };
-		F88DC0B2299655C80029E1F4 /* SwiftUINavigation in Frameworks */ = {isa = PBXBuildFile; productRef = F88DC0B1299655C80029E1F4 /* SwiftUINavigation */; };
 		F890ECB12FA0B861007E8217 /* Color+MaterialTint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F890ECB02FA0B85B007E8217 /* Color+MaterialTint.swift */; };
 		F89722372C41342200C66322 /* MockRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89722362C41341900C66322 /* MockRequest.swift */; };
 		F897223B2C41BDC500C66322 /* LocationPlain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F897223A2C41BDC200C66322 /* LocationPlain.swift */; };
@@ -339,7 +338,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F88DC0B2299655C80029E1F4 /* SwiftUINavigation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -833,7 +831,6 @@
 			);
 			name = ImperialWeather;
 			packageProductDependencies = (
-				F88DC0B1299655C80029E1F4 /* SwiftUINavigation */,
 			);
 			productName = ImperialWeather;
 			productReference = F87E5C8F267C9E950032949A /* ImperialWeather.app */;
@@ -873,7 +870,6 @@
 			);
 			mainGroup = F87E5C86267C9E950032949A;
 			packageReferences = (
-				F88DC0B0299655C80029E1F4 /* XCRemoteSwiftPackageReference "swiftui-navigation" */,
 				F8B993372C4918B500F326CE /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
 			);
 			productRefGroup = F87E5C90267C9E950032949A /* Products */;
@@ -1443,14 +1439,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F88DC0B0299655C80029E1F4 /* XCRemoteSwiftPackageReference "swiftui-navigation" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pointfreeco/swiftui-navigation";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 		F8B993372C4918B500F326CE /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins.git";
@@ -1462,11 +1450,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F88DC0B1299655C80029E1F4 /* SwiftUINavigation */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F88DC0B0299655C80029E1F4 /* XCRemoteSwiftPackageReference "swiftui-navigation" */;
-			productName = SwiftUINavigation;
-		};
 		F8B993382C491B0100F326CE /* SwiftLintBuildToolPlugin */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F8B993372C4918B500F326CE /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;

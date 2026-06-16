@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SwiftUINavigation
 
 struct DailyWeatherView: View {
     let dailyWeather: [DailyWeather]
@@ -32,9 +31,9 @@ struct DailyWeatherView: View {
                         .contentShape(Rectangle())
                 }
                 .tint(.primary)
-                .sheet(item: self.$selection) { $selection in
-                    WeatherDetailView(dailyWeather: dailyWeather, selection: $selection)
-                }
+            }
+            .sheet(item: self.$selection) { selection in
+                WeatherDetailView(dailyWeather: dailyWeather, initialSelection: selection)
             }
         }
         .paneBackground()
