@@ -8,7 +8,7 @@
 An iOS weather app that displays temperatures in Fahrenheit and Celsius side-by-side, for
 anyone transitioning between the two scales.
 
-I built it after moving from the US to the UK. I wanted to see both scales at once to to help me build an
+I built it after moving from the US to the UK. I wanted to see both scales at once to help me build an
 intuition for Celsius. It's since become a sandbox for exploring SwiftUI and modern iOS
 engineering practices, including architecture, concurrency, accessibility, and localisation.
 
@@ -47,7 +47,7 @@ Weather data is provided by [OpenWeather](https://openweathermap.org).
 
 ## Architecture
 
-The app usea a **Clean Architecture** (refactored from MVVM) organised around the `Home`
+The app uses a **Clean Architecture** (refactored from MVVM) organised around the `Home`
 weather screen feature, separating concerns into distinct layers:
 
 | Layer | Responsibility |
@@ -80,7 +80,7 @@ free of framework details and making the code straightforward to unit test.
 3. Select the **ImperialWeather** scheme and run on a simulator or device.
 
 The project depends only on the [SwiftLint](https://github.com/SimplyDanny/SwiftLintPlugins)
-build plugin, resolved automatically by Swift Package Manager — no manual setup required. A demo
+build plugin, resolved by Swift Package Manager — no manual setup required. A demo
 OpenWeather API key is bundled so the app runs out of the box.
 
 ## Testing
