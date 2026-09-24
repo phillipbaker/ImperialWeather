@@ -20,36 +20,35 @@ engineering practices, including architecture, concurrency, accessibility, and l
 
 ## Features
 
-- **Dual temperature scales** — current, hourly, and daily temperatures shown in both °F and °C.
+- **Dual temperature scales** — current, hourly, and daily temperatures shown in °F and °C at the same time.
 - **Current conditions** for your location, backed by Core Location.
 - **Hourly and daily forecasts** with weather icons and descriptions.
 - **Detail view with charts** — tap a day to see a Swift Charts temperature plot that toggles
-  between Celsius and Fahrenheit.
-- **Adaptive layouts** for iPhone and iPad, and for large accessibility text sizes.
-- **Accessible** — Dynamic Type support and VoiceOver labels throughout.
-- **Localised** into English and Spanish, including units and weather descriptions.
-- **Robust error handling** for network, parsing, and location failures.
+  between both scales.
+- **Adaptive layouts** for iPhone, iPad, and accessibility text sizes.
+- **Accessible** — custom labels and modifiers to group elements for VoiceOver.
+- **Localised** into Spanish, including temperature scales and weather descriptions.
+- **Error handling** for network requests, API responses and location failures.
 
 ## Tech Stack
 
-- **Swift 6** — Swift 6 language-mode compliant; completion handlers migrated to `async`/`await`.
 - **SwiftUI** — composable views, custom view modifiers, the `Layout` protocol, environment
   values, and observable state.
 - **Swift Concurrency** — two weather endpoints fetched concurrently with `async let`; Core
-  Location updates and errors surfaced through an `AsyncStream`.
-- **Networking** — protocol-based URL construction and requests over `URLSession`, JSON decoded
+  Location updates and errors published through `AsyncStream`.
+- **Networking** — protocol-based URL and request construction with `URLSession`, JSON decoded
   with `Codable`, and an injectable client/session for testing.
 - **Swift Charts** — interactive temperature chart with annotated axes and VoiceOver support.
 - **Measurement framework** — system temperature conversion plus localisable temperature labels.
 - **Swift Testing** — unit tests covering ~92% of non-view code (migrated from XCTest).
-- **Tooling** — GitHub Actions (CI), SwiftLint (linting), and fastlane (localised screenshots).
+- **Tooling** — GitHub Actions (CI), SwiftLint (linting), and fastlane (automated screenshots).
 
-Weather data is provided by [OpenWeatherMap](https://openweathermap.org).
+Weather data is provided by [OpenWeather](https://openweathermap.org).
 
 ## Architecture
 
-The app follows a **Clean Architecture** (refactored from MVVM) organised around the `Home`
-feature, separating concerns into distinct layers:
+The app usea a **Clean Architecture** (refactored from MVVM) organised around the `Home`
+weather screen feature, separating concerns into distinct layers:
 
 | Layer | Responsibility |
 | --- | --- |
@@ -59,22 +58,7 @@ feature, separating concerns into distinct layers:
 | **Framework** | SwiftUI views, networking (`URLSession` + `Codable`), Core Location, and localisation resources. |
 
 Data is mapped into immutable value types as it crosses layer boundaries, keeping the domain
-free of framework details and making the code straightforward to unit test. Root views own
-state while child views stay data-driven.
-
-## Implementation Highlights
-
-A few problems that were interesting to solve:
-
-- **Measurement framework for temperatures.** Temperatures were originally converted by hand.
-  Adopting `Measurement<UnitTemperature>` introduced type-safe conversion and unlocked localised
-  labels and VoiceOver output with little extra work.
-- **Bridging Measurement to Swift Charts.** `Measurement<UnitTemperature>` doesn't conform to
-  `Plottable`, which Swift Charts requires. Small `PlottableCelsius` / `PlottableFahrenheit`
-  wrapper types bridge the gap and let the chart switch scales cleanly.
-- **Accessibility-driven layout.** Layouts adapt to horizontal size class (iPhone/iPad) and
-  switch orientation at accessibility Dynamic Type sizes using the `Layout` protocol, with custom
-  labels for natural VoiceOver output.
+free of framework details and making the code straightforward to unit test.
 
 ## Requirements
 
@@ -97,7 +81,7 @@ A few problems that were interesting to solve:
 
 The project depends only on the [SwiftLint](https://github.com/SimplyDanny/SwiftLintPlugins)
 build plugin, resolved automatically by Swift Package Manager — no manual setup required. A demo
-OpenWeatherMap API key is bundled so the app runs out of the box.
+OpenWeather API key is bundled so the app runs out of the box.
 
 ## Testing
 
@@ -131,10 +115,10 @@ bundle exec fastlane screenshots
 
 Ideas for future exploration:
 
-- Home Screen widget
+- Widgets
 - Weather caching for offline / faster launches
 - Additional localisations
 
 ## License
 
-This project is a personal portfolio app. Weather data © [OpenWeatherMap](https://openweathermap.org).
+This project is a personal portfolio app. Weather data © [OpenWeather](https://openweathermap.org).
