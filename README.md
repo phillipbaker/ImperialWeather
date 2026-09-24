@@ -23,8 +23,7 @@ engineering practices, including architecture, concurrency, accessibility, and l
 - **Dual temperature scales** — temperatures shown in °F and °C side-by-side.
 - **Current conditions** for your location, backed by Core Location.
 - **Hourly and daily forecasts** with weather icons.
-- **Detail view with chart** — Swift Charts temperature plot toggles
-  between both scales.
+- **Detail view** — a Swift Charts plot toggles between temperature scales.
 - **Adaptive layouts** for iPhone, iPad, and accessibility text sizes.
 - **Accessible** — custom labels and modifiers to group elements for VoiceOver.
 - **Localised** into Spanish, including temperature scales and weather descriptions.
