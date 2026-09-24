@@ -20,10 +20,10 @@ engineering practices, including architecture, concurrency, accessibility, and l
 
 ## Features
 
-- **Dual temperature scales** — current, hourly, and daily temperatures shown in °F and °C at the same time.
+- **Dual temperature scales** — temperatures shown in °F and °C side-by-side.
 - **Current conditions** for your location, backed by Core Location.
-- **Hourly and daily forecasts** with weather icons and descriptions.
-- **Detail view with charts** — tap a day to see a Swift Charts temperature plot that toggles
+- **Hourly and daily forecasts** with weather icons.
+- **Detail view with chart** — Swift Charts temperature plot toggles
   between both scales.
 - **Adaptive layouts** for iPhone, iPad, and accessibility text sizes.
 - **Accessible** — custom labels and modifiers to group elements for VoiceOver.
@@ -34,20 +34,20 @@ engineering practices, including architecture, concurrency, accessibility, and l
 
 - **SwiftUI** — composable views, custom view modifiers, the `Layout` protocol, environment
   values, and observable state.
-- **Swift Concurrency** — two weather endpoints fetched concurrently with `async let`; Core
-  Location updates and errors published through `AsyncStream`.
-- **Networking** — protocol-based URL and request construction with `URLSession`, JSON decoded
+- **Swift Concurrency** — two weather endpoints fetched concurrently; Core
+  Location updates and errors published using `AsyncStream`.
+- **Networking** — protocol-based request construction using `URLSession`, JSON decoded
   with `Codable`, and an injectable client/session for testing.
 - **Swift Charts** — interactive temperature chart with annotated axes and VoiceOver support.
-- **Measurement framework** — system temperature conversion plus localisable temperature labels.
+- **Measurement framework** — system temperature conversion and localisable temperature labels.
 - **Swift Testing** — unit tests covering ~92% of non-view code (migrated from XCTest).
-- **Tooling** — GitHub Actions (CI), SwiftLint (linting), and fastlane (automated screenshots).
+- **Tooling** — GitHub Actions (CI), SwiftLint (linting), and fastlane (screenshots).
 
 Weather data is provided by [OpenWeather](https://openweathermap.org).
 
 ## Architecture
 
-The app uses a **Clean Architecture** (refactored from MVVM) organised around the `Home`
+The app uses a Clean Architecture (refactored from MVVM) organised around the `Home`
 weather screen feature, separating concerns into distinct layers:
 
 | Layer | Responsibility |
@@ -62,9 +62,9 @@ free of framework details and making the code straightforward to unit test.
 
 ## Requirements
 
-- Xcode (latest stable; CI runs on macOS with the latest stable Xcode)
 - Swift 6.0
 - iOS 17.4+ deployment target
+- Xcode (latest stable; CI runs on macOS with the latest stable Xcode)
 
 ## Getting Started
 
@@ -117,7 +117,6 @@ Ideas for future exploration:
 
 - Widgets
 - Weather caching for offline / faster launches
-- Additional localisations
 
 ## License
 
