@@ -62,7 +62,7 @@ free of framework details and making the code straightforward to unit test.
 ## Requirements
 
 - Swift 6.0
-- iOS 17.4+ deployment target
+- iOS 17.6+ deployment target
 - Xcode (latest stable; CI runs on macOS with the latest stable Xcode)
 
 ## Getting Started
