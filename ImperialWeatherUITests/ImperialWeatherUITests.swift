@@ -35,10 +35,11 @@ final class ImperialWeatherUITests: XCTestCase {
 
         // App
         app = XCUIApplication()
-        app.launch()
-
+        
         // Setup fastlane snapshot
         setupSnapshot(app)
+        
+        app.launch()
 
         // Reset location permission
         app.resetAuthorizationStatus(for: .location)
