@@ -13,7 +13,7 @@ struct WeatherImage: View {
     var body: some View {
         Image(systemName: systemName)
             .renderingMode(.original)
-            .aspectRatio(contentMode: .fit)
+            .scaledToFit()
             .imageScale(.large)
             .paneShadow()
     }
