@@ -68,6 +68,9 @@ extension LocationServiceImpl: CLLocationManagerDelegate {
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        if let locationError = error as? CLError, locationError.code == .locationUnknown {
+            return // transient status, Core Location keeps trying to find location
+        }
         continuation.yield(.didFailWithError(.locationError))
     }
 }
