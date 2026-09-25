@@ -119,4 +119,4 @@ Ideas for future exploration:
 
 ## License
 
-This project is a personal portfolio app. Weather data © [OpenWeather](https://openweathermap.org).
+© 2026 Phillip Baker. All rights reserved. Weather data © [OpenWeather](https://openweathermap.org).
